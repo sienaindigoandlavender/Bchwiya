@@ -56,3 +56,30 @@ export const requireSession = cache(async (): Promise<Session> => {
 
 /** Open during the building phase: same session, the dashboard reads the learner's data. */
 export const requireAdmin = requireSession;
+
+export type SetupState = "no-env" | "no-tables" | "bad-key" | "no-profile" | "ok";
+
+/** Checks the database live, for the setup page. Never throws. */
+export async function diagnose(): Promise<{
+  state: SetupState;
+  host: string | null;
+  detail?: string;
+}> {
+  await connection();
+  if (!isSupabaseConfigured()) return { state: "no-env", host: null };
+  const host = new URL(process.env.NEXT_PUBLIC_SUPABASE_URL!).host;
+  try {
+    const { data, error } = await createClient()
+      .from("bchwiya_profiles")
+      .select("id")
+      .eq("role", "learner")
+      .limit(1)
+      .maybeSingle();
+    if (error?.code === "42P01" || error?.code === "PGRST205") return { state: "no-tables", host };
+    if (error)
+      return { state: "bad-key", host, detail: `${error.code ?? ""} ${error.message}`.trim() };
+    return { state: data ? "ok" : "no-profile", host };
+  } catch (e) {
+    return { state: "bad-key", host, detail: e instanceof Error ? e.message : String(e) };
+  }
+}
