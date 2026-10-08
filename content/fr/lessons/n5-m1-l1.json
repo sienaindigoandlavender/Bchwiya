@@ -1,0 +1,14 @@
+{
+  "id": "n5-m1-l1",
+  "moduleId": "n5-m1",
+  "title": "En ville",
+  "minutes": 5,
+  "ruleIds": [],
+  "screens": [
+    {
+      "type": "text",
+      "body": "Contenu à venir."
+    }
+  ],
+  "checks": []
+}

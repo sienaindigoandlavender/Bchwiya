@@ -1,0 +1,27 @@
+{
+  "$comment": "// TODO: verify against loi 52-05",
+  "id": "n2-m3-l3",
+  "moduleId": "n2-m3",
+  "title": "Entrer, circuler, sortir",
+  "minutes": 5,
+  "ruleIds": ["giratoire-clignotant", "giratoire-position-voie"],
+  "screens": [
+    {
+      "type": "text",
+      "body": "Tu prends la première sortie, à droite ? Place-toi sur la voie de droite et mets ton clignotant droit dès l'approche. Tu restes à droite dans l'anneau."
+    },
+    {
+      "type": "text",
+      "body": "Tu vas plus loin (en face, à gauche, ou demi-tour) ? Place-toi plutôt sur la voie de gauche à l'approche, et circule près de l'îlot dans l'anneau."
+    },
+    {
+      "type": "text",
+      "body": "Pour sortir : mets ton clignotant droit après avoir passé la sortie qui précède la tienne. Puis rapproche-toi de la droite en regardant ton rétroviseur et ton angle mort."
+    },
+    {
+      "type": "keypoint",
+      "body": "Pour sortir d'un giratoire : clignotant droit, toujours. Rétroviseur et angle mort avant de changer de voie."
+    }
+  ],
+  "checks": ["q-n2-m3-008", "q-n2-m3-009"]
+}

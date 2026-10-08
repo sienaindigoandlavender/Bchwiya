@@ -1,0 +1,14 @@
+{
+  "id": "n1-m3-l1",
+  "moduleId": "n1-m3",
+  "title": "Panneaux d'interdiction et d'obligation",
+  "minutes": 5,
+  "ruleIds": [],
+  "screens": [
+    {
+      "type": "text",
+      "body": "Contenu à venir."
+    }
+  ],
+  "checks": []
+}

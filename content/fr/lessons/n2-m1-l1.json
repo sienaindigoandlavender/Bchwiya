@@ -1,0 +1,14 @@
+{
+  "id": "n2-m1-l1",
+  "moduleId": "n2-m1",
+  "title": "La priorité à droite",
+  "minutes": 5,
+  "ruleIds": [],
+  "screens": [
+    {
+      "type": "text",
+      "body": "Contenu à venir."
+    }
+  ],
+  "checks": []
+}

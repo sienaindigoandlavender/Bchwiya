@@ -1,0 +1,14 @@
+{
+  "id": "n0-m1-l1",
+  "moduleId": "n0-m1",
+  "title": "Les usagers de la route",
+  "minutes": 5,
+  "ruleIds": [],
+  "screens": [
+    {
+      "type": "text",
+      "body": "Contenu à venir."
+    }
+  ],
+  "checks": []
+}

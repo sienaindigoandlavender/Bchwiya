@@ -1,0 +1,14 @@
+{
+  "id": "n5-m3-l1",
+  "moduleId": "n5-m3",
+  "title": "La nuit et par mauvais temps",
+  "minutes": 5,
+  "ruleIds": [],
+  "screens": [
+    {
+      "type": "text",
+      "body": "Contenu à venir."
+    }
+  ],
+  "checks": []
+}

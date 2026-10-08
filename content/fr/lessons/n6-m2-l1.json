@@ -1,0 +1,14 @@
+{
+  "id": "n6-m2-l1",
+  "moduleId": "n6-m2",
+  "title": "Révision générale",
+  "minutes": 5,
+  "ruleIds": [],
+  "screens": [
+    {
+      "type": "text",
+      "body": "Contenu à venir."
+    }
+  ],
+  "checks": []
+}

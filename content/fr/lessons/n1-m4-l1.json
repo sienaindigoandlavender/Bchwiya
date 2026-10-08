@@ -1,0 +1,14 @@
+{
+  "id": "n1-m4-l1",
+  "moduleId": "n1-m4",
+  "title": "Panneaux d'indication",
+  "minutes": 5,
+  "ruleIds": [],
+  "screens": [
+    {
+      "type": "text",
+      "body": "Contenu à venir."
+    }
+  ],
+  "checks": []
+}

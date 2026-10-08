@@ -1,0 +1,14 @@
+{
+  "id": "n4-m1-l1",
+  "moduleId": "n4-m1",
+  "title": "Alcool, fatigue, médicaments",
+  "minutes": 5,
+  "ruleIds": [],
+  "screens": [
+    {
+      "type": "text",
+      "body": "Contenu à venir."
+    }
+  ],
+  "checks": []
+}
