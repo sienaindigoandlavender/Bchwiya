@@ -38,13 +38,12 @@ and no link in the app: it is reachable by URL only.
 
 ## Scripts
 
-| Command                                        | What it does                                       |
-| ---------------------------------------------- | -------------------------------------------------- |
-| `pnpm dev`                                     | Dev server                                         |
-| `pnpm build`                                   | Validates content, then builds                     |
-| `pnpm validate:content`                        | Zod schema checks plus broken-reference checks     |
-| `pnpm lint` / `pnpm format` / `pnpm typecheck` | Hygiene                                            |
-| `pnpm seed`                                    | Creates the admin and learner users and sets roles |
+| Command                                        | What it does                                   |
+| ---------------------------------------------- | ---------------------------------------------- |
+| `pnpm dev`                                     | Dev server                                     |
+| `pnpm build`                                   | Validates content, then builds                 |
+| `pnpm validate:content`                        | Zod schema checks plus broken-reference checks |
+| `pnpm lint` / `pnpm format` / `pnpm typecheck` | Hygiene                                        |
 
 ## Content
 
