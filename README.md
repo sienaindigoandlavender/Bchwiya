@@ -44,7 +44,8 @@ and shows a setup notice on `/configuration`.
 2. Run the migrations in `supabase/migrations/`, either:
    - with the CLI: `supabase link --project-ref <ref>` then `supabase db push`, or
    - by pasting each file, in order, into the SQL editor.
-3. Create the two profiles and set their roles: `pnpm seed`.
+3. Building phase: `20261008010000_open_access_learner.sql` creates Zahra's learner profile
+   without an auth user. (`pnpm seed` is for when login comes back.)
 
 Every table keeps its RLS policies for when login returns. During the building phase the
 service-role key bypasses them, so every query in the app filters by the learner's id itself.
