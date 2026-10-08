@@ -9,6 +9,7 @@ const MESSAGE: Record<SetupState, Parameters<typeof t>[0]> = {
   "no-env": "setup.db",
   "no-tables": "setup.tables",
   "bad-key": "setup.key",
+  "wrong-key-kind": "setup.keyKind",
   "no-profile": "setup.profile",
   ok: "setup.ok",
 };
