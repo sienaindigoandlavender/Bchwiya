@@ -18,11 +18,11 @@ export default async function HomePage() {
 
   return (
     <>
-      <p className="text-[1.0625rem] text-ink-soft">
-        {t("home.welcome", { name: session.profile.display_name ?? "" })}
-      </p>
-
-      <ResumeCard target={resumeTarget(path, lastModuleId)} hasHistory={lastActivityAt !== null} />
+      <ResumeCard
+        name={session.profile.display_name ?? ""}
+        target={resumeTarget(path, lastModuleId)}
+        hasHistory={lastActivityAt !== null}
+      />
 
       {count ? (
         <Link

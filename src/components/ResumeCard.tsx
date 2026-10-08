@@ -1,37 +1,80 @@
 import Link from "next/link";
-import { LittleCar } from "@/components/ui/LittleCar";
 import { Sparkle } from "@/components/ui/Icons";
+import { WallE } from "@/components/ui/WallE";
 import { t } from "@/i18n";
+import { greetingKey } from "@/lib/greeting";
 import type { ResumeTarget } from "@/lib/progress";
 
-/** "On reprend ?": picks up where she left off. No guilt, no counters. */
-export function ResumeCard({ target, hasHistory }: { target: ResumeTarget; hasHistory: boolean }) {
-  if (target.kind === "done") {
-    return (
-      <section className="flex flex-col gap-2 rounded-big bg-mint p-6">
-        <Sparkle size={20} className="text-success" />
-        <p className="title text-[1.75rem]">{t("home.resume.allDone")}</p>
-      </section>
-    );
-  }
-  const href = target.kind === "lesson" ? `/lecon/${target.lessonId}` : `/test/${target.moduleId}`;
+/**
+ * The welcome: Wall-E greets Zahra by name, in Darija, for the hour of the day,
+ * and offers to pick up exactly where she left off. No guilt, no counters.
+ */
+export function ResumeCard({
+  name,
+  target,
+  hasHistory,
+}: {
+  name: string;
+  target: ResumeTarget;
+  hasHistory: boolean;
+}) {
+  const href =
+    target.kind === "lesson"
+      ? `/lecon/${target.lessonId}`
+      : target.kind === "test"
+        ? `/test/${target.moduleId}`
+        : "/revision";
+
+  const bubble =
+    target.kind === "done"
+      ? t("home.bubble.done")
+      : hasHistory
+        ? t("home.bubble.resume")
+        : t("home.bubble.start");
+
   return (
-    <section className="relative overflow-hidden rounded-big bg-blush p-6 pb-7">
-      <Sparkle size={14} className="absolute end-8 top-7 text-rose" />
-      <Sparkle size={9} className="absolute end-16 top-14 text-rose" />
-      <h2 className="title text-[2.5rem] text-ink">
-        {hasHistory ? t("home.resume.title") : t("home.resume.start")}
-      </h2>
-      <p className="mt-2 max-w-[22ch] text-[1.0625rem] text-ink">
-        {target.kind === "lesson"
-          ? t("home.resume.lesson", { title: target.title })
-          : t("home.resume.test", { title: target.title })}
-      </p>
-      <div className="mt-6 flex items-end justify-between gap-3">
-        <Link href={href} className="btn">
-          {hasHistory ? t("home.resume.cta") : t("home.resume.ctaStart")}
-        </Link>
-        <LittleCar size={104} className="-me-2 shrink-0" />
+    <section className="relative -mx-5 -mt-[5.25rem] overflow-hidden bg-blush px-5 pt-[7.25rem] pb-0">
+      <Sparkle size={16} className="absolute start-[46%] top-10 text-rose" />
+      <Sparkle size={9} className="absolute start-[54%] top-20 text-rose" />
+
+      <div className="flex items-end gap-2">
+        <div className="flex min-w-0 flex-1 flex-col gap-5 pb-8">
+          <h1 className="title text-[3.25rem] leading-[0.95] text-ink">
+            {t(greetingKey())},
+            <br />
+            {name}.
+          </h1>
+
+          {target.kind === "done" ? (
+            <p className="text-[1.0625rem]">{t("home.resume.allDone")}</p>
+          ) : (
+            <div className="flex flex-col gap-1">
+              <span className="text-[0.9375rem] font-medium text-ink-soft">
+                {target.kind === "lesson" ? t("home.next.lesson") : t("home.next.test")}
+              </span>
+              <span className="text-[1.125rem] font-semibold leading-snug">{target.title}</span>
+            </div>
+          )}
+
+          <Link href={href} className="btn self-start">
+            {target.kind === "done"
+              ? t("home.resume.review")
+              : hasHistory
+                ? t("home.resume.cta")
+                : t("home.resume.ctaStart")}
+          </Link>
+        </div>
+
+        <div className="relative flex shrink-0 flex-col items-center">
+          <p className="relative mb-3 max-w-[9.5rem] rounded-[20px] bg-paper px-4 py-3 text-[0.9375rem] font-medium leading-snug text-ink">
+            {bubble}
+            <span
+              aria-hidden
+              className="absolute -bottom-2 start-1/2 size-4 -translate-x-1/2 rotate-45 rounded-[3px] bg-paper rtl:translate-x-1/2"
+            />
+          </p>
+          <WallE pose="hello" height={260} priority className="-mb-1" />
+        </div>
       </div>
     </section>
   );

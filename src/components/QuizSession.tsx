@@ -20,6 +20,8 @@ type Props = {
   /** Navigate here when finished (`{attemptId}` is replaced). Otherwise show doneMessage. */
   resultHref?: string;
   doneMessage?: string;
+  /** Optional Wall-E shown on the intro card. */
+  illustration?: React.ReactNode;
 };
 
 /** Intro card → questions → result page (or an inline closing message). */
@@ -29,6 +31,7 @@ export function QuizSession({
   startLabel,
   resultHref,
   doneMessage,
+  illustration,
   ...runner
 }: Props) {
   const router = useRouter();
@@ -36,7 +39,8 @@ export function QuizSession({
 
   if (phase === "intro") {
     return (
-      <div className="flex flex-col gap-5 rounded-big bg-blush p-6">
+      <div className="flex flex-col gap-5 overflow-hidden rounded-big bg-blush p-6">
+        {illustration}
         <p className="font-serif text-[1.375rem] leading-[1.45]">{intro}</p>
         {note ? <p className="rounded-card bg-paper px-4 py-3 text-[1rem]">{note}</p> : null}
         <button type="button" className="btn self-start" onClick={() => setPhase("running")}>

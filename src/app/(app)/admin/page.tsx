@@ -1,3 +1,4 @@
+import { ChevronIcon } from "@/components/ui/Icons";
 import Link from "next/link";
 import { getContent } from "@/content";
 import { t } from "@/i18n";
@@ -78,6 +79,13 @@ export default async function AdminPage() {
   return (
     <>
       <h1 className="title text-[2.5rem]">{t("admin.title")}</h1>
+      <Link
+        href="/admin/journal"
+        className="flex items-center gap-3 rounded-big bg-blush p-5 font-semibold"
+      >
+        <span className="title flex-1 text-[1.5rem] font-medium">{t("admin.journal")}</span>
+        <ChevronIcon size={18} />
+      </Link>
       <p className="text-muted">
         {t("admin.learner", { name: learner.display_name ?? learner.id })}
       </p>

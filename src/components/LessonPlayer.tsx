@@ -7,6 +7,7 @@ import type { Lesson, Question } from "@/content/schema";
 import { Media } from "@/components/diagrams/Media";
 import { QuizRunner } from "@/components/QuizRunner";
 import { BackIcon, Sparkle } from "@/components/ui/Icons";
+import { WallE } from "@/components/ui/WallE";
 import { t } from "@/i18n";
 
 type Props = {
@@ -75,9 +76,11 @@ export function LessonPlayer({ lesson, checks, moduleHref, next }: Props) {
 
   if (phase === "done") {
     return (
-      <div className="flex flex-col items-start gap-5 rounded-big bg-mint p-6">
-        <Sparkle size={22} className="text-success" />
-        <p className="title text-[2.25rem]">{t("lesson.done")}</p>
+      <div className="relative flex flex-col items-start gap-5 overflow-hidden rounded-big bg-mint p-6">
+        <div className="flex w-full items-end justify-between gap-3">
+          <p className="title text-[2.25rem]">{t("lesson.done")}</p>
+          <WallE pose="joy" height={150} className="-mb-2 shrink-0" />
+        </div>
         <div className="flex w-full flex-col gap-3">
           {next ? (
             <Link href={next.href} className="btn">
