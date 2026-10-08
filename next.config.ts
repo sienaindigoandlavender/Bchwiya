@@ -6,6 +6,13 @@ const nextConfig: NextConfig = {
   outputFileTracingIncludes: {
     "/**": ["./content/**/*"],
   },
+  // Old addresses still open in someone's browser go somewhere sensible.
+  async redirects() {
+    return [
+      { source: "/configuration", destination: "/un-instant", permanent: false },
+      { source: "/connexion", destination: "/", permanent: false },
+    ];
+  },
 };
 
 export default nextConfig;
