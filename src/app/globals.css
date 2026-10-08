@@ -1,0 +1,84 @@
+@import "tailwindcss";
+
+/*
+ * Design tokens. Reskin the app by changing these values only.
+ * Components use the Tailwind names mapped in @theme below (bg-surface, text-muted…).
+ */
+:root {
+  --bg: #faf8f4;
+  --surface: #ffffff;
+  --surface-muted: #f1ede6;
+  --text: #2b2a28;
+  --text-muted: #6f6a62;
+  --border: #e3ddd2;
+  --accent: #3f6f8f;
+  --accent-contrast: #ffffff;
+  --accent-soft: #e3edf3;
+  --success: #4f7d5c;
+  --success-soft: #e6f0e8;
+  /* Deliberately soft: wrong answers are information, not alarms. */
+  --notice: #8a6d3b;
+  --notice-soft: #f5eddc;
+  --locked: #b8b2a7;
+  --radius: 14px;
+  --font-sans: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+}
+
+@theme inline {
+  --color-bg: var(--bg);
+  --color-surface: var(--surface);
+  --color-surface-muted: var(--surface-muted);
+  --color-text: var(--text);
+  --color-muted: var(--text-muted);
+  --color-border: var(--border);
+  --color-accent: var(--accent);
+  --color-accent-contrast: var(--accent-contrast);
+  --color-accent-soft: var(--accent-soft);
+  --color-success: var(--success);
+  --color-success-soft: var(--success-soft);
+  --color-notice: var(--notice);
+  --color-notice-soft: var(--notice-soft);
+  --color-locked: var(--locked);
+  --radius-card: var(--radius);
+  --font-sans: var(--font-sans);
+}
+
+html {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-sans);
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  min-height: 100dvh;
+}
+
+@layer components {
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    min-height: 44px;
+    padding-inline: 1.25rem;
+    border-radius: var(--radius);
+    background: var(--accent);
+    color: var(--accent-contrast);
+    font-weight: 600;
+  }
+  .btn:disabled {
+    opacity: 0.5;
+  }
+  .btn-secondary {
+    background: var(--surface);
+    color: var(--text);
+    border: 1px solid var(--border);
+  }
+  .card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 1rem;
+  }
+}
