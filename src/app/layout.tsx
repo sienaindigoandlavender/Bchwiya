@@ -4,8 +4,12 @@ import "./globals.css";
 
 export const metadata: Metadata = {
   title: t("app.name"),
-  description: t("app.tagline"),
-  robots: { index: false, follow: false },
+  robots: {
+    index: false,
+    follow: false,
+    nocache: true,
+    googleBot: { index: false, follow: false, noimageindex: true },
+  },
 };
 
 export const viewport: Viewport = {
