@@ -26,12 +26,12 @@ export type Session = {
 /**
  * The learner everyone acts as while there is no login.
  * Uses BCHWIYA_LEARNER_ID if set, otherwise the first learner profile.
- * Sends to /configuration when the database or the profile is missing.
+ * Sends to /un-instant (a calm holding page) when anything is missing.
  */
 export const requireSession = cache(async (): Promise<Session> => {
   // Always render on request: her progress must never be frozen at build time.
   await connection();
-  if (!isSupabaseConfigured()) redirect("/configuration");
+  if (!isSupabaseConfigured()) redirect("/un-instant");
   const supabase = createClient();
 
   const pinned = process.env.BCHWIYA_LEARNER_ID;
@@ -44,13 +44,8 @@ export const requireSession = cache(async (): Promise<Session> => {
         .limit(1)
         .maybeSingle();
 
-  // Table missing: the migrations have not been run yet.
-  if (error?.code === "42P01" || error?.code === "PGRST205") {
-    redirect("/configuration?manque=tables");
-  }
-  // Any other error: usually a wrong or rotated service-role key.
-  if (error) redirect("/configuration?manque=cle");
-  if (!profile) redirect("/configuration?manque=profil");
+  // The holding page diagnoses the exact cause itself; Zahra never sees the details.
+  if (error || !profile) redirect("/un-instant");
   return { supabase, userId: profile.id, profile };
 });
 

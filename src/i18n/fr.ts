@@ -11,12 +11,20 @@ export const fr = {
   "nav.admin": "Tableau de bord",
   "nav.back": "Retour",
 
-  "home.welcome": "Bonjour {name}, le code t'attend, bchwiya bchwiya.",
   "home.myCar.sub": "Faire connaissance avec la voiture, sans la clé.",
-  "home.resume.title": "On reprend ?",
-  "home.resume.start": "On commence ?",
-  "home.resume.lesson": "Leçon : {title}",
-  "home.resume.test": "Le test du module « {title} » t'attend.",
+  "greet.morning": "Sbah lkhir",
+  "greet.day": "Salam",
+  "greet.evening": "Msa lkhir",
+  "home.bubble.start": "Je t'apprends le code, bchwiya bchwiya.",
+  "home.bubble.resume": "On reprend là où on s'est arrêtées ?",
+  "home.bubble.done": "Tout est fait. Bravo !",
+  "home.next.lesson": "Ta prochaine leçon",
+  "home.next.test": "Le test qui t'attend",
+  "home.resume.review": "Réviser",
+  "home.resume.title": "On reprend ?",
+  "home.resume.start": "On commence ?",
+  "home.resume.lesson": "Leçon : {title}",
+  "home.resume.test": "Le test du module « {title} » t'attend.",
   "home.resume.cta": "Continuer",
   "home.resume.ctaStart": "Commencer",
   "home.resume.allDone": "Tout est fait. Bravo, et place aux révisions.",
@@ -40,7 +48,7 @@ export const fr = {
   "module.retakeTest": "Refaire le test",
   "module.testLocked": "Le test s'ouvre quand toutes les leçons sont faites.",
   "module.noTest": "Pas encore de test pour ce module.",
-  "module.bestScore": "Meilleur score : {pct} %",
+  "module.bestScore": "Meilleur score : {pct} %",
   "module.locked": "Ce module s'ouvrira un peu plus tard.",
 
   "lesson.next": "Suivant",
@@ -60,14 +68,14 @@ export const fr = {
   "question.submit": "Valider",
   "question.next": "Suivante",
   "question.finish": "Terminer",
-  "question.correct": "C'est ça !",
+  "question.correct": "C'est ça !",
   "question.incorrect": "Pas tout à fait.",
-  "question.answerWas": "La bonne réponse : {answer}",
+  "question.answerWas": "La bonne réponse : {answer}",
   "question.count": "Question {current} sur {total}",
   "question.saving": "Enregistrement…",
   "question.saveError": "Pas de réseau. On réessaie au prochain clic.",
 
-  "test.title": "Test : {title}",
+  "test.title": "Test : {title}",
   "test.kicker": "Le test",
   "test.intro":
     "{count} questions. Il faut 80 % pour valider le module. Prends ton temps, tu peux le refaire autant de fois que tu veux.",
@@ -111,7 +119,7 @@ export const fr = {
   "myCar.soon": "Bientôt",
 
   "admin.title": "Tableau de bord",
-  "admin.learner": "Apprenante : {name}",
+  "admin.learner": "Apprenante : {name}",
   "admin.noLearner": "Aucune apprenante trouvée.",
   "admin.overview": "Vue d'ensemble",
   "admin.modulesPassed": "Modules validés",
@@ -128,7 +136,7 @@ export const fr = {
   "admin.flag": "Signal",
   "admin.flag.hesitation": "Hésitation",
   "admin.flag.confusion": "Confusion",
-  "admin.medianNote": "Temps médian de réponse : {time}.",
+  "admin.medianNote": "Temps médian de réponse : {time}.",
   "admin.attempts": "Historique des tests",
   "admin.mockExams": "Examens blancs",
   "admin.date": "Date",
@@ -156,6 +164,12 @@ export const fr = {
 
   "common.notFound": "Cette page n'existe pas.",
 
+  "hold.title": "Un petit instant",
+  "hold.body": "Bchwiya se prépare. Reviens dans quelques minutes.",
+  "hold.retry": "Réessayer",
+  "hold.readyTitle": "C'est prêt",
+  "hold.ready": "Tout est en place. On y va ?",
+  "hold.open": "Ouvrir Bchwiya",
   "setup.title": "Presque prête",
   "setup.db":
     "La base de données n'est pas encore branchée. Ajoute NEXT_PUBLIC_SUPABASE_URL et SUPABASE_SERVICE_ROLE_KEY dans Vercel (ou .env.local), puis redéploie.",
@@ -166,12 +180,12 @@ export const fr = {
   "setup.key":
     "La base refuse la clé. Vérifie SUPABASE_SERVICE_ROLE_KEY dans Vercel (elle a peut-être été changée), puis redéploie.",
   "setup.keyKind":
-    "La clé dans Vercel est la clé publique (anon). Il faut la clé secrète : Supabase → Settings → API → service_role (ou « secret »). Remplace SUPABASE_SERVICE_ROLE_KEY dans Vercel, puis redéploie.",
+    "La clé dans Vercel est la clé publique (anon). Il faut la clé secrète : Supabase → Settings → API → service_role (ou « secret »). Remplace SUPABASE_SERVICE_ROLE_KEY dans Vercel, puis redéploie.",
   "setup.retry": "Réessayer",
   "setup.ok": "La base est branchée et le profil de Zahra est là.",
   "setup.okTitle": "Tout est prêt",
   "setup.open": "Ouvrir Bchwiya",
-  "setup.host": "Projet Supabase utilisé : {host}",
+  "setup.host": "Projet Supabase utilisé : {host}",
 } as const;
 
 export type Dictionary = Record<keyof typeof fr, string>;

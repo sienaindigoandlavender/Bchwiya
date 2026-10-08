@@ -6,7 +6,7 @@ import { t } from "@/i18n";
 export default function AppLayout({ children }: { children: React.ReactNode }) {
   return (
     <div className="mx-auto flex min-h-dvh max-w-xl flex-col">
-      <header className="flex items-center justify-between px-5 pt-5">
+      <header className="relative z-10 flex h-[3.75rem] items-end justify-between px-5">
         <Link href="/" className="title text-[1.75rem] text-ink">
           {t("app.name")}
         </Link>
