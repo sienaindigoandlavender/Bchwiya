@@ -160,12 +160,16 @@ export const fr = {
   "setup.db":
     "La base de données n'est pas encore branchée. Ajoute NEXT_PUBLIC_SUPABASE_URL et SUPABASE_SERVICE_ROLE_KEY dans Vercel (ou .env.local), puis redéploie.",
   "setup.profile":
-    "La base est branchée, mais il manque le profil de Zahra. Lance le fichier supabase/migrations/20261008010000_open_access_learner.sql dans l'éditeur SQL de Supabase.",
+    "La base est branchée, mais il manque le profil de Zahra. Lance le fichier bchwiya-setup.sql dans l'éditeur SQL de ce projet Supabase.",
   "setup.tables":
-    "La base est branchée, mais les tables Bchwiya n'existent pas encore. Lance les fichiers de supabase/migrations/ dans l'éditeur SQL de Supabase, dans l'ordre.",
+    "La base est branchée, mais les tables Bchwiya n'existent pas encore. Lance le fichier bchwiya-setup.sql dans l'éditeur SQL de ce projet Supabase.",
   "setup.key":
     "La base refuse la clé. Vérifie SUPABASE_SERVICE_ROLE_KEY dans Vercel (elle a peut-être été changée), puis redéploie.",
   "setup.retry": "Réessayer",
+  "setup.ok": "La base est branchée et le profil de Zahra est là.",
+  "setup.okTitle": "Tout est prêt",
+  "setup.open": "Ouvrir Bchwiya",
+  "setup.host": "Projet Supabase utilisé : {host}",
 } as const;
 
 export type Dictionary = Record<keyof typeof fr, string>;
