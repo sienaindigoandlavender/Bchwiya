@@ -16,7 +16,7 @@ export const fr = {
   "greet.day": "Salam",
   "greet.evening": "Msa lkhir",
   "home.bubble.start": "Je t'apprends le code, bchwiya bchwiya.",
-  "home.bubble.resume": "On reprend là où on s'est arrêtées ?",
+  "home.bubble.resume": "On reprend où on en était ?",
   "home.bubble.done": "Tout est fait. Bravo !",
   "home.next.lesson": "Ta prochaine leçon",
   "home.next.test": "Le test qui t'attend",
