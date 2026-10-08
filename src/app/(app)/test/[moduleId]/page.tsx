@@ -1,6 +1,6 @@
-import Link from "next/link";
 import { notFound } from "next/navigation";
 import { QuizSession } from "@/components/QuizSession";
+import { PageHeader } from "@/components/ui/PageHeader";
 import { getContent } from "@/content";
 import { t } from "@/i18n";
 import { loadPath } from "@/lib/data";
@@ -24,14 +24,15 @@ export default async function ModuleTestPage({
 
   return (
     <>
-      <Link href={`/module/${mod.id}`} className="text-sm text-muted">
-        ← {mod.title}
-      </Link>
-      <h1 className="text-2xl font-semibold">{t("test.title", { title: mod.title })}</h1>
+      <PageHeader
+        back={{ href: `/module/${mod.id}`, label: mod.title }}
+        kicker={t("test.kicker")}
+        title={mod.title}
+      />
       {questions.length === 0 ? (
-        <p className="text-muted">{t("test.empty")}</p>
+        <p className="card">{t("test.empty")}</p>
       ) : !ready ? (
-        <p className="text-muted">{t("test.locked")}</p>
+        <p className="card">{t("test.locked")}</p>
       ) : (
         <QuizSession
           kind="module_test"

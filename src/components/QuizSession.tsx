@@ -36,9 +36,9 @@ export function QuizSession({
 
   if (phase === "intro") {
     return (
-      <div className="card flex flex-col gap-3">
-        <p>{intro}</p>
-        {note ? <p className="text-sm text-muted">{note}</p> : null}
+      <div className="flex flex-col gap-5 rounded-big bg-blush p-6">
+        <p className="font-serif text-[1.375rem] leading-[1.45]">{intro}</p>
+        {note ? <p className="rounded-card bg-paper px-4 py-3 text-[0.9375rem]">{note}</p> : null}
         <button type="button" className="btn self-start" onClick={() => setPhase("running")}>
           {startLabel}
         </button>
@@ -48,8 +48,8 @@ export function QuizSession({
 
   if (phase === "done") {
     return (
-      <div className="card flex flex-col gap-3">
-        <p>{doneMessage}</p>
+      <div className="flex flex-col items-start gap-5 rounded-big bg-mint p-6">
+        <p className="title text-[2rem]">{doneMessage}</p>
         <Link href="/" className="btn self-start">
           {t("result.home")}
         </Link>

@@ -128,20 +128,26 @@ export function QuizRunner({
   const isLast = index + 1 === questions.length;
 
   return (
-    <div className="flex flex-col gap-4">
-      <div className="flex items-center justify-between text-sm text-muted">
-        <span>{t("question.count", { current: index + 1, total: questions.length })}</span>
+    <div className="flex flex-col gap-5">
+      <div className="flex items-center justify-between gap-3">
+        <span className="pill bg-blush text-ink">
+          {t("question.count", { current: index + 1, total: questions.length })}
+        </span>
         {timerMinutes ? (
-          <span aria-live="off">
+          <span aria-live="off" className="pill bg-lilac text-ink tabular-nums">
             {t("exam.timeLeft", {
               time: `${Math.floor(remaining / 60)}:${String(remaining % 60).padStart(2, "0")}`,
             })}
           </span>
         ) : null}
       </div>
-      {saveError ? <p className="text-sm text-notice">{t("question.saveError")}</p> : null}
+      {saveError ? (
+        <p className="rounded-card bg-butter px-4 py-3 text-[0.9375rem]">
+          {t("question.saveError")}
+        </p>
+      ) : null}
       {finishing ? (
-        <p className="text-muted">{t("question.saving")}</p>
+        <p className="card font-medium">{t("question.saving")}</p>
       ) : (
         <QuestionCard
           key={question.id}

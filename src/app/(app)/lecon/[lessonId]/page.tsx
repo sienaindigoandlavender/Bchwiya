@@ -1,6 +1,6 @@
-import Link from "next/link";
 import { notFound, redirect } from "next/navigation";
 import { LessonPlayer } from "@/components/LessonPlayer";
+import { PageHeader } from "@/components/ui/PageHeader";
 import { getContent } from "@/content";
 import { t } from "@/i18n";
 import { loadPath } from "@/lib/data";
@@ -33,10 +33,7 @@ export default async function LessonPage({ params }: { params: Promise<{ lessonI
 
   return (
     <>
-      <Link href={`/module/${mod.id}`} className="text-sm text-muted">
-        ← {mod.title}
-      </Link>
-      <h1 className="text-2xl font-semibold">{lesson.title}</h1>
+      <PageHeader back={{ href: `/module/${mod.id}`, label: mod.title }} title={lesson.title} />
       <LessonPlayer lesson={lesson} checks={checks} moduleHref={`/module/${mod.id}`} next={next} />
     </>
   );

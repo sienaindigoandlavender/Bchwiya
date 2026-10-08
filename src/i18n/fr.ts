@@ -4,26 +4,15 @@ export const fr = {
   "app.name": "Bchwiya",
   "app.tagline": "Le code de la route, bchwiya bchwiya.",
 
-  "nav.home": "Accueil",
+  "nav.home": "Parcours",
   "nav.review": "Révision",
-  "nav.mockExam": "Examen blanc",
+  "nav.mockExam": "Examen",
   "nav.myCar": "Ma voiture",
   "nav.admin": "Tableau de bord",
-  "nav.signOut": "Se déconnecter",
   "nav.back": "Retour",
 
-  "login.title": "Connexion",
-  "login.intro": "Entre ton adresse e-mail. Tu recevras un lien pour te connecter.",
-  "login.email": "Adresse e-mail",
-  "login.submit": "Recevoir le lien",
-  "login.sending": "Envoi…",
-  "login.sent": "C'est envoyé. Ouvre l'e-mail et touche le lien.",
-  "login.error": "Ça n'a pas marché. Vérifie l'adresse et réessaie.",
-  "login.notConfigured": "Bchwiya arrive bientôt. La base de données n'est pas encore branchée.",
-  "login.noAccess": "Cette adresse n'a pas accès à Bchwiya.",
-  "login.linkError": "Le lien n'est plus valable. Demande-en un nouveau.",
-
-  "home.welcome": "Bienvenue, {name}.",
+  "home.welcome": "Bonjour {name}, le code t'attend, bchwiya bchwiya.",
+  "home.myCar.sub": "Faire connaissance avec la voiture, sans la clé.",
   "home.resume.title": "On reprend ?",
   "home.resume.start": "On commence ?",
   "home.resume.lesson": "Leçon : {title}",
@@ -33,6 +22,7 @@ export const fr = {
   "home.resume.allDone": "Tout est fait. Bravo, et place aux révisions.",
   "home.review.due": "{count} question(s) à revoir aujourd'hui.",
   "home.path": "Ton parcours",
+  "path.here": "Tu es ici",
   "home.extra": "Hors parcours",
 
   "status.locked": "Plus tard",
@@ -45,6 +35,7 @@ export const fr = {
 
   "module.lessons": "Leçons",
   "module.minutes": "{minutes} min",
+  "module.testTitle": "Le test du module",
   "module.takeTest": "Passer le test",
   "module.retakeTest": "Refaire le test",
   "module.testLocked": "Le test s'ouvre quand toutes les leçons sont faites.",
@@ -53,6 +44,7 @@ export const fr = {
   "module.locked": "Ce module s'ouvrira un peu plus tard.",
 
   "lesson.next": "Suivant",
+  "lesson.finish": "Terminer la leçon",
   "lesson.prev": "Précédent",
   "lesson.toChecks": "Petites questions",
   "lesson.checksIntro": "Quelques questions pour voir si c'est clair. Ça ne compte pas.",
@@ -68,7 +60,7 @@ export const fr = {
   "question.submit": "Valider",
   "question.next": "Suivante",
   "question.finish": "Terminer",
-  "question.correct": "C'est ça.",
+  "question.correct": "C'est ça !",
   "question.incorrect": "Pas tout à fait.",
   "question.answerWas": "La bonne réponse : {answer}",
   "question.count": "Question {current} sur {total}",
@@ -76,6 +68,7 @@ export const fr = {
   "question.saveError": "Pas de réseau. On réessaie au prochain clic.",
 
   "test.title": "Test : {title}",
+  "test.kicker": "Le test",
   "test.intro":
     "{count} questions. Il faut 80 % pour valider le module. Prends ton temps, tu peux le refaire autant de fois que tu veux.",
   "test.start": "Commencer",
@@ -114,8 +107,8 @@ export const fr = {
   "exam.corrections": "Corrections",
 
   "myCar.title": "Ma voiture",
-  "myCar.placeholder":
-    "Bientôt : l'intérieur de la voiture, à toucher pour découvrir chaque commande.",
+  "myCar.placeholder": "L'intérieur de la voiture, à toucher pour découvrir chaque commande.",
+  "myCar.soon": "Bientôt",
 
   "admin.title": "Tableau de bord",
   "admin.learner": "Apprenante : {name}",
@@ -161,7 +154,14 @@ export const fr = {
   "kind.review": "Révision",
   "kind.mock_exam": "Examen blanc",
 
-  "common.notFound": "Page introuvable.",
+  "common.notFound": "Cette page n'existe pas.",
+
+  "setup.title": "Presque prête",
+  "setup.db":
+    "La base de données n'est pas encore branchée. Ajoute NEXT_PUBLIC_SUPABASE_URL et SUPABASE_SERVICE_ROLE_KEY dans Vercel (ou .env.local), puis redéploie.",
+  "setup.profile":
+    "La base est branchée, mais il manque le profil de Zahra. Lance le seed (pnpm seed) ou ajoute une ligne learner dans bchwiya_profiles.",
+  "setup.retry": "Réessayer",
 } as const;
 
 export type Dictionary = Record<keyof typeof fr, string>;

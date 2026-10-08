@@ -3,8 +3,13 @@
 بشوية — "slowly, gently". A private, calm micro-learning app that teaches the Moroccan
 _code de la route_ for the NARSA theory exam. Two users: one learner, one admin.
 
-Stack: Next.js 15 (App Router, TypeScript), Tailwind CSS v4, Supabase (Postgres, magic-link
-Auth, RLS), Zod, pnpm, Vercel.
+Stack: Next.js 15 (App Router, TypeScript), Tailwind CSS v4, Supabase (Postgres, RLS), Zod,
+pnpm, Vercel. Fonts: EB Garamond (titles, lesson text) and DM Sans (interface), self-hosted
+via Fontsource.
+
+**Building phase: there is no login.** The app opens straight on `/`. The server uses the
+service-role key and always acts as the learner profile (`BCHWIYA_LEARNER_ID`, or the first
+`learner` row in `bchwiya_profiles`). `/admin` is open too. Login can come back later.
 
 ## Setup
 
@@ -16,39 +21,33 @@ pnpm dev                     # http://localhost:3000
 
 ### Environment variables
 
-| Name                            | Where      | Purpose                                           |
-| ------------------------------- | ---------- | ------------------------------------------------- |
-| `NEXT_PUBLIC_SUPABASE_URL`      | app + seed | Supabase project URL (Settings → API)             |
-| `NEXT_PUBLIC_SUPABASE_ANON_KEY` | app        | Public anon key                                   |
-| `SUPABASE_SERVICE_ROLE_KEY`     | seed only  | Service role key. Never expose it to the browser. |
-| `ADMIN_EMAIL`                   | seed only  | Gets the `admin` role                             |
-| `LEARNER_EMAIL`                 | seed only  | Gets the `learner` role                           |
+| Name                        | Where      | Purpose                                                   |
+| --------------------------- | ---------- | --------------------------------------------------------- |
+| `NEXT_PUBLIC_SUPABASE_URL`  | app + seed | Supabase project URL (Settings → API)                     |
+| `SUPABASE_SERVICE_ROLE_KEY` | app + seed | Service role key. Server-only, never sent to the browser. |
+| `BCHWIYA_LEARNER_ID`        | app        | Optional: pin the learner profile id                      |
+| `ADMIN_EMAIL`               | seed only  | Gets the `admin` role                                     |
+| `LEARNER_EMAIL`             | seed only  | Gets the `learner` role                                   |
 
-On Vercel, only the two `NEXT_PUBLIC_*` variables are required at runtime.
+On Vercel, `NEXT_PUBLIC_SUPABASE_URL` and `SUPABASE_SERVICE_ROLE_KEY` are required at runtime.
 
 ## Supabase
 
 Bchwiya can live inside an existing Supabase project shared with another app:
 every table, function and policy is prefixed `bchwiya_`, and nothing touches
-`auth.users` (no triggers). Auth users are shared, so the app only admits users
-that have a `bchwiya_profiles` row; anyone else is signed out.
+`auth.users` (no triggers).
 
-Without the env vars the app still builds and deploys, and shows a
-"not connected yet" notice on `/connexion`.
+Without the env vars (or without a learner profile) the app still builds and deploys,
+and shows a setup notice on `/configuration`.
 
 1. Use an existing project (or create one).
 2. Run the migrations in `supabase/migrations/`, either:
    - with the CLI: `supabase link --project-ref <ref>` then `supabase db push`, or
    - by pasting each file, in order, into the SQL editor.
-3. **Auth → URL configuration**: add `https://<your-domain>/auth/callback` and
-   `http://localhost:3000/auth/callback` to the redirect URLs. On a shared project,
-   leave the Site URL alone: it belongs to the other app. The magic-link email
-   template is shared too.
-4. Create the two users and set their roles: `pnpm seed`.
-   Sign-ups are disabled from the app (`shouldCreateUser: false`), so only seeded users can log in.
+3. Create the two profiles and set their roles: `pnpm seed`.
 
-Every table has RLS: the learner reads and writes only her own rows; the admin
-(`public.bchwiya_is_admin()`) reads everything. Roles can only be changed with the service role.
+Every table keeps its RLS policies for when login returns. During the building phase the
+service-role key bypasses them, so every query in the app filters by the learner's id itself.
 
 ## Scripts
 
@@ -105,6 +104,5 @@ locale, and styles use logical properties (`ms-`, `pe-`, `start`, `end`) so RTL 
 ## Deploying to Vercel
 
 1. Import the GitHub repo in Vercel (framework: Next.js; pnpm is detected from the lockfile).
-2. Deploy. It works without env vars (it shows a "not connected yet" notice).
-3. When the database is ready, add `NEXT_PUBLIC_SUPABASE_URL` and
-   `NEXT_PUBLIC_SUPABASE_ANON_KEY`, redeploy, then add the deployment's `/auth/callback` URL to Supabase redirect URLs.
+2. Add `NEXT_PUBLIC_SUPABASE_URL` and `SUPABASE_SERVICE_ROLE_KEY`, then deploy.
+   Without them it still deploys and shows the setup notice.

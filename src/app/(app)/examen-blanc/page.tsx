@@ -1,4 +1,5 @@
 import { QuizSession } from "@/components/QuizSession";
+import { PageHeader } from "@/components/ui/PageHeader";
 import { getContent } from "@/content";
 import { t } from "@/i18n";
 import { MOCK_EXAM, shuffle } from "@/lib/scoring";
@@ -15,7 +16,7 @@ export default function MockExamPage() {
 
   return (
     <>
-      <h1 className="text-2xl font-semibold">{t("exam.title")}</h1>
+      <PageHeader title={t("exam.title")} />
       {questions.length === 0 ? (
         <p className="card">{t("exam.empty")}</p>
       ) : (

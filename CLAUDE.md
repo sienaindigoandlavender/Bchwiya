@@ -3,7 +3,18 @@
 > **Bchwiya** (بشوية, "slowly, gently") is a private, calm micro-learning web app that teaches one learner, Zahra, the Moroccan *code de la route* so she passes the NARSA theory exam.
 > It is not a product. There is no marketing, no SaaS, and no payments. Two users: Zahra (learner) and Jacqueline (admin).
 
-**Your job right now: build the scaffolding only.** Get the structure, data layer, engines and routes working end to end with placeholder content. Visual design will be redone later, so keep the styling clean and minimal and don't polish it.
+**Status (Oct 8 2026):** scaffold built; open access and the first visual design are in.
+
+## Design system (locked Oct 8 2026)
+
+- Flat. No shadows, no gradients, no borders as decoration. Colour comes from soft pastel fills.
+- White paper, deep aubergine ink (`--ink`). Never light grey text; secondary text uses `--ink-soft`.
+- One strong colour, rose `--rose`, for actions and "you are here". Pastels: blush, lilac, mint, butter, peach, sky, cloud.
+- Type: EB Garamond italic for titles (`.title`), EB Garamond roman for lesson and question text, DM Sans for the interface.
+- Shapes: pill buttons, 28px blocks (`rounded-big`), 18px options (`rounded-card`).
+- Girly and cute but calm: sparkles and the little pink car (`components/ui/LittleCar.tsx`) are the only ornaments.
+- Shared UI is one component, imported everywhere: `PageHeader`, `ScoreHero`, `MissedList`, `StatusBadge`, `BottomNav`.
+- Tokens live in `src/app/globals.css`. Restyle there first.
 
 ---
 
@@ -11,7 +22,7 @@
 
 - **Next.js 15**, App Router, TypeScript (strict), `src/` directory
 - **Tailwind CSS**, with design tokens as CSS variables in `globals.css` so the theme can be reskinned later
-- **Supabase**: Postgres, Auth (email magic link), and Row Level Security
+- **Supabase**: Postgres and Row Level Security. **Building phase: no login.** The server uses the service-role key and acts as the learner profile; the app opens on `/`.
 - **Vercel** for deployment
 - **pnpm**
 - Validate content files with **Zod**
@@ -218,7 +229,6 @@ Write answers to Supabase as they happen, so nothing is lost if she closes the a
 
 | Route | Purpose |
 |-------|---------|
-| `/connexion` | Magic-link login |
 | `/` | Home: "On reprend ?" card (resume where she left off) plus the level path |
 | `/niveau/[levelId]` | A level's modules and status |
 | `/module/[moduleId]` | A module's lessons, plus a "Passer le test" button once all lessons are done |
@@ -230,7 +240,7 @@ Write answers to Supabase as they happen, so nothing is lost if she closes the a
 | `/ma-voiture` | Placeholder page for the car interior module |
 | `/admin` | Jacqueline's dashboard (admin role only) |
 
-Protect all routes except `/connexion` with middleware. `/admin` requires the admin role.
+No auth gate during the building phase. `/configuration` explains missing env vars or a missing learner profile.
 
 ## 9. Admin dashboard (`/admin`)
 
@@ -256,7 +266,7 @@ Never use AI-generated images for signs or anything she has to learn from. Signs
 ## 11. Project hygiene
 
 - `README.md` covering setup, env vars, how to add content, and how to run migrations
-- `.env.example` with `NEXT_PUBLIC_SUPABASE_URL`, `NEXT_PUBLIC_SUPABASE_ANON_KEY`, `SUPABASE_SERVICE_ROLE_KEY`
+- `.env.example` with `NEXT_PUBLIC_SUPABASE_URL`, `SUPABASE_SERVICE_ROLE_KEY`, optional `BCHWIYA_LEARNER_ID`
 - A `pnpm validate:content` script that runs the Zod checks and fails on broken references (unknown `ruleIds`, `checks` pointing to missing questions, `correct` IDs not in `options`)
 - A seed script that creates the two profiles (set roles by email via env vars `ADMIN_EMAIL` and `LEARNER_EMAIL`)
 - ESLint and Prettier
