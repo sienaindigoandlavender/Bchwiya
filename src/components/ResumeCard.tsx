@@ -73,7 +73,7 @@ export function ResumeCard({
               className="absolute -bottom-2 start-1/2 size-4 -translate-x-1/2 rotate-45 rounded-[3px] bg-paper rtl:translate-x-1/2"
             />
           </p>
-          <WallE pose="front" height={250} priority className="-mb-1" />
+          <WallE pose="hello" height={260} priority className="-mb-1" />
         </div>
       </div>
     </section>

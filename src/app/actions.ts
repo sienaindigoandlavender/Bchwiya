@@ -2,6 +2,7 @@
 
 import { revalidatePath } from "next/cache";
 import { getContent } from "@/content";
+import { logEvent } from "@/lib/journal";
 import { nextReviewStep } from "@/lib/review";
 import { hasPassed, isCorrect, pct } from "@/lib/scoring";
 import { requireSession } from "@/lib/supabase/server";
@@ -25,6 +26,7 @@ export async function startAttempt(kind: AttemptKind, moduleId: string | null): 
     .select("id")
     .single();
   if (error || !data) throw new Error(error?.message ?? "Could not start attempt");
+  await logEvent({ supabase, userId }, "attempt_start", { attemptId: data.id, kind, moduleId });
   return data.id;
 }
 
@@ -58,6 +60,14 @@ export async function recordAnswer(input: AnswerInput): Promise<{ correct: boole
     time_to_submit_ms: clampMs(input.timeToSubmitMs),
   });
   if (error) throw new Error(error.message);
+  await logEvent({ supabase, userId }, "answer", {
+    attemptId: input.attemptId,
+    kind: attempt.kind,
+    questionId: question.id,
+    correct,
+    changes: Math.max(0, Math.round(input.changeCount)),
+    timeMs: clampMs(input.timeToSubmitMs),
+  });
 
   const { data: existing } = await supabase
     .from("bchwiya_review_queue")
@@ -136,6 +146,14 @@ export async function finishAttempt(
     });
   }
 
+  await logEvent({ supabase, userId }, "attempt_finish", {
+    attemptId,
+    kind: attempt.kind,
+    moduleId: attempt.module_id,
+    score,
+    total: safeTotal,
+    passed,
+  });
   revalidatePath("/", "layout");
   return { score, total: safeTotal, passed };
 }
@@ -143,6 +161,7 @@ export async function finishAttempt(
 export async function recordLessonVisit(lessonId: string): Promise<void> {
   const { supabase, userId } = await requireSession();
   if (!getContent().lessons.has(lessonId)) return;
+  await logEvent({ supabase, userId }, "lesson_open", { lessonId });
   const { data } = await supabase
     .from("bchwiya_lesson_progress")
     .select("visits")
@@ -171,6 +190,10 @@ export async function completeLesson(lessonId: string): Promise<void> {
     .eq("user_id", userId)
     .eq("lesson_id", lessonId)
     .maybeSingle();
+  await logEvent({ supabase, userId }, "lesson_complete", {
+    lessonId,
+    firstTime: !data?.completed_at,
+  });
   if (data?.completed_at) return;
   if (data) {
     await supabase
@@ -187,4 +210,11 @@ export async function completeLesson(lessonId: string): Promise<void> {
     });
   }
   revalidatePath("/", "layout");
+}
+
+/** One line in the journal per screen she opens. */
+export async function trackPageView(path: string): Promise<void> {
+  if (typeof path !== "string" || !path.startsWith("/") || path.length > 200) return;
+  const session = await requireSession();
+  await logEvent(session, "page_view", {}, path);
 }

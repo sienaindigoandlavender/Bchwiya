@@ -1,5 +1,5 @@
-import { LittleCar } from "@/components/ui/LittleCar";
 import { Sparkle } from "@/components/ui/Icons";
+import { WallE } from "@/components/ui/WallE";
 import { t } from "@/i18n";
 
 /** The big score block shared by module tests and mock exams. */
@@ -28,7 +28,7 @@ export function ScoreHero({
         {t("result.score", { score, total })}
       </p>
       <p className="max-w-[26ch] text-[1.0625rem] font-medium">{message}</p>
-      {passed ? <LittleCar size={96} className="self-end" /> : null}
+      {passed ? <WallE pose="joy" height={190} className="-mb-6 self-end" /> : null}
     </section>
   );
 }

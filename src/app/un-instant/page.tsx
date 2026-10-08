@@ -40,7 +40,7 @@ export default async function HoldingPage({
         <Link href="/" className="btn">
           {ready ? t("hold.open") : t("hold.retry")}
         </Link>
-        <WallE pose="three-quarter" height={220} className="mt-2" />
+        <WallE pose="wave" height={230} className="mt-2" />
       </section>
 
       {showDetails ? (

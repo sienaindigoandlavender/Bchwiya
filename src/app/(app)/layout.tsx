@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { PageTracker } from "@/components/PageTracker";
 import { BottomNav } from "@/components/ui/BottomNav";
 import { ChartIcon } from "@/components/ui/Icons";
 import { t } from "@/i18n";
@@ -20,6 +21,7 @@ export default function AppLayout({ children }: { children: React.ReactNode }) {
       </header>
       <main className="flex flex-1 flex-col gap-6 px-5 pt-6 pb-32">{children}</main>
       <BottomNav />
+      <PageTracker />
     </div>
   );
 }

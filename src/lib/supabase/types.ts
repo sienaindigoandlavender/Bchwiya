@@ -67,6 +67,18 @@ export type ModuleProgressRow = {
   passed_at: string | null;
 };
 
+export type EventType =
+  "page_view" | "lesson_open" | "lesson_complete" | "attempt_start" | "answer" | "attempt_finish";
+
+export type EventRow = {
+  id: number;
+  user_id: string;
+  type: EventType;
+  path: string | null;
+  data: Record<string, unknown>;
+  created_at: string;
+};
+
 export type Database = {
   public: {
     Tables: {
@@ -76,6 +88,7 @@ export type Database = {
       bchwiya_answers: Table<AnswerRow, "attempt_id" | "user_id" | "question_id">;
       bchwiya_review_queue: Table<ReviewQueueRow, "user_id" | "question_id">;
       bchwiya_module_progress: Table<ModuleProgressRow, "user_id" | "module_id">;
+      bchwiya_events: Table<EventRow, "user_id" | "type">;
     };
     Views: { [_ in never]: never };
     Functions: {

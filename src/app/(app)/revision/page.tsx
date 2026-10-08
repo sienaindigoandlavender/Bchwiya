@@ -1,5 +1,6 @@
 import { QuizSession } from "@/components/QuizSession";
 import { PageHeader } from "@/components/ui/PageHeader";
+import { WallE } from "@/components/ui/WallE";
 import { getContent } from "@/content";
 import { t } from "@/i18n";
 import { requireSession } from "@/lib/supabase/server";
@@ -22,7 +23,10 @@ export default async function ReviewPage() {
     <>
       <PageHeader title={t("review.title")} />
       {questions.length === 0 ? (
-        <p className="title rounded-big bg-mint p-6 text-[1.75rem]">{t("review.empty")}</p>
+        <section className="flex flex-col items-center gap-4 overflow-hidden rounded-big bg-mint px-6 pt-8 text-center">
+          <p className="title text-[2rem]">{t("review.empty")}</p>
+          <WallE pose="sit-calm" height={230} className="-mb-2" />
+        </section>
       ) : (
         <QuizSession
           kind="review"
