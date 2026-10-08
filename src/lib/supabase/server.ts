@@ -1,6 +1,7 @@
 import "server-only";
 import { createClient as createSupabaseClient } from "@supabase/supabase-js";
 import { redirect } from "next/navigation";
+import { connection } from "next/server";
 import { cache } from "react";
 import { isSupabaseConfigured, supabaseEnv } from "./env";
 import type { Database, ProfileRow } from "./types";
@@ -28,6 +29,8 @@ export type Session = {
  * Sends to /configuration when the database or the profile is missing.
  */
 export const requireSession = cache(async (): Promise<Session> => {
+  // Always render on request: her progress must never be frozen at build time.
+  await connection();
   if (!isSupabaseConfigured()) redirect("/configuration");
   const supabase = createClient();
 
