@@ -84,7 +84,7 @@ export default async function AdminPage() {
 
       <section className="flex flex-col gap-2">
         <h2 className="title text-[1.625rem]">{t("admin.overview")}</h2>
-        <dl className="grid grid-cols-2 gap-3 text-sm">
+        <dl className="grid grid-cols-2 gap-3 text-base">
           <div className="card">
             <dt className="text-muted">{t("admin.modulesPassed")}</dt>
             <dd className="text-xl font-semibold">
@@ -102,17 +102,19 @@ export default async function AdminPage() {
           <div className="card">
             <dt className="text-muted">{t("admin.timeThisWeek")}</dt>
             <dd>{formatMs(weekMs)}</dd>
-            <dd className="text-xs text-muted">{t("admin.timeNote")}</dd>
+            <dd className="text-[0.9375rem] text-muted">{t("admin.timeNote")}</dd>
           </div>
         </dl>
       </section>
 
       <section className="flex flex-col gap-2">
         <h2 className="title text-[1.625rem]">{t("admin.rules")}</h2>
-        <p className="text-xs text-muted">{t("admin.medianNote", { time: formatMs(medianMs) })}</p>
+        <p className="text-[0.9375rem] text-muted">
+          {t("admin.medianNote", { time: formatMs(medianMs) })}
+        </p>
         <div className="overflow-x-auto">
           <div className="-mx-5 overflow-x-auto px-5">
-            <table className="w-full min-w-[560px] text-sm">
+            <table className="w-full min-w-[560px] text-base">
               <thead className="text-start text-muted">
                 <tr>
                   <th className="py-2 pe-2 text-start">{t("admin.rule")}</th>
@@ -151,7 +153,7 @@ export default async function AdminPage() {
         ) : (
           <div className="overflow-x-auto">
             <div className="-mx-5 overflow-x-auto px-5">
-              <table className="w-full min-w-[480px] text-sm">
+              <table className="w-full min-w-[480px] text-base">
                 <thead className="text-muted">
                   <tr>
                     <th className="py-2 pe-2 text-start">{t("admin.date")}</th>
@@ -194,7 +196,7 @@ export default async function AdminPage() {
           <p className="text-muted">{t("admin.none")}</p>
         ) : (
           <div className="-mx-5 overflow-x-auto px-5">
-            <table className="w-full text-sm">
+            <table className="w-full text-base">
               <thead className="text-muted">
                 <tr>
                   <th className="py-2 pe-2 text-start">{t("admin.date")}</th>

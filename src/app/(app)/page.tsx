@@ -46,7 +46,7 @@ export default async function HomePage() {
         </span>
         <span className="flex flex-1 flex-col">
           <span className="title text-[1.5rem]">{t("nav.myCar")}</span>
-          <span className="text-[0.9375rem] text-ink-soft">{t("home.myCar.sub")}</span>
+          <span className="text-[1rem] text-ink-soft">{t("home.myCar.sub")}</span>
         </span>
         <ChevronIcon size={18} />
       </Link>

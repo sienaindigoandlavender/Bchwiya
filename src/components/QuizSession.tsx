@@ -38,7 +38,7 @@ export function QuizSession({
     return (
       <div className="flex flex-col gap-5 rounded-big bg-blush p-6">
         <p className="font-serif text-[1.375rem] leading-[1.45]">{intro}</p>
-        {note ? <p className="rounded-card bg-paper px-4 py-3 text-[0.9375rem]">{note}</p> : null}
+        {note ? <p className="rounded-card bg-paper px-4 py-3 text-[1rem]">{note}</p> : null}
         <button type="button" className="btn self-start" onClick={() => setPhase("running")}>
           {startLabel}
         </button>

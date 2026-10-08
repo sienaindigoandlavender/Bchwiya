@@ -17,13 +17,13 @@ export function MissedList({ questions }: { questions: Question[] }) {
               .map((o) => (
                 <li
                   key={o.id}
-                  className="rounded-card bg-mint px-3 py-1.5 text-[0.9375rem] font-semibold"
+                  className="rounded-card bg-mint px-3 py-1.5 text-[1rem] font-semibold"
                 >
                   {o.text}
                 </li>
               ))}
           </ul>
-          <p className="text-[0.9375rem] leading-relaxed">{q.explanation}</p>
+          <p className="text-[1rem] leading-relaxed">{q.explanation}</p>
         </li>
       ))}
     </ul>

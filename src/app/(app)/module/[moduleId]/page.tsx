@@ -50,7 +50,7 @@ export default async function ModulePage({ params }: { params: Promise<{ moduleI
                     {marker}
                     <span className="flex flex-1 flex-col">
                       <span className="font-semibold leading-snug">{l.title}</span>
-                      <span className="text-[0.875rem] text-ink-soft">
+                      <span className="text-[0.9375rem] text-ink-soft">
                         {t("module.minutes", { minutes: l.minutes })}
                       </span>
                     </span>

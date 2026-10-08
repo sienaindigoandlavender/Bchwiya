@@ -24,7 +24,7 @@ function ModuleChip({ m }: { m: ModuleState }) {
       <span>{m.title}</span>
     </>
   );
-  const cls = `inline-flex items-center gap-1.5 rounded-full px-3 py-1.5 text-[0.8125rem] font-medium ${CHIP[m.status]}`;
+  const cls = `inline-flex items-center gap-1.5 rounded-full px-3 py-1.5 text-[0.9375rem] font-medium ${CHIP[m.status]}`;
   return m.status === "locked" ? (
     <span className={cls}>{body}</span>
   ) : (
@@ -78,7 +78,7 @@ export function LevelPath({ levels }: { levels: LevelState[] }) {
             </span>
             <div className="flex min-w-0 flex-1 flex-col gap-2.5 pt-1">
               <Link href={`/niveau/${level.id}`} className="flex flex-col">
-                <span className="flex items-center gap-2 text-[0.8125rem] font-medium text-ink-soft">
+                <span className="flex items-center gap-2 text-[0.9375rem] font-medium text-ink-soft">
                   {t("level.label")} {i}
                   {isCurrent ? (
                     <span className="pill bg-rose py-0 text-rose-ink">{t("path.here")}</span>
