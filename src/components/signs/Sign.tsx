@@ -28,25 +28,61 @@ function octagonPoints(cx: number, cy: number, r: number) {
 }
 
 /** Generic road sign renderer: outer shape with border, plus a pictogram slot. */
-export function Sign({ shape, fill = SIGN_COLORS.white, border, children, title, size = 160 }: SignProps) {
+export function Sign({
+  shape,
+  fill = SIGN_COLORS.white,
+  border,
+  children,
+  title,
+  size = 160,
+}: SignProps) {
   const stroke = border ?? "none";
   const sw = border ? 9 : 0;
   let outline: ReactNode;
   switch (shape) {
     case "triangle":
-      outline = <polygon points="50,8 95,88 5,88" fill={fill} stroke={stroke} strokeWidth={sw} strokeLinejoin="round" />;
+      outline = (
+        <polygon
+          points="50,8 95,88 5,88"
+          fill={fill}
+          stroke={stroke}
+          strokeWidth={sw}
+          strokeLinejoin="round"
+        />
+      );
       break;
     case "inverted-triangle":
-      outline = <polygon points="5,12 95,12 50,92" fill={fill} stroke={stroke} strokeWidth={sw} strokeLinejoin="round" />;
+      outline = (
+        <polygon
+          points="5,12 95,12 50,92"
+          fill={fill}
+          stroke={stroke}
+          strokeWidth={sw}
+          strokeLinejoin="round"
+        />
+      );
       break;
     case "circle":
       outline = <circle cx="50" cy="50" r="44" fill={fill} stroke={stroke} strokeWidth={sw} />;
       break;
     case "octagon":
-      outline = <polygon points={octagonPoints(50, 50, 46)} fill={fill} stroke={stroke} strokeWidth={sw} />;
+      outline = (
+        <polygon points={octagonPoints(50, 50, 46)} fill={fill} stroke={stroke} strokeWidth={sw} />
+      );
       break;
     case "square":
-      outline = <rect x="6" y="6" width="88" height="88" rx="8" fill={fill} stroke={stroke} strokeWidth={sw} />;
+      outline = (
+        <rect
+          x="6"
+          y="6"
+          width="88"
+          height="88"
+          rx="8"
+          fill={fill}
+          stroke={stroke}
+          strokeWidth={sw}
+        />
+      );
       break;
   }
   return (
@@ -72,9 +108,11 @@ export function RoundaboutArrows({
   color: string;
   width: number;
 }) {
+  // Rounded so server and client render identical attribute strings.
+  const n = (v: number) => Math.round(v * 100) / 100;
   const p = (deg: number) => {
     const a = (deg * Math.PI) / 180;
-    return [cx + r * Math.cos(a), cy + r * Math.sin(a)] as const;
+    return [n(cx + r * Math.cos(a)), n(cy + r * Math.sin(a))] as const;
   };
   return (
     <g fill={color} stroke={color}>
@@ -90,9 +128,9 @@ export function RoundaboutArrows({
         const nx = Math.cos(a);
         const ny = Math.sin(a);
         const head = width * 1.6;
-        const tip = `${x0 + dx * head * 1.4},${y0 + dy * head * 1.4}`;
-        const b1 = `${x0 + nx * head},${y0 + ny * head}`;
-        const b2 = `${x0 - nx * head},${y0 - ny * head}`;
+        const tip = `${n(x0 + dx * head * 1.4)},${n(y0 + dy * head * 1.4)}`;
+        const b1 = `${n(x0 + nx * head)},${n(y0 + ny * head)}`;
+        const b2 = `${n(x0 - nx * head)},${n(y0 - ny * head)}`;
         return (
           <g key={base}>
             <path
@@ -111,14 +149,34 @@ export function RoundaboutArrows({
 const PRESETS: Record<SignPreset, { title: string; render: (size?: number) => ReactNode }> = {
   "cedez-le-passage": {
     title: "Cédez le passage",
-    render: (size) => <Sign shape="inverted-triangle" border={SIGN_COLORS.red} title="Cédez le passage" size={size} />,
+    render: (size) => (
+      <Sign
+        shape="inverted-triangle"
+        border={SIGN_COLORS.red}
+        title="Cédez le passage"
+        size={size}
+      />
+    ),
   },
   stop: {
     title: "Stop",
     render: (size) => (
       <Sign shape="octagon" fill={SIGN_COLORS.red} title="Stop" size={size}>
-        <polygon points={octagonPoints(50, 50, 41)} fill="none" stroke={SIGN_COLORS.white} strokeWidth="2.5" />
-        <text x="50" y="58" textAnchor="middle" fontSize="24" fontWeight="700" fill={SIGN_COLORS.white} fontFamily="Arial, sans-serif">
+        <polygon
+          points={octagonPoints(50, 50, 41)}
+          fill="none"
+          stroke={SIGN_COLORS.white}
+          strokeWidth="2.5"
+        />
+        <text
+          x="50"
+          y="58"
+          textAnchor="middle"
+          fontSize="24"
+          fontWeight="700"
+          fill={SIGN_COLORS.white}
+          fontFamily="Arial, sans-serif"
+        >
           STOP
         </text>
       </Sign>
@@ -135,7 +193,12 @@ const PRESETS: Record<SignPreset, { title: string; render: (size?: number) => Re
   "giratoire-danger": {
     title: "Carrefour à sens giratoire",
     render: (size) => (
-      <Sign shape="triangle" border={SIGN_COLORS.red} title="Carrefour à sens giratoire" size={size}>
+      <Sign
+        shape="triangle"
+        border={SIGN_COLORS.red}
+        title="Carrefour à sens giratoire"
+        size={size}
+      >
         <RoundaboutArrows cx={50} cy={62} r={13} color={SIGN_COLORS.black} width={3.5} />
       </Sign>
     ),

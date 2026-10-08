@@ -50,7 +50,8 @@ function slotPose(slot: CarSlot) {
   if (entry) return entry;
   const deg = RING_ANGLE[slot] ?? 0;
   const a = (deg * Math.PI) / 180;
-  return { x: C + RING * Math.cos(a), y: C + RING * Math.sin(a), rot: deg };
+  const round = (v: number) => Math.round(v * 100) / 100;
+  return { x: round(C + RING * Math.cos(a)), y: round(C + RING * Math.sin(a)), rot: deg };
 }
 
 function Car({ slot, who = "other" }: RoundaboutCar) {
@@ -58,7 +59,16 @@ function Car({ slot, who = "other" }: RoundaboutCar) {
   const fill = who === "you" ? "var(--accent)" : "#8c8c8c";
   return (
     <g transform={`translate(${x} ${y}) rotate(${rot})`}>
-      <rect x="-6" y="-10" width="12" height="20" rx="3" fill={fill} stroke="#fff" strokeWidth="1" />
+      <rect
+        x="-6"
+        y="-10"
+        width="12"
+        height="20"
+        rx="3"
+        fill={fill}
+        stroke="#fff"
+        strokeWidth="1"
+      />
       {/* windscreen marks the front */}
       <rect x="-4.5" y="-7" width="9" height="4" rx="1" fill="#fff" opacity="0.85" />
     </g>
@@ -68,7 +78,13 @@ function Car({ slot, who = "other" }: RoundaboutCar) {
 function YieldMark({ x, y, rot }: { x: number; y: number; rot: number }) {
   return (
     <g transform={`translate(${x} ${y}) rotate(${rot})`}>
-      <polygon points="-6,-5 6,-5 0,6" fill="#fff" stroke={SIGN_COLORS.red} strokeWidth="2" strokeLinejoin="round" />
+      <polygon
+        points="-6,-5 6,-5 0,6"
+        fill="#fff"
+        stroke={SIGN_COLORS.red}
+        strokeWidth="2"
+        strokeLinejoin="round"
+      />
     </g>
   );
 }
@@ -84,7 +100,16 @@ export function Roundabout({ variant = "sans-panneau", cars = [], size = 260 }: 
       <rect x="0" y="84" width="200" height="32" fill={road} />
       {/* ring */}
       <circle cx={C} cy={C} r="60" fill={road} />
-      <circle cx={C} cy={C} r={RING} fill="none" stroke="#fff" strokeWidth="0.8" strokeDasharray="4 4" opacity="0.6" />
+      <circle
+        cx={C}
+        cy={C}
+        r={RING}
+        fill="none"
+        stroke="#fff"
+        strokeWidth="0.8"
+        strokeDasharray="4 4"
+        opacity="0.6"
+      />
       <circle cx={C} cy={C} r="30" fill="#b9cfa6" stroke="#fff" strokeWidth="2" />
       {/* centre lines on the arms */}
       {[
@@ -93,7 +118,16 @@ export function Roundabout({ variant = "sans-panneau", cars = [], size = 260 }: 
         [0, 100, 40, 100],
         [160, 100, 200, 100],
       ].map(([x1, y1, x2, y2], i) => (
-        <line key={i} x1={x1} y1={y1} x2={x2} y2={y2} stroke="#fff" strokeWidth="1.2" strokeDasharray="5 4" />
+        <line
+          key={i}
+          x1={x1}
+          y1={y1}
+          x2={x2}
+          y2={y2}
+          stroke="#fff"
+          strokeWidth="1.2"
+          strokeDasharray="5 4"
+        />
       ))}
       {variant === "cedez" ? (
         <>
