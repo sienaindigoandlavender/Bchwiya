@@ -19,6 +19,8 @@ export const fr = {
   "login.sending": "Envoi…",
   "login.sent": "C'est envoyé. Ouvre l'e-mail et touche le lien.",
   "login.error": "Ça n'a pas marché. Vérifie l'adresse et réessaie.",
+  "login.notConfigured": "Bchwiya arrive bientôt. La base de données n'est pas encore branchée.",
+  "login.noAccess": "Cette adresse n'a pas accès à Bchwiya.",
   "login.linkError": "Le lien n'est plus valable. Demande-en un nouveau.",
 
   "home.welcome": "Bienvenue, {name}.",

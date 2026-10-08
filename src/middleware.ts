@@ -1,10 +1,23 @@
 import { createServerClient } from "@supabase/ssr";
 import { NextResponse, type NextRequest } from "next/server";
+import { isSupabaseConfigured } from "@/lib/supabase/env";
 import type { Database } from "@/lib/supabase/types";
 
 const PUBLIC_PATHS = ["/connexion", "/auth"];
 
 export async function middleware(request: NextRequest) {
+  const { pathname } = request.nextUrl;
+  const isPublic = PUBLIC_PATHS.some((p) => pathname === p || pathname.startsWith(`${p}/`));
+
+  // No database yet: everything lands on /connexion, which explains it.
+  if (!isSupabaseConfigured()) {
+    if (isPublic) return NextResponse.next();
+    const url = request.nextUrl.clone();
+    url.pathname = "/connexion";
+    url.search = "";
+    return NextResponse.redirect(url);
+  }
+
   let response = NextResponse.next({ request });
 
   const supabase = createServerClient<Database>(
@@ -27,24 +40,33 @@ export async function middleware(request: NextRequest) {
     data: { user },
   } = await supabase.auth.getUser();
 
-  const { pathname } = request.nextUrl;
-  const isPublic = PUBLIC_PATHS.some((p) => pathname === p || pathname.startsWith(`${p}/`));
-
-  const redirectTo = (path: string) => {
+  const redirectTo = (path: string, search = "") => {
     const url = request.nextUrl.clone();
     url.pathname = path;
-    url.search = "";
+    url.search = search;
     const res = NextResponse.redirect(url);
     for (const c of response.cookies.getAll()) res.cookies.set(c);
     return res;
   };
 
-  if (!user && !isPublic) return redirectTo("/connexion");
-  if (user && pathname === "/connexion") return redirectTo("/");
+  if (!user) return isPublic ? response : redirectTo("/connexion");
+  if (pathname.startsWith("/auth/")) return response;
 
-  if (user && (pathname === "/admin" || pathname.startsWith("/admin/"))) {
-    const { data } = await supabase.from("profiles").select("role").eq("id", user.id).single();
-    if (data?.role !== "admin") return redirectTo("/");
+  // The auth users table is shared with another app: only users with a
+  // Bchwiya profile get in. Anyone else is signed out.
+  const { data: profile } = await supabase
+    .from("bchwiya_profiles")
+    .select("role")
+    .eq("id", user.id)
+    .maybeSingle();
+  if (!profile) {
+    await supabase.auth.signOut();
+    return pathname === "/connexion" ? response : redirectTo("/connexion", "?erreur=acces");
+  }
+
+  if (pathname === "/connexion") return redirectTo("/");
+  if ((pathname === "/admin" || pathname.startsWith("/admin/")) && profile.role !== "admin") {
+    return redirectTo("/");
   }
 
   return response;
