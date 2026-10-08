@@ -24,7 +24,11 @@
     {
       "type": "text",
       "body": "À l'entrée, tu peux voir un panneau rond et bleu avec trois flèches blanches : sens giratoire obligatoire. Il t'indique dans quel sens tourner.",
-      "media": { "kind": "svg", "component": "Sign", "props": { "preset": "sens-giratoire-obligatoire" } }
+      "media": {
+        "kind": "svg",
+        "component": "Sign",
+        "props": { "preset": "sens-giratoire-obligatoire" }
+      }
     },
     {
       "type": "text",

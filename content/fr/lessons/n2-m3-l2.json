@@ -4,7 +4,11 @@
   "moduleId": "n2-m3",
   "title": "Le rond-point : deux règles",
   "minutes": 5,
-  "ruleIds": ["priorite-giratoire-cedez", "priorite-giratoire-sans-panneau", "panneau-cedez-le-passage"],
+  "ruleIds": [
+    "priorite-giratoire-cedez",
+    "priorite-giratoire-sans-panneau",
+    "panneau-cedez-le-passage"
+  ],
   "screens": [
     {
       "type": "text",

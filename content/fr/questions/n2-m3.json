@@ -21,7 +21,11 @@
       "moduleId": "n2-m3",
       "ruleIds": ["panneau-sens-giratoire-obligatoire"],
       "prompt": "Ce panneau rond et bleu signifie :",
-      "media": { "kind": "svg", "component": "Sign", "props": { "preset": "sens-giratoire-obligatoire" } },
+      "media": {
+        "kind": "svg",
+        "component": "Sign",
+        "props": { "preset": "sens-giratoire-obligatoire" }
+      },
       "options": [
         { "id": "a", "text": "Sens giratoire obligatoire" },
         { "id": "b", "text": "Rond-point interdit" },
