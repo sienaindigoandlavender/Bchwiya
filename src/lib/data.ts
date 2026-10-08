@@ -11,11 +11,17 @@ export type PathData = {
 };
 
 /** Loads a user's progress rows and derives the path. */
-export async function loadPath({ supabase, userId }: Pick<Session, "supabase" | "userId">): Promise<PathData> {
+export async function loadPath({
+  supabase,
+  userId,
+}: Pick<Session, "supabase" | "userId">): Promise<PathData> {
   const content = getContent();
   const [lessons, modules, attempts] = await Promise.all([
     supabase.from("lesson_progress").select("lesson_id, completed_at").eq("user_id", userId),
-    supabase.from("module_progress").select("module_id, best_score_pct, passed_at").eq("user_id", userId),
+    supabase
+      .from("module_progress")
+      .select("module_id, best_score_pct, passed_at")
+      .eq("user_id", userId),
     supabase
       .from("attempts")
       .select("module_id, started_at")

@@ -69,10 +69,13 @@ export async function recordAnswer(input: AnswerInput): Promise<{ correct: boole
 
   const step = nextReviewStep(existing, correct, attempt.kind === "review");
   if (step.action === "upsert") {
-    const { action: _, ...fields } = step;
-    await supabase
-      .from("review_queue")
-      .upsert({ user_id: userId, question_id: question.id, ...fields });
+    await supabase.from("review_queue").upsert({
+      user_id: userId,
+      question_id: question.id,
+      due_at: step.due_at,
+      interval_days: step.interval_days,
+      correct_in_a_row: step.correct_in_a_row,
+    });
   } else if (step.action === "delete") {
     await supabase
       .from("review_queue")
@@ -154,7 +157,9 @@ export async function recordLessonVisit(lessonId: string): Promise<void> {
       .eq("user_id", userId)
       .eq("lesson_id", lessonId);
   } else {
-    await supabase.from("lesson_progress").insert({ user_id: userId, lesson_id: lessonId, visits: 1 });
+    await supabase
+      .from("lesson_progress")
+      .insert({ user_id: userId, lesson_id: lessonId, visits: 1 });
   }
 }
 

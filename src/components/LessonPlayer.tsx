@@ -62,7 +62,12 @@ export function LessonPlayer({ lesson, checks, moduleHref, next }: Props) {
     return (
       <div className="flex flex-col gap-4">
         <p className="text-muted">{t("lesson.checksIntro")}</p>
-        <QuizRunner kind="lesson_check" moduleId={lesson.moduleId} questions={checks} onComplete={finishLesson} />
+        <QuizRunner
+          kind="lesson_check"
+          moduleId={lesson.moduleId}
+          questions={checks}
+          onComplete={finishLesson}
+        />
       </div>
     );
   }
@@ -97,13 +102,20 @@ export function LessonPlayer({ lesson, checks, moduleHref, next }: Props) {
         aria-valuenow={index + 1}
         aria-label={t("lesson.progress", { current: index + 1, total })}
       >
-        <div className="h-full bg-accent transition-all" style={{ width: `${((index + 1) / total) * 100}%` }} />
+        <div
+          className="h-full bg-accent transition-all"
+          style={{ width: `${((index + 1) / total) * 100}%` }}
+        />
       </div>
 
       {screen ? (
-        <div className={`card flex min-h-64 flex-col gap-3 ${screen.type === "keypoint" ? "bg-accent-soft" : ""}`}>
+        <div
+          className={`card flex min-h-64 flex-col gap-3 ${screen.type === "keypoint" ? "bg-accent-soft" : ""}`}
+        >
           {screen.type === "keypoint" ? (
-            <p className="text-sm font-semibold uppercase tracking-wide text-accent">{t("lesson.keypoint")}</p>
+            <p className="text-sm font-semibold uppercase tracking-wide text-accent">
+              {t("lesson.keypoint")}
+            </p>
           ) : null}
           <Media media={screen.media} />
           <p className="text-lg leading-relaxed">{screen.body}</p>
@@ -111,11 +123,20 @@ export function LessonPlayer({ lesson, checks, moduleHref, next }: Props) {
       ) : null}
 
       <div className="flex gap-3">
-        <button type="button" className="btn btn-secondary flex-1" onClick={goPrev} disabled={index === 0}>
+        <button
+          type="button"
+          className="btn btn-secondary flex-1"
+          onClick={goPrev}
+          disabled={index === 0}
+        >
           {t("lesson.prev")}
         </button>
         <button type="button" className="btn flex-1" onClick={goNext}>
-          {index + 1 < total ? t("lesson.next") : checks.length ? t("lesson.toChecks") : t("lesson.next")}
+          {index + 1 < total
+            ? t("lesson.next")
+            : checks.length
+              ? t("lesson.toChecks")
+              : t("lesson.next")}
         </button>
       </div>
     </div>

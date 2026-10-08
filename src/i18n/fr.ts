@@ -74,7 +74,8 @@ export const fr = {
   "question.saveError": "Pas de réseau. On réessaie au prochain clic.",
 
   "test.title": "Test : {title}",
-  "test.intro": "{count} questions. Il faut 80 % pour valider le module. Prends ton temps, tu peux le refaire autant de fois que tu veux.",
+  "test.intro":
+    "{count} questions. Il faut 80 % pour valider le module. Prends ton temps, tu peux le refaire autant de fois que tu veux.",
   "test.start": "Commencer",
   "test.empty": "Ce module n'a pas encore de questions.",
   "test.locked": "Termine d'abord les leçons du module.",
@@ -98,8 +99,10 @@ export const fr = {
   "review.done": "C'est tout pour aujourd'hui.",
 
   "exam.title": "Examen blanc",
-  "exam.intro": "{count} questions, {minutes} minutes. Il faut {pass} bonnes réponses pour réussir. Comme le jour de l'examen, les corrections arrivent à la fin.",
-  "exam.fewQuestions": "Il n'y a que {count} questions disponibles pour l'instant. L'examen blanc les utilise toutes.",
+  "exam.intro":
+    "{count} questions, {minutes} minutes. Il faut {pass} bonnes réponses pour réussir. Comme le jour de l'examen, les corrections arrivent à la fin.",
+  "exam.fewQuestions":
+    "Il n'y a que {count} questions disponibles pour l'instant. L'examen blanc les utilise toutes.",
   "exam.empty": "Pas encore de questions disponibles.",
   "exam.start": "Commencer l'examen",
   "exam.timeLeft": "{time} restantes",
@@ -109,7 +112,8 @@ export const fr = {
   "exam.corrections": "Corrections",
 
   "myCar.title": "Ma voiture",
-  "myCar.placeholder": "Bientôt : l'intérieur de la voiture, à toucher pour découvrir chaque commande.",
+  "myCar.placeholder":
+    "Bientôt : l'intérieur de la voiture, à toucher pour découvrir chaque commande.",
 
   "admin.title": "Tableau de bord",
   "admin.learner": "Apprenante : {name}",

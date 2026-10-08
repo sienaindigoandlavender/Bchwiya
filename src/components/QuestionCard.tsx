@@ -125,9 +125,16 @@ export function QuestionCard({ question, feedback = true, onSubmit, onNext, next
       </ul>
 
       {showFeedback ? (
-        <div className={`rounded-card p-4 ${correct ? "bg-success-soft" : "bg-notice-soft"}`} aria-live="polite">
-          <p className="font-semibold">{correct ? t("question.correct") : t("question.incorrect")}</p>
-          {!correct ? <p className="mt-1">{t("question.answerWas", { answer: correctText })}</p> : null}
+        <div
+          className={`rounded-card p-4 ${correct ? "bg-success-soft" : "bg-notice-soft"}`}
+          aria-live="polite"
+        >
+          <p className="font-semibold">
+            {correct ? t("question.correct") : t("question.incorrect")}
+          </p>
+          {!correct ? (
+            <p className="mt-1">{t("question.answerWas", { answer: correctText })}</p>
+          ) : null}
           <p className="mt-2 text-sm">{question.explanation}</p>
         </div>
       ) : null}

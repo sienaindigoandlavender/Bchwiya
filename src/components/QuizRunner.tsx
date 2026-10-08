@@ -29,7 +29,14 @@ type Props = {
  * Runs a sequence of questions as one attempt. Each answer is sent to Supabase as soon
  * as it is submitted; failed writes are kept and retried on the next action.
  */
-export function QuizRunner({ kind, moduleId, questions, feedback = true, timerMinutes, onComplete }: Props) {
+export function QuizRunner({
+  kind,
+  moduleId,
+  questions,
+  feedback = true,
+  timerMinutes,
+  onComplete,
+}: Props) {
   const [index, setIndex] = useState(0);
   const [saveError, setSaveError] = useState(false);
   const [finishing, setFinishing] = useState(false);
@@ -100,8 +107,14 @@ export function QuizRunner({ kind, moduleId, questions, feedback = true, timerMi
   }, [timerMinutes, finish]);
 
   function handleSubmit(m: AnswerMetrics) {
-    const { correct: _correct, ...answer } = m;
-    pending.current.push(answer);
+    pending.current.push({
+      questionId: m.questionId,
+      firstSelection: m.firstSelection,
+      finalSelection: m.finalSelection,
+      changeCount: m.changeCount,
+      timeToFirstMs: m.timeToFirstMs,
+      timeToSubmitMs: m.timeToSubmitMs,
+    });
     void flush();
   }
 

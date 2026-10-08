@@ -119,9 +119,12 @@ export function checkReferences(c: Content): string[] {
       for (const lessonId of mod.lessonIds) {
         referencedLessons.add(lessonId);
         const lesson = c.lessons.get(lessonId);
-        if (!lesson) errors.push(`levels.json: module "${mod.id}" lists missing lesson "${lessonId}"`);
+        if (!lesson)
+          errors.push(`levels.json: module "${mod.id}" lists missing lesson "${lessonId}"`);
         else if (lesson.moduleId !== mod.id) {
-          errors.push(`lesson "${lessonId}" has moduleId "${lesson.moduleId}", listed under "${mod.id}"`);
+          errors.push(
+            `lesson "${lessonId}" has moduleId "${lesson.moduleId}", listed under "${mod.id}"`,
+          );
         }
       }
     }
@@ -145,14 +148,18 @@ export function checkReferences(c: Content): string[] {
 
   for (const q of c.questions.values()) {
     const optionIds = new Set(q.options.map((o) => o.id));
-    if (optionIds.size !== q.options.length) errors.push(`question "${q.id}": duplicate option ids`);
+    if (optionIds.size !== q.options.length)
+      errors.push(`question "${q.id}": duplicate option ids`);
     for (const id of q.correct) {
       if (!optionIds.has(id)) errors.push(`question "${q.id}": correct "${id}" is not an option`);
     }
     for (const r of q.ruleIds) {
       if (!ruleIds.has(r)) errors.push(`question "${q.id}": unknown ruleId "${r}"`);
     }
-    if (q.media?.kind === "image" && !fs.existsSync(path.join(process.cwd(), "public/images", q.media.src))) {
+    if (
+      q.media?.kind === "image" &&
+      !fs.existsSync(path.join(process.cwd(), "public/images", q.media.src))
+    ) {
       errors.push(`question "${q.id}": image "${q.media.src}" not found in public/images`);
     }
   }

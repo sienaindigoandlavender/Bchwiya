@@ -103,13 +103,21 @@ export type ResumeTarget =
 /** Where to pick up: the module touched most recently if unfinished, else the next open one. */
 export function resumeTarget(path: LevelState[], lastModuleId: string | null): ResumeTarget {
   const modules = path.flatMap((l) => l.modules);
-  const last = modules.find((m) => m.id === lastModuleId && m.status !== "done" && m.status !== "locked");
-  const target = last ?? modules.find((m) => m.status === "in_progress" || m.status === "available");
+  const last = modules.find(
+    (m) => m.id === lastModuleId && m.status !== "done" && m.status !== "locked",
+  );
+  const target =
+    last ?? modules.find((m) => m.status === "in_progress" || m.status === "available");
   if (!target) return { kind: "done" };
 
   const nextLesson = target.lessons.find((l) => l.status === "available");
   if (nextLesson) {
-    return { kind: "lesson", moduleId: target.id, lessonId: nextLesson.id, title: nextLesson.title };
+    return {
+      kind: "lesson",
+      moduleId: target.id,
+      lessonId: nextLesson.id,
+      title: nextLesson.title,
+    };
   }
   return { kind: "test", moduleId: target.id, title: target.title };
 }
