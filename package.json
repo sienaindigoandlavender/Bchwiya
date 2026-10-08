@@ -11,11 +11,9 @@
     "format": "prettier --write .",
     "format:check": "prettier --check .",
     "typecheck": "tsc --noEmit",
-    "validate:content": "tsx scripts/validate-content.ts",
-    "seed": "tsx scripts/seed.ts"
+    "validate:content": "tsx scripts/validate-content.ts"
   },
   "dependencies": {
-    "@supabase/ssr": "^0.12.7",
     "@supabase/supabase-js": "^2.117.3",
     "next": "15.5.27",
     "react": "^19.1.0",

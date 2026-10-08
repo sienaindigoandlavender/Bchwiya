@@ -3,8 +3,8 @@
 بشوية — "slowly, gently". A private, calm micro-learning app that teaches the Moroccan
 _code de la route_ for the NARSA theory exam. Two users: one learner, one admin.
 
-Stack: Next.js 15 (App Router, TypeScript), Tailwind CSS v4, Supabase (Postgres, magic-link
-Auth, RLS), Zod, pnpm, Vercel.
+Stack: Next.js 15 (App Router, TypeScript), Tailwind CSS v4, Supabase (Postgres), Zod,
+pnpm, Vercel. The site is hidden from search engines (robots.txt, meta tags, `X-Robots-Tag`).
 
 ## Setup
 
@@ -16,39 +16,25 @@ pnpm dev                     # http://localhost:3000
 
 ### Environment variables
 
-| Name                            | Where      | Purpose                                           |
-| ------------------------------- | ---------- | ------------------------------------------------- |
-| `NEXT_PUBLIC_SUPABASE_URL`      | app + seed | Supabase project URL (Settings → API)             |
-| `NEXT_PUBLIC_SUPABASE_ANON_KEY` | app        | Public anon key                                   |
-| `SUPABASE_SERVICE_ROLE_KEY`     | seed only  | Service role key. Never expose it to the browser. |
-| `ADMIN_EMAIL`                   | seed only  | Gets the `admin` role                             |
-| `LEARNER_EMAIL`                 | seed only  | Gets the `learner` role                           |
+| Name                        | Purpose                                                          |
+| --------------------------- | ---------------------------------------------------------------- |
+| `NEXT_PUBLIC_SUPABASE_URL`  | Supabase project URL (Settings → API)                            |
+| `SUPABASE_SERVICE_ROLE_KEY` | Service role key (Settings → API → `service_role`). Server-only. |
 
-On Vercel, only the two `NEXT_PUBLIC_*` variables are required at runtime.
+There is no login: the app is for one learner, and only the server talks to the
+database. Until both variables are set, every page shows "Bchwiya arrive bientôt".
 
 ## Supabase
 
-Bchwiya can live inside an existing Supabase project shared with another app:
-every table, function and policy is prefixed `bchwiya_`, and nothing touches
-`auth.users` (no triggers). Auth users are shared, so the app only admits users
-that have a `bchwiya_profiles` row; anyone else is signed out.
+Bchwiya lives inside an existing Supabase project shared with another app: every
+table is prefixed `bchwiya_`, and nothing touches `auth.users`.
 
-Without the env vars the app still builds and deploys, and shows a
-"not connected yet" notice on `/connexion`.
+1. Open the project's **SQL editor** and run `supabase/migrations/20261008000000_init.sql`.
+2. Set the two env vars above (in `.env.local` and on Vercel).
 
-1. Use an existing project (or create one).
-2. Run the migrations in `supabase/migrations/`, either:
-   - with the CLI: `supabase link --project-ref <ref>` then `supabase db push`, or
-   - by pasting each file, in order, into the SQL editor.
-3. **Auth → URL configuration**: add `https://<your-domain>/auth/callback` and
-   `http://localhost:3000/auth/callback` to the redirect URLs. On a shared project,
-   leave the Site URL alone: it belongs to the other app. The magic-link email
-   template is shared too.
-4. Create the two users and set their roles: `pnpm seed`.
-   Sign-ups are disabled from the app (`shouldCreateUser: false`), so only seeded users can log in.
-
-Every table has RLS: the learner reads and writes only her own rows; the admin
-(`public.bchwiya_is_admin()`) reads everything. Roles can only be changed with the service role.
+Zahra's profile is created on her first visit. RLS is on with no policies, so the
+public anon key cannot read or write any `bchwiya_` table. `/admin` has no login
+and no link in the app: it is reachable by URL only.
 
 ## Scripts
 
@@ -105,6 +91,4 @@ locale, and styles use logical properties (`ms-`, `pe-`, `start`, `end`) so RTL 
 ## Deploying to Vercel
 
 1. Import the GitHub repo in Vercel (framework: Next.js; pnpm is detected from the lockfile).
-2. Deploy. It works without env vars (it shows a "not connected yet" notice).
-3. When the database is ready, add `NEXT_PUBLIC_SUPABASE_URL` and
-   `NEXT_PUBLIC_SUPABASE_ANON_KEY`, redeploy, then add the deployment's `/auth/callback` URL to Supabase redirect URLs.
+2. Add `NEXT_PUBLIC_SUPABASE_URL` and `SUPABASE_SERVICE_ROLE_KEY`, then deploy.

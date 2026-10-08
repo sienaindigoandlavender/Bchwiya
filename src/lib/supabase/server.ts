@@ -1,52 +1,54 @@
 import "server-only";
-import { createServerClient } from "@supabase/ssr";
-import { cookies } from "next/headers";
+import { createClient as createSupabaseClient } from "@supabase/supabase-js";
 import { redirect } from "next/navigation";
 import { cache } from "react";
-import { supabaseEnv } from "./env";
+import { isSupabaseConfigured } from "./env";
 import type { Database, ProfileRow } from "./types";
 
-export async function createClient() {
-  const cookieStore = await cookies();
-  const { url, anonKey } = supabaseEnv();
-  return createServerClient<Database>(url, anonKey, {
-    cookies: {
-      getAll: () => cookieStore.getAll(),
-      setAll: (toSet) => {
-        try {
-          for (const { name, value, options } of toSet) cookieStore.set(name, value, options);
-        } catch {
-          // Called from a server component: middleware refreshes the session instead.
-        }
-      },
-    },
-  });
+/**
+ * Server-only client with the service role key. There is no login: the app has one
+ * learner, and the key never reaches the browser.
+ */
+function createClient() {
+  return createSupabaseClient<Database>(
+    process.env.NEXT_PUBLIC_SUPABASE_URL!,
+    process.env.SUPABASE_SERVICE_ROLE_KEY!,
+    { auth: { persistSession: false, autoRefreshToken: false } },
+  );
 }
 
 export type Session = {
-  supabase: Awaited<ReturnType<typeof createClient>>;
+  supabase: ReturnType<typeof createClient>;
   userId: string;
   profile: ProfileRow;
 };
 
-/** The signed-in user and profile. Redirects to /connexion when signed out. */
+/** Zahra's profile, created on first visit. Sends to /bientot until the database is set up. */
 export const requireSession = cache(async (): Promise<Session> => {
-  const supabase = await createClient();
-  const {
-    data: { user },
-  } = await supabase.auth.getUser();
-  if (!user) redirect("/connexion");
-  const { data: profile } = await supabase
+  if (!isSupabaseConfigured()) redirect("/bientot");
+  const supabase = createClient();
+
+  const { data: existing, error } = await supabase
     .from("bchwiya_profiles")
     .select("*")
-    .eq("id", user.id)
-    .single();
-  if (!profile) redirect("/connexion?erreur=acces");
-  return { supabase, userId: user.id, profile };
+    .eq("role", "learner")
+    .order("created_at", { ascending: true })
+    .limit(1)
+    .maybeSingle();
+  if (error) throw new Error(error.message);
+
+  let profile = existing;
+  if (!profile) {
+    const { data, error: insertError } = await supabase
+      .from("bchwiya_profiles")
+      .insert({ role: "learner", display_name: "Zahra" })
+      .select("*")
+      .single();
+    if (insertError) throw new Error(insertError.message);
+    profile = data;
+  }
+  return { supabase, userId: profile.id, profile };
 });
 
-export async function requireAdmin(): Promise<Session> {
-  const session = await requireSession();
-  if (session.profile.role !== "admin") redirect("/");
-  return session;
-}
+/** The admin dashboard has no login either; it is reachable by URL only. */
+export const requireAdmin = requireSession;

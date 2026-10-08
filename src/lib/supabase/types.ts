@@ -70,7 +70,7 @@ export type ModuleProgressRow = {
 export type Database = {
   public: {
     Tables: {
-      bchwiya_profiles: Table<ProfileRow, "id">;
+      bchwiya_profiles: Table<ProfileRow, never>;
       bchwiya_lesson_progress: Table<LessonProgressRow, "user_id" | "lesson_id">;
       bchwiya_attempts: Table<AttemptRow, "user_id" | "kind">;
       bchwiya_answers: Table<AnswerRow, "attempt_id" | "user_id" | "question_id">;
@@ -78,9 +78,7 @@ export type Database = {
       bchwiya_module_progress: Table<ModuleProgressRow, "user_id" | "module_id">;
     };
     Views: { [_ in never]: never };
-    Functions: {
-      bchwiya_is_admin: { Args: Record<string, never>; Returns: boolean };
-    };
+    Functions: { [_ in never]: never };
     Enums: { [_ in never]: never };
     CompositeTypes: { [_ in never]: never };
   };

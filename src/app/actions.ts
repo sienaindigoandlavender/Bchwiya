@@ -1,11 +1,10 @@
 "use server";
 
 import { revalidatePath } from "next/cache";
-import { redirect } from "next/navigation";
 import { getContent } from "@/content";
 import { nextReviewStep } from "@/lib/review";
 import { hasPassed, isCorrect, pct } from "@/lib/scoring";
-import { createClient, requireSession } from "@/lib/supabase/server";
+import { requireSession } from "@/lib/supabase/server";
 import type { AttemptKind } from "@/lib/supabase/types";
 
 export type AnswerInput = {
@@ -188,10 +187,4 @@ export async function completeLesson(lessonId: string): Promise<void> {
     });
   }
   revalidatePath("/", "layout");
-}
-
-export async function signOut(): Promise<void> {
-  const supabase = await createClient();
-  await supabase.auth.signOut();
-  redirect("/connexion");
 }
