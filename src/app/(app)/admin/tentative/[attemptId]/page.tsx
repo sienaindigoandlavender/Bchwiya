@@ -28,7 +28,7 @@ export default async function AttemptDetailPage({
 
   return (
     <>
-      <Link href="/admin" className="text-sm text-muted">
+      <Link href="/admin" className="text-base text-muted">
         ← {t("admin.backToDashboard")}
       </Link>
       <h1 className="title text-[2.5rem]">
@@ -42,7 +42,7 @@ export default async function AttemptDetailPage({
       </p>
       <div className="overflow-x-auto">
         <div className="-mx-5 overflow-x-auto px-5">
-          <table className="w-full min-w-[640px] text-sm">
+          <table className="w-full min-w-[640px] text-base">
             <thead className="text-muted">
               <tr>
                 <th className="py-2 pe-2 text-start">{t("admin.question")}</th>

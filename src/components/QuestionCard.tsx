@@ -130,7 +130,7 @@ export function QuestionCard({ question, feedback = true, onSubmit, onNext, next
               >
                 <span
                   aria-hidden
-                  className={`flex size-8 shrink-0 items-center justify-center text-[0.9375rem] font-semibold ${multi ? "rounded-[10px]" : "rounded-full"} ${bubble}`}
+                  className={`flex size-8 shrink-0 items-center justify-center text-[1rem] font-semibold ${multi ? "rounded-[10px]" : "rounded-full"} ${bubble}`}
                 >
                   {showFeedback && isRight ? <CheckIcon size={16} /> : String.fromCharCode(65 + i)}
                 </span>

@@ -142,9 +142,7 @@ export function QuizRunner({
         ) : null}
       </div>
       {saveError ? (
-        <p className="rounded-card bg-butter px-4 py-3 text-[0.9375rem]">
-          {t("question.saveError")}
-        </p>
+        <p className="rounded-card bg-butter px-4 py-3 text-[1rem]">{t("question.saveError")}</p>
       ) : null}
       {finishing ? (
         <p className="card font-medium">{t("question.saving")}</p>
