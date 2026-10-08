@@ -1,14 +1,31 @@
 {
+  "$comment": "Faits vérifiés : NARSA (40 questions, 32 pour réussir), loi 52-05 art. 23 et 27 (probatoire 2 ans, 20 points, puis 30).",
   "id": "n0-m3-l1",
   "moduleId": "n0-m3",
-  "title": "Le permis et l'examen",
+  "title": "L'examen théorique",
   "minutes": 5,
-  "ruleIds": [],
+  "ruleIds": ["examen-format"],
   "screens": [
     {
       "type": "text",
-      "body": "Contenu à venir."
+      "body": "L'examen du code est organisé par la NARSA, l'Agence nationale de la sécurité routière. Il se passe sur écran, dans un centre d'examen."
+    },
+    {
+      "type": "text",
+      "body": "Il y a 40 questions. Pour réussir, il faut au moins 32 bonnes réponses. Tu as donc droit à 8 erreurs, pas une de plus."
+    },
+    {
+      "type": "text",
+      "body": "Presque toutes les questions montrent une image ou une courte vidéo d'une situation sur la route. Regarde bien tous les détails : panneaux, lignes au sol, autres véhicules."
+    },
+    {
+      "type": "text",
+      "body": "Attention : une question peut avoir plusieurs bonnes réponses. Il faut cocher toutes les bonnes, et seulement les bonnes."
+    },
+    {
+      "type": "keypoint",
+      "body": "40 questions, 32 bonnes réponses minimum. Parfois plusieurs réponses justes."
     }
   ],
-  "checks": []
+  "checks": ["q-n0-m3-002", "q-n0-m3-003"]
 }

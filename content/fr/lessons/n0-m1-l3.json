@@ -1,0 +1,26 @@
+{
+  "id": "n0-m1-l3",
+  "moduleId": "n0-m1",
+  "title": "Piétons, enfants et animaux",
+  "minutes": 5,
+  "ruleIds": ["pieton-passage", "enfants-animaux"],
+  "screens": [
+    {
+      "type": "text",
+      "body": "Le passage piéton, ce sont les bandes blanches peintes sur la chaussée. Quand un piéton y est engagé, ou s'apprête à traverser, tu t'arrêtes et tu le laisses passer."
+    },
+    {
+      "type": "text",
+      "body": "Les enfants sont imprévisibles : un ballon qui roule, et ils courent sur la route sans regarder. Près d'une école ou d'enfants qui jouent, tu ralentis."
+    },
+    {
+      "type": "text",
+      "body": "Un troupeau ou un âne sur le bord de la route ? Même chose : tu ralentis, tu gardes de la distance, et tu évites de klaxonner pour ne pas les affoler."
+    },
+    {
+      "type": "keypoint",
+      "body": "Piéton engagé sur le passage : je m'arrête. Enfants ou animaux : je ralentis."
+    }
+  ],
+  "checks": ["q-n0-m1-003", "q-n0-m1-007"]
+}

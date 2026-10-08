@@ -1,0 +1,30 @@
+{
+  "id": "n0-m1-l2",
+  "moduleId": "n0-m1",
+  "title": "Les véhicules prioritaires",
+  "minutes": 5,
+  "ruleIds": ["vehicules-prioritaires"],
+  "screens": [
+    {
+      "type": "text",
+      "body": "Certains véhicules passent avant tout le monde quand ils sont en mission urgente : l'ambulance, les pompiers, la police et la gendarmerie."
+    },
+    {
+      "type": "text",
+      "body": "Tu les reconnais à deux signaux : leur sirène spéciale et leurs feux qui clignotent sur le toit, qu'on appelle gyrophares."
+    },
+    {
+      "type": "text",
+      "body": "Quand tu les entends ou les vois, tu leur facilites le passage : tu ralentis, tu te serres sur le côté, et tu t'arrêtes si c'est nécessaire."
+    },
+    {
+      "type": "text",
+      "body": "Sans sirène ni gyrophare, ce sont des véhicules comme les autres. Une voiture de police qui roule tranquillement n'a pas de priorité spéciale."
+    },
+    {
+      "type": "keypoint",
+      "body": "Sirène et gyrophare allumés : je libère le passage."
+    }
+  ],
+  "checks": ["q-n0-m1-002", "q-n0-m1-006"]
+}

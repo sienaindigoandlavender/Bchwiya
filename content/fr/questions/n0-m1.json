@@ -1,0 +1,155 @@
+{
+  "moduleId": "n0-m1",
+  "questions": [
+    {
+      "id": "q-n0-m1-001",
+      "moduleId": "n0-m1",
+      "ruleIds": ["usagers-vulnerables"],
+      "prompt": "Lesquels sont des usagers vulnérables ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Le piéton"
+        },
+        {
+          "id": "b",
+          "text": "Le chauffeur de camion"
+        },
+        {
+          "id": "c",
+          "text": "Le cycliste"
+        },
+        {
+          "id": "d",
+          "text": "Le conducteur de bus"
+        }
+      ],
+      "correct": ["a", "c"],
+      "explanation": "Le piéton et le cycliste n'ont aucune carrosserie pour les protéger. Le camion et le bus, si."
+    },
+    {
+      "id": "q-n0-m1-002",
+      "moduleId": "n0-m1",
+      "ruleIds": ["vehicules-prioritaires"],
+      "prompt": "Une ambulance arrive derrière toi, sirène allumée. Que fais-tu ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Je facilite son passage en me serrant sur le côté"
+        },
+        {
+          "id": "b",
+          "text": "J'accélère pour rester devant elle"
+        },
+        {
+          "id": "c",
+          "text": "Je continue normalement"
+        }
+      ],
+      "correct": ["a"],
+      "explanation": "Sirène et gyrophare allumés : l'ambulance est en mission. Tu ralentis et tu te serres pour la laisser passer."
+    },
+    {
+      "id": "q-n0-m1-003",
+      "moduleId": "n0-m1",
+      "ruleIds": ["pieton-passage"],
+      "prompt": "Un piéton est engagé sur le passage piéton devant toi. Que fais-tu ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Je m'arrête et je le laisse traverser"
+        },
+        {
+          "id": "b",
+          "text": "Je klaxonne pour qu'il se dépêche"
+        },
+        {
+          "id": "c",
+          "text": "Je passe avant lui s'il est encore loin"
+        }
+      ],
+      "correct": ["a"],
+      "explanation": "Le piéton engagé sur le passage est prioritaire. Tu t'arrêtes et tu attends qu'il ait traversé."
+    },
+    {
+      "id": "q-n0-m1-004",
+      "moduleId": "n0-m1",
+      "ruleIds": ["usagers-diversite"],
+      "prompt": "Une charrette tirée par un âne est-elle un usager de la route ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Oui"
+        },
+        {
+          "id": "b",
+          "text": "Non"
+        }
+      ],
+      "correct": ["a"],
+      "explanation": "Oui. Charrettes, animaux et troupeaux partagent aussi la route, et ils peuvent réagir de façon inattendue."
+    },
+    {
+      "id": "q-n0-m1-005",
+      "moduleId": "n0-m1",
+      "ruleIds": ["usagers-vulnerables"],
+      "prompt": "Pourquoi faut-il être très prudent avec les motards ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Ils n'ont pas de carrosserie pour les protéger"
+        },
+        {
+          "id": "b",
+          "text": "Ils roulent toujours trop vite"
+        },
+        {
+          "id": "c",
+          "text": "Ils n'ont pas le droit de dépasser"
+        }
+      ],
+      "correct": ["a"],
+      "explanation": "Le motard est un usager vulnérable : au moindre choc, il n'est pas protégé."
+    },
+    {
+      "id": "q-n0-m1-006",
+      "moduleId": "n0-m1",
+      "ruleIds": ["vehicules-prioritaires"],
+      "prompt": "Une voiture de police roule sans sirène ni gyrophare. Est-elle prioritaire ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Oui, toujours"
+        },
+        {
+          "id": "b",
+          "text": "Non, elle n'est pas en mission urgente"
+        }
+      ],
+      "correct": ["b"],
+      "explanation": "La priorité spéciale existe seulement quand le véhicule signale une mission urgente, avec sirène et gyrophare."
+    },
+    {
+      "id": "q-n0-m1-007",
+      "moduleId": "n0-m1",
+      "ruleIds": ["enfants-animaux"],
+      "prompt": "Des enfants jouent au ballon au bord de la route. Que fais-tu ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Je ralentis et je reste prête à m'arrêter"
+        },
+        {
+          "id": "b",
+          "text": "Je klaxonne pour qu'ils s'écartent"
+        },
+        {
+          "id": "c",
+          "text": "Je garde ma vitesse, ils m'ont vue"
+        }
+      ],
+      "correct": ["a"],
+      "explanation": "Un enfant peut courir sur la route sans regarder. Tu ralentis et tu restes prête à freiner."
+    }
+  ]
+}
