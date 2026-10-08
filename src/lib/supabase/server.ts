@@ -33,7 +33,7 @@ export const requireSession = cache(async (): Promise<Session> => {
 
   const pinned = process.env.BCHWIYA_LEARNER_ID;
   const query = supabase.from("bchwiya_profiles").select("*");
-  const { data: profile } = pinned
+  const { data: profile, error } = pinned
     ? await query.eq("id", pinned).maybeSingle()
     : await query
         .eq("role", "learner")
@@ -41,6 +41,12 @@ export const requireSession = cache(async (): Promise<Session> => {
         .limit(1)
         .maybeSingle();
 
+  // Table missing: the migrations have not been run yet.
+  if (error?.code === "42P01" || error?.code === "PGRST205") {
+    redirect("/configuration?manque=tables");
+  }
+  // Any other error: usually a wrong or rotated service-role key.
+  if (error) redirect("/configuration?manque=cle");
   if (!profile) redirect("/configuration?manque=profil");
   return { supabase, userId: profile.id, profile };
 });
