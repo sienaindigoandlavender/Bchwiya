@@ -1,0 +1,31 @@
+{
+  "$comment": "Faits vérifiés : NARSA (40 questions, 32 pour réussir), loi 52-05 art. 23 et 27 (probatoire 2 ans, 20 points, puis 30).",
+  "id": "n0-m3-l2",
+  "moduleId": "n0-m3",
+  "title": "Le permis à points",
+  "minutes": 5,
+  "ruleIds": ["permis-probatoire", "permis-points", "permis-age"],
+  "screens": [
+    {
+      "type": "text",
+      "body": "Pour le permis B, celui de la voiture, il faut avoir au moins 18 ans."
+    },
+    {
+      "type": "text",
+      "body": "Au Maroc, le permis fonctionne avec des points. Chaque infraction grave retire des points."
+    },
+    {
+      "type": "text",
+      "body": "Au début, ton permis est probatoire pendant 2 ans. Tu commences avec 20 points."
+    },
+    {
+      "type": "text",
+      "body": "Après ces 2 ans, si tout se passe bien, ton permis passe à 30 points maximum."
+    },
+    {
+      "type": "keypoint",
+      "body": "Permis probatoire : 2 ans et 20 points. Ensuite : 30 points."
+    }
+  ],
+  "checks": ["q-n0-m3-004", "q-n0-m3-005"]
+}

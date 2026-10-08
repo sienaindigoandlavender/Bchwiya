@@ -1,0 +1,30 @@
+{
+  "id": "n0-m2-l2",
+  "moduleId": "n0-m2",
+  "title": "Les lignes au sol",
+  "minutes": 5,
+  "ruleIds": ["ligne-continue", "ligne-discontinue", "fleches-rabattement"],
+  "screens": [
+    {
+      "type": "text",
+      "body": "Les lignes blanches au sol te parlent. Il y en a deux grandes familles : les lignes continues et les lignes discontinues."
+    },
+    {
+      "type": "text",
+      "body": "La ligne discontinue est faite de traits séparés. Tu peux la franchir, par exemple pour dépasser, mais seulement si c'est sans danger."
+    },
+    {
+      "type": "text",
+      "body": "La ligne continue est un trait sans interruption. Tu n'as pas le droit de la franchir, ni même de rouler dessus. Elle protège les endroits où dépasser serait dangereux."
+    },
+    {
+      "type": "text",
+      "body": "Avant une ligne continue, des flèches blanches inclinées apparaissent au sol : ce sont les flèches de rabattement. Elles te disent de revenir dans ta voie, car la ligne continue arrive."
+    },
+    {
+      "type": "keypoint",
+      "body": "Ligne continue : je ne la touche pas. Flèches de rabattement : je me rabats."
+    }
+  ],
+  "checks": ["q-n0-m2-002", "q-n0-m2-005"]
+}

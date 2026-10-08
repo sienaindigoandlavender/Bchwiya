@@ -1,0 +1,155 @@
+{
+  "moduleId": "n0-m3",
+  "questions": [
+    {
+      "id": "q-n0-m3-001",
+      "moduleId": "n0-m3",
+      "ruleIds": ["examen-format"],
+      "prompt": "Combien de questions compte l'examen théorique ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "40"
+        },
+        {
+          "id": "b",
+          "text": "30"
+        },
+        {
+          "id": "c",
+          "text": "50"
+        }
+      ],
+      "correct": ["a"],
+      "explanation": "L'examen du code compte 40 questions."
+    },
+    {
+      "id": "q-n0-m3-002",
+      "moduleId": "n0-m3",
+      "ruleIds": ["examen-format"],
+      "prompt": "Combien de bonnes réponses faut-il au minimum pour réussir ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "32"
+        },
+        {
+          "id": "b",
+          "text": "20"
+        },
+        {
+          "id": "c",
+          "text": "38"
+        }
+      ],
+      "correct": ["a"],
+      "explanation": "Il faut 32 bonnes réponses sur 40. Tu as donc droit à 8 erreurs."
+    },
+    {
+      "id": "q-n0-m3-003",
+      "moduleId": "n0-m3",
+      "ruleIds": ["examen-format"],
+      "prompt": "Une question de l'examen peut-elle avoir plusieurs bonnes réponses ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Oui"
+        },
+        {
+          "id": "b",
+          "text": "Non"
+        }
+      ],
+      "correct": ["a"],
+      "explanation": "Oui. Il faut alors cocher toutes les bonnes réponses, et seulement elles."
+    },
+    {
+      "id": "q-n0-m3-004",
+      "moduleId": "n0-m3",
+      "ruleIds": ["permis-probatoire"],
+      "prompt": "Combien de temps dure le permis probatoire ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "2 ans"
+        },
+        {
+          "id": "b",
+          "text": "1 an"
+        },
+        {
+          "id": "c",
+          "text": "5 ans"
+        }
+      ],
+      "correct": ["a"],
+      "explanation": "Le permis B est probatoire pendant 2 ans."
+    },
+    {
+      "id": "q-n0-m3-005",
+      "moduleId": "n0-m3",
+      "ruleIds": ["permis-probatoire"],
+      "prompt": "Avec combien de points commence un nouveau permis ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "20"
+        },
+        {
+          "id": "b",
+          "text": "30"
+        },
+        {
+          "id": "c",
+          "text": "12"
+        }
+      ],
+      "correct": ["a"],
+      "explanation": "Pendant la période probatoire, le permis compte 20 points."
+    },
+    {
+      "id": "q-n0-m3-006",
+      "moduleId": "n0-m3",
+      "ruleIds": ["permis-points"],
+      "prompt": "Après la période probatoire, combien de points peut avoir le permis au maximum ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "30"
+        },
+        {
+          "id": "b",
+          "text": "20"
+        },
+        {
+          "id": "c",
+          "text": "40"
+        }
+      ],
+      "correct": ["a"],
+      "explanation": "Après 2 ans, le permis passe à un capital maximum de 30 points."
+    },
+    {
+      "id": "q-n0-m3-007",
+      "moduleId": "n0-m3",
+      "ruleIds": ["permis-age"],
+      "prompt": "Quel âge minimum faut-il pour le permis B ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "18 ans"
+        },
+        {
+          "id": "b",
+          "text": "16 ans"
+        },
+        {
+          "id": "c",
+          "text": "21 ans"
+        }
+      ],
+      "correct": ["a"],
+      "explanation": "Le permis B, celui de la voiture, s'obtient à partir de 18 ans."
+    }
+  ]
+}

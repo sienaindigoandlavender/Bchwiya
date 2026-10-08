@@ -1,0 +1,147 @@
+{
+  "moduleId": "n0-m2",
+  "questions": [
+    {
+      "id": "q-n0-m2-001",
+      "moduleId": "n0-m2",
+      "ruleIds": ["chaussee-parties"],
+      "prompt": "Comment s'appelle la partie de la route où roulent les véhicules ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "La chaussée"
+        },
+        {
+          "id": "b",
+          "text": "Le trottoir"
+        },
+        {
+          "id": "c",
+          "text": "L'accotement"
+        }
+      ],
+      "correct": ["a"],
+      "explanation": "La chaussée est pour les véhicules. Le trottoir est pour les piétons, l'accotement est le bord de la route hors des villes."
+    },
+    {
+      "id": "q-n0-m2-002",
+      "moduleId": "n0-m2",
+      "ruleIds": ["ligne-continue"],
+      "prompt": "Une ligne continue est tracée au milieu de la chaussée. Peux-tu la franchir pour dépasser ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Oui, si personne n'arrive en face"
+        },
+        {
+          "id": "b",
+          "text": "Non, jamais"
+        }
+      ],
+      "correct": ["b"],
+      "explanation": "La ligne continue ne se franchit pas, même si la route semble libre."
+    },
+    {
+      "id": "q-n0-m2-003",
+      "moduleId": "n0-m2",
+      "ruleIds": ["ligne-discontinue"],
+      "prompt": "La ligne au milieu est discontinue. Que peux-tu faire ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "La franchir pour dépasser, si c'est sans danger"
+        },
+        {
+          "id": "b",
+          "text": "Rien, il est interdit de la franchir"
+        }
+      ],
+      "correct": ["a"],
+      "explanation": "Une ligne discontinue peut être franchie, mais seulement quand la manœuvre est sans danger."
+    },
+    {
+      "id": "q-n0-m2-004",
+      "moduleId": "n0-m2",
+      "ruleIds": ["chaussee-parties"],
+      "prompt": "À qui est réservé le trottoir ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Aux piétons"
+        },
+        {
+          "id": "b",
+          "text": "Aux voitures pour un arrêt rapide"
+        },
+        {
+          "id": "c",
+          "text": "Aux motos"
+        }
+      ],
+      "correct": ["a"],
+      "explanation": "Le trottoir est l'espace des piétons."
+    },
+    {
+      "id": "q-n0-m2-005",
+      "moduleId": "n0-m2",
+      "ruleIds": ["fleches-rabattement"],
+      "prompt": "Des flèches blanches inclinées apparaissent au sol. Elles t'annoncent :",
+      "options": [
+        {
+          "id": "a",
+          "text": "Une ligne continue : je dois me rabattre"
+        },
+        {
+          "id": "b",
+          "text": "Une sortie d'autoroute"
+        },
+        {
+          "id": "c",
+          "text": "Une place de stationnement"
+        }
+      ],
+      "correct": ["a"],
+      "explanation": "Ce sont les flèches de rabattement. La ligne continue arrive, tu reviens dans ta voie."
+    },
+    {
+      "id": "q-n0-m2-006",
+      "moduleId": "n0-m2",
+      "ruleIds": ["chaussee-parties"],
+      "prompt": "Qu'est-ce qu'une voie ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Une bande de la chaussée pour une seule file de véhicules"
+        },
+        {
+          "id": "b",
+          "text": "La route entière, d'un bord à l'autre"
+        },
+        {
+          "id": "c",
+          "text": "Le bord de la route"
+        }
+      ],
+      "correct": ["a"],
+      "explanation": "La chaussée est découpée en voies. Chaque voie accueille une file de véhicules."
+    },
+    {
+      "id": "q-n0-m2-007",
+      "moduleId": "n0-m2",
+      "ruleIds": ["ligne-continue"],
+      "prompt": "As-tu le droit de rouler sur une ligne continue, à cheval dessus ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Non"
+        },
+        {
+          "id": "b",
+          "text": "Oui, si c'est pour peu de temps"
+        }
+      ],
+      "correct": ["a"],
+      "explanation": "Rouler sur une ligne continue, c'est comme la franchir : c'est interdit."
+    }
+  ]
+}

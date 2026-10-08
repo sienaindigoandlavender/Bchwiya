@@ -1,14 +1,30 @@
 {
   "id": "n0-m2-l1",
   "moduleId": "n0-m2",
-  "title": "La chaussée et ses marquages",
+  "title": "Les parties de la route",
   "minutes": 5,
-  "ruleIds": [],
+  "ruleIds": ["chaussee-parties"],
   "screens": [
     {
       "type": "text",
-      "body": "Contenu à venir."
+      "body": "La chaussée, c'est la partie de la route où roulent les véhicules."
+    },
+    {
+      "type": "text",
+      "body": "La chaussée est découpée en voies. Une voie est une bande assez large pour une seule file de véhicules."
+    },
+    {
+      "type": "text",
+      "body": "Sur les côtés, hors des villes, il y a les accotements : la bande de terre ou de gravier au bord de la chaussée. En ville, ce sont les trottoirs, réservés aux piétons."
+    },
+    {
+      "type": "text",
+      "body": "Sur l'autoroute, tout à droite, il y a une bande spéciale : la bande d'arrêt d'urgence. On s'y arrête seulement en cas de panne ou d'urgence."
+    },
+    {
+      "type": "keypoint",
+      "body": "Chaussée pour les véhicules, trottoir pour les piétons."
     }
   ],
-  "checks": []
+  "checks": ["q-n0-m2-001", "q-n0-m2-006"]
 }

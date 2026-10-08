@@ -1,14 +1,26 @@
 {
   "id": "n0-m1-l1",
   "moduleId": "n0-m1",
-  "title": "Les usagers de la route",
+  "title": "Qui partage la route ?",
   "minutes": 5,
-  "ruleIds": [],
+  "ruleIds": ["usagers-diversite", "usagers-vulnerables"],
   "screens": [
     {
       "type": "text",
-      "body": "Contenu à venir."
+      "body": "Sur la route, tu n'es jamais seule. Il y a des piétons, des cyclistes, des motos, des voitures, des camions et des bus."
+    },
+    {
+      "type": "text",
+      "body": "Au Maroc, il y a aussi des charrettes, des ânes, des troupeaux de moutons. Eux aussi sont des usagers de la route, et ils ne réagissent pas comme une voiture."
+    },
+    {
+      "type": "text",
+      "body": "Certains usagers n'ont aucune carrosserie pour les protéger : les piétons, les cyclistes et les motards. On les appelle les usagers vulnérables. Au moindre choc, ce sont eux qui sont blessés."
+    },
+    {
+      "type": "keypoint",
+      "body": "Plus un usager est fragile, plus tu fais attention à lui."
     }
   ],
-  "checks": []
+  "checks": ["q-n0-m1-001"]
 }
