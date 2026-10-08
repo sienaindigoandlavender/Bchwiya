@@ -1,0 +1,14 @@
+{
+  "id": "n2-m4-l1",
+  "moduleId": "n2-m4",
+  "title": "Les feux et l'agent",
+  "minutes": 5,
+  "ruleIds": [],
+  "screens": [
+    {
+      "type": "text",
+      "body": "Contenu à venir."
+    }
+  ],
+  "checks": []
+}

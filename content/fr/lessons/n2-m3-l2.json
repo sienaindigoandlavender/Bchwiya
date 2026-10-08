@@ -1,0 +1,57 @@
+{
+  "$comment": "// TODO: verify against loi 52-05",
+  "id": "n2-m3-l2",
+  "moduleId": "n2-m3",
+  "title": "Le rond-point : deux règles",
+  "minutes": 5,
+  "ruleIds": [
+    "priorite-giratoire-cedez",
+    "priorite-giratoire-sans-panneau",
+    "panneau-cedez-le-passage"
+  ],
+  "screens": [
+    {
+      "type": "text",
+      "body": "Qui passe en premier dans un giratoire ? Au Maroc, la réponse dépend d'un seul détail : y a-t-il un panneau « cédez le passage » à l'entrée ?"
+    },
+    {
+      "type": "text",
+      "body": "Règle 1 : avec le panneau cédez le passage à l'entrée, les véhicules déjà dans l'anneau sont prioritaires. Tu ralentis, tu regardes à gauche, et tu entres quand la voie est libre.",
+      "media": {
+        "kind": "svg",
+        "component": "Roundabout",
+        "props": {
+          "variant": "cedez",
+          "cars": [
+            { "slot": "entry-s", "who": "you" },
+            { "slot": "ring-sw", "who": "other" }
+          ]
+        }
+      }
+    },
+    {
+      "type": "text",
+      "body": "Règle 2 : sans panneau à l'entrée, c'est la priorité à droite. Les véhicules qui entrent arrivent sur la droite de ceux qui tournent : ils sont prioritaires. Dans l'anneau, tu laisses donc passer ceux qui entrent.",
+      "media": {
+        "kind": "svg",
+        "component": "Roundabout",
+        "props": {
+          "variant": "sans-panneau",
+          "cars": [
+            { "slot": "ring-se", "who": "you" },
+            { "slot": "entry-e", "who": "other" }
+          ]
+        }
+      }
+    },
+    {
+      "type": "keypoint",
+      "body": "Cédez le passage à l'entrée → l'anneau est prioritaire. Pas de panneau → priorité à droite : ceux qui entrent sont prioritaires."
+    },
+    {
+      "type": "text",
+      "body": "Le piège classique : penser que l'anneau est toujours prioritaire. Ce n'est vrai que s'il y a le panneau. Alors, à chaque giratoire, un seul réflexe : regarder l'entrée."
+    }
+  ],
+  "checks": ["q-n2-m3-004", "q-n2-m3-005", "q-n2-m3-006"]
+}

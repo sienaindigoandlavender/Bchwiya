@@ -1,0 +1,14 @@
+{
+  "id": "n3-m1-l1",
+  "moduleId": "n3-m1",
+  "title": "Position sur la chaussée",
+  "minutes": 5,
+  "ruleIds": [],
+  "screens": [
+    {
+      "type": "text",
+      "body": "Contenu à venir."
+    }
+  ],
+  "checks": []
+}

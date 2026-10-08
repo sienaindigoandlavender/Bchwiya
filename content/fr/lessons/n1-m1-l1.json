@@ -1,0 +1,14 @@
+{
+  "id": "n1-m1-l1",
+  "moduleId": "n1-m1",
+  "title": "Les formes et les couleurs",
+  "minutes": 5,
+  "ruleIds": [],
+  "screens": [
+    {
+      "type": "text",
+      "body": "Contenu à venir."
+    }
+  ],
+  "checks": []
+}

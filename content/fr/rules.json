@@ -1,0 +1,44 @@
+{
+  "rules": [
+    {
+      "id": "panneau-danger-giratoire",
+      "title": "Panneau triangulaire : carrefour à sens giratoire",
+      "levelId": "n2"
+    },
+    {
+      "id": "panneau-sens-giratoire-obligatoire",
+      "title": "Panneau rond bleu : sens giratoire obligatoire",
+      "levelId": "n2"
+    },
+    {
+      "id": "panneau-cedez-le-passage",
+      "title": "Panneau cédez le passage (triangle pointe en bas)",
+      "levelId": "n2"
+    },
+    {
+      "id": "giratoire-sens-de-circulation",
+      "title": "Dans un giratoire, on tourne en gardant l'îlot à sa gauche",
+      "levelId": "n2"
+    },
+    {
+      "id": "priorite-giratoire-cedez",
+      "title": "Giratoire avec cédez le passage : l'anneau est prioritaire",
+      "levelId": "n2"
+    },
+    {
+      "id": "priorite-giratoire-sans-panneau",
+      "title": "Giratoire sans panneau : priorité à droite",
+      "levelId": "n2"
+    },
+    {
+      "id": "giratoire-clignotant",
+      "title": "Clignotant à l'entrée et à la sortie du giratoire",
+      "levelId": "n2"
+    },
+    {
+      "id": "giratoire-position-voie",
+      "title": "Choisir sa voie selon la sortie",
+      "levelId": "n2"
+    }
+  ]
+}

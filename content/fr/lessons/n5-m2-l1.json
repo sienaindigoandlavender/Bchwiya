@@ -1,0 +1,14 @@
+{
+  "id": "n5-m2-l1",
+  "moduleId": "n5-m2",
+  "title": "Sur route et autoroute",
+  "minutes": 5,
+  "ruleIds": [],
+  "screens": [
+    {
+      "type": "text",
+      "body": "Contenu à venir."
+    }
+  ],
+  "checks": []
+}
