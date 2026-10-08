@@ -191,6 +191,9 @@ export const fr = {
   "kind.review": "Révision",
   "kind.mock_exam": "Examen blanc",
 
+  "lost.title": "Petit détour",
+  "lost.body": "Cette page n'existe pas. Wall-E connaît le chemin du retour.",
+  "lost.home": "Retour au parcours",
   "common.notFound": "Cette page n'existe pas.",
 
   "hold.title": "Un petit instant",
