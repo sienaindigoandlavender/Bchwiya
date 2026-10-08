@@ -70,16 +70,16 @@ export type ModuleProgressRow = {
 export type Database = {
   public: {
     Tables: {
-      profiles: Table<ProfileRow, "id">;
-      lesson_progress: Table<LessonProgressRow, "user_id" | "lesson_id">;
-      attempts: Table<AttemptRow, "user_id" | "kind">;
-      answers: Table<AnswerRow, "attempt_id" | "user_id" | "question_id">;
-      review_queue: Table<ReviewQueueRow, "user_id" | "question_id">;
-      module_progress: Table<ModuleProgressRow, "user_id" | "module_id">;
+      bchwiya_profiles: Table<ProfileRow, "id">;
+      bchwiya_lesson_progress: Table<LessonProgressRow, "user_id" | "lesson_id">;
+      bchwiya_attempts: Table<AttemptRow, "user_id" | "kind">;
+      bchwiya_answers: Table<AnswerRow, "attempt_id" | "user_id" | "question_id">;
+      bchwiya_review_queue: Table<ReviewQueueRow, "user_id" | "question_id">;
+      bchwiya_module_progress: Table<ModuleProgressRow, "user_id" | "module_id">;
     };
     Views: { [_ in never]: never };
     Functions: {
-      is_admin: { Args: Record<string, never>; Returns: boolean };
+      bchwiya_is_admin: { Args: Record<string, never>; Returns: boolean };
     };
     Enums: { [_ in never]: never };
     CompositeTypes: { [_ in never]: never };

@@ -10,7 +10,7 @@ export default async function HomePage() {
   const session = await requireSession();
   const { path, lastModuleId, lastActivityAt } = await loadPath(session);
   const { count } = await session.supabase
-    .from("review_queue")
+    .from("bchwiya_review_queue")
     .select("question_id", { count: "exact", head: true })
     .eq("user_id", session.userId)
     .lte("due_at", new Date().toISOString());

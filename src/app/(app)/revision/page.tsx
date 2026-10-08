@@ -6,7 +6,7 @@ import { requireSession } from "@/lib/supabase/server";
 export default async function ReviewPage() {
   const { supabase, userId } = await requireSession();
   const { data } = await supabase
-    .from("review_queue")
+    .from("bchwiya_review_queue")
     .select("question_id, due_at")
     .eq("user_id", userId)
     .lte("due_at", new Date().toISOString())

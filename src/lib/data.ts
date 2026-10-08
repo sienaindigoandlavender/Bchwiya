@@ -17,13 +17,16 @@ export async function loadPath({
 }: Pick<Session, "supabase" | "userId">): Promise<PathData> {
   const content = getContent();
   const [lessons, modules, attempts] = await Promise.all([
-    supabase.from("lesson_progress").select("lesson_id, completed_at").eq("user_id", userId),
     supabase
-      .from("module_progress")
+      .from("bchwiya_lesson_progress")
+      .select("lesson_id, completed_at")
+      .eq("user_id", userId),
+    supabase
+      .from("bchwiya_module_progress")
       .select("module_id, best_score_pct, passed_at")
       .eq("user_id", userId),
     supabase
-      .from("attempts")
+      .from("bchwiya_attempts")
       .select("module_id, started_at")
       .eq("user_id", userId)
       .not("module_id", "is", null)

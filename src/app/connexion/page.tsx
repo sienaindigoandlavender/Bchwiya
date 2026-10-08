@@ -1,4 +1,5 @@
 import { t } from "@/i18n";
+import { isSupabaseConfigured } from "@/lib/supabase/env";
 import { LoginForm } from "./LoginForm";
 
 export default async function LoginPage({
@@ -15,9 +16,19 @@ export default async function LoginPage({
       </div>
       <div className="card flex flex-col gap-4">
         <h2 className="text-lg font-semibold">{t("login.title")}</h2>
-        {erreur ? <p className="text-sm text-notice">{t("login.linkError")}</p> : null}
-        <p className="text-sm">{t("login.intro")}</p>
-        <LoginForm />
+        {!isSupabaseConfigured() ? (
+          <p className="text-sm text-muted">{t("login.notConfigured")}</p>
+        ) : (
+          <>
+            {erreur ? (
+              <p className="text-sm text-notice">
+                {erreur === "acces" ? t("login.noAccess") : t("login.linkError")}
+              </p>
+            ) : null}
+            <p className="text-sm">{t("login.intro")}</p>
+            <LoginForm />
+          </>
+        )}
       </div>
     </main>
   );

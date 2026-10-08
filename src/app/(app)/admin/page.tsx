@@ -13,7 +13,7 @@ export default async function AdminPage() {
   const content = getContent();
 
   const { data: learner } = await supabase
-    .from("profiles")
+    .from("bchwiya_profiles")
     .select("*")
     .eq("role", "learner")
     .order("created_at", { ascending: true })
@@ -31,11 +31,11 @@ export default async function AdminPage() {
 
   const [{ data: answers }, { data: attempts }, pathData] = await Promise.all([
     supabase
-      .from("answers")
+      .from("bchwiya_answers")
       .select("rule_ids, correct, time_to_submit_ms, change_count, created_at")
       .eq("user_id", learner.id),
     supabase
-      .from("attempts")
+      .from("bchwiya_attempts")
       .select("*")
       .eq("user_id", learner.id)
       .not("finished_at", "is", null)

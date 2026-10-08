@@ -16,9 +16,14 @@ export default async function ModuleResultPage({
   if (!mod) notFound();
 
   const [{ data: attempt }, { data: answers }] = await Promise.all([
-    supabase.from("attempts").select("*").eq("id", attemptId).eq("user_id", userId).maybeSingle(),
     supabase
-      .from("answers")
+      .from("bchwiya_attempts")
+      .select("*")
+      .eq("id", attemptId)
+      .eq("user_id", userId)
+      .maybeSingle(),
+    supabase
+      .from("bchwiya_answers")
       .select("question_id, correct, created_at")
       .eq("attempt_id", attemptId)
       .order("created_at", { ascending: true }),

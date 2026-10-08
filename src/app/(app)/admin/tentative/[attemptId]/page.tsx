@@ -15,9 +15,9 @@ export default async function AttemptDetailPage({
   const content = getContent();
 
   const [{ data: attempt }, { data: answers }] = await Promise.all([
-    supabase.from("attempts").select("*").eq("id", attemptId).maybeSingle(),
+    supabase.from("bchwiya_attempts").select("*").eq("id", attemptId).maybeSingle(),
     supabase
-      .from("answers")
+      .from("bchwiya_answers")
       .select("*")
       .eq("attempt_id", attemptId)
       .order("created_at", { ascending: true }),

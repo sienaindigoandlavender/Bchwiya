@@ -21,7 +21,7 @@ export type AnswerInput = {
 export async function startAttempt(kind: AttemptKind, moduleId: string | null): Promise<string> {
   const { supabase, userId } = await requireSession();
   const { data, error } = await supabase
-    .from("attempts")
+    .from("bchwiya_attempts")
     .insert({ user_id: userId, kind, module_id: moduleId })
     .select("id")
     .single();
@@ -36,7 +36,7 @@ export async function recordAnswer(input: AnswerInput): Promise<{ correct: boole
   if (!question) throw new Error(`Unknown question ${input.questionId}`);
 
   const { data: attempt } = await supabase
-    .from("attempts")
+    .from("bchwiya_attempts")
     .select("kind")
     .eq("id", input.attemptId)
     .eq("user_id", userId)
@@ -46,7 +46,7 @@ export async function recordAnswer(input: AnswerInput): Promise<{ correct: boole
   const correct = isCorrect(question.correct, input.finalSelection);
   const clampMs = (n: number) => Math.max(0, Math.min(Math.round(n), 2_000_000_000));
 
-  const { error } = await supabase.from("answers").insert({
+  const { error } = await supabase.from("bchwiya_answers").insert({
     attempt_id: input.attemptId,
     user_id: userId,
     question_id: question.id,
@@ -61,7 +61,7 @@ export async function recordAnswer(input: AnswerInput): Promise<{ correct: boole
   if (error) throw new Error(error.message);
 
   const { data: existing } = await supabase
-    .from("review_queue")
+    .from("bchwiya_review_queue")
     .select("interval_days, correct_in_a_row")
     .eq("user_id", userId)
     .eq("question_id", question.id)
@@ -69,7 +69,7 @@ export async function recordAnswer(input: AnswerInput): Promise<{ correct: boole
 
   const step = nextReviewStep(existing, correct, attempt.kind === "review");
   if (step.action === "upsert") {
-    await supabase.from("review_queue").upsert({
+    await supabase.from("bchwiya_review_queue").upsert({
       user_id: userId,
       question_id: question.id,
       due_at: step.due_at,
@@ -78,7 +78,7 @@ export async function recordAnswer(input: AnswerInput): Promise<{ correct: boole
     });
   } else if (step.action === "delete") {
     await supabase
-      .from("review_queue")
+      .from("bchwiya_review_queue")
       .delete()
       .eq("user_id", userId)
       .eq("question_id", question.id);
@@ -97,7 +97,7 @@ export async function finishAttempt(
 ): Promise<{ score: number; total: number; passed: boolean | null }> {
   const { supabase, userId } = await requireSession();
   const { data: attempt } = await supabase
-    .from("attempts")
+    .from("bchwiya_attempts")
     .select("*")
     .eq("id", attemptId)
     .eq("user_id", userId)
@@ -105,7 +105,7 @@ export async function finishAttempt(
   if (!attempt) throw new Error("Unknown attempt");
 
   const { data: answers } = await supabase
-    .from("answers")
+    .from("bchwiya_answers")
     .select("question_id, correct, created_at")
     .eq("attempt_id", attemptId)
     .order("created_at", { ascending: true });
@@ -117,19 +117,19 @@ export async function finishAttempt(
   const passed = hasPassed(attempt.kind, score, safeTotal);
 
   await supabase
-    .from("attempts")
+    .from("bchwiya_attempts")
     .update({ finished_at: new Date().toISOString(), score, total: safeTotal, passed })
     .eq("id", attemptId);
 
   if (attempt.kind === "module_test" && attempt.module_id) {
     const { data: prev } = await supabase
-      .from("module_progress")
+      .from("bchwiya_module_progress")
       .select("best_score_pct, passed_at")
       .eq("user_id", userId)
       .eq("module_id", attempt.module_id)
       .maybeSingle();
     const scorePct = pct(score, safeTotal);
-    await supabase.from("module_progress").upsert({
+    await supabase.from("bchwiya_module_progress").upsert({
       user_id: userId,
       module_id: attempt.module_id,
       best_score_pct: Math.max(scorePct, prev?.best_score_pct ?? 0),
@@ -145,20 +145,20 @@ export async function recordLessonVisit(lessonId: string): Promise<void> {
   const { supabase, userId } = await requireSession();
   if (!getContent().lessons.has(lessonId)) return;
   const { data } = await supabase
-    .from("lesson_progress")
+    .from("bchwiya_lesson_progress")
     .select("visits")
     .eq("user_id", userId)
     .eq("lesson_id", lessonId)
     .maybeSingle();
   if (data) {
     await supabase
-      .from("lesson_progress")
+      .from("bchwiya_lesson_progress")
       .update({ visits: data.visits + 1 })
       .eq("user_id", userId)
       .eq("lesson_id", lessonId);
   } else {
     await supabase
-      .from("lesson_progress")
+      .from("bchwiya_lesson_progress")
       .insert({ user_id: userId, lesson_id: lessonId, visits: 1 });
   }
 }
@@ -167,7 +167,7 @@ export async function completeLesson(lessonId: string): Promise<void> {
   const { supabase, userId } = await requireSession();
   if (!getContent().lessons.has(lessonId)) return;
   const { data } = await supabase
-    .from("lesson_progress")
+    .from("bchwiya_lesson_progress")
     .select("completed_at")
     .eq("user_id", userId)
     .eq("lesson_id", lessonId)
@@ -175,12 +175,12 @@ export async function completeLesson(lessonId: string): Promise<void> {
   if (data?.completed_at) return;
   if (data) {
     await supabase
-      .from("lesson_progress")
+      .from("bchwiya_lesson_progress")
       .update({ completed_at: new Date().toISOString() })
       .eq("user_id", userId)
       .eq("lesson_id", lessonId);
   } else {
-    await supabase.from("lesson_progress").insert({
+    await supabase.from("bchwiya_lesson_progress").insert({
       user_id: userId,
       lesson_id: lessonId,
       visits: 1,

@@ -54,7 +54,7 @@ async function main() {
       console.log(`Created auth user ${p.email}`);
     }
     const { error } = await supabase
-      .from("profiles")
+      .from("bchwiya_profiles")
       .upsert({ id, role: p.role, display_name: p.displayName });
     if (error) throw error;
     console.log(`✓ ${p.email} → ${p.role}`);

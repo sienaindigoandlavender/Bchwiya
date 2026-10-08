@@ -36,8 +36,12 @@ export const requireSession = cache(async (): Promise<Session> => {
     data: { user },
   } = await supabase.auth.getUser();
   if (!user) redirect("/connexion");
-  const { data: profile } = await supabase.from("profiles").select("*").eq("id", user.id).single();
-  if (!profile) redirect("/connexion?erreur=profil");
+  const { data: profile } = await supabase
+    .from("bchwiya_profiles")
+    .select("*")
+    .eq("id", user.id)
+    .single();
+  if (!profile) redirect("/connexion?erreur=acces");
   return { supabase, userId: user.id, profile };
 });
 
