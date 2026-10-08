@@ -57,7 +57,25 @@ export const requireSession = cache(async (): Promise<Session> => {
 /** Open during the building phase: same session, the dashboard reads the learner's data. */
 export const requireAdmin = requireSession;
 
-export type SetupState = "no-env" | "no-tables" | "bad-key" | "no-profile" | "ok";
+export type SetupState =
+  "no-env" | "no-tables" | "bad-key" | "wrong-key-kind" | "no-profile" | "ok";
+
+/**
+ * Which kind of key is configured, without revealing it. A public (anon or
+ * publishable) key is blocked by RLS and silently sees zero rows.
+ */
+function keyKind(key: string): "secret" | "public" | "unknown" {
+  if (key.startsWith("sb_secret_")) return "secret";
+  if (key.startsWith("sb_publishable_")) return "public";
+  try {
+    const payload = JSON.parse(Buffer.from(key.split(".")[1] ?? "", "base64url").toString());
+    if (payload.role === "service_role") return "secret";
+    if (payload.role === "anon") return "public";
+  } catch {
+    // not a JWT
+  }
+  return "unknown";
+}
 
 /** Checks the database live, for the setup page. Never throws. */
 export async function diagnose(): Promise<{
@@ -68,6 +86,9 @@ export async function diagnose(): Promise<{
   await connection();
   if (!isSupabaseConfigured()) return { state: "no-env", host: null };
   const host = new URL(process.env.NEXT_PUBLIC_SUPABASE_URL!).host;
+  if (keyKind(process.env.SUPABASE_SERVICE_ROLE_KEY!) === "public") {
+    return { state: "wrong-key-kind", host };
+  }
   try {
     const { data, error } = await createClient()
       .from("bchwiya_profiles")

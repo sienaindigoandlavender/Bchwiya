@@ -165,6 +165,8 @@ export const fr = {
     "La base est branchée, mais les tables Bchwiya n'existent pas encore. Lance le fichier bchwiya-setup.sql dans l'éditeur SQL de ce projet Supabase.",
   "setup.key":
     "La base refuse la clé. Vérifie SUPABASE_SERVICE_ROLE_KEY dans Vercel (elle a peut-être été changée), puis redéploie.",
+  "setup.keyKind":
+    "La clé dans Vercel est la clé publique (anon). Il faut la clé secrète : Supabase → Settings → API → service_role (ou « secret »). Remplace SUPABASE_SERVICE_ROLE_KEY dans Vercel, puis redéploie.",
   "setup.retry": "Réessayer",
   "setup.ok": "La base est branchée et le profil de Zahra est là.",
   "setup.okTitle": "Tout est prêt",
