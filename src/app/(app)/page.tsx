@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { LevelPath } from "@/components/LevelPath";
 import { ResumeCard } from "@/components/ResumeCard";
+import { CarIcon, ChevronIcon, ReviewIcon } from "@/components/ui/Icons";
 import { t } from "@/i18n";
 import { loadPath } from "@/lib/data";
 import { resumeTarget } from "@/lib/progress";
@@ -17,25 +18,38 @@ export default async function HomePage() {
 
   return (
     <>
-      <p className="text-muted">
+      <p className="text-[1.0625rem] text-ink-soft">
         {t("home.welcome", { name: session.profile.display_name ?? "" })}
       </p>
+
       <ResumeCard target={resumeTarget(path, lastModuleId)} hasHistory={lastActivityAt !== null} />
+
       {count ? (
-        <Link href="/revision" className="card block">
-          {t("home.review.due", { count })}
+        <Link
+          href="/revision"
+          className="flex items-center gap-3 rounded-card bg-butter px-5 py-4 font-medium"
+        >
+          <ReviewIcon size={20} />
+          <span className="flex-1">{t("home.review.due", { count })}</span>
+          <ChevronIcon size={18} />
         </Link>
       ) : null}
-      <section className="flex flex-col gap-4">
-        <h2 className="text-lg font-semibold">{t("home.path")}</h2>
+
+      <section className="mt-4 flex flex-col gap-6">
+        <h2 className="title text-[2rem]">{t("home.path")}</h2>
         <LevelPath levels={path} />
       </section>
-      <section className="flex flex-col gap-2">
-        <h2 className="text-lg font-semibold">{t("home.extra")}</h2>
-        <Link href="/ma-voiture" className="card block">
-          {t("nav.myCar")}
-        </Link>
-      </section>
+
+      <Link href="/ma-voiture" className="mt-4 flex items-center gap-4 rounded-big bg-lilac p-5">
+        <span className="flex size-12 items-center justify-center rounded-full bg-paper">
+          <CarIcon size={24} />
+        </span>
+        <span className="flex flex-1 flex-col">
+          <span className="title text-[1.5rem]">{t("nav.myCar")}</span>
+          <span className="text-[0.9375rem] text-ink-soft">{t("home.myCar.sub")}</span>
+        </span>
+        <ChevronIcon size={18} />
+      </Link>
     </>
   );
 }

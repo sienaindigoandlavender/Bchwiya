@@ -1,52 +1,49 @@
 import "server-only";
-import { createServerClient } from "@supabase/ssr";
-import { cookies } from "next/headers";
+import { createClient as createSupabaseClient } from "@supabase/supabase-js";
 import { redirect } from "next/navigation";
 import { cache } from "react";
-import { supabaseEnv } from "./env";
+import { isSupabaseConfigured, supabaseEnv } from "./env";
 import type { Database, ProfileRow } from "./types";
 
-export async function createClient() {
-  const cookieStore = await cookies();
-  const { url, anonKey } = supabaseEnv();
-  return createServerClient<Database>(url, anonKey, {
-    cookies: {
-      getAll: () => cookieStore.getAll(),
-      setAll: (toSet) => {
-        try {
-          for (const { name, value, options } of toSet) cookieStore.set(name, value, options);
-        } catch {
-          // Called from a server component: middleware refreshes the session instead.
-        }
-      },
-    },
+/**
+ * Server-only Supabase client using the service-role key.
+ * Building phase: no login, so every query must filter by `userId` itself.
+ */
+export function createClient() {
+  const { url, serviceKey } = supabaseEnv();
+  return createSupabaseClient<Database>(url, serviceKey, {
+    auth: { persistSession: false, autoRefreshToken: false },
   });
 }
 
 export type Session = {
-  supabase: Awaited<ReturnType<typeof createClient>>;
+  supabase: ReturnType<typeof createClient>;
   userId: string;
   profile: ProfileRow;
 };
 
-/** The signed-in user and profile. Redirects to /connexion when signed out. */
+/**
+ * The learner everyone acts as while there is no login.
+ * Uses BCHWIYA_LEARNER_ID if set, otherwise the first learner profile.
+ * Sends to /configuration when the database or the profile is missing.
+ */
 export const requireSession = cache(async (): Promise<Session> => {
-  const supabase = await createClient();
-  const {
-    data: { user },
-  } = await supabase.auth.getUser();
-  if (!user) redirect("/connexion");
-  const { data: profile } = await supabase
-    .from("bchwiya_profiles")
-    .select("*")
-    .eq("id", user.id)
-    .single();
-  if (!profile) redirect("/connexion?erreur=acces");
-  return { supabase, userId: user.id, profile };
+  if (!isSupabaseConfigured()) redirect("/configuration");
+  const supabase = createClient();
+
+  const pinned = process.env.BCHWIYA_LEARNER_ID;
+  const query = supabase.from("bchwiya_profiles").select("*");
+  const { data: profile } = pinned
+    ? await query.eq("id", pinned).maybeSingle()
+    : await query
+        .eq("role", "learner")
+        .order("created_at", { ascending: true })
+        .limit(1)
+        .maybeSingle();
+
+  if (!profile) redirect("/configuration?manque=profil");
+  return { supabase, userId: profile.id, profile };
 });
 
-export async function requireAdmin(): Promise<Session> {
-  const session = await requireSession();
-  if (session.profile.role !== "admin") redirect("/");
-  return session;
-}
+/** Open during the building phase: same session, the dashboard reads the learner's data. */
+export const requireAdmin = requireSession;

@@ -6,6 +6,7 @@ import { completeLesson, recordLessonVisit } from "@/app/actions";
 import type { Lesson, Question } from "@/content/schema";
 import { Media } from "@/components/diagrams/Media";
 import { QuizRunner } from "@/components/QuizRunner";
+import { BackIcon, Sparkle } from "@/components/ui/Icons";
 import { t } from "@/i18n";
 
 type Props = {
@@ -60,8 +61,8 @@ export function LessonPlayer({ lesson, checks, moduleHref, next }: Props) {
 
   if (phase === "checks") {
     return (
-      <div className="flex flex-col gap-4">
-        <p className="text-muted">{t("lesson.checksIntro")}</p>
+      <div className="flex flex-col gap-5">
+        <p className="rounded-card bg-sky px-5 py-4 font-medium">{t("lesson.checksIntro")}</p>
         <QuizRunner
           kind="lesson_check"
           moduleId={lesson.moduleId}
@@ -74,69 +75,79 @@ export function LessonPlayer({ lesson, checks, moduleHref, next }: Props) {
 
   if (phase === "done") {
     return (
-      <div className="card flex flex-col gap-4">
-        <p className="text-lg font-semibold">{t("lesson.done")}</p>
-        {next ? (
-          <Link href={next.href} className="btn">
-            {next.label}
+      <div className="flex flex-col items-start gap-5 rounded-big bg-mint p-6">
+        <Sparkle size={22} className="text-success" />
+        <p className="title text-[2.25rem]">{t("lesson.done")}</p>
+        <div className="flex w-full flex-col gap-3">
+          {next ? (
+            <Link href={next.href} className="btn">
+              {next.label}
+            </Link>
+          ) : null}
+          <Link href={moduleHref} className="btn btn-secondary bg-paper">
+            {t("lesson.backToModule")}
           </Link>
-        ) : null}
-        <Link href={moduleHref} className="btn btn-secondary">
-          {t("lesson.backToModule")}
-        </Link>
+        </div>
       </div>
     );
   }
 
   return (
     <div
-      className="flex flex-col gap-4"
+      className="flex flex-col gap-5"
       onTouchStart={(e) => (touchX.current = e.touches[0]?.clientX ?? null)}
       onTouchEnd={onTouchEnd}
     >
       <div
-        className="h-2 w-full overflow-hidden rounded-full bg-surface-muted"
+        className="flex gap-1.5"
         role="progressbar"
         aria-valuemin={1}
         aria-valuemax={total}
         aria-valuenow={index + 1}
         aria-label={t("lesson.progress", { current: index + 1, total })}
       >
-        <div
-          className="h-full bg-accent transition-all"
-          style={{ width: `${((index + 1) / total) * 100}%` }}
-        />
+        {lesson.screens.map((_, i) => (
+          <span
+            key={i}
+            className={`h-2 flex-1 rounded-full transition-colors ${i <= index ? "bg-rose" : "bg-cloud"}`}
+          />
+        ))}
       </div>
 
       {screen ? (
         <div
-          className={`card flex min-h-64 flex-col gap-3 ${screen.type === "keypoint" ? "bg-accent-soft" : ""}`}
+          key={index}
+          className={`flex min-h-72 flex-col gap-4 rounded-big p-6 ${
+            screen.type === "keypoint" ? "bg-lilac" : "bg-cloud"
+          }`}
         >
           {screen.type === "keypoint" ? (
-            <p className="text-sm font-semibold uppercase tracking-wide text-accent">
+            <span className="pill self-start bg-paper text-ink">
+              <Sparkle size={12} className="text-rose" />
               {t("lesson.keypoint")}
-            </p>
+            </span>
           ) : null}
           <Media media={screen.media} />
-          <p className="text-lg leading-relaxed">{screen.body}</p>
+          <p className="font-serif text-[1.375rem] leading-[1.45] text-ink">{screen.body}</p>
         </div>
       ) : null}
 
       <div className="flex gap-3">
         <button
           type="button"
-          className="btn btn-secondary flex-1"
+          className="btn btn-secondary px-5"
           onClick={goPrev}
           disabled={index === 0}
+          aria-label={t("lesson.prev")}
         >
-          {t("lesson.prev")}
+          <BackIcon size={20} />
         </button>
         <button type="button" className="btn flex-1" onClick={goNext}>
           {index + 1 < total
             ? t("lesson.next")
             : checks.length
               ? t("lesson.toChecks")
-              : t("lesson.next")}
+              : t("lesson.finish")}
         </button>
       </div>
     </div>

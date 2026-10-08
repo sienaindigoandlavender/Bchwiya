@@ -1,8 +1,11 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { StatusBadge } from "@/components/StatusBadge";
+import { ChevronIcon } from "@/components/ui/Icons";
+import { PageHeader } from "@/components/ui/PageHeader";
 import { t } from "@/i18n";
 import { loadPath } from "@/lib/data";
+import { levelFill } from "@/lib/levelColors";
 import { requireSession } from "@/lib/supabase/server";
 
 export default async function LevelPage({ params }: { params: Promise<{ levelId: string }> }) {
@@ -14,37 +17,44 @@ export default async function LevelPage({ params }: { params: Promise<{ levelId:
 
   return (
     <>
-      <Link href="/" className="text-sm text-muted">
-        ← {t("nav.home")}
-      </Link>
-      <header className="flex items-start justify-between gap-2">
-        <h1 className="text-2xl font-semibold">
-          <span className="block text-sm font-normal text-muted">
-            {t("level.label")} {index}
-          </span>
-          {level.title}
-        </h1>
-        <StatusBadge status={level.status} />
-      </header>
+      <PageHeader
+        back={{ href: "/", label: t("nav.home") }}
+        kicker={`${t("level.label")} ${index}`}
+        title={level.title}
+      />
       <ul className="flex flex-col gap-3">
-        {level.modules.map((m) => (
-          <li key={m.id}>
-            {m.status === "locked" ? (
-              <div className="card flex items-center justify-between gap-2 text-locked">
-                <span>{m.title}</span>
-                <StatusBadge status={m.status} />
-              </div>
-            ) : (
-              <Link
-                href={`/module/${m.id}`}
-                className="card flex items-center justify-between gap-2"
+        {level.modules.map((m, i) => {
+          const inner = (
+            <>
+              <span
+                className={`title flex size-11 shrink-0 items-center justify-center rounded-full text-[1.375rem] ${
+                  m.status === "locked" ? "bg-paper text-ink-soft" : "bg-paper text-ink"
+                }`}
               >
-                <span>{m.title}</span>
+                {i + 1}
+              </span>
+              <span className="flex flex-1 flex-col gap-1.5">
+                <span className="text-[1.0625rem] font-semibold leading-snug">{m.title}</span>
                 <StatusBadge status={m.status} />
-              </Link>
-            )}
-          </li>
-        ))}
+              </span>
+              {m.status !== "locked" ? <ChevronIcon size={18} /> : null}
+            </>
+          );
+          const cls = `flex items-center gap-4 rounded-big p-4 ${
+            m.status === "locked" ? "bg-cloud text-ink-soft" : `${levelFill(index)} text-ink`
+          }`;
+          return (
+            <li key={m.id}>
+              {m.status === "locked" ? (
+                <div className={cls}>{inner}</div>
+              ) : (
+                <Link href={`/module/${m.id}`} className={cls}>
+                  {inner}
+                </Link>
+              )}
+            </li>
+          );
+        })}
       </ul>
     </>
   );

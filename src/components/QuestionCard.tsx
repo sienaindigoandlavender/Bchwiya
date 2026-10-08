@@ -3,6 +3,7 @@
 import { useRef, useState } from "react";
 import type { Question } from "@/content/schema";
 import { Media } from "@/components/diagrams/Media";
+import { CheckIcon, Sparkle } from "@/components/ui/Icons";
 import { useActiveTimer } from "@/components/useActiveTimer";
 import { t } from "@/i18n";
 import { isCorrect } from "@/lib/scoring";
@@ -86,21 +87,37 @@ export function QuestionCard({ question, feedback = true, onSubmit, onNext, next
   const correctText = question.options
     .filter((o) => question.correct.includes(o.id))
     .map((o) => o.text)
-    .join(" · ");
+    .join(" / ");
 
   return (
-    <div className="flex flex-col gap-4">
-      <Media media={question.media} />
-      <p className="text-lg font-medium leading-snug">{question.prompt}</p>
-      <p className="text-sm text-muted">{multi ? t("question.multi") : t("question.single")}</p>
+    <div className="flex flex-col gap-5">
+      {question.media && question.media.kind !== "none" ? (
+        <div className="rounded-big bg-cloud p-4">
+          <Media media={question.media} />
+        </div>
+      ) : null}
+      <div className="flex flex-col gap-2">
+        <p className="font-serif text-[1.5rem] leading-[1.3] text-ink">{question.prompt}</p>
+        <span className="pill self-start bg-cloud text-ink-soft">
+          {multi ? t("question.multi") : t("question.single")}
+        </span>
+      </div>
 
-      <ul className="flex flex-col gap-2" role={multi ? "group" : "radiogroup"}>
-        {question.options.map((o) => {
+      <ul className="flex flex-col gap-2.5" role={multi ? "group" : "radiogroup"}>
+        {question.options.map((o, i) => {
           const picked = selection.includes(o.id);
           const isRight = question.correct.includes(o.id);
-          let tone = picked ? "border-accent bg-accent-soft" : "border-border bg-surface";
-          if (showFeedback && isRight) tone = "border-success bg-success-soft";
-          else if (showFeedback && picked) tone = "border-notice bg-notice-soft";
+          let tone = picked ? "bg-blush ring-2 ring-rose" : "bg-cloud";
+          let bubble = picked ? "bg-rose text-rose-ink" : "bg-paper text-ink";
+          if (showFeedback && isRight) {
+            tone = "bg-mint";
+            bubble = "bg-success text-paper";
+          } else if (showFeedback && picked) {
+            tone = "bg-butter";
+            bubble = "bg-paper text-ink";
+          } else if (showFeedback) {
+            tone = "bg-cloud";
+          }
           return (
             <li key={o.id}>
               <button
@@ -109,13 +126,13 @@ export function QuestionCard({ question, feedback = true, onSubmit, onNext, next
                 aria-checked={picked}
                 disabled={submitted}
                 onClick={() => toggle(o.id)}
-                className={`flex min-h-12 w-full items-center gap-3 rounded-card border px-4 py-3 text-start ${tone}`}
+                className={`flex min-h-14 w-full items-center gap-3.5 rounded-card px-4 py-3 text-start text-[1.0625rem] text-ink ring-inset transition-colors ${tone}`}
               >
                 <span
                   aria-hidden
-                  className={`flex size-5 shrink-0 items-center justify-center border border-current ${multi ? "rounded" : "rounded-full"}`}
+                  className={`flex size-8 shrink-0 items-center justify-center text-[0.9375rem] font-semibold ${multi ? "rounded-[10px]" : "rounded-full"} ${bubble}`}
                 >
-                  {picked ? "•" : ""}
+                  {showFeedback && isRight ? <CheckIcon size={16} /> : String.fromCharCode(65 + i)}
                 </span>
                 <span>{o.text}</span>
               </button>
@@ -126,16 +143,17 @@ export function QuestionCard({ question, feedback = true, onSubmit, onNext, next
 
       {showFeedback ? (
         <div
-          className={`rounded-card p-4 ${correct ? "bg-success-soft" : "bg-notice-soft"}`}
+          className={`flex flex-col gap-2 rounded-big p-5 ${correct ? "bg-mint" : "bg-butter"}`}
           aria-live="polite"
         >
-          <p className="font-semibold">
+          <p className="title flex items-center gap-2 text-[1.625rem]">
+            {correct ? <Sparkle size={16} className="text-success" /> : null}
             {correct ? t("question.correct") : t("question.incorrect")}
           </p>
           {!correct ? (
-            <p className="mt-1">{t("question.answerWas", { answer: correctText })}</p>
+            <p className="font-semibold">{t("question.answerWas", { answer: correctText })}</p>
           ) : null}
-          <p className="mt-2 text-sm">{question.explanation}</p>
+          <p className="text-[1rem] leading-relaxed">{question.explanation}</p>
         </div>
       ) : null}
 

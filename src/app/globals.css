@@ -1,30 +1,66 @@
 @import "tailwindcss";
 
 /*
- * Design tokens. Reskin the app by changing these values only.
- * Components use the Tailwind names mapped in @theme below (bg-surface, text-muted…).
+ * Bchwiya design tokens. Flat: no shadows, no gradients. Colour comes from soft
+ * pastel fills; text is always deep aubergine ink, never light grey.
+ * Reskin the app by changing these values only.
  */
 :root {
-  --bg: #faf8f4;
-  --surface: #ffffff;
-  --surface-muted: #f1ede6;
-  --text: #2b2a28;
-  --text-muted: #6f6a62;
-  --border: #e3ddd2;
-  --accent: #3f6f8f;
-  --accent-contrast: #ffffff;
-  --accent-soft: #e3edf3;
-  --success: #4f7d5c;
-  --success-soft: #e6f0e8;
-  /* Deliberately soft: wrong answers are information, not alarms. */
-  --notice: #8a6d3b;
-  --notice-soft: #f5eddc;
-  --locked: #b8b2a7;
-  --radius: 14px;
-  --font-sans: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  /* base */
+  --paper: #ffffff;
+  --ink: #26121f;
+  --ink-soft: #5c3f52; /* secondary text: still dark enough to read */
+  --line: #f2dbe5;
+
+  /* the pastel box */
+  --blush: #ffe4ee;
+  --rose: #e0245e; /* the one strong colour: actions, current place */
+  --rose-ink: #ffffff;
+  --lilac: #ece3ff;
+  --mint: #d3f4e2;
+  --butter: #fff1bf;
+  --peach: #ffe0cf;
+  --sky: #dcedff;
+  --cloud: #f7f1f4; /* locked things, the road */
+
+  /* semantic aliases used by components */
+  --bg: var(--paper);
+  --surface: var(--paper);
+  --surface-muted: var(--cloud);
+  --text: var(--ink);
+  --text-muted: var(--ink-soft);
+  --border: var(--line);
+  --accent: var(--rose);
+  --accent-contrast: var(--rose-ink);
+  --accent-soft: var(--blush);
+  --success: #1d6b45;
+  --success-soft: var(--mint);
+  /* Deliberately soft: a wrong answer is information, not an alarm. */
+  --notice: #7a5a00;
+  --notice-soft: var(--butter);
+  --locked: var(--ink-soft);
+
+  --radius: 18px;
+  --radius-lg: 28px;
+  --font-sans: "DM Sans Variable", system-ui, sans-serif;
+  --font-serif: "EB Garamond", Georgia, serif;
 }
 
 @theme inline {
+  --color-paper: var(--paper);
+  --color-ink: var(--ink);
+  --color-ink-soft: var(--ink-soft);
+  --color-line: var(--line);
+  --color-blush: var(--blush);
+  --color-rose: var(--rose);
+  --color-rose-ink: var(--rose-ink);
+  --color-lilac: var(--lilac);
+  --color-mint: var(--mint);
+  --color-butter: var(--butter);
+  --color-peach: var(--peach);
+  --color-sky: var(--sky);
+  --color-cloud: var(--cloud);
+
   --color-bg: var(--bg);
   --color-surface: var(--surface);
   --color-surface-muted: var(--surface-muted);
@@ -39,8 +75,11 @@
   --color-notice: var(--notice);
   --color-notice-soft: var(--notice-soft);
   --color-locked: var(--locked);
+
   --radius-card: var(--radius);
+  --radius-big: var(--radius-lg);
   --font-sans: var(--font-sans);
+  --font-serif: var(--font-serif);
 }
 
 html {
@@ -48,37 +87,99 @@ html {
   color: var(--text);
   font-family: var(--font-sans);
   -webkit-text-size-adjust: 100%;
+  -webkit-tap-highlight-color: transparent;
+  scrollbar-width: none;
+}
+html::-webkit-scrollbar {
+  display: none;
 }
 
 body {
   min-height: 100dvh;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+:focus-visible {
+  outline: 2px solid var(--rose);
+  outline-offset: 3px;
+  border-radius: 6px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+  }
 }
 
 @layer components {
+  /* Headings: the house serif, set italic for a soft, feminine voice. */
+  .title {
+    font-family: var(--font-serif);
+    font-style: italic;
+    font-weight: 500;
+    letter-spacing: -0.01em;
+    line-height: 1.05;
+  }
+
   .btn {
     display: inline-flex;
     align-items: center;
     justify-content: center;
     gap: 0.5rem;
-    min-height: 44px;
-    padding-inline: 1.25rem;
-    border-radius: var(--radius);
-    background: var(--accent);
-    color: var(--accent-contrast);
+    min-height: 52px;
+    padding-inline: 1.75rem;
+    border-radius: 999px;
+    background: var(--rose);
+    color: var(--rose-ink);
     font-weight: 600;
+    font-size: 1rem;
+    transition:
+      transform 120ms ease,
+      background-color 120ms ease;
+  }
+  .btn:active {
+    transform: scale(0.97);
   }
   .btn:disabled {
-    opacity: 0.5;
+    background: var(--cloud);
+    color: var(--ink-soft);
   }
   .btn-secondary {
-    background: var(--surface);
-    color: var(--text);
-    border: 1px solid var(--border);
+    background: var(--blush);
+    color: var(--ink);
   }
+
+  /* Flat blocks: a fill, no border, no shadow. */
   .card {
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-radius: var(--radius);
-    padding: 1rem;
+    background: var(--cloud);
+    border-radius: var(--radius-lg);
+    padding: 1.25rem;
+  }
+
+  .pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    border-radius: 999px;
+    padding: 0.2rem 0.7rem;
+    font-size: 0.8125rem;
+    font-weight: 600;
+  }
+
+  .back-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    align-self: flex-start;
+    border-radius: 999px;
+    background: var(--cloud);
+    padding: 0.35rem 0.9rem 0.35rem 0.7rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: var(--ink);
   }
 }

@@ -1,5 +1,8 @@
 import Link from "next/link";
 import { getContent } from "@/content";
+import { MissedList } from "@/components/MissedList";
+import { ScoreHero } from "@/components/ScoreHero";
+import { PageHeader } from "@/components/ui/PageHeader";
 import { t } from "@/i18n";
 import { requireSession } from "@/lib/supabase/server";
 
@@ -24,7 +27,7 @@ export default async function MockExamResultPage({
       .order("created_at", { ascending: true }),
   ]);
   if (!attempt || attempt.kind !== "mock_exam") {
-    return <p className="text-muted">{t("result.notFound")}</p>;
+    return <p className="card">{t("result.notFound")}</p>;
   }
 
   const content = getContent();
@@ -35,35 +38,16 @@ export default async function MockExamResultPage({
 
   return (
     <>
-      <h1 className="text-2xl font-semibold">{t("exam.title")}</h1>
-      <section className={`card flex flex-col gap-2 ${attempt.passed ? "bg-success-soft" : ""}`}>
-        <p className="text-3xl font-semibold">
-          {t("result.score", { score: attempt.score ?? 0, total: attempt.total ?? 0 })}
-        </p>
-        <p>{attempt.passed ? t("exam.passed") : t("exam.notPassed")}</p>
-      </section>
-      <section className="flex flex-col gap-2">
-        <h2 className="text-lg font-semibold">{t("exam.corrections")}</h2>
-        {missed.length === 0 ? (
-          <p className="text-muted">{t("result.allCorrect")}</p>
-        ) : (
-          <ul className="flex flex-col gap-2">
-            {missed.map((q) => (
-              <li key={q.id} className="card flex flex-col gap-1">
-                <p className="font-medium">{q.prompt}</p>
-                <p className="text-sm">
-                  {t("question.answerWas", {
-                    answer: q.options
-                      .filter((o) => q.correct.includes(o.id))
-                      .map((o) => o.text)
-                      .join(" · "),
-                  })}
-                </p>
-                <p className="text-sm text-muted">{q.explanation}</p>
-              </li>
-            ))}
-          </ul>
-        )}
+      <PageHeader title={t("exam.title")} />
+      <ScoreHero
+        score={attempt.score ?? 0}
+        total={attempt.total ?? 0}
+        passed={attempt.passed === true}
+        message={attempt.passed ? t("exam.passed") : t("exam.notPassed")}
+      />
+      <section className="flex flex-col gap-3">
+        <h2 className="title text-[1.625rem]">{t("exam.corrections")}</h2>
+        <MissedList questions={missed} />
       </section>
       <Link href="/" className="btn self-start">
         {t("result.home")}

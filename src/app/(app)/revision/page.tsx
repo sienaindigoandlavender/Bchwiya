@@ -1,4 +1,5 @@
 import { QuizSession } from "@/components/QuizSession";
+import { PageHeader } from "@/components/ui/PageHeader";
 import { getContent } from "@/content";
 import { t } from "@/i18n";
 import { requireSession } from "@/lib/supabase/server";
@@ -19,9 +20,9 @@ export default async function ReviewPage() {
 
   return (
     <>
-      <h1 className="text-2xl font-semibold">{t("review.title")}</h1>
+      <PageHeader title={t("review.title")} />
       {questions.length === 0 ? (
-        <p className="card">{t("review.empty")}</p>
+        <p className="title rounded-big bg-mint p-6 text-[1.75rem]">{t("review.empty")}</p>
       ) : (
         <QuizSession
           kind="review"

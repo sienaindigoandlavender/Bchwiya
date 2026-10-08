@@ -56,7 +56,7 @@ function slotPose(slot: CarSlot) {
 
 function Car({ slot, who = "other" }: RoundaboutCar) {
   const { x, y, rot } = slotPose(slot);
-  const fill = who === "you" ? "var(--accent)" : "#8c8c8c";
+  const fill = who === "you" ? "var(--rose)" : "var(--ink-soft)";
   return (
     <g transform={`translate(${x} ${y}) rotate(${rot})`}>
       <rect
@@ -91,10 +91,10 @@ function YieldMark({ x, y, rot }: { x: number; y: number; rot: number }) {
 
 /** Top-down roundabout with four arms. Placeholder art: will be redesigned. */
 export function Roundabout({ variant = "sans-panneau", cars = [], size = 260 }: RoundaboutProps) {
-  const road = "#9a978f";
+  const road = "#b9aab3";
   return (
     <svg viewBox="0 0 200 200" width={size} height={size} role="img" aria-label="Giratoire">
-      <rect width="200" height="200" fill="#dfe8d6" />
+      <rect width="200" height="200" rx="16" fill="var(--mint)" />
       {/* arms */}
       <rect x="84" y="0" width="32" height="200" fill={road} />
       <rect x="0" y="84" width="200" height="32" fill={road} />
@@ -110,7 +110,7 @@ export function Roundabout({ variant = "sans-panneau", cars = [], size = 260 }: 
         strokeDasharray="4 4"
         opacity="0.6"
       />
-      <circle cx={C} cy={C} r="30" fill="#b9cfa6" stroke="#fff" strokeWidth="2" />
+      <circle cx={C} cy={C} r="30" fill="#a8e6c4" stroke="#fff" strokeWidth="2" />
       {/* centre lines on the arms */}
       {[
         [100, 0, 100, 40],
