@@ -5,7 +5,6 @@ import { ChevronIcon } from "@/components/ui/Icons";
 import { PageHeader } from "@/components/ui/PageHeader";
 import { t } from "@/i18n";
 import { loadPath } from "@/lib/data";
-import { levelFill } from "@/lib/levelColors";
 import { requireSession } from "@/lib/supabase/server";
 
 export default async function LevelPage({ params }: { params: Promise<{ levelId: string }> }) {
@@ -41,7 +40,7 @@ export default async function LevelPage({ params }: { params: Promise<{ levelId:
             </>
           );
           const cls = `flex items-center gap-4 rounded-big p-4 ${
-            m.status === "locked" ? "bg-cloud text-ink-soft" : `${levelFill(index)} text-ink`
+            m.status === "locked" ? "bg-cloud text-ink-soft" : "bg-cloud text-ink"
           }`;
           return (
             <li key={m.id}>

@@ -19,7 +19,7 @@ export default function AppLayout({ children }: { children: React.ReactNode }) {
           <ChartIcon size={19} />
         </Link>
       </header>
-      <main className="flex flex-1 flex-col gap-6 px-5 pt-6 pb-32">{children}</main>
+      <main className="flex flex-1 flex-col gap-7 px-5 pt-6 pb-32">{children}</main>
       <BottomNav />
       <PageTracker />
     </div>

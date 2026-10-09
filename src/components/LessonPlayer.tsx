@@ -63,7 +63,7 @@ export function LessonPlayer({ lesson, checks, moduleHref, next }: Props) {
   if (phase === "checks") {
     return (
       <div className="flex flex-col gap-5">
-        <p className="rounded-card bg-sky px-5 py-4 font-medium">{t("lesson.checksIntro")}</p>
+        <p className="rounded-card bg-cloud px-5 py-4 font-medium">{t("lesson.checksIntro")}</p>
         <QuizRunner
           kind="lesson_check"
           moduleId={lesson.moduleId}
@@ -120,7 +120,7 @@ export function LessonPlayer({ lesson, checks, moduleHref, next }: Props) {
       {screen ? (
         <div
           key={index}
-          className={`flex min-h-72 flex-col gap-4 rounded-big p-6 ${
+          className={`fade-in flex min-h-72 flex-col gap-4 rounded-big p-6 ${
             screen.type === "keypoint" ? "bg-lilac" : "bg-cloud"
           }`}
         >
