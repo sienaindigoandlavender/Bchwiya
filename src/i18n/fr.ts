@@ -115,8 +115,6 @@ export const fr = {
   "exam.corrections": "Corrections",
 
   "myCar.title": "Ma voiture",
-  "myCar.placeholder": "L'intérieur de la voiture, à toucher pour découvrir chaque commande.",
-  "myCar.soon": "Bientôt",
 
   "admin.title": "Tableau de bord",
   "admin.learner": "Apprenante : {name}",
