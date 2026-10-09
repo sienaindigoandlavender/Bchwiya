@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { LevelPath } from "@/components/LevelPath";
+import { PerminouLink } from "@/components/PerminouLink";
 import { ResumeCard } from "@/components/ResumeCard";
 import { CarIcon, ChevronIcon, ReviewIcon } from "@/components/ui/Icons";
 import { t } from "@/i18n";
@@ -58,6 +59,8 @@ export default async function HomePage() {
           <LevelPath levels={path} />
         </div>
       </details>
+
+      <PerminouLink />
 
       <Link href="/ma-voiture" className="flex items-center gap-4 rounded-big bg-cloud p-5">
         <span className="flex size-12 items-center justify-center rounded-full bg-paper">

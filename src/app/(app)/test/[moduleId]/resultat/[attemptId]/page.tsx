@@ -2,6 +2,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { getContent, lessonsForRules } from "@/content";
 import { MissedList } from "@/components/MissedList";
+import { PerminouLink } from "@/components/PerminouLink";
 import { ScoreHero } from "@/components/ScoreHero";
 import { ChevronIcon } from "@/components/ui/Icons";
 import { PageHeader } from "@/components/ui/PageHeader";
@@ -58,6 +59,13 @@ export default async function ModuleResultPage({
         passed={attempt.passed === true}
         message={attempt.passed ? t("result.passed") : t("result.notPassed")}
       />
+
+      {attempt.passed ? (
+        <section className="flex flex-col gap-3 rounded-big bg-mint p-5">
+          <p className="text-[1.0625rem] font-medium">{t("perminou.afterPass")}</p>
+          <PerminouLink tone="mint" />
+        </section>
+      ) : null}
 
       {lessons.length ? (
         <section className="flex flex-col gap-3">
