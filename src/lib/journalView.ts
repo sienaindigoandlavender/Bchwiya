@@ -42,6 +42,7 @@ function pageLabel(path: string, c: Content): string | null {
   if (path === "/revision") return t("journal.page.review");
   if (path === "/examen-blanc") return t("journal.page.exam");
   if (path === "/ma-voiture") return t("journal.page.car");
+  if (path === "/perminou") return t("journal.page.perminou");
   const [, kind, id] = path.split("/");
   if (kind === "niveau" && id) {
     const level = c.levels.find((l) => l.id === id);

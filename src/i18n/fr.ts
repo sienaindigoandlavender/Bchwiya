@@ -195,6 +195,12 @@ export const fr = {
   "lost.title": "Petit détour",
   "lost.body": "Cette page n'existe pas. Wall-E connaît le chemin du retour.",
   "lost.home": "Retour au parcours",
+  "perminou.title": "Les questions officielles",
+  "perminou.sub":
+    "S'entraîner sur Perminou, la plateforme de la NARSA, au vrai format de l'examen.",
+  "perminou.afterPass":
+    "Module validé. Entraîne-toi maintenant sur les vraies questions de ce thème.",
+  "journal.page.perminou": "Part s'entraîner sur Perminou (NARSA)",
   "common.notFound": "Cette page n'existe pas.",
 
   "hold.title": "Un petit instant",

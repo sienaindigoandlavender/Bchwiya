@@ -1,3 +1,4 @@
+import { PerminouLink } from "@/components/PerminouLink";
 import { QuizSession } from "@/components/QuizSession";
 import { loadPath } from "@/lib/data";
 import { requireSession } from "@/lib/supabase/server";
@@ -50,6 +51,7 @@ export default async function MockExamPage() {
           illustration={<WallE pose="sit-curious" height={200} className="self-center" />}
         />
       )}
+      <PerminouLink />
     </>
   );
 }
