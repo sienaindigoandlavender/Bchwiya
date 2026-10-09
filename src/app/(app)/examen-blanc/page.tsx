@@ -1,4 +1,6 @@
 import { QuizSession } from "@/components/QuizSession";
+import { loadPath } from "@/lib/data";
+import { requireSession } from "@/lib/supabase/server";
 import { PageHeader } from "@/components/ui/PageHeader";
 import { WallE } from "@/components/ui/WallE";
 import { getContent } from "@/content";
@@ -7,9 +9,19 @@ import { MOCK_EXAM, shuffle } from "@/lib/scoring";
 
 export const dynamic = "force-dynamic";
 
-export default function MockExamPage() {
-  const all = [...getContent().questions.values()];
+export default async function MockExamPage() {
+  // Only what she has already studied: a module counts once all its lessons are done.
+  const { path } = await loadPath(await requireSession());
+  const studied = new Set(
+    path
+      .flatMap((l) => l.modules)
+      .filter((m) => m.allLessonsDone)
+      .map((m) => m.id),
+  );
+  const all = [...getContent().questions.values()].filter((q) => studied.has(q.moduleId));
   const questions = shuffle(all).slice(0, MOCK_EXAM.questions);
+  // Same pace as the real exam: one minute per question.
+  const minutes = Math.round((questions.length * MOCK_EXAM.minutes) / MOCK_EXAM.questions);
   const pass =
     questions.length === MOCK_EXAM.questions
       ? MOCK_EXAM.passScore
@@ -26,8 +38,8 @@ export default function MockExamPage() {
           moduleId={null}
           questions={questions}
           feedback={false}
-          timerMinutes={MOCK_EXAM.minutes}
-          intro={t("exam.intro", { count: questions.length, minutes: MOCK_EXAM.minutes, pass })}
+          timerMinutes={minutes}
+          intro={t("exam.intro", { count: questions.length, minutes, pass })}
           note={
             questions.length < MOCK_EXAM.questions
               ? t("exam.fewQuestions", { count: questions.length })

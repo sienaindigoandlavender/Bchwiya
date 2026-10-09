@@ -105,8 +105,8 @@ export const fr = {
   "exam.intro":
     "{count} questions, {minutes} minutes. Il faut {pass} bonnes réponses pour réussir. Comme le jour de l'examen, les corrections arrivent à la fin.",
   "exam.fewQuestions":
-    "Il n'y a que {count} questions disponibles pour l'instant. L'examen blanc les utilise toutes.",
-  "exam.empty": "Pas encore de questions disponibles.",
+    "L'examen blanc utilise les {count} questions des modules que tu as déjà étudiés. Il passera à 40 questions quand tu auras avancé.",
+  "exam.empty": "L'examen blanc s'ouvre dès que tu as terminé les leçons d'un premier module.",
   "exam.start": "Commencer l'examen",
   "exam.timeLeft": "{time} restantes",
   "exam.timeUp": "Le temps est écoulé.",
