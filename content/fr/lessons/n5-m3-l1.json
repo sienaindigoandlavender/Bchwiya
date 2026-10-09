@@ -8,19 +8,47 @@
   "screens": [
     {
       "type": "text",
-      "body": "La nuit, tu roules en feux de croisement. Ils éclairent la route sans éblouir les autres."
+      "body": "La nuit, tu roules en feux de croisement. Ils éclairent la route sans éblouir les autres.",
+      "media": {
+        "kind": "svg",
+        "component": "Scene",
+        "props": {
+          "name": "night"
+        }
+      }
     },
     {
       "type": "text",
-      "body": "Les feux de route, les pleins phares, servent hors des villes, sur une route sombre, quand personne n'arrive en face ni devant toi."
+      "body": "Les feux de route, les pleins phares, servent hors des villes, sur une route sombre, quand personne n'arrive en face ni devant toi.",
+      "media": {
+        "kind": "svg",
+        "component": "Scene",
+        "props": {
+          "name": "countryside"
+        }
+      }
     },
     {
       "type": "text",
-      "body": "Dès qu'une voiture arrive en face, ou que tu en suis une, tu repasses en croisement."
+      "body": "Dès qu'une voiture arrive en face, ou que tu en suis une, tu repasses en croisement.",
+      "media": {
+        "kind": "svg",
+        "component": "Scene",
+        "props": {
+          "name": "slow-truck"
+        }
+      }
     },
     {
       "type": "text",
-      "body": "Si quelqu'un t'éblouit : ralentis et regarde le bord droit de la route jusqu'à ce que ta vue revienne."
+      "body": "Si quelqu'un t'éblouit : ralentis et regarde le bord droit de la route jusqu'à ce que ta vue revienne.",
+      "media": {
+        "kind": "svg",
+        "component": "Scene",
+        "props": {
+          "name": "glare"
+        }
+      }
     },
     {
       "type": "keypoint",

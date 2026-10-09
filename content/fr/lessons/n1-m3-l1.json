@@ -7,7 +7,14 @@
   "screens": [
     {
       "type": "text",
-      "body": "Les panneaux d'interdiction sont ronds, avec du rouge. Ils te disent ce que tu n'as pas le droit de faire, à partir du panneau."
+      "body": "Les panneaux d'interdiction sont ronds, avec du rouge. Ils te disent ce que tu n'as pas le droit de faire, à partir du panneau.",
+      "media": {
+        "kind": "svg",
+        "component": "Scene",
+        "props": {
+          "name": "no-u-turn"
+        }
+      }
     },
     {
       "type": "text",

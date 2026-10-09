@@ -55,7 +55,29 @@
     },
     {
       "type": "text",
-      "body": "Dans les deux cas, la priorité à droite ne compte plus : c'est toi qui dois céder."
+      "body": "Dans les deux cas, la priorité à droite ne compte plus : c'est toi qui dois céder.",
+      "media": {
+        "kind": "svg",
+        "component": "Crossroads",
+        "props": {
+          "cars": [
+            {
+              "arm": "s",
+              "who": "you"
+            },
+            {
+              "arm": "e",
+              "who": "other"
+            }
+          ],
+          "signs": [
+            {
+              "arm": "s",
+              "type": "stop"
+            }
+          ]
+        }
+      }
     },
     {
       "type": "keypoint",

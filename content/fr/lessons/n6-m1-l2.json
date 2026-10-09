@@ -7,11 +7,26 @@
   "screens": [
     {
       "type": "text",
-      "body": "Le giratoire. Avec cédez le passage aux entrées : l'anneau est prioritaire. Sans panneau : priorité à droite, ceux qui entrent passent."
+      "body": "Le giratoire. Avec cédez le passage aux entrées : l'anneau est prioritaire. Sans panneau : priorité à droite, ceux qui entrent passent.",
+      "media": {
+        "kind": "svg",
+        "component": "Roundabout",
+        "props": {
+          "variant": "cedez",
+          "cars": []
+        }
+      }
     },
     {
       "type": "text",
-      "body": "L'orange. Fixe : je m'arrête si je peux. Clignotant : le feu ne commande plus, je suis les panneaux."
+      "body": "L'orange. Fixe : je m'arrête si je peux. Clignotant : le feu ne commande plus, je suis les panneaux.",
+      "media": {
+        "kind": "svg",
+        "component": "TrafficLight",
+        "props": {
+          "state": "orange-clignotant"
+        }
+      }
     },
     {
       "type": "text",
@@ -26,11 +41,25 @@
     },
     {
       "type": "text",
-      "body": "Les panneaux bleus. Rond bleu : je dois. Carré bleu : on m'informe."
+      "body": "Les panneaux bleus. Rond bleu : je dois. Carré bleu : on m'informe.",
+      "media": {
+        "kind": "svg",
+        "component": "Sign",
+        "props": {
+          "preset": "sens-unique"
+        }
+      }
     },
     {
       "type": "text",
-      "body": "La vitesse en probatoire : 90 km/h au maximum, même sur autoroute."
+      "body": "La vitesse en probatoire : 90 km/h au maximum, même sur autoroute.",
+      "media": {
+        "kind": "svg",
+        "component": "Sign",
+        "props": {
+          "preset": "vitesse-90"
+        }
+      }
     },
     {
       "type": "keypoint",

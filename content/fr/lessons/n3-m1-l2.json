@@ -7,15 +7,42 @@
   "screens": [
     {
       "type": "text",
-      "body": "Pour changer de voie : rétroviseur, clignotant, coup d'œil par-dessus l'épaule, puis tu te déplaces en douceur."
+      "body": "Pour changer de voie : rétroviseur, clignotant, coup d'œil par-dessus l'épaule, puis tu te déplaces en douceur.",
+      "media": {
+        "kind": "svg",
+        "component": "Scene",
+        "props": {
+          "name": "lane-change"
+        }
+      }
     },
     {
       "type": "text",
-      "body": "Le coup d'œil sert à voir l'angle mort : cette zone sur le côté que les rétroviseurs ne montrent pas. Un scooter peut s'y cacher."
+      "body": "Le coup d'œil sert à voir l'angle mort : cette zone sur le côté que les rétroviseurs ne montrent pas. Un scooter peut s'y cacher.",
+      "media": {
+        "kind": "svg",
+        "component": "Scene",
+        "props": {
+          "name": "eyes-shoulder"
+        }
+      }
     },
     {
       "type": "text",
-      "body": "Pour tourner à droite, tu serres à droite. Pour tourner à gauche, tu te rapproches du milieu de la chaussée, sans le dépasser."
+      "body": "Pour tourner à droite, tu serres à droite. Pour tourner à gauche, tu te rapproches du milieu de la chaussée, sans le dépasser.",
+      "media": {
+        "kind": "svg",
+        "component": "Crossroads",
+        "props": {
+          "cars": [
+            {
+              "arm": "s",
+              "who": "you"
+            }
+          ],
+          "signs": []
+        }
+      }
     },
     {
       "type": "text",

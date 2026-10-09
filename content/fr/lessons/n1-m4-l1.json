@@ -7,7 +7,14 @@
   "screens": [
     {
       "type": "text",
-      "body": "Les panneaux d'indication sont carrés ou rectangulaires, souvent bleus. Ils ne donnent pas d'ordre : ils t'aident à t'orienter."
+      "body": "Les panneaux d'indication sont carrés ou rectangulaires, souvent bleus. Ils ne donnent pas d'ordre : ils t'aident à t'orienter.",
+      "media": {
+        "kind": "svg",
+        "component": "Scene",
+        "props": {
+          "name": "town"
+        }
+      }
     },
     {
       "type": "text",

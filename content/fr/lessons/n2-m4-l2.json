@@ -29,15 +29,36 @@
     },
     {
       "type": "text",
-      "body": "L'agent de circulation passe avant les feux et les panneaux."
+      "body": "L'agent de circulation passe avant les feux et les panneaux.",
+      "media": {
+        "kind": "svg",
+        "component": "Scene",
+        "props": {
+          "name": "agent"
+        }
+      }
     },
     {
       "type": "text",
-      "body": "Bras levé à la verticale : arrêt pour tous, sauf ceux déjà engagés dans le carrefour."
+      "body": "Bras levé à la verticale : arrêt pour tous, sauf ceux déjà engagés dans le carrefour.",
+      "media": {
+        "kind": "svg",
+        "component": "Scene",
+        "props": {
+          "name": "agent"
+        }
+      }
     },
     {
       "type": "text",
-      "body": "Bras tendus à l'horizontale : arrêt pour ceux qui arrivent face à lui ou dans son dos. Ceux qui sont sur ses côtés passent."
+      "body": "Bras tendus à l'horizontale : arrêt pour ceux qui arrivent face à lui ou dans son dos. Ceux qui sont sur ses côtés passent.",
+      "media": {
+        "kind": "svg",
+        "component": "Scene",
+        "props": {
+          "name": "agent-side"
+        }
+      }
     },
     {
       "type": "keypoint",

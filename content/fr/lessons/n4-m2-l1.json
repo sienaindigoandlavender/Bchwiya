@@ -7,19 +7,47 @@
   "screens": [
     {
       "type": "text",
-      "body": "La ceinture est obligatoire à toutes les places, à l'avant comme à l'arrière, même pour un tout petit trajet."
+      "body": "La ceinture est obligatoire à toutes les places, à l'avant comme à l'arrière, même pour un tout petit trajet.",
+      "media": {
+        "kind": "svg",
+        "component": "Scene",
+        "props": {
+          "name": "seatbelt"
+        }
+      }
     },
     {
       "type": "text",
-      "body": "Elle se porte bien plaquée : sur l'épaule, pas sur le cou, et sur le bassin, pas sur le ventre."
+      "body": "Elle se porte bien plaquée : sur l'épaule, pas sur le cou, et sur le bassin, pas sur le ventre.",
+      "media": {
+        "kind": "svg",
+        "component": "Scene",
+        "props": {
+          "name": "seatbelt"
+        }
+      }
     },
     {
       "type": "text",
-      "body": "Avant de démarrer, vérifie que tout le monde est attaché."
+      "body": "Avant de démarrer, vérifie que tout le monde est attaché.",
+      "media": {
+        "kind": "svg",
+        "component": "Scene",
+        "props": {
+          "name": "checklist"
+        }
+      }
     },
     {
       "type": "text",
-      "body": "Un jeune enfant voyage dans un siège auto homologué, adapté à sa taille. Jamais sur les genoux d'un adulte."
+      "body": "Un jeune enfant voyage dans un siège auto homologué, adapté à sa taille. Jamais sur les genoux d'un adulte.",
+      "media": {
+        "kind": "svg",
+        "component": "Scene",
+        "props": {
+          "name": "child-seat"
+        }
+      }
     },
     {
       "type": "keypoint",

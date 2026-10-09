@@ -7,19 +7,47 @@
   "screens": [
     {
       "type": "text",
-      "body": "À l'examen, beaucoup d'erreurs viennent de la lecture, pas des règles. Voici les pièges les plus courants."
+      "body": "À l'examen, beaucoup d'erreurs viennent de la lecture, pas des règles. Voici les pièges les plus courants.",
+      "media": {
+        "kind": "svg",
+        "component": "Scene",
+        "props": {
+          "name": "exam-day"
+        }
+      }
     },
     {
       "type": "text",
-      "body": "Plusieurs bonnes réponses. Une question peut en avoir deux, trois, ou une seule. Lis chaque proposition, une par une, et demande-toi : est-ce vrai ?"
+      "body": "Plusieurs bonnes réponses. Une question peut en avoir deux, trois, ou une seule. Lis chaque proposition, une par une, et demande-toi : est-ce vrai ?",
+      "media": {
+        "kind": "svg",
+        "component": "Scene",
+        "props": {
+          "name": "checklist"
+        }
+      }
     },
     {
       "type": "text",
-      "body": "Les mots « toujours », « jamais », « seulement ». Ils rendent souvent une phrase fausse, parce qu'il existe presque toujours une exception."
+      "body": "Les mots « toujours », « jamais », « seulement ». Ils rendent souvent une phrase fausse, parce qu'il existe presque toujours une exception.",
+      "media": {
+        "kind": "svg",
+        "component": "Scene",
+        "props": {
+          "name": "exam-screen"
+        }
+      }
     },
     {
       "type": "text",
-      "body": "Les détails de l'image. Un panneau au loin, une ligne au sol, un clignotant, un piéton sur le côté : regarde tout avant de répondre."
+      "body": "Les détails de l'image. Un panneau au loin, une ligne au sol, un clignotant, un piéton sur le côté : regarde tout avant de répondre.",
+      "media": {
+        "kind": "svg",
+        "component": "Scene",
+        "props": {
+          "name": "magnifier"
+        }
+      }
     },
     {
       "type": "keypoint",

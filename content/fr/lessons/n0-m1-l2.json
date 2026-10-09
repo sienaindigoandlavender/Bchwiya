@@ -7,19 +7,47 @@
   "screens": [
     {
       "type": "text",
-      "body": "Certains véhicules passent avant tout le monde quand ils sont en mission urgente : l'ambulance, les pompiers, la police et la gendarmerie."
+      "body": "Certains véhicules passent avant tout le monde quand ils sont en mission urgente : l'ambulance, les pompiers, la police et la gendarmerie.",
+      "media": {
+        "kind": "svg",
+        "component": "Scene",
+        "props": {
+          "name": "ambulance"
+        }
+      }
     },
     {
       "type": "text",
-      "body": "Tu les reconnais à deux signaux : leur sirène spéciale et leurs feux qui clignotent sur le toit, qu'on appelle gyrophares."
+      "body": "Tu les reconnais à deux signaux : leur sirène spéciale et leurs feux qui clignotent sur le toit, qu'on appelle gyrophares.",
+      "media": {
+        "kind": "svg",
+        "component": "Scene",
+        "props": {
+          "name": "horn"
+        }
+      }
     },
     {
       "type": "text",
-      "body": "Quand tu les entends ou les vois, tu leur facilites le passage : tu ralentis, tu te serres sur le côté, et tu t'arrêtes si c'est nécessaire."
+      "body": "Quand tu les entends ou les vois, tu leur facilites le passage : tu ralentis, tu te serres sur le côté, et tu t'arrêtes si c'est nécessaire.",
+      "media": {
+        "kind": "svg",
+        "component": "Scene",
+        "props": {
+          "name": "lane-change"
+        }
+      }
     },
     {
       "type": "text",
-      "body": "Sans sirène ni gyrophare, ce sont des véhicules comme les autres. Une voiture de police qui roule tranquillement n'a pas de priorité spéciale."
+      "body": "Sans sirène ni gyrophare, ce sont des véhicules comme les autres. Une voiture de police qui roule tranquillement n'a pas de priorité spéciale.",
+      "media": {
+        "kind": "svg",
+        "component": "Scene",
+        "props": {
+          "name": "police-calm"
+        }
+      }
     },
     {
       "type": "keypoint",

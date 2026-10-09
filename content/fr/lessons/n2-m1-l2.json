@@ -8,11 +8,43 @@
   "screens": [
     {
       "type": "text",
-      "body": "À une intersection, plusieurs règles peuvent se croiser. Elles ont un ordre, du plus fort au plus faible."
+      "body": "À une intersection, plusieurs règles peuvent se croiser. Elles ont un ordre, du plus fort au plus faible.",
+      "media": {
+        "kind": "svg",
+        "component": "Crossroads",
+        "props": {
+          "cars": [
+            {
+              "arm": "s",
+              "who": "you"
+            },
+            {
+              "arm": "e",
+              "who": "other"
+            },
+            {
+              "arm": "n",
+              "who": "other"
+            },
+            {
+              "arm": "w",
+              "who": "other"
+            }
+          ],
+          "signs": []
+        }
+      }
     },
     {
       "type": "text",
-      "body": "1. L'agent de circulation. Ses gestes passent avant tout le reste."
+      "body": "1. L'agent de circulation. Ses gestes passent avant tout le reste.",
+      "media": {
+        "kind": "svg",
+        "component": "Scene",
+        "props": {
+          "name": "agent"
+        }
+      }
     },
     {
       "type": "text",
@@ -38,7 +70,24 @@
     },
     {
       "type": "text",
-      "body": "4. Et s'il n'y a rien de tout ça : la priorité à droite."
+      "body": "4. Et s'il n'y a rien de tout ça : la priorité à droite.",
+      "media": {
+        "kind": "svg",
+        "component": "Crossroads",
+        "props": {
+          "cars": [
+            {
+              "arm": "s",
+              "who": "you"
+            },
+            {
+              "arm": "e",
+              "who": "other"
+            }
+          ],
+          "signs": []
+        }
+      }
     },
     {
       "type": "keypoint",

@@ -7,7 +7,14 @@
   "screens": [
     {
       "type": "text",
-      "body": "Les panneaux d'obligation sont ronds et bleus, avec un dessin blanc. Ils te disent ce que tu dois faire."
+      "body": "Les panneaux d'obligation sont ronds et bleus, avec un dessin blanc. Ils te disent ce que tu dois faire.",
+      "media": {
+        "kind": "svg",
+        "component": "Scene",
+        "props": {
+          "name": "lane-change"
+        }
+      }
     },
     {
       "type": "text",

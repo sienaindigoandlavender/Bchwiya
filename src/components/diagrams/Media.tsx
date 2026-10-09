@@ -3,8 +3,9 @@ import { PresetSign } from "@/components/signs/presets";
 import { Crossroads, type CrossroadsProps } from "./Crossroads";
 import { RoadLines, type RoadLinesProps } from "./RoadLines";
 import { Roundabout, type RoundaboutProps } from "./Roundabout";
+import { Scene } from "./Scene";
 import { TrafficLight, type TrafficLightProps } from "./TrafficLight";
-import { SIGN_PRESETS, type SignPreset } from "./names";
+import { SCENE_NAMES, SIGN_PRESETS, type SceneName, type SignPreset } from "./names";
 
 /** Renders a content `media` block: named SVG component, image, or nothing. */
 export function Media({ media }: { media?: MediaSpec }) {
@@ -24,6 +25,11 @@ export function Media({ media }: { media?: MediaSpec }) {
     case "Roundabout":
       node = <Roundabout {...(props as RoundaboutProps)} />;
       break;
+    case "Scene": {
+      const name = props.name as SceneName;
+      node = SCENE_NAMES.includes(name) ? <Scene name={name} /> : null;
+      break;
+    }
     case "Crossroads":
       node = <Crossroads {...(props as CrossroadsProps)} />;
       break;

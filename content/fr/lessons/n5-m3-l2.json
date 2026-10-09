@@ -8,19 +8,47 @@
   "screens": [
     {
       "type": "text",
-      "body": "Sous la pluie : ralentis, double ta distance de sécurité, et allume tes feux de croisement pour être vue."
+      "body": "Sous la pluie : ralentis, double ta distance de sécurité, et allume tes feux de croisement pour être vue.",
+      "media": {
+        "kind": "svg",
+        "component": "Scene",
+        "props": {
+          "name": "rain"
+        }
+      }
     },
     {
       "type": "text",
-      "body": "Grosse flaque, volant qui devient léger : c'est l'aquaplaning. Ne freine pas brusquement. Lève le pied et tiens le volant droit."
+      "body": "Grosse flaque, volant qui devient léger : c'est l'aquaplaning. Ne freine pas brusquement. Lève le pied et tiens le volant droit.",
+      "media": {
+        "kind": "svg",
+        "component": "Scene",
+        "props": {
+          "name": "aquaplaning"
+        }
+      }
     },
     {
       "type": "text",
-      "body": "Dans le brouillard : feux de croisement et feux de brouillard, jamais les pleins phares, qui se reflètent et t'éblouissent. Roule lentement."
+      "body": "Dans le brouillard : feux de croisement et feux de brouillard, jamais les pleins phares, qui se reflètent et t'éblouissent. Roule lentement.",
+      "media": {
+        "kind": "svg",
+        "component": "Scene",
+        "props": {
+          "name": "fog"
+        }
+      }
     },
     {
       "type": "text",
-      "body": "Par vent fort, tiens bien le volant, surtout en dépassant un camion ou en sortant d'un tunnel."
+      "body": "Par vent fort, tiens bien le volant, surtout en dépassant un camion ou en sortant d'un tunnel.",
+      "media": {
+        "kind": "svg",
+        "component": "Scene",
+        "props": {
+          "name": "wind"
+        }
+      }
     },
     {
       "type": "keypoint",

@@ -8,15 +8,54 @@
   "screens": [
     {
       "type": "text",
-      "body": "Tu prends la première sortie, à droite ? Place-toi sur la voie de droite et mets ton clignotant droit dès l'approche. Tu restes à droite dans l'anneau."
+      "body": "Tu prends la première sortie, à droite ? Place-toi sur la voie de droite et mets ton clignotant droit dès l'approche. Tu restes à droite dans l'anneau.",
+      "media": {
+        "kind": "svg",
+        "component": "Roundabout",
+        "props": {
+          "variant": "sans-panneau",
+          "cars": [
+            {
+              "slot": "entry-s",
+              "who": "you"
+            }
+          ]
+        }
+      }
     },
     {
       "type": "text",
-      "body": "Tu vas plus loin (en face, à gauche, ou demi-tour) ? Place-toi plutôt sur la voie de gauche à l'approche, et circule près de l'îlot dans l'anneau."
+      "body": "Tu vas plus loin (en face, à gauche, ou demi-tour) ? Place-toi plutôt sur la voie de gauche à l'approche, et circule près de l'îlot dans l'anneau.",
+      "media": {
+        "kind": "svg",
+        "component": "Roundabout",
+        "props": {
+          "variant": "sans-panneau",
+          "cars": [
+            {
+              "slot": "ring-w",
+              "who": "you"
+            }
+          ]
+        }
+      }
     },
     {
       "type": "text",
-      "body": "Pour sortir : mets ton clignotant droit après avoir passé la sortie qui précède la tienne. Puis rapproche-toi de la droite en regardant ton rétroviseur et ton angle mort."
+      "body": "Pour sortir : mets ton clignotant droit après avoir passé la sortie qui précède la tienne. Puis rapproche-toi de la droite en regardant ton rétroviseur et ton angle mort.",
+      "media": {
+        "kind": "svg",
+        "component": "Roundabout",
+        "props": {
+          "variant": "sans-panneau",
+          "cars": [
+            {
+              "slot": "ring-e",
+              "who": "you"
+            }
+          ]
+        }
+      }
     },
     {
       "type": "keypoint",
