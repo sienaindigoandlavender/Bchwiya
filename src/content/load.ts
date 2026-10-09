@@ -6,12 +6,14 @@ import {
   questionFileSchema,
   rulesFileSchema,
   type Lesson,
+  type Media,
   type Level,
   type Module,
   type Question,
   type Rule,
 } from "./schema";
 import { DEFAULT_LOCALE, type Locale } from "@/i18n/config";
+import { SCENE_NAMES, SIGN_PRESETS } from "@/components/diagrams/names";
 
 export type Content = {
   locale: Locale;
@@ -97,6 +99,17 @@ export function readContent(locale: Locale = DEFAULT_LOCALE): Content {
 }
 
 /** Returns a list of broken cross-references. Empty means the content is sound. */
+function checkMedia(where: string, media: Media | undefined, errors: string[]) {
+  if (!media || media.kind !== "svg") return;
+  const props = media.props ?? {};
+  if (media.component === "Sign" && !(SIGN_PRESETS as readonly unknown[]).includes(props.preset)) {
+    errors.push(`${where}: unknown sign preset "${String(props.preset)}"`);
+  }
+  if (media.component === "Scene" && !(SCENE_NAMES as readonly unknown[]).includes(props.name)) {
+    errors.push(`${where}: unknown scene "${String(props.name)}"`);
+  }
+}
+
 export function checkReferences(c: Content): string[] {
   const errors: string[] = [];
   const levelIds = new Set(c.levels.map((l) => l.id));
@@ -140,6 +153,9 @@ export function checkReferences(c: Content): string[] {
     for (const q of lesson.checks) {
       if (!c.questions.has(q)) errors.push(`lesson "${lesson.id}": check "${q}" is not a question`);
     }
+    lesson.screens.forEach((s, i) =>
+      checkMedia(`lesson "${lesson.id}" screen ${i + 1}`, s.media, errors),
+    );
   }
 
   for (const [moduleId] of c.questionsByModule) {
@@ -156,6 +172,7 @@ export function checkReferences(c: Content): string[] {
     for (const r of q.ruleIds) {
       if (!ruleIds.has(r)) errors.push(`question "${q.id}": unknown ruleId "${r}"`);
     }
+    checkMedia(`question "${q.id}"`, q.media, errors);
     if (
       q.media?.kind === "image" &&
       !fs.existsSync(path.join(process.cwd(), "public/images", q.media.src))

@@ -8,19 +8,47 @@
   "screens": [
     {
       "type": "text",
-      "body": "Au Maroc, il est interdit de conduire à partir de 0,20 g d'alcool par litre de sang, soit 0,10 mg par litre d'air expiré."
+      "body": "Au Maroc, il est interdit de conduire à partir de 0,20 g d'alcool par litre de sang, soit 0,10 mg par litre d'air expiré.",
+      "media": {
+        "kind": "svg",
+        "component": "Scene",
+        "props": {
+          "name": "no-alcohol"
+        }
+      }
     },
     {
       "type": "text",
-      "body": "Ce seuil est très bas. Un seul verre peut suffire à le dépasser. Le plus simple : zéro alcool avant de conduire."
+      "body": "Ce seuil est très bas. Un seul verre peut suffire à le dépasser. Le plus simple : zéro alcool avant de conduire.",
+      "media": {
+        "kind": "svg",
+        "component": "Scene",
+        "props": {
+          "name": "mint-tea"
+        }
+      }
     },
     {
       "type": "text",
-      "body": "L'alcool ralentit tes réflexes, rétrécit ta vision sur les côtés, et te donne l'impression de bien conduire alors que ce n'est pas le cas."
+      "body": "L'alcool ralentit tes réflexes, rétrécit ta vision sur les côtés, et te donne l'impression de bien conduire alors que ce n'est pas le cas.",
+      "media": {
+        "kind": "svg",
+        "component": "Scene",
+        "props": {
+          "name": "crazy-driver"
+        }
+      }
     },
     {
       "type": "text",
-      "body": "Café, eau, repas : rien ne fait baisser le taux d'alcool. Seul le temps l'élimine."
+      "body": "Café, eau, repas : rien ne fait baisser le taux d'alcool. Seul le temps l'élimine.",
+      "media": {
+        "kind": "svg",
+        "component": "Scene",
+        "props": {
+          "name": "clock"
+        }
+      }
     },
     {
       "type": "keypoint",

@@ -8,19 +8,47 @@
   "screens": [
     {
       "type": "text",
-      "body": "La fatigue est aussi dangereuse que l'alcool. Signes : bâillements, yeux qui piquent, nuque raide, voiture qui dérive."
+      "body": "La fatigue est aussi dangereuse que l'alcool. Signes : bâillements, yeux qui piquent, nuque raide, voiture qui dérive.",
+      "media": {
+        "kind": "svg",
+        "component": "Scene",
+        "props": {
+          "name": "nap"
+        }
+      }
     },
     {
       "type": "text",
-      "body": "Sur un long trajet, fais une pause environ toutes les 2 heures. Si tu sens la fatigue, arrête-toi et fais une petite sieste de 15 à 20 minutes."
+      "body": "Sur un long trajet, fais une pause environ toutes les 2 heures. Si tu sens la fatigue, arrête-toi et fais une petite sieste de 15 à 20 minutes.",
+      "media": {
+        "kind": "svg",
+        "component": "Scene",
+        "props": {
+          "name": "mint-tea"
+        }
+      }
     },
     {
       "type": "text",
-      "body": "Certains médicaments donnent sommeil. Lis la notice, demande au pharmacien. Les drogues, elles, sont interdites au volant."
+      "body": "Certains médicaments donnent sommeil. Lis la notice, demande au pharmacien. Les drogues, elles, sont interdites au volant.",
+      "media": {
+        "kind": "svg",
+        "component": "Scene",
+        "props": {
+          "name": "pills"
+        }
+      }
     },
     {
       "type": "text",
-      "body": "Le téléphone tenu en main est interdit en conduisant. Même en mains libres, une conversation détourne ton attention."
+      "body": "Le téléphone tenu en main est interdit en conduisant. Même en mains libres, une conversation détourne ton attention.",
+      "media": {
+        "kind": "svg",
+        "component": "Scene",
+        "props": {
+          "name": "phone-off"
+        }
+      }
     },
     {
       "type": "keypoint",

@@ -1,0 +1,231 @@
+{
+  "$comment": "Contenu du module Ma voiture. Les identifiants (id) correspondent aux zones dessinées dans src/components/car/.",
+  "intro": "Imagine-toi au volant. Touche chaque numéro pour découvrir la commande, ou avance avec le bouton.",
+  "sections": {
+    "cockpit": "Au volant",
+    "lights": "Les voyants",
+    "mirrors": "Angles morts",
+    "engine": "Sous le capot",
+    "start": "Avant de partir"
+  },
+  "cockpit": [
+    {
+      "id": "volant",
+      "title": "Le volant",
+      "body": "Il dirige les roues avant. Tiens-le à deux mains, comme les aiguilles d'une horloge à 9 h 15.",
+      "tip": "Au centre, le klaxon. En ville, seulement en cas de danger immédiat."
+    },
+    {
+      "id": "compteurs",
+      "title": "Le tableau de bord",
+      "body": "Derrière le volant : le compteur de vitesse, le compte-tours, la jauge d'essence et les voyants.",
+      "tip": "Un coup d'œil rapide suffit. Tes yeux restent surtout sur la route."
+    },
+    {
+      "id": "retro-interieur",
+      "title": "Le rétroviseur intérieur",
+      "body": "Il te montre ce qui se passe derrière la voiture, par la lunette arrière.",
+      "tip": "Règle-le avant de démarrer, pour voir toute la lunette arrière sans bouger la tête."
+    },
+    {
+      "id": "retro-exterieur",
+      "title": "Les rétroviseurs extérieurs",
+      "body": "Un de chaque côté. Ils montrent les voies à gauche et à droite derrière toi.",
+      "tip": "Ils ne montrent pas tout : l'angle mort se vérifie d'un coup d'œil par-dessus l'épaule."
+    },
+    {
+      "id": "commodo-gauche",
+      "title": "La manette de gauche",
+      "body": "Les clignotants : vers le haut pour la droite, vers le bas pour la gauche. Elle commande aussi les feux.",
+      "tip": "Le clignotant se met avant de tourner ou de changer de voie, pas pendant."
+    },
+    {
+      "id": "commodo-droit",
+      "title": "La manette de droite",
+      "body": "Les essuie-glaces et le lave-glace.",
+      "tip": "Vérifie le niveau du lave-glace avant un long trajet."
+    },
+    {
+      "id": "warning",
+      "title": "Les feux de détresse",
+      "body": "Le bouton au triangle rouge. Les quatre clignotants s'allument en même temps.",
+      "tip": "En cas de panne, d'accident, ou pour prévenir d'un ralentissement brutal sur autoroute."
+    },
+    {
+      "id": "levier",
+      "title": "Le levier de vitesse",
+      "body": "Il change les rapports. Au milieu, c'est le point mort : aucune vitesse n'est engagée.",
+      "tip": "Avant de démarrer le moteur, vérifie que le levier est au point mort."
+    },
+    {
+      "id": "frein-main",
+      "title": "Le frein à main",
+      "body": "Il bloque la voiture à l'arrêt, pour qu'elle ne roule pas toute seule.",
+      "tip": "Serré à chaque fois que tu te gares, surtout en pente."
+    },
+    {
+      "id": "embrayage",
+      "title": "L'embrayage",
+      "body": "La pédale de gauche. Tu l'enfonces pour changer de vitesse et pour démarrer.",
+      "tip": "Pied gauche, et seulement pour l'embrayage."
+    },
+    {
+      "id": "frein",
+      "title": "Le frein",
+      "body": "La pédale du milieu. Elle ralentit et arrête la voiture.",
+      "tip": "Pied droit. Le même pied que l'accélérateur : impossible d'appuyer sur les deux à la fois."
+    },
+    {
+      "id": "accelerateur",
+      "title": "L'accélérateur",
+      "body": "La pédale de droite. Plus tu appuies, plus la voiture accélère.",
+      "tip": "Pied droit, en douceur. De gauche à droite, retiens : E, F, A — embrayage, frein, accélérateur."
+    }
+  ],
+  "lights": [
+    {
+      "id": "huile",
+      "color": "red",
+      "title": "Pression d'huile",
+      "body": "Le moteur manque d'huile ou la pression est trop faible.",
+      "action": "Arrête-toi dès que possible et coupe le moteur."
+    },
+    {
+      "id": "temperature",
+      "color": "red",
+      "title": "Température du moteur",
+      "body": "Le moteur chauffe trop.",
+      "action": "Arrête-toi, coupe le moteur. N'ouvre jamais le bouchon du radiateur à chaud."
+    },
+    {
+      "id": "freins",
+      "color": "red",
+      "title": "Freins",
+      "body": "Frein à main serré, ou problème de freinage.",
+      "action": "Desserre le frein à main. S'il reste allumé, arrête-toi et fais vérifier."
+    },
+    {
+      "id": "batterie",
+      "color": "red",
+      "title": "Batterie",
+      "body": "La batterie ne se recharge plus.",
+      "action": "Arrête-toi et fais vérifier rapidement."
+    },
+    {
+      "id": "ceinture",
+      "color": "red",
+      "title": "Ceinture",
+      "body": "Quelqu'un n'a pas attaché sa ceinture.",
+      "action": "Tout le monde s'attache avant de rouler."
+    },
+    {
+      "id": "moteur",
+      "color": "orange",
+      "title": "Moteur",
+      "body": "Un défaut moteur a été détecté.",
+      "action": "Fais vérifier la voiture bientôt."
+    },
+    {
+      "id": "abs",
+      "color": "orange",
+      "title": "ABS",
+      "body": "Le système qui empêche les roues de se bloquer au freinage ne fonctionne plus.",
+      "action": "Les freins marchent encore, mais fais vérifier rapidement."
+    },
+    {
+      "id": "carburant",
+      "color": "orange",
+      "title": "Réserve de carburant",
+      "body": "Il reste peu d'essence ou de gasoil.",
+      "action": "Fais le plein à la prochaine station."
+    },
+    {
+      "id": "pneus",
+      "color": "orange",
+      "title": "Pression des pneus",
+      "body": "Un pneu est mal gonflé.",
+      "action": "Vérifie et regonfle les pneus dès que possible."
+    },
+    {
+      "id": "clignotants",
+      "color": "green",
+      "title": "Clignotants",
+      "body": "Ton clignotant est en marche.",
+      "action": "Pense à l'éteindre après avoir tourné s'il ne s'arrête pas seul."
+    },
+    {
+      "id": "croisement",
+      "color": "green",
+      "title": "Feux de croisement",
+      "body": "Tes feux de croisement sont allumés.",
+      "action": "Les feux normaux, la nuit et sous la pluie."
+    },
+    {
+      "id": "route",
+      "color": "blue",
+      "title": "Feux de route",
+      "body": "Tes pleins phares sont allumés.",
+      "action": "Repasse en croisement dès que quelqu'un arrive en face ou devant toi."
+    }
+  ],
+  "mirrors": {
+    "body": "Les rétroviseurs ne montrent pas tout. Juste derrière tes épaules, de chaque côté, il y a une zone invisible : l'angle mort.",
+    "tip": "Avant de changer de voie ou de te garer : rétroviseur, clignotant, puis un coup d'œil par-dessus l'épaule.",
+    "show": "Montre-moi le scooter",
+    "hide": "Cacher le scooter",
+    "scooter": "Ce scooter est dans ton angle mort : aucun rétroviseur ne le montre. Seul un coup d'œil par-dessus ton épaule gauche le révèle."
+  },
+  "engine": [
+    {
+      "id": "huile",
+      "title": "L'huile moteur",
+      "body": "La jauge, une tige à tirer, montre le niveau. Il doit être entre les repères minimum et maximum.",
+      "tip": "Contrôle moteur froid, voiture à plat."
+    },
+    {
+      "id": "refroidissement",
+      "title": "Le liquide de refroidissement",
+      "body": "Un réservoir transparent, avec des repères minimum et maximum. Il empêche le moteur de surchauffer.",
+      "tip": "Jamais ouvert moteur chaud : il est sous pression et brûlant."
+    },
+    {
+      "id": "frein",
+      "title": "Le liquide de frein",
+      "body": "Un petit réservoir, souvent près du conducteur. Sans lui, les freins ne fonctionnent pas.",
+      "tip": "Si le niveau baisse, fais vérifier les freins."
+    },
+    {
+      "id": "lave-glace",
+      "title": "Le lave-glace",
+      "body": "Le réservoir au bouchon bleu, souvent marqué d'un petit pare-brise.",
+      "tip": "Un pare-brise propre, c'est une route bien vue."
+    },
+    {
+      "id": "batterie",
+      "title": "La batterie",
+      "body": "Le boîtier noir avec une borne + (rouge) et une borne − (noire). Elle fait démarrer la voiture.",
+      "tip": "Si le moteur peine à démarrer, la batterie est peut-être fatiguée."
+    }
+  ],
+  "start": {
+    "steps": [
+      "Je règle mon siège : les pieds touchent bien les pédales.",
+      "Je règle l'appuie-tête et les rétroviseurs.",
+      "J'attache ma ceinture et je vérifie celle des passagers.",
+      "Frein à main serré, levier au point mort.",
+      "Je démarre le moteur et je regarde les voyants.",
+      "Rétroviseurs, clignotant, coup d'œil dans l'angle mort.",
+      "Je desserre le frein à main et je pars, bchwiya."
+    ],
+    "done": "Prête à partir !",
+    "reset": "Recommencer"
+  },
+  "labels": {
+    "red": "Rouge : je m'arrête",
+    "orange": "Orange : je fais vérifier",
+    "info": "Vert ou bleu : information",
+    "mirrorsSee": "Ce que montrent les rétroviseurs",
+    "blindSpot": "Angles morts",
+    "previous": "Précédent"
+  }
+}

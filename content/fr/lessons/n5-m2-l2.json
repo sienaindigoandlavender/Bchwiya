@@ -23,19 +23,47 @@
     },
     {
       "type": "text",
-      "body": "Pour entrer, tu prends de la vitesse sur la voie d'accélération et tu t'insères en laissant passer ceux qui sont déjà sur l'autoroute."
+      "body": "Pour entrer, tu prends de la vitesse sur la voie d'accélération et tu t'insères en laissant passer ceux qui sont déjà sur l'autoroute.",
+      "media": {
+        "kind": "svg",
+        "component": "Scene",
+        "props": {
+          "name": "motorway-merge"
+        }
+      }
     },
     {
       "type": "text",
-      "body": "Tu roules à droite, entre 60 et 120 km/h. Les voies de gauche servent à dépasser."
+      "body": "Tu roules à droite, entre 60 et 120 km/h. Les voies de gauche servent à dépasser.",
+      "media": {
+        "kind": "svg",
+        "component": "Scene",
+        "props": {
+          "name": "motorway"
+        }
+      }
     },
     {
       "type": "text",
-      "body": "Jamais de demi-tour, jamais de marche arrière. Sortie ratée ? Tu prends la suivante."
+      "body": "Jamais de demi-tour, jamais de marche arrière. Sortie ratée ? Tu prends la suivante.",
+      "media": {
+        "kind": "svg",
+        "component": "Scene",
+        "props": {
+          "name": "no-u-turn"
+        }
+      }
     },
     {
       "type": "text",
-      "body": "En panne : bande d'arrêt d'urgence, warning, et tout le monde sort côté droit pour se mettre derrière la glissière."
+      "body": "En panne : bande d'arrêt d'urgence, warning, et tout le monde sort côté droit pour se mettre derrière la glissière.",
+      "media": {
+        "kind": "svg",
+        "component": "Scene",
+        "props": {
+          "name": "safety-barrier"
+        }
+      }
     },
     {
       "type": "keypoint",

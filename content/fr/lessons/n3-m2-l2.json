@@ -8,15 +8,36 @@
   "screens": [
     {
       "type": "text",
-      "body": "La limite est un maximum. Ce n'est pas la vitesse à laquelle tu dois rouler."
+      "body": "La limite est un maximum. Ce n'est pas la vitesse à laquelle tu dois rouler.",
+      "media": {
+        "kind": "svg",
+        "component": "Scene",
+        "props": {
+          "name": "speedometer"
+        }
+      }
     },
     {
       "type": "text",
-      "body": "Pluie, nuit, brouillard, route abîmée, beaucoup de piétons : tu ralentis."
+      "body": "Pluie, nuit, brouillard, route abîmée, beaucoup de piétons : tu ralentis.",
+      "media": {
+        "kind": "svg",
+        "component": "Scene",
+        "props": {
+          "name": "rain"
+        }
+      }
     },
     {
       "type": "text",
-      "body": "La loi le demande aussi : dès la tombée du jour et dans le brouillard, la vitesse doit être modérée."
+      "body": "La loi le demande aussi : dès la tombée du jour et dans le brouillard, la vitesse doit être modérée.",
+      "media": {
+        "kind": "svg",
+        "component": "Scene",
+        "props": {
+          "name": "fog"
+        }
+      }
     },
     {
       "type": "keypoint",

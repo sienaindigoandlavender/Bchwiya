@@ -7,19 +7,47 @@
   "screens": [
     {
       "type": "text",
-      "body": "En ville, tout est proche et tout bouge : piétons, scooters, vélos, bus, voitures qui se garent."
+      "body": "En ville, tout est proche et tout bouge : piétons, scooters, vélos, bus, voitures qui se garent.",
+      "media": {
+        "kind": "svg",
+        "component": "Scene",
+        "props": {
+          "name": "town"
+        }
+      }
     },
     {
       "type": "text",
-      "body": "Un piéton peut sortir entre deux voitures garées. Un scooter peut se cacher dans ton angle mort. Regarde partout, roule doucement."
+      "body": "Un piéton peut sortir entre deux voitures garées. Un scooter peut se cacher dans ton angle mort. Regarde partout, roule doucement.",
+      "media": {
+        "kind": "svg",
+        "component": "Scene",
+        "props": {
+          "name": "crosswalk"
+        }
+      }
     },
     {
       "type": "text",
-      "body": "Avant d'ouvrir ta portière côté rue, regarde dans le rétroviseur et par-dessus ton épaule."
+      "body": "Avant d'ouvrir ta portière côté rue, regarde dans le rétroviseur et par-dessus ton épaule.",
+      "media": {
+        "kind": "svg",
+        "component": "Scene",
+        "props": {
+          "name": "door-cyclist"
+        }
+      }
     },
     {
       "type": "text",
-      "body": "Le klaxon, en ville, sert seulement à prévenir d'un danger immédiat. Pas pour saluer, pas pour s'impatienter."
+      "body": "Le klaxon, en ville, sert seulement à prévenir d'un danger immédiat. Pas pour saluer, pas pour s'impatienter.",
+      "media": {
+        "kind": "svg",
+        "component": "Scene",
+        "props": {
+          "name": "horn"
+        }
+      }
     },
     {
       "type": "keypoint",

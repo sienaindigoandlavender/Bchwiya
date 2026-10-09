@@ -8,19 +8,47 @@
   "screens": [
     {
       "type": "text",
-      "body": "Pour le permis B, celui de la voiture, il faut avoir au moins 18 ans."
+      "body": "Pour le permis B, celui de la voiture, il faut avoir au moins 18 ans.",
+      "media": {
+        "kind": "svg",
+        "component": "Scene",
+        "props": {
+          "name": "cake-18"
+        }
+      }
     },
     {
       "type": "text",
-      "body": "Au Maroc, le permis fonctionne avec des points. Chaque infraction grave retire des points."
+      "body": "Au Maroc, le permis fonctionne avec des points. Chaque infraction grave retire des points.",
+      "media": {
+        "kind": "svg",
+        "component": "Scene",
+        "props": {
+          "name": "licence"
+        }
+      }
     },
     {
       "type": "text",
-      "body": "Au début, ton permis est probatoire pendant 2 ans. Tu commences avec 20 points."
+      "body": "Au début, ton permis est probatoire pendant 2 ans. Tu commences avec 20 points.",
+      "media": {
+        "kind": "svg",
+        "component": "Scene",
+        "props": {
+          "name": "points-20"
+        }
+      }
     },
     {
       "type": "text",
-      "body": "Après ces 2 ans, si tout se passe bien, ton permis passe à 30 points maximum."
+      "body": "Après ces 2 ans, si tout se passe bien, ton permis passe à 30 points maximum.",
+      "media": {
+        "kind": "svg",
+        "component": "Scene",
+        "props": {
+          "name": "points-30"
+        }
+      }
     },
     {
       "type": "keypoint",

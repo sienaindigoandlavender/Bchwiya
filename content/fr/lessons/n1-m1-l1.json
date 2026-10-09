@@ -7,7 +7,14 @@
   "screens": [
     {
       "type": "text",
-      "body": "Un panneau se lit d'abord par sa forme, avant même de voir ce qu'il y a dessus. De loin, la forme suffit pour savoir quel genre de message t'attend."
+      "body": "Un panneau se lit d'abord par sa forme, avant même de voir ce qu'il y a dessus. De loin, la forme suffit pour savoir quel genre de message t'attend.",
+      "media": {
+        "kind": "svg",
+        "component": "Scene",
+        "props": {
+          "name": "magnifier"
+        }
+      }
     },
     {
       "type": "text",

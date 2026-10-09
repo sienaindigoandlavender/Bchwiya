@@ -7,15 +7,36 @@
   "screens": [
     {
       "type": "text",
-      "body": "Sur la route, tu n'es jamais seule. Il y a des piétons, des cyclistes, des motos, des voitures, des camions et des bus."
+      "body": "Sur la route, tu n'es jamais seule. Il y a des piétons, des cyclistes, des motos, des voitures, des camions et des bus.",
+      "media": {
+        "kind": "svg",
+        "component": "Scene",
+        "props": {
+          "name": "road-users"
+        }
+      }
     },
     {
       "type": "text",
-      "body": "Au Maroc, il y a aussi des charrettes, des ânes, des troupeaux de moutons. Eux aussi sont des usagers de la route, et ils ne réagissent pas comme une voiture."
+      "body": "Au Maroc, il y a aussi des charrettes, des ânes, des troupeaux de moutons. Eux aussi sont des usagers de la route, et ils ne réagissent pas comme une voiture.",
+      "media": {
+        "kind": "svg",
+        "component": "Scene",
+        "props": {
+          "name": "donkey-cart"
+        }
+      }
     },
     {
       "type": "text",
-      "body": "Certains usagers n'ont aucune carrosserie pour les protéger : les piétons, les cyclistes et les motards. On les appelle les usagers vulnérables. Au moindre choc, ce sont eux qui sont blessés."
+      "body": "Certains usagers n'ont aucune carrosserie pour les protéger : les piétons, les cyclistes et les motards. On les appelle les usagers vulnérables. Au moindre choc, ce sont eux qui sont blessés.",
+      "media": {
+        "kind": "svg",
+        "component": "Scene",
+        "props": {
+          "name": "vulnerable"
+        }
+      }
     },
     {
       "type": "keypoint",

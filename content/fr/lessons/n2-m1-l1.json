@@ -8,7 +8,20 @@
   "screens": [
     {
       "type": "text",
-      "body": "À une intersection sans panneau, sans feu et sans agent, une seule règle : tu laisses passer les véhicules qui arrivent par ta droite."
+      "body": "À une intersection sans panneau, sans feu et sans agent, une seule règle : tu laisses passer les véhicules qui arrivent par ta droite.",
+      "media": {
+        "kind": "svg",
+        "component": "Crossroads",
+        "props": {
+          "cars": [
+            {
+              "arm": "s",
+              "who": "you"
+            }
+          ],
+          "signs": []
+        }
+      }
     },
     {
       "type": "text",
@@ -65,7 +78,14 @@
     },
     {
       "type": "text",
-      "body": "En sortant d'un chemin de terre, d'un parking ou d'une maison, tu laisses passer tout le monde, même ceux de gauche."
+      "body": "En sortant d'un chemin de terre, d'un parking ou d'une maison, tu laisses passer tout le monde, même ceux de gauche.",
+      "media": {
+        "kind": "svg",
+        "component": "Scene",
+        "props": {
+          "name": "countryside"
+        }
+      }
     },
     {
       "type": "keypoint",

@@ -18,11 +18,25 @@
     },
     {
       "type": "text",
-      "body": "Quand il y a plusieurs voies dans ton sens, tu roules sur celle de droite. Celles de gauche servent à dépasser."
+      "body": "Quand il y a plusieurs voies dans ton sens, tu roules sur celle de droite. Celles de gauche servent à dépasser.",
+      "media": {
+        "kind": "svg",
+        "component": "Scene",
+        "props": {
+          "name": "motorway"
+        }
+      }
     },
     {
       "type": "text",
-      "body": "Après un dépassement, tu reviens à droite dès que c'est possible, sans gêner celui que tu viens de dépasser."
+      "body": "Après un dépassement, tu reviens à droite dès que c'est possible, sans gêner celui que tu viens de dépasser.",
+      "media": {
+        "kind": "svg",
+        "component": "Scene",
+        "props": {
+          "name": "overtake"
+        }
+      }
     },
     {
       "type": "keypoint",

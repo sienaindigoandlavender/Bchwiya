@@ -8,19 +8,47 @@
   "screens": [
     {
       "type": "text",
-      "body": "L'examen du code est organisé par la NARSA, l'Agence nationale de la sécurité routière. Il se passe sur écran, dans un centre d'examen."
+      "body": "L'examen du code est organisé par la NARSA, l'Agence nationale de la sécurité routière. Il se passe sur écran, dans un centre d'examen.",
+      "media": {
+        "kind": "svg",
+        "component": "Scene",
+        "props": {
+          "name": "exam-screen"
+        }
+      }
     },
     {
       "type": "text",
-      "body": "Il y a 40 questions. Pour réussir, il faut au moins 32 bonnes réponses. Tu as donc droit à 8 erreurs, pas une de plus."
+      "body": "Il y a 40 questions. Pour réussir, il faut au moins 32 bonnes réponses. Tu as donc droit à 8 erreurs, pas une de plus.",
+      "media": {
+        "kind": "svg",
+        "component": "Scene",
+        "props": {
+          "name": "exam-day"
+        }
+      }
     },
     {
       "type": "text",
-      "body": "Presque toutes les questions montrent une image ou une courte vidéo d'une situation sur la route. Regarde bien tous les détails : panneaux, lignes au sol, autres véhicules."
+      "body": "Presque toutes les questions montrent une image ou une courte vidéo d'une situation sur la route. Regarde bien tous les détails : panneaux, lignes au sol, autres véhicules.",
+      "media": {
+        "kind": "svg",
+        "component": "Scene",
+        "props": {
+          "name": "magnifier"
+        }
+      }
     },
     {
       "type": "text",
-      "body": "Attention : une question peut avoir plusieurs bonnes réponses. Il faut cocher toutes les bonnes, et seulement les bonnes."
+      "body": "Attention : une question peut avoir plusieurs bonnes réponses. Il faut cocher toutes les bonnes, et seulement les bonnes.",
+      "media": {
+        "kind": "svg",
+        "component": "Scene",
+        "props": {
+          "name": "checklist"
+        }
+      }
     },
     {
       "type": "keypoint",

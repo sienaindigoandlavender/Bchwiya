@@ -7,23 +7,58 @@
   "screens": [
     {
       "type": "text",
-      "body": "On dépasse par la gauche. Exception : une voiture qui tourne à gauche et l'a signalé peut être dépassée par la droite."
+      "body": "On dépasse par la gauche. Exception : une voiture qui tourne à gauche et l'a signalé peut être dépassée par la droite.",
+      "media": {
+        "kind": "svg",
+        "component": "Scene",
+        "props": {
+          "name": "overtake"
+        }
+      }
     },
     {
       "type": "text",
-      "body": "Avant de dépasser, vérifie trois choses : tu vois loin devant, personne n'est déjà en train de te dépasser, et tu auras la place de revenir à droite."
+      "body": "Avant de dépasser, vérifie trois choses : tu vois loin devant, personne n'est déjà en train de te dépasser, et tu auras la place de revenir à droite.",
+      "media": {
+        "kind": "svg",
+        "component": "Scene",
+        "props": {
+          "name": "checklist"
+        }
+      }
     },
     {
       "type": "text",
-      "body": "Puis : rétroviseur, clignotant gauche, angle mort, et tu dépasses franchement, en laissant un bon espace sur le côté."
+      "body": "Puis : rétroviseur, clignotant gauche, angle mort, et tu dépasses franchement, en laissant un bon espace sur le côté.",
+      "media": {
+        "kind": "svg",
+        "component": "Scene",
+        "props": {
+          "name": "eyes-shoulder"
+        }
+      }
     },
     {
       "type": "text",
-      "body": "Tu reviens à droite quand tu vois la voiture dépassée dans ton rétroviseur intérieur, avec ton clignotant droit."
+      "body": "Tu reviens à droite quand tu vois la voiture dépassée dans ton rétroviseur intérieur, avec ton clignotant droit.",
+      "media": {
+        "kind": "svg",
+        "component": "Scene",
+        "props": {
+          "name": "lane-change"
+        }
+      }
     },
     {
       "type": "text",
-      "body": "Et si c'est toi qu'on dépasse ? Tu restes à droite et tu n'accélères pas."
+      "body": "Et si c'est toi qu'on dépasse ? Tu restes à droite et tu n'accélères pas.",
+      "media": {
+        "kind": "svg",
+        "component": "Scene",
+        "props": {
+          "name": "slow-truck"
+        }
+      }
     },
     {
       "type": "keypoint",

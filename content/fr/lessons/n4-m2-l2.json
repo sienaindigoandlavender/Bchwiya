@@ -7,15 +7,36 @@
   "screens": [
     {
       "type": "text",
-      "body": "L'appuie-tête se règle au niveau du haut de ta tête. Il protège ta nuque en cas de choc par l'arrière."
+      "body": "L'appuie-tête se règle au niveau du haut de ta tête. Il protège ta nuque en cas de choc par l'arrière.",
+      "media": {
+        "kind": "svg",
+        "component": "Scene",
+        "props": {
+          "name": "seatbelt"
+        }
+      }
     },
     {
       "type": "text",
-      "body": "L'airbag complète la ceinture, il ne la remplace pas. Jamais de siège bébé dos à la route devant un airbag actif."
+      "body": "L'airbag complète la ceinture, il ne la remplace pas. Jamais de siège bébé dos à la route devant un airbag actif.",
+      "media": {
+        "kind": "svg",
+        "component": "Scene",
+        "props": {
+          "name": "child-seat"
+        }
+      }
     },
     {
       "type": "text",
-      "body": "En cas de panne : feux de détresse, triangle posé bien en arrière de la voiture, et tout le monde se met en sécurité hors de la chaussée."
+      "body": "En cas de panne : feux de détresse, triangle posé bien en arrière de la voiture, et tout le monde se met en sécurité hors de la chaussée.",
+      "media": {
+        "kind": "svg",
+        "component": "Scene",
+        "props": {
+          "name": "breakdown"
+        }
+      }
     },
     {
       "type": "keypoint",

@@ -7,11 +7,25 @@
   "screens": [
     {
       "type": "text",
-      "body": "Les panneaux de danger sont des triangles blancs bordés de rouge. Ils sont placés avant le danger, pour te laisser le temps de réagir."
+      "body": "Les panneaux de danger sont des triangles blancs bordés de rouge. Ils sont placés avant le danger, pour te laisser le temps de réagir.",
+      "media": {
+        "kind": "svg",
+        "component": "Scene",
+        "props": {
+          "name": "countryside"
+        }
+      }
     },
     {
       "type": "text",
-      "body": "Leur message est toujours le même : ralentis et regarde bien. Le dessin au milieu te dit de quel danger il s'agit."
+      "body": "Leur message est toujours le même : ralentis et regarde bien. Le dessin au milieu te dit de quel danger il s'agit.",
+      "media": {
+        "kind": "svg",
+        "component": "Scene",
+        "props": {
+          "name": "speedometer"
+        }
+      }
     },
     {
       "type": "text",

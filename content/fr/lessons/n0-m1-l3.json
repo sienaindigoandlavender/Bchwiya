@@ -7,15 +7,36 @@
   "screens": [
     {
       "type": "text",
-      "body": "Le passage piéton, ce sont les bandes blanches peintes sur la chaussée. Quand un piéton y est engagé, ou s'apprête à traverser, tu t'arrêtes et tu le laisses passer."
+      "body": "Le passage piéton, ce sont les bandes blanches peintes sur la chaussée. Quand un piéton y est engagé, ou s'apprête à traverser, tu t'arrêtes et tu le laisses passer.",
+      "media": {
+        "kind": "svg",
+        "component": "Scene",
+        "props": {
+          "name": "crosswalk"
+        }
+      }
     },
     {
       "type": "text",
-      "body": "Les enfants sont imprévisibles : un ballon qui roule, et ils courent sur la route sans regarder. Près d'une école ou d'enfants qui jouent, tu ralentis."
+      "body": "Les enfants sont imprévisibles : un ballon qui roule, et ils courent sur la route sans regarder. Près d'une école ou d'enfants qui jouent, tu ralentis.",
+      "media": {
+        "kind": "svg",
+        "component": "Scene",
+        "props": {
+          "name": "kids-ball"
+        }
+      }
     },
     {
       "type": "text",
-      "body": "Un troupeau ou un âne sur le bord de la route ? Même chose : tu ralentis, tu gardes de la distance, et tu évites de klaxonner pour ne pas les affoler."
+      "body": "Un troupeau ou un âne sur le bord de la route ? Même chose : tu ralentis, tu gardes de la distance, et tu évites de klaxonner pour ne pas les affoler.",
+      "media": {
+        "kind": "svg",
+        "component": "Scene",
+        "props": {
+          "name": "sheep-herd"
+        }
+      }
     },
     {
       "type": "keypoint",

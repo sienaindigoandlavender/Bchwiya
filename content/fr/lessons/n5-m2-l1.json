@@ -18,11 +18,25 @@
     },
     {
       "type": "text",
-      "body": "Au Maroc, tu croiseras des charrettes, des ânes, des troupeaux, des piétons au bord de la route. Ralentis à leur approche."
+      "body": "Au Maroc, tu croiseras des charrettes, des ânes, des troupeaux, des piétons au bord de la route. Ralentis à leur approche.",
+      "media": {
+        "kind": "svg",
+        "component": "Scene",
+        "props": {
+          "name": "donkey-cart"
+        }
+      }
     },
     {
       "type": "text",
-      "body": "Derrière une charrette ou un camion lent, patience : dépasse seulement sur une portion droite, avec de la visibilité, et quand la ligne le permet."
+      "body": "Derrière une charrette ou un camion lent, patience : dépasse seulement sur une portion droite, avec de la visibilité, et quand la ligne le permet.",
+      "media": {
+        "kind": "svg",
+        "component": "Scene",
+        "props": {
+          "name": "slow-truck"
+        }
+      }
     },
     {
       "type": "keypoint",

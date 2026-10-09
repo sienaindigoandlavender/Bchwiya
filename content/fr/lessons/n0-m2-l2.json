@@ -7,19 +7,47 @@
   "screens": [
     {
       "type": "text",
-      "body": "Les lignes blanches au sol te parlent. Il y en a deux grandes familles : les lignes continues et les lignes discontinues."
+      "body": "Les lignes blanches au sol te parlent. Il y en a deux grandes familles : les lignes continues et les lignes discontinues.",
+      "media": {
+        "kind": "svg",
+        "component": "RoadLines",
+        "props": {
+          "variant": "mixte"
+        }
+      }
     },
     {
       "type": "text",
-      "body": "La ligne discontinue est faite de traits séparés. Tu peux la franchir, par exemple pour dépasser, mais seulement si c'est sans danger."
+      "body": "La ligne discontinue est faite de traits séparés. Tu peux la franchir, par exemple pour dépasser, mais seulement si c'est sans danger.",
+      "media": {
+        "kind": "svg",
+        "component": "RoadLines",
+        "props": {
+          "variant": "discontinue"
+        }
+      }
     },
     {
       "type": "text",
-      "body": "La ligne continue est un trait sans interruption. Tu n'as pas le droit de la franchir, ni même de rouler dessus. Elle protège les endroits où dépasser serait dangereux."
+      "body": "La ligne continue est un trait sans interruption. Tu n'as pas le droit de la franchir, ni même de rouler dessus. Elle protège les endroits où dépasser serait dangereux.",
+      "media": {
+        "kind": "svg",
+        "component": "RoadLines",
+        "props": {
+          "variant": "continue"
+        }
+      }
     },
     {
       "type": "text",
-      "body": "Avant une ligne continue, des flèches blanches inclinées apparaissent au sol : ce sont les flèches de rabattement. Elles te disent de revenir dans ta voie, car la ligne continue arrive."
+      "body": "Avant une ligne continue, des flèches blanches inclinées apparaissent au sol : ce sont les flèches de rabattement. Elles te disent de revenir dans ta voie, car la ligne continue arrive.",
+      "media": {
+        "kind": "svg",
+        "component": "RoadLines",
+        "props": {
+          "variant": "rabattement"
+        }
+      }
     },
     {
       "type": "keypoint",

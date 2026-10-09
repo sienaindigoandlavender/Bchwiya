@@ -7,15 +7,36 @@
   "screens": [
     {
       "type": "text",
-      "body": "Pneus : vérifie la pression à froid, et surveille l'usure. Un pneu lisse glisse, surtout sous la pluie."
+      "body": "Pneus : vérifie la pression à froid, et surveille l'usure. Un pneu lisse glisse, surtout sous la pluie.",
+      "media": {
+        "kind": "svg",
+        "component": "Scene",
+        "props": {
+          "name": "tyre"
+        }
+      }
     },
     {
       "type": "text",
-      "body": "Niveaux, moteur froid : huile, liquide de frein, liquide de refroidissement, lave-glace."
+      "body": "Niveaux, moteur froid : huile, liquide de frein, liquide de refroidissement, lave-glace.",
+      "media": {
+        "kind": "svg",
+        "component": "Scene",
+        "props": {
+          "name": "checklist"
+        }
+      }
     },
     {
       "type": "text",
-      "body": "Dans la voiture, garde toujours : ton permis, la carte grise, l'attestation d'assurance, et le certificat de visite technique à jour."
+      "body": "Dans la voiture, garde toujours : ton permis, la carte grise, l'attestation d'assurance, et le certificat de visite technique à jour.",
+      "media": {
+        "kind": "svg",
+        "component": "Scene",
+        "props": {
+          "name": "documents"
+        }
+      }
     },
     {
       "type": "keypoint",

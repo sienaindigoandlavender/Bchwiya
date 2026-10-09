@@ -7,19 +7,47 @@
   "screens": [
     {
       "type": "text",
-      "body": "Les voyants parlent avec leurs couleurs, comme les feux."
+      "body": "Les voyants parlent avec leurs couleurs, comme les feux.",
+      "media": {
+        "kind": "svg",
+        "component": "Scene",
+        "props": {
+          "name": "dashboard-lights"
+        }
+      }
     },
     {
       "type": "text",
-      "body": "Rouge : alerte grave. Huile, température du moteur, freins, batterie. Tu t'arrêtes dès que possible, en sécurité."
+      "body": "Rouge : alerte grave. Huile, température du moteur, freins, batterie. Tu t'arrêtes dès que possible, en sécurité.",
+      "media": {
+        "kind": "svg",
+        "component": "Scene",
+        "props": {
+          "name": "breakdown"
+        }
+      }
     },
     {
       "type": "text",
-      "body": "Orange : quelque chose à faire vérifier bientôt. Pas d'urgence immédiate, mais pas question d'attendre des semaines."
+      "body": "Orange : quelque chose à faire vérifier bientôt. Pas d'urgence immédiate, mais pas question d'attendre des semaines.",
+      "media": {
+        "kind": "svg",
+        "component": "Scene",
+        "props": {
+          "name": "checklist"
+        }
+      }
     },
     {
       "type": "text",
-      "body": "Vert ou bleu : simple information. Le bleu t'indique par exemple que tes feux de route sont allumés."
+      "body": "Vert ou bleu : simple information. Le bleu t'indique par exemple que tes feux de route sont allumés.",
+      "media": {
+        "kind": "svg",
+        "component": "Scene",
+        "props": {
+          "name": "night"
+        }
+      }
     },
     {
       "type": "keypoint",

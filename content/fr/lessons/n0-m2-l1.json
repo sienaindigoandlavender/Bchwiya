@@ -7,19 +7,47 @@
   "screens": [
     {
       "type": "text",
-      "body": "La chaussée, c'est la partie de la route où roulent les véhicules."
+      "body": "La chaussée, c'est la partie de la route où roulent les véhicules.",
+      "media": {
+        "kind": "svg",
+        "component": "Scene",
+        "props": {
+          "name": "road-parts"
+        }
+      }
     },
     {
       "type": "text",
-      "body": "La chaussée est découpée en voies. Une voie est une bande assez large pour une seule file de véhicules."
+      "body": "La chaussée est découpée en voies. Une voie est une bande assez large pour une seule file de véhicules.",
+      "media": {
+        "kind": "svg",
+        "component": "RoadLines",
+        "props": {
+          "variant": "discontinue"
+        }
+      }
     },
     {
       "type": "text",
-      "body": "Sur les côtés, hors des villes, il y a les accotements : la bande de terre ou de gravier au bord de la chaussée. En ville, ce sont les trottoirs, réservés aux piétons."
+      "body": "Sur les côtés, hors des villes, il y a les accotements : la bande de terre ou de gravier au bord de la chaussée. En ville, ce sont les trottoirs, réservés aux piétons.",
+      "media": {
+        "kind": "svg",
+        "component": "Scene",
+        "props": {
+          "name": "countryside"
+        }
+      }
     },
     {
       "type": "text",
-      "body": "Sur l'autoroute, tout à droite, il y a une bande spéciale : la bande d'arrêt d'urgence. On s'y arrête seulement en cas de panne ou d'urgence."
+      "body": "Sur l'autoroute, tout à droite, il y a une bande spéciale : la bande d'arrêt d'urgence. On s'y arrête seulement en cas de panne ou d'urgence.",
+      "media": {
+        "kind": "svg",
+        "component": "Scene",
+        "props": {
+          "name": "motorway"
+        }
+      }
     },
     {
       "type": "keypoint",

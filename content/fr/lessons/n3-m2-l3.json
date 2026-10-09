@@ -8,19 +8,47 @@
   "screens": [
     {
       "type": "text",
-      "body": "Garde au moins 2 secondes entre toi et la voiture de devant. Repère un poteau : quand elle le passe, compte « un, deux »."
+      "body": "Garde au moins 2 secondes entre toi et la voiture de devant. Repère un poteau : quand elle le passe, compte « un, deux ».",
+      "media": {
+        "kind": "svg",
+        "component": "Scene",
+        "props": {
+          "name": "two-seconds"
+        }
+      }
     },
     {
       "type": "text",
-      "body": "Si tu arrives au poteau avant d'avoir fini de compter, tu es trop près. Lève le pied."
+      "body": "Si tu arrives au poteau avant d'avoir fini de compter, tu es trop près. Lève le pied.",
+      "media": {
+        "kind": "svg",
+        "component": "Scene",
+        "props": {
+          "name": "crazy-driver"
+        }
+      }
     },
     {
       "type": "text",
-      "body": "Pour t'arrêter, il te faut d'abord le temps de réagir, environ une seconde. Pendant cette seconde, la voiture roule encore. Ensuite seulement, elle freine."
+      "body": "Pour t'arrêter, il te faut d'abord le temps de réagir, environ une seconde. Pendant cette seconde, la voiture roule encore. Ensuite seulement, elle freine.",
+      "media": {
+        "kind": "svg",
+        "component": "Scene",
+        "props": {
+          "name": "clock"
+        }
+      }
     },
     {
       "type": "text",
-      "body": "Plus tu vas vite, plus la distance d'arrêt s'allonge. Sur route mouillée, double ta distance de sécurité."
+      "body": "Plus tu vas vite, plus la distance d'arrêt s'allonge. Sur route mouillée, double ta distance de sécurité.",
+      "media": {
+        "kind": "svg",
+        "component": "Scene",
+        "props": {
+          "name": "rain"
+        }
+      }
     },
     {
       "type": "keypoint",

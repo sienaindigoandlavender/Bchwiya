@@ -7,7 +7,14 @@
   "screens": [
     {
       "type": "text",
-      "body": "Rappel : l'arrêt est bref, conducteur au volant ou tout près. Le stationnement dure plus longtemps."
+      "body": "Rappel : l'arrêt est bref, conducteur au volant ou tout près. Le stationnement dure plus longtemps.",
+      "media": {
+        "kind": "svg",
+        "component": "Scene",
+        "props": {
+          "name": "parking-good"
+        }
+      }
     },
     {
       "type": "text",
@@ -22,7 +29,14 @@
     },
     {
       "type": "text",
-      "body": "Et pas de double file, même « deux minutes » avec les feux de détresse."
+      "body": "Et pas de double file, même « deux minutes » avec les feux de détresse.",
+      "media": {
+        "kind": "svg",
+        "component": "Scene",
+        "props": {
+          "name": "double-parking"
+        }
+      }
     },
     {
       "type": "text",

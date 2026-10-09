@@ -7,19 +7,47 @@
   "screens": [
     {
       "type": "text",
-      "body": "Tu as tout vu. Ce dernier module est une révision générale, avec des questions sur tous les niveaux."
+      "body": "Tu as tout vu. Ce dernier module est une révision générale, avec des questions sur tous les niveaux.",
+      "media": {
+        "kind": "svg",
+        "component": "Scene",
+        "props": {
+          "name": "checklist"
+        }
+      }
     },
     {
       "type": "text",
-      "body": "Dans les jours avant l'examen : un examen blanc par jour, puis tu revois tes erreurs dans Révision."
+      "body": "Dans les jours avant l'examen : un examen blanc par jour, puis tu revois tes erreurs dans Révision.",
+      "media": {
+        "kind": "svg",
+        "component": "Scene",
+        "props": {
+          "name": "exam-screen"
+        }
+      }
     },
     {
       "type": "text",
-      "body": "La veille : une bonne nuit de sommeil. Pas de révision tard le soir, ton cerveau a besoin de repos."
+      "body": "La veille : une bonne nuit de sommeil. Pas de révision tard le soir, ton cerveau a besoin de repos.",
+      "media": {
+        "kind": "svg",
+        "component": "Scene",
+        "props": {
+          "name": "sleep-night"
+        }
+      }
     },
     {
       "type": "text",
-      "body": "Le jour J : lis chaque question jusqu'au bout, regarde toute l'image, et coche toutes les bonnes réponses. 32 sur 40, tu en es capable."
+      "body": "Le jour J : lis chaque question jusqu'au bout, regarde toute l'image, et coche toutes les bonnes réponses. 32 sur 40, tu en es capable.",
+      "media": {
+        "kind": "svg",
+        "component": "Scene",
+        "props": {
+          "name": "exam-day"
+        }
+      }
     },
     {
       "type": "keypoint",
