@@ -1,0 +1,31 @@
+{
+  "$comment": "Numéros d'urgence au Maroc : 15 (protection civile : pompiers et ambulance), 19 (police), 177 (gendarmerie royale).",
+  "id": "n5-m3-l3",
+  "moduleId": "n5-m3",
+  "title": "En cas d'accident",
+  "minutes": 5,
+  "ruleIds": ["accident-pas", "numeros-urgence"],
+  "screens": [
+    {
+      "type": "text",
+      "body": "Face à un accident, trois gestes dans l'ordre : Protéger, Alerter, Secourir."
+    },
+    {
+      "type": "text",
+      "body": "Protéger : feux de détresse, triangle bien en arrière, pas de cigarette. Gare-toi en sécurité avant de sortir."
+    },
+    {
+      "type": "text",
+      "body": "Alerter : 15 pour la protection civile (pompiers et ambulance), 19 pour la police, 177 pour la gendarmerie royale hors des villes. Dis où, combien de blessés, et dans quel état."
+    },
+    {
+      "type": "text",
+      "body": "Secourir : ne déplace pas un blessé, sauf danger immédiat comme un incendie. Ne retire jamais le casque d'un motard. Parle-lui, couvre-le, reste avec lui."
+    },
+    {
+      "type": "keypoint",
+      "body": "Protéger, alerter, secourir. 15, 19, 177."
+    }
+  ],
+  "checks": ["q-n5-m3-007", "q-n5-m3-009"]
+}

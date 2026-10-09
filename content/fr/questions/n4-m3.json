@@ -1,0 +1,211 @@
+{
+  "moduleId": "n4-m3",
+  "questions": [
+    {
+      "id": "q-n4-m3-001",
+      "moduleId": "n4-m3",
+      "ruleIds": ["voyants-couleurs"],
+      "prompt": "Un voyant rouge s'allume sur le tableau de bord. Que fais-tu ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Je m'arrête dès que possible, en sécurité"
+        },
+        {
+          "id": "b",
+          "text": "Je continue jusqu'à la maison"
+        },
+        {
+          "id": "c",
+          "text": "Je l'ignore, ce n'est souvent rien"
+        }
+      ],
+      "correct": ["a"],
+      "explanation": "Rouge : alerte grave (huile, température, freins). Tu t'arrêtes dès que tu peux le faire en sécurité."
+    },
+    {
+      "id": "q-n4-m3-002",
+      "moduleId": "n4-m3",
+      "ruleIds": ["voyants-couleurs"],
+      "prompt": "Un voyant orange s'allume. Que fais-tu ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Je fais vérifier la voiture rapidement"
+        },
+        {
+          "id": "b",
+          "text": "Je m'arrête immédiatement sur la chaussée"
+        },
+        {
+          "id": "c",
+          "text": "Rien, c'est décoratif"
+        }
+      ],
+      "correct": ["a"],
+      "explanation": "Orange : il y a un problème à faire vérifier bientôt, mais ce n'est pas une urgence immédiate."
+    },
+    {
+      "id": "q-n4-m3-003",
+      "moduleId": "n4-m3",
+      "ruleIds": ["voyants-couleurs"],
+      "prompt": "Que signifie un voyant vert ou bleu ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Une simple information, par exemple les feux allumés"
+        },
+        {
+          "id": "b",
+          "text": "Un danger grave"
+        },
+        {
+          "id": "c",
+          "text": "Une panne moteur"
+        }
+      ],
+      "correct": ["a"],
+      "explanation": "Vert ou bleu : une information. Le bleu, par exemple, t'indique que les feux de route (pleins phares) sont allumés."
+    },
+    {
+      "id": "q-n4-m3-004",
+      "moduleId": "n4-m3",
+      "ruleIds": ["pneus"],
+      "prompt": "Quand vérifie-t-on la pression des pneus ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Pneus froids, avant de rouler longtemps"
+        },
+        {
+          "id": "b",
+          "text": "Juste après un long trajet"
+        },
+        {
+          "id": "c",
+          "text": "Jamais, c'est le garagiste"
+        }
+      ],
+      "correct": ["a"],
+      "explanation": "La pression se vérifie à froid. Des pneus mal gonflés freinent moins bien et s'usent plus vite."
+    },
+    {
+      "id": "q-n4-m3-005",
+      "moduleId": "n4-m3",
+      "ruleIds": ["pneus"],
+      "prompt": "Un pneu lisse, très usé, est dangereux car :",
+      "options": [
+        {
+          "id": "a",
+          "text": "Il adhère moins à la route, surtout sous la pluie"
+        },
+        {
+          "id": "b",
+          "text": "Il fait plus de bruit, c'est tout"
+        },
+        {
+          "id": "c",
+          "text": "Il consomme plus d'essence, c'est tout"
+        }
+      ],
+      "correct": ["a"],
+      "explanation": "Un pneu usé évacue mal l'eau : risque de glisser et d'aquaplaning."
+    },
+    {
+      "id": "q-n4-m3-006",
+      "moduleId": "n4-m3",
+      "ruleIds": ["niveaux"],
+      "prompt": "Quels niveaux faut-il surveiller régulièrement ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "L'huile moteur"
+        },
+        {
+          "id": "b",
+          "text": "Le liquide de frein"
+        },
+        {
+          "id": "c",
+          "text": "Le liquide de refroidissement"
+        },
+        {
+          "id": "d",
+          "text": "La couleur de la carrosserie"
+        }
+      ],
+      "correct": ["a", "b", "c"],
+      "explanation": "Huile, liquide de frein, liquide de refroidissement et lave-glace se contrôlent régulièrement, moteur froid."
+    },
+    {
+      "id": "q-n4-m3-007",
+      "moduleId": "n4-m3",
+      "ruleIds": ["documents"],
+      "prompt": "Quels documents dois-tu avoir avec toi en conduisant ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Mon permis de conduire"
+        },
+        {
+          "id": "b",
+          "text": "La carte grise du véhicule"
+        },
+        {
+          "id": "c",
+          "text": "L'attestation d'assurance"
+        },
+        {
+          "id": "d",
+          "text": "Mon diplôme"
+        }
+      ],
+      "correct": ["a", "b", "c"],
+      "explanation": "Permis, carte grise, attestation d'assurance, et le certificat de visite technique à jour si le véhicule y est soumis."
+    },
+    {
+      "id": "q-n4-m3-008",
+      "moduleId": "n4-m3",
+      "ruleIds": ["documents"],
+      "prompt": "À quoi sert la visite technique ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "À vérifier que le véhicule est en bon état et sûr"
+        },
+        {
+          "id": "b",
+          "text": "À laver la voiture"
+        },
+        {
+          "id": "c",
+          "text": "À renouveler le permis"
+        }
+      ],
+      "correct": ["a"],
+      "explanation": "La visite technique contrôle régulièrement les freins, l'éclairage, les pneus et le reste. Le véhicule doit être à jour."
+    },
+    {
+      "id": "q-n4-m3-009",
+      "moduleId": "n4-m3",
+      "ruleIds": ["niveaux", "voyants-couleurs"],
+      "prompt": "Le voyant de température du moteur s'allume en rouge. Que fais-tu ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Je m'arrête en sécurité et je coupe le moteur"
+        },
+        {
+          "id": "b",
+          "text": "J'accélère pour arriver plus vite"
+        },
+        {
+          "id": "c",
+          "text": "J'ouvre les fenêtres et je continue"
+        }
+      ],
+      "correct": ["a"],
+      "explanation": "Moteur trop chaud : continuer peut l'abîmer gravement. Arrête-toi, coupe le moteur, et n'ouvre jamais le bouchon du radiateur à chaud."
+    }
+  ]
+}

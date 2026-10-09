@@ -1,0 +1,31 @@
+{
+  "$comment": "Alcoolémie : arrêté 2707-10, seuil de 0,20 g/l de sang ou 0,10 mg/l d'air expiré.",
+  "id": "n4-m1-l2",
+  "moduleId": "n4-m1",
+  "title": "Fatigue, médicaments, téléphone",
+  "minutes": 5,
+  "ruleIds": ["fatigue", "medicaments-drogues", "telephone"],
+  "screens": [
+    {
+      "type": "text",
+      "body": "La fatigue est aussi dangereuse que l'alcool. Signes : bâillements, yeux qui piquent, nuque raide, voiture qui dérive."
+    },
+    {
+      "type": "text",
+      "body": "Sur un long trajet, fais une pause environ toutes les 2 heures. Si tu sens la fatigue, arrête-toi et fais une petite sieste de 15 à 20 minutes."
+    },
+    {
+      "type": "text",
+      "body": "Certains médicaments donnent sommeil. Lis la notice, demande au pharmacien. Les drogues, elles, sont interdites au volant."
+    },
+    {
+      "type": "text",
+      "body": "Le téléphone tenu en main est interdit en conduisant. Même en mains libres, une conversation détourne ton attention."
+    },
+    {
+      "type": "keypoint",
+      "body": "Fatiguée, je m'arrête. Le téléphone, je le pose."
+    }
+  ],
+  "checks": ["q-n4-m1-004", "q-n4-m1-007"]
+}

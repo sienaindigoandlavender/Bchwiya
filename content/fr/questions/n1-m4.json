@@ -1,0 +1,230 @@
+{
+  "moduleId": "n1-m4",
+  "questions": [
+    {
+      "id": "q-n1-m4-001",
+      "moduleId": "n1-m4",
+      "ruleIds": ["indication-services"],
+      "prompt": "Ce panneau t'indique :",
+      "options": [
+        {
+          "id": "a",
+          "text": "Un parking"
+        },
+        {
+          "id": "b",
+          "text": "Une interdiction de stationner"
+        },
+        {
+          "id": "c",
+          "text": "Une station de police"
+        }
+      ],
+      "correct": ["a"],
+      "explanation": "Le P blanc sur fond bleu indique un parking.",
+      "media": {
+        "kind": "svg",
+        "component": "Sign",
+        "props": {
+          "preset": "parking"
+        }
+      }
+    },
+    {
+      "id": "q-n1-m4-002",
+      "moduleId": "n1-m4",
+      "ruleIds": ["indication-circulation"],
+      "prompt": "Ce panneau t'indique :",
+      "options": [
+        {
+          "id": "a",
+          "text": "Une impasse : la rue n'a pas de sortie"
+        },
+        {
+          "id": "b",
+          "text": "Un sens interdit"
+        },
+        {
+          "id": "c",
+          "text": "Une route prioritaire"
+        }
+      ],
+      "correct": ["a"],
+      "explanation": "La barre rouge en travers en haut : la route est sans issue. C'est une impasse.",
+      "media": {
+        "kind": "svg",
+        "component": "Sign",
+        "props": {
+          "preset": "impasse"
+        }
+      }
+    },
+    {
+      "id": "q-n1-m4-003",
+      "moduleId": "n1-m4",
+      "ruleIds": ["indication-circulation"],
+      "prompt": "Ce panneau carré bleu avec une flèche blanche vers le haut indique :",
+      "options": [
+        {
+          "id": "a",
+          "text": "Un sens unique"
+        },
+        {
+          "id": "b",
+          "text": "Une obligation d'aller tout droit"
+        },
+        {
+          "id": "c",
+          "text": "Une route prioritaire"
+        }
+      ],
+      "correct": ["a"],
+      "explanation": "Carré bleu avec une flèche : sens unique. Tous les véhicules roulent dans le sens de la flèche. Attention : rond bleu avec flèche, c'est une obligation.",
+      "media": {
+        "kind": "svg",
+        "component": "Sign",
+        "props": {
+          "preset": "sens-unique"
+        }
+      }
+    },
+    {
+      "id": "q-n1-m4-004",
+      "moduleId": "n1-m4",
+      "ruleIds": ["indication-pietons"],
+      "prompt": "Ce panneau bleu signale :",
+      "options": [
+        {
+          "id": "a",
+          "text": "L'emplacement d'un passage pour piétons"
+        },
+        {
+          "id": "b",
+          "text": "Une rue interdite aux piétons"
+        },
+        {
+          "id": "c",
+          "text": "Un danger de piétons sur la route"
+        }
+      ],
+      "correct": ["a"],
+      "explanation": "Carré bleu avec un piéton : il t'indique où se trouve le passage piéton. Le triangle rouge, lui, l'annonce à l'avance.",
+      "media": {
+        "kind": "svg",
+        "component": "Sign",
+        "props": {
+          "preset": "passage-pietons"
+        }
+      }
+    },
+    {
+      "id": "q-n1-m4-005",
+      "moduleId": "n1-m4",
+      "ruleIds": ["indication-services"],
+      "prompt": "Ce panneau t'indique :",
+      "options": [
+        {
+          "id": "a",
+          "text": "Un hôpital"
+        },
+        {
+          "id": "b",
+          "text": "Un hôtel"
+        },
+        {
+          "id": "c",
+          "text": "Une halte de bus"
+        }
+      ],
+      "correct": ["a"],
+      "explanation": "Le H blanc sur fond bleu signale un hôpital. Évite de klaxonner près d'un hôpital.",
+      "media": {
+        "kind": "svg",
+        "component": "Sign",
+        "props": {
+          "preset": "hopital"
+        }
+      }
+    },
+    {
+      "id": "q-n1-m4-006",
+      "moduleId": "n1-m4",
+      "ruleIds": ["indication-autoroute"],
+      "prompt": "Ce panneau t'indique :",
+      "options": [
+        {
+          "id": "a",
+          "text": "L'entrée d'une autoroute"
+        },
+        {
+          "id": "b",
+          "text": "Un pont dangereux"
+        },
+        {
+          "id": "c",
+          "text": "La fin d'une autoroute"
+        }
+      ],
+      "correct": ["a"],
+      "explanation": "Ce dessin d'autoroute sur fond bleu marque son entrée. Les règles de l'autoroute s'appliquent à partir d'ici.",
+      "media": {
+        "kind": "svg",
+        "component": "Sign",
+        "props": {
+          "preset": "autoroute"
+        }
+      }
+    },
+    {
+      "id": "q-n1-m4-007",
+      "moduleId": "n1-m4",
+      "ruleIds": ["indication-autoroute"],
+      "prompt": "Ce panneau t'indique :",
+      "options": [
+        {
+          "id": "a",
+          "text": "Une autoroute fermée"
+        },
+        {
+          "id": "b",
+          "text": "La fin de l'autoroute"
+        },
+        {
+          "id": "c",
+          "text": "Une sortie d'urgence"
+        }
+      ],
+      "correct": ["b"],
+      "explanation": "Le même dessin barré de rouge : l'autoroute se termine. Les limitations de vitesse changent.",
+      "media": {
+        "kind": "svg",
+        "component": "Sign",
+        "props": {
+          "preset": "fin-autoroute"
+        }
+      }
+    },
+    {
+      "id": "q-n1-m4-008",
+      "moduleId": "n1-m4",
+      "ruleIds": ["indication-circulation", "obligation-bleue"],
+      "prompt": "Quelle est la différence entre ces deux panneaux : un rond bleu avec une flèche, et un carré bleu avec une flèche ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Le rond est une obligation, le carré une information"
+        },
+        {
+          "id": "b",
+          "text": "Aucune différence"
+        },
+        {
+          "id": "c",
+          "text": "Le carré est une obligation, le rond une information"
+        }
+      ],
+      "correct": ["a"],
+      "explanation": "La forme change tout : rond bleu = tu dois. Carré bleu = on t'informe (ici, un sens unique)."
+    }
+  ]
+}

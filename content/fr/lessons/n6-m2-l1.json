@@ -1,14 +1,30 @@
 {
   "id": "n6-m2-l1",
   "moduleId": "n6-m2",
-  "title": "Révision générale",
+  "title": "La dernière ligne droite",
   "minutes": 5,
-  "ruleIds": [],
+  "ruleIds": ["examen-format", "piege-plusieurs-reponses"],
   "screens": [
     {
       "type": "text",
-      "body": "Contenu à venir."
+      "body": "Tu as tout vu. Ce dernier module est une révision générale, avec des questions sur tous les niveaux."
+    },
+    {
+      "type": "text",
+      "body": "Dans les jours avant l'examen : un examen blanc par jour, puis tu revois tes erreurs dans Révision."
+    },
+    {
+      "type": "text",
+      "body": "La veille : une bonne nuit de sommeil. Pas de révision tard le soir, ton cerveau a besoin de repos."
+    },
+    {
+      "type": "text",
+      "body": "Le jour J : lis chaque question jusqu'au bout, regarde toute l'image, et coche toutes les bonnes réponses. 32 sur 40, tu en es capable."
+    },
+    {
+      "type": "keypoint",
+      "body": "Un examen blanc par jour, une bonne nuit, et du calme. Bchwiya bchwiya."
     }
   ],
-  "checks": []
+  "checks": ["q-n6-m2-001"]
 }

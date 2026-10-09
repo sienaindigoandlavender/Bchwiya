@@ -1,0 +1,41 @@
+{
+  "id": "n6-m1-l2",
+  "moduleId": "n6-m1",
+  "title": "Les confusions classiques",
+  "minutes": 5,
+  "ruleIds": ["priorite-giratoire-sans-panneau", "feu-orange-clignotant", "arret-vs-stationnement"],
+  "screens": [
+    {
+      "type": "text",
+      "body": "Le giratoire. Avec cédez le passage aux entrées : l'anneau est prioritaire. Sans panneau : priorité à droite, ceux qui entrent passent."
+    },
+    {
+      "type": "text",
+      "body": "L'orange. Fixe : je m'arrête si je peux. Clignotant : le feu ne commande plus, je suis les panneaux."
+    },
+    {
+      "type": "text",
+      "body": "Stationnement. Une barre : arrêt possible. Une croix : ni arrêt ni stationnement.",
+      "media": {
+        "kind": "svg",
+        "component": "Sign",
+        "props": {
+          "preset": "stationnement-interdit"
+        }
+      }
+    },
+    {
+      "type": "text",
+      "body": "Les panneaux bleus. Rond bleu : je dois. Carré bleu : on m'informe."
+    },
+    {
+      "type": "text",
+      "body": "La vitesse en probatoire : 90 km/h au maximum, même sur autoroute."
+    },
+    {
+      "type": "keypoint",
+      "body": "Giratoire, orange, barre ou croix, rond ou carré, probatoire : je vérifie deux fois."
+    }
+  ],
+  "checks": ["q-n6-m1-002", "q-n6-m1-003"]
+}

@@ -1,14 +1,76 @@
 {
+  "$comment": "Règle générale de priorité à droite : loi 52-05 (règles de circulation).",
   "id": "n2-m1-l1",
   "moduleId": "n2-m1",
-  "title": "La priorité à droite",
+  "title": "La règle de base",
   "minutes": 5,
-  "ruleIds": [],
+  "ruleIds": ["priorite-droite-principe"],
   "screens": [
     {
       "type": "text",
-      "body": "Contenu à venir."
+      "body": "À une intersection sans panneau, sans feu et sans agent, une seule règle : tu laisses passer les véhicules qui arrivent par ta droite."
+    },
+    {
+      "type": "text",
+      "body": "Ici, tu es la voiture rose. L'autre voiture arrive par ta droite : elle passe avant toi.",
+      "media": {
+        "kind": "svg",
+        "component": "Crossroads",
+        "props": {
+          "cars": [
+            {
+              "arm": "s",
+              "who": "you"
+            },
+            {
+              "arm": "e",
+              "who": "other"
+            }
+          ],
+          "signs": []
+        }
+      }
+    },
+    {
+      "type": "text",
+      "body": "Si la voiture arrive par ta gauche, c'est elle qui doit te céder le passage. Mais reste prudente : vérifie toujours qu'elle s'arrête.",
+      "media": {
+        "kind": "svg",
+        "component": "Crossroads",
+        "props": {
+          "cars": [
+            {
+              "arm": "s",
+              "who": "you"
+            },
+            {
+              "arm": "w",
+              "who": "other"
+            }
+          ],
+          "signs": []
+        }
+      }
+    },
+    {
+      "type": "text",
+      "body": "Ce panneau t'annonce une intersection à priorité à droite.",
+      "media": {
+        "kind": "svg",
+        "component": "Sign",
+        "props": {
+          "preset": "danger-intersection-droite"
+        }
+      }
+    },
+    {
+      "type": "text",
+      "body": "En sortant d'un chemin de terre, d'un parking ou d'une maison, tu laisses passer tout le monde, même ceux de gauche."
+    },
+    {
+      "type": "keypoint",
+      "body": "Pas de panneau, pas de feu : je cède le passage à droite."
     }
   ],
-  "checks": []
+  "checks": ["q-n2-m1-001", "q-n2-m1-002"]
 }

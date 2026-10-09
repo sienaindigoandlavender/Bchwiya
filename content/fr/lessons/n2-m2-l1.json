@@ -3,12 +3,64 @@
   "moduleId": "n2-m2",
   "title": "Stop et cédez le passage",
   "minutes": 5,
-  "ruleIds": [],
+  "ruleIds": ["stop-arret-complet", "cedez-ralentir"],
   "screens": [
     {
       "type": "text",
-      "body": "Contenu à venir."
+      "body": "Le stop : arrêt complet obligatoire à la ligne blanche, même si la route est vide. Ensuite, tu laisses passer tout le monde, à droite comme à gauche.",
+      "media": {
+        "kind": "svg",
+        "component": "Sign",
+        "props": {
+          "preset": "stop"
+        }
+      }
+    },
+    {
+      "type": "text",
+      "body": "Ici, tu as un stop. La voiture de gauche passe avant toi.",
+      "media": {
+        "kind": "svg",
+        "component": "Crossroads",
+        "props": {
+          "cars": [
+            {
+              "arm": "s",
+              "who": "you"
+            },
+            {
+              "arm": "w",
+              "who": "other"
+            }
+          ],
+          "signs": [
+            {
+              "arm": "s",
+              "type": "stop"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "type": "text",
+      "body": "Le cédez le passage : tu ralentis, tu regardes, et tu laisses passer tout le monde. Si personne n'arrive, tu n'as pas besoin de t'arrêter.",
+      "media": {
+        "kind": "svg",
+        "component": "Sign",
+        "props": {
+          "preset": "cedez-le-passage"
+        }
+      }
+    },
+    {
+      "type": "text",
+      "body": "Dans les deux cas, la priorité à droite ne compte plus : c'est toi qui dois céder."
+    },
+    {
+      "type": "keypoint",
+      "body": "Stop : je m'arrête toujours. Cédez : je m'arrête seulement si quelqu'un arrive."
     }
   ],
-  "checks": []
+  "checks": ["q-n2-m2-001", "q-n2-m2-003"]
 }

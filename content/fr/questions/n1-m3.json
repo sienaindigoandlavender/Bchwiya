@@ -1,0 +1,284 @@
+{
+  "moduleId": "n1-m3",
+  "questions": [
+    {
+      "id": "q-n1-m3-001",
+      "moduleId": "n1-m3",
+      "ruleIds": ["interdiction-acces"],
+      "prompt": "Ce panneau signifie :",
+      "options": [
+        {
+          "id": "a",
+          "text": "Sens interdit : je ne peux pas entrer dans cette rue"
+        },
+        {
+          "id": "b",
+          "text": "Arrêt obligatoire"
+        },
+        {
+          "id": "c",
+          "text": "Route barrée pour travaux uniquement"
+        }
+      ],
+      "correct": ["a"],
+      "explanation": "Le disque rouge avec une barre blanche, c'est le sens interdit. Tu ne peux pas entrer par ce côté.",
+      "media": {
+        "kind": "svg",
+        "component": "Sign",
+        "props": {
+          "preset": "sens-interdit"
+        }
+      }
+    },
+    {
+      "id": "q-n1-m3-002",
+      "moduleId": "n1-m3",
+      "ruleIds": ["interdiction-acces"],
+      "prompt": "Un cercle blanc bordé de rouge, sans rien dedans, signifie :",
+      "options": [
+        {
+          "id": "a",
+          "text": "Circulation interdite à tous les véhicules"
+        },
+        {
+          "id": "b",
+          "text": "Fin de toutes les interdictions"
+        },
+        {
+          "id": "c",
+          "text": "Route prioritaire"
+        }
+      ],
+      "correct": ["a"],
+      "explanation": "Le cercle vide bordé de rouge interdit le passage à tous les véhicules, dans les deux sens.",
+      "media": {
+        "kind": "svg",
+        "component": "Sign",
+        "props": {
+          "preset": "interdit-circulation"
+        }
+      }
+    },
+    {
+      "id": "q-n1-m3-003",
+      "moduleId": "n1-m3",
+      "ruleIds": ["interdiction-depasser-tourner"],
+      "prompt": "Ce panneau t'interdit :",
+      "options": [
+        {
+          "id": "a",
+          "text": "De dépasser les véhicules à moteur"
+        },
+        {
+          "id": "b",
+          "text": "De rouler à côté d'une autre voiture"
+        },
+        {
+          "id": "c",
+          "text": "De suivre une voiture rouge"
+        }
+      ],
+      "correct": ["a"],
+      "explanation": "Deux voitures, une rouge et une noire : interdiction de dépasser.",
+      "media": {
+        "kind": "svg",
+        "component": "Sign",
+        "props": {
+          "preset": "depassement-interdit"
+        }
+      }
+    },
+    {
+      "id": "q-n1-m3-004",
+      "moduleId": "n1-m3",
+      "ruleIds": ["interdiction-depasser-tourner"],
+      "prompt": "Ce panneau t'interdit :",
+      "options": [
+        {
+          "id": "a",
+          "text": "De tourner à gauche"
+        },
+        {
+          "id": "b",
+          "text": "D'aller tout droit"
+        },
+        {
+          "id": "c",
+          "text": "De tourner à droite"
+        }
+      ],
+      "correct": ["a"],
+      "explanation": "La flèche vers la gauche est barrée de rouge : interdiction de tourner à gauche.",
+      "media": {
+        "kind": "svg",
+        "component": "Sign",
+        "props": {
+          "preset": "interdit-tourner-gauche"
+        }
+      }
+    },
+    {
+      "id": "q-n1-m3-005",
+      "moduleId": "n1-m3",
+      "ruleIds": ["limitation-vitesse-panneau"],
+      "prompt": "Ce panneau t'indique :",
+      "options": [
+        {
+          "id": "a",
+          "text": "Que tu ne dois pas dépasser 60 km/h"
+        },
+        {
+          "id": "b",
+          "text": "Que tu dois rouler à 60 km/h minimum"
+        },
+        {
+          "id": "c",
+          "text": "Qu'il reste 60 km avant la ville"
+        }
+      ],
+      "correct": ["a"],
+      "explanation": "Le chiffre dans un cercle rouge est une vitesse maximale. Tu peux rouler moins vite, jamais plus.",
+      "media": {
+        "kind": "svg",
+        "component": "Sign",
+        "props": {
+          "preset": "vitesse-60"
+        }
+      }
+    },
+    {
+      "id": "q-n1-m3-006",
+      "moduleId": "n1-m3",
+      "ruleIds": ["arret-vs-stationnement"],
+      "prompt": "Ce panneau (fond bleu, une seule barre rouge) interdit :",
+      "options": [
+        {
+          "id": "a",
+          "text": "Le stationnement"
+        },
+        {
+          "id": "b",
+          "text": "L'arrêt et le stationnement"
+        },
+        {
+          "id": "c",
+          "text": "La circulation"
+        }
+      ],
+      "correct": ["a"],
+      "explanation": "Une barre : stationnement interdit. Tu peux t'arrêter un court instant pour déposer quelqu'un.",
+      "media": {
+        "kind": "svg",
+        "component": "Sign",
+        "props": {
+          "preset": "stationnement-interdit"
+        }
+      }
+    },
+    {
+      "id": "q-n1-m3-007",
+      "moduleId": "n1-m3",
+      "ruleIds": ["arret-vs-stationnement"],
+      "prompt": "Ce panneau (fond bleu, croix rouge) interdit :",
+      "options": [
+        {
+          "id": "a",
+          "text": "Seulement le stationnement"
+        },
+        {
+          "id": "b",
+          "text": "L'arrêt et le stationnement"
+        },
+        {
+          "id": "c",
+          "text": "De klaxonner"
+        }
+      ],
+      "correct": ["b"],
+      "explanation": "Une croix : ni arrêt, ni stationnement. Pas même pour déposer quelqu'un.",
+      "media": {
+        "kind": "svg",
+        "component": "Sign",
+        "props": {
+          "preset": "arret-stationnement-interdit"
+        }
+      }
+    },
+    {
+      "id": "q-n1-m3-008",
+      "moduleId": "n1-m3",
+      "ruleIds": ["arret-vs-stationnement"],
+      "prompt": "Tu t'arrêtes 30 secondes pour déposer une amie, tu restes au volant. C'est :",
+      "options": [
+        {
+          "id": "a",
+          "text": "Un arrêt"
+        },
+        {
+          "id": "b",
+          "text": "Un stationnement"
+        }
+      ],
+      "correct": ["a"],
+      "explanation": "L'arrêt est bref et le conducteur reste au volant ou tout près. Le stationnement, c'est quand le véhicule reste immobilisé plus longtemps."
+    },
+    {
+      "id": "q-n1-m3-009",
+      "moduleId": "n1-m3",
+      "ruleIds": ["obligation-bleue"],
+      "prompt": "Ce panneau signifie :",
+      "options": [
+        {
+          "id": "a",
+          "text": "Tu dois tourner à droite"
+        },
+        {
+          "id": "b",
+          "text": "Tourner à droite est interdit"
+        },
+        {
+          "id": "c",
+          "text": "Un virage à droite arrive"
+        }
+      ],
+      "correct": ["a"],
+      "explanation": "Rond et bleu : obligation. La flèche te dit où aller : à droite.",
+      "media": {
+        "kind": "svg",
+        "component": "Sign",
+        "props": {
+          "preset": "obligation-droite"
+        }
+      }
+    },
+    {
+      "id": "q-n1-m3-010",
+      "moduleId": "n1-m3",
+      "ruleIds": ["panneau-fin-barres"],
+      "prompt": "Ce panneau signifie :",
+      "options": [
+        {
+          "id": "a",
+          "text": "Fin des interdictions imposées aux véhicules en mouvement (vitesse, dépassement…)"
+        },
+        {
+          "id": "b",
+          "text": "Interdiction de tout"
+        },
+        {
+          "id": "c",
+          "text": "Route glissante"
+        }
+      ],
+      "correct": ["a"],
+      "explanation": "Les barres noires en diagonale mettent fin aux interdictions qui concernent les véhicules en mouvement, comme une limitation de vitesse ou une interdiction de dépasser. Les interdictions de stationner, elles, restent valables.",
+      "media": {
+        "kind": "svg",
+        "component": "Sign",
+        "props": {
+          "preset": "fin-interdictions"
+        }
+      }
+    }
+  ]
+}

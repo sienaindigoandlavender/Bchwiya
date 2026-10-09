@@ -1,0 +1,51 @@
+{
+  "id": "n3-m3-l2",
+  "moduleId": "n3-m3",
+  "title": "Quand c'est interdit, et croiser",
+  "minutes": 5,
+  "ruleIds": ["depasser-interdit-lieux", "croiser"],
+  "screens": [
+    {
+      "type": "text",
+      "body": "Pas de dépassement sur une ligne continue.",
+      "media": {
+        "kind": "svg",
+        "component": "RoadLines",
+        "props": {
+          "variant": "continue"
+        }
+      }
+    },
+    {
+      "type": "text",
+      "body": "Ni dans un virage ou au sommet d'une côte, là où tu ne vois pas ce qui arrive. Ni à l'approche d'un passage piéton.",
+      "media": {
+        "kind": "svg",
+        "component": "Sign",
+        "props": {
+          "preset": "depassement-interdit"
+        }
+      }
+    },
+    {
+      "type": "text",
+      "body": "Avec une ligne mixte, c'est la ligne de ton côté qui compte.",
+      "media": {
+        "kind": "svg",
+        "component": "RoadLines",
+        "props": {
+          "variant": "mixte"
+        }
+      }
+    },
+    {
+      "type": "text",
+      "body": "Croiser, c'est passer à côté d'une voiture qui arrive en face. Tu serres à droite. Si un obstacle bloque ta voie, c'est toi qui laisses passer celle d'en face."
+    },
+    {
+      "type": "keypoint",
+      "body": "Je ne vois pas loin : je ne dépasse pas. L'obstacle est de mon côté : je cède."
+    }
+  ],
+  "checks": ["q-n3-m3-004", "q-n3-m3-009"]
+}

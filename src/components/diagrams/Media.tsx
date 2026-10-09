@@ -1,6 +1,9 @@
 import type { Media as MediaSpec } from "@/content/schema";
-import { PresetSign } from "@/components/signs/Sign";
+import { PresetSign } from "@/components/signs/presets";
+import { Crossroads, type CrossroadsProps } from "./Crossroads";
+import { RoadLines, type RoadLinesProps } from "./RoadLines";
 import { Roundabout, type RoundaboutProps } from "./Roundabout";
+import { TrafficLight, type TrafficLightProps } from "./TrafficLight";
 import { SIGN_PRESETS, type SignPreset } from "./names";
 
 /** Renders a content `media` block: named SVG component, image, or nothing. */
@@ -20,6 +23,15 @@ export function Media({ media }: { media?: MediaSpec }) {
   switch (media.component) {
     case "Roundabout":
       node = <Roundabout {...(props as RoundaboutProps)} />;
+      break;
+    case "Crossroads":
+      node = <Crossroads {...(props as CrossroadsProps)} />;
+      break;
+    case "TrafficLight":
+      node = <TrafficLight {...(props as TrafficLightProps)} />;
+      break;
+    case "RoadLines":
+      node = <RoadLines {...(props as RoadLinesProps)} />;
       break;
     case "Sign": {
       const preset = props.preset as SignPreset;

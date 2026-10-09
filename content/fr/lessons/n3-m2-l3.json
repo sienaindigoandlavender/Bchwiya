@@ -1,0 +1,31 @@
+{
+  "$comment": "Vitesses : décret 2-10-420 art. 15 à 18 (60 / 100 / 120 km/h), art. 16 (90 km/h en période probatoire). Vitesse minimale de 60 km/h sur autoroute.",
+  "id": "n3-m2-l3",
+  "moduleId": "n3-m2",
+  "title": "Distances de sécurité et d'arrêt",
+  "minutes": 5,
+  "ruleIds": ["distance-securite", "distance-arret"],
+  "screens": [
+    {
+      "type": "text",
+      "body": "Garde au moins 2 secondes entre toi et la voiture de devant. Repère un poteau : quand elle le passe, compte « un, deux »."
+    },
+    {
+      "type": "text",
+      "body": "Si tu arrives au poteau avant d'avoir fini de compter, tu es trop près. Lève le pied."
+    },
+    {
+      "type": "text",
+      "body": "Pour t'arrêter, il te faut d'abord le temps de réagir, environ une seconde. Pendant cette seconde, la voiture roule encore. Ensuite seulement, elle freine."
+    },
+    {
+      "type": "text",
+      "body": "Plus tu vas vite, plus la distance d'arrêt s'allonge. Sur route mouillée, double ta distance de sécurité."
+    },
+    {
+      "type": "keypoint",
+      "body": "2 secondes au moins. Sous la pluie, le double."
+    }
+  ],
+  "checks": ["q-n3-m2-007", "q-n3-m2-008"]
+}

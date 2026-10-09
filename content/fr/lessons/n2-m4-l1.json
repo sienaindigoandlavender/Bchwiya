@@ -1,14 +1,58 @@
 {
   "id": "n2-m4-l1",
   "moduleId": "n2-m4",
-  "title": "Les feux et l'agent",
+  "title": "Les feux tricolores",
   "minutes": 5,
-  "ruleIds": [],
+  "ruleIds": ["feu-rouge", "feu-orange-fixe", "feu-vert"],
   "screens": [
     {
       "type": "text",
-      "body": "Contenu à venir."
+      "body": "Feu rouge : arrêt à la ligne blanche. Toujours.",
+      "media": {
+        "kind": "svg",
+        "component": "TrafficLight",
+        "props": {
+          "state": "rouge"
+        }
+      }
+    },
+    {
+      "type": "text",
+      "body": "Feu orange fixe : arrête-toi. Tu ne passes que si t'arrêter serait dangereux, parce que tu es déjà tout près de la ligne.",
+      "media": {
+        "kind": "svg",
+        "component": "TrafficLight",
+        "props": {
+          "state": "orange"
+        }
+      }
+    },
+    {
+      "type": "text",
+      "body": "Feu vert : tu peux passer, si le carrefour est dégagé. Si tu risques de rester bloquée au milieu, attends.",
+      "media": {
+        "kind": "svg",
+        "component": "TrafficLight",
+        "props": {
+          "state": "vert"
+        }
+      }
+    },
+    {
+      "type": "text",
+      "body": "Ce panneau t'annonce des feux un peu plus loin.",
+      "media": {
+        "kind": "svg",
+        "component": "Sign",
+        "props": {
+          "preset": "danger-feux"
+        }
+      }
+    },
+    {
+      "type": "keypoint",
+      "body": "Rouge : stop. Orange : je m'arrête si je peux. Vert : je passe si c'est libre."
     }
   ],
-  "checks": []
+  "checks": ["q-n2-m4-001", "q-n2-m4-002"]
 }

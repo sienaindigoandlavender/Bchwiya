@@ -1,0 +1,237 @@
+{
+  "moduleId": "n2-m2",
+  "questions": [
+    {
+      "id": "q-n2-m2-001",
+      "moduleId": "n2-m2",
+      "ruleIds": ["stop-arret-complet"],
+      "prompt": "Au panneau stop, la route semble libre. Que fais-tu ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Je m'arrête complètement à la ligne, puis je repars"
+        },
+        {
+          "id": "b",
+          "text": "Je ralentis et je passe sans m'arrêter"
+        },
+        {
+          "id": "c",
+          "text": "Je klaxonne et je passe"
+        }
+      ],
+      "correct": ["a"],
+      "explanation": "Au stop, l'arrêt complet est obligatoire, même si la route est vide. Les roues doivent s'immobiliser.",
+      "media": {
+        "kind": "svg",
+        "component": "Sign",
+        "props": {
+          "preset": "stop"
+        }
+      }
+    },
+    {
+      "id": "q-n2-m2-002",
+      "moduleId": "n2-m2",
+      "ruleIds": ["stop-arret-complet"],
+      "prompt": "Où dois-tu t'arrêter au stop ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "À la ligne blanche continue tracée au sol"
+        },
+        {
+          "id": "b",
+          "text": "Au milieu de l'intersection"
+        },
+        {
+          "id": "c",
+          "text": "N'importe où avant le carrefour"
+        }
+      ],
+      "correct": ["a"],
+      "explanation": "Tu t'arrêtes à la ligne d'arrêt. S'il n'y en a pas, à l'endroit d'où tu vois bien les deux côtés."
+    },
+    {
+      "id": "q-n2-m2-003",
+      "moduleId": "n2-m2",
+      "ruleIds": ["cedez-ralentir"],
+      "prompt": "Au panneau cédez le passage, la route est libre. Dois-tu t'arrêter ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Non, je ralentis et je passe si personne n'arrive"
+        },
+        {
+          "id": "b",
+          "text": "Oui, l'arrêt est toujours obligatoire"
+        }
+      ],
+      "correct": ["a"],
+      "explanation": "Le cédez le passage n'oblige pas à s'arrêter. Il oblige à laisser passer. Si personne n'arrive, tu continues.",
+      "media": {
+        "kind": "svg",
+        "component": "Sign",
+        "props": {
+          "preset": "cedez-le-passage"
+        }
+      }
+    },
+    {
+      "id": "q-n2-m2-004",
+      "moduleId": "n2-m2",
+      "ruleIds": ["stop-arret-complet"],
+      "prompt": "Tu es au stop. Une voiture arrive par ta gauche. Que fais-tu ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Je la laisse passer"
+        },
+        {
+          "id": "b",
+          "text": "Je passe, elle est à ma gauche"
+        }
+      ],
+      "correct": ["a"],
+      "explanation": "Au stop, tu laisses passer tout le monde : à droite comme à gauche.",
+      "media": {
+        "kind": "svg",
+        "component": "Crossroads",
+        "props": {
+          "cars": [
+            {
+              "arm": "s",
+              "who": "you"
+            },
+            {
+              "arm": "w",
+              "who": "other"
+            }
+          ],
+          "signs": [
+            {
+              "arm": "s",
+              "type": "stop"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "q-n2-m2-005",
+      "moduleId": "n2-m2",
+      "ruleIds": ["route-prioritaire-regle"],
+      "prompt": "Tu roules sur une route marquée par ce panneau. À la prochaine intersection, une voiture arrive par ta droite, d'une petite route. Qui passe ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Moi, je suis sur la route prioritaire"
+        },
+        {
+          "id": "b",
+          "text": "La voiture de droite"
+        }
+      ],
+      "correct": ["a"],
+      "explanation": "Sur une route prioritaire, la priorité à droite ne s'applique pas : ce sont les autres qui te cèdent le passage.",
+      "media": {
+        "kind": "svg",
+        "component": "Sign",
+        "props": {
+          "preset": "route-prioritaire"
+        }
+      }
+    },
+    {
+      "id": "q-n2-m2-006",
+      "moduleId": "n2-m2",
+      "ruleIds": ["route-prioritaire-regle"],
+      "prompt": "Ce panneau signifie :",
+      "options": [
+        {
+          "id": "a",
+          "text": "Fin de la route prioritaire : la priorité à droite peut revenir"
+        },
+        {
+          "id": "b",
+          "text": "Tu restes prioritaire"
+        },
+        {
+          "id": "c",
+          "text": "Stop obligatoire"
+        }
+      ],
+      "correct": ["a"],
+      "explanation": "Fin de route prioritaire : aux prochaines intersections, regarde à nouveau les panneaux, ou applique la priorité à droite.",
+      "media": {
+        "kind": "svg",
+        "component": "Sign",
+        "props": {
+          "preset": "fin-route-prioritaire"
+        }
+      }
+    },
+    {
+      "id": "q-n2-m2-007",
+      "moduleId": "n2-m2",
+      "ruleIds": ["cedez-ralentir", "stop-arret-complet"],
+      "prompt": "Quelle est la différence entre stop et cédez le passage ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Au stop, l'arrêt est obligatoire. Au cédez le passage, seulement si quelqu'un arrive"
+        },
+        {
+          "id": "b",
+          "text": "Aucune différence"
+        },
+        {
+          "id": "c",
+          "text": "Au cédez le passage, l'arrêt est obligatoire"
+        }
+      ],
+      "correct": ["a"],
+      "explanation": "Les deux t'obligent à laisser passer tout le monde. Mais seul le stop impose un arrêt complet à chaque fois."
+    },
+    {
+      "id": "q-n2-m2-008",
+      "moduleId": "n2-m2",
+      "ruleIds": ["cedez-ralentir"],
+      "prompt": "Tu es au cédez le passage. Une voiture arrive par ta gauche sur la route principale. Que fais-tu ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Je la laisse passer"
+        },
+        {
+          "id": "b",
+          "text": "Je passe, elle vient de gauche"
+        }
+      ],
+      "correct": ["a"],
+      "explanation": "Le cédez le passage t'oblige à laisser passer tous les véhicules de la route que tu rejoins, de gauche comme de droite.",
+      "media": {
+        "kind": "svg",
+        "component": "Crossroads",
+        "props": {
+          "cars": [
+            {
+              "arm": "s",
+              "who": "you"
+            },
+            {
+              "arm": "w",
+              "who": "other"
+            }
+          ],
+          "signs": [
+            {
+              "arm": "s",
+              "type": "cedez"
+            }
+          ]
+        }
+      }
+    }
+  ]
+}

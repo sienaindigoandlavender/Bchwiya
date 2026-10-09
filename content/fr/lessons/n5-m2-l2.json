@@ -1,0 +1,46 @@
+{
+  "id": "n5-m2-l2",
+  "moduleId": "n5-m2",
+  "title": "Sur l'autoroute",
+  "minutes": 5,
+  "ruleIds": [
+    "autoroute-interdits",
+    "autoroute-inserer",
+    "autoroute-interdictions",
+    "autoroute-panne"
+  ],
+  "screens": [
+    {
+      "type": "text",
+      "body": "L'autoroute est interdite aux piétons, aux vélos, aux charrettes et aux tracteurs.",
+      "media": {
+        "kind": "svg",
+        "component": "Sign",
+        "props": {
+          "preset": "autoroute"
+        }
+      }
+    },
+    {
+      "type": "text",
+      "body": "Pour entrer, tu prends de la vitesse sur la voie d'accélération et tu t'insères en laissant passer ceux qui sont déjà sur l'autoroute."
+    },
+    {
+      "type": "text",
+      "body": "Tu roules à droite, entre 60 et 120 km/h. Les voies de gauche servent à dépasser."
+    },
+    {
+      "type": "text",
+      "body": "Jamais de demi-tour, jamais de marche arrière. Sortie ratée ? Tu prends la suivante."
+    },
+    {
+      "type": "text",
+      "body": "En panne : bande d'arrêt d'urgence, warning, et tout le monde sort côté droit pour se mettre derrière la glissière."
+    },
+    {
+      "type": "keypoint",
+      "body": "À droite, pas de demi-tour, et en panne, derrière la glissière."
+    }
+  ],
+  "checks": ["q-n5-m2-002", "q-n5-m2-004"]
+}

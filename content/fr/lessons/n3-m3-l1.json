@@ -1,14 +1,34 @@
 {
   "id": "n3-m3-l1",
   "moduleId": "n3-m3",
-  "title": "Dépasser et croiser",
+  "title": "Bien dépasser",
   "minutes": 5,
-  "ruleIds": [],
+  "ruleIds": ["depasser-gauche", "depasser-conditions", "etre-depasse"],
   "screens": [
     {
       "type": "text",
-      "body": "Contenu à venir."
+      "body": "On dépasse par la gauche. Exception : une voiture qui tourne à gauche et l'a signalé peut être dépassée par la droite."
+    },
+    {
+      "type": "text",
+      "body": "Avant de dépasser, vérifie trois choses : tu vois loin devant, personne n'est déjà en train de te dépasser, et tu auras la place de revenir à droite."
+    },
+    {
+      "type": "text",
+      "body": "Puis : rétroviseur, clignotant gauche, angle mort, et tu dépasses franchement, en laissant un bon espace sur le côté."
+    },
+    {
+      "type": "text",
+      "body": "Tu reviens à droite quand tu vois la voiture dépassée dans ton rétroviseur intérieur, avec ton clignotant droit."
+    },
+    {
+      "type": "text",
+      "body": "Et si c'est toi qu'on dépasse ? Tu restes à droite et tu n'accélères pas."
+    },
+    {
+      "type": "keypoint",
+      "body": "Je dépasse à gauche, je reviens quand je vois l'autre dans mon rétro."
     }
   ],
-  "checks": []
+  "checks": ["q-n3-m3-001", "q-n3-m3-003"]
 }

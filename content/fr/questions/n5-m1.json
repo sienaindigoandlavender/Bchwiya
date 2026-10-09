@@ -1,0 +1,191 @@
+{
+  "moduleId": "n5-m1",
+  "questions": [
+    {
+      "id": "q-n5-m1-001",
+      "moduleId": "n5-m1",
+      "ruleIds": ["ville-vigilance"],
+      "prompt": "En ville, à quoi dois-tu faire particulièrement attention ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Aux piétons qui traversent"
+        },
+        {
+          "id": "b",
+          "text": "Aux scooters qui se faufilent"
+        },
+        {
+          "id": "c",
+          "text": "Aux portières qui s'ouvrent"
+        },
+        {
+          "id": "d",
+          "text": "Aux oiseaux"
+        }
+      ],
+      "correct": ["a", "b", "c"],
+      "explanation": "En ville, tout est proche : un piéton qui sort entre deux voitures, un scooter dans l'angle mort, une portière qui s'ouvre."
+    },
+    {
+      "id": "q-n5-m1-002",
+      "moduleId": "n5-m1",
+      "ruleIds": ["ville-vigilance"],
+      "prompt": "Tu es garée et tu veux sortir de la voiture côté rue. Que fais-tu ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Je regarde dans le rétroviseur et par-dessus mon épaule avant d'ouvrir"
+        },
+        {
+          "id": "b",
+          "text": "J'ouvre vite la portière"
+        },
+        {
+          "id": "c",
+          "text": "Je klaxonne d'abord"
+        }
+      ],
+      "correct": ["a"],
+      "explanation": "Une portière ouverte sans regarder peut faire tomber un cycliste ou un motard. Regarde toujours avant."
+    },
+    {
+      "id": "q-n5-m1-003",
+      "moduleId": "n5-m1",
+      "ruleIds": ["stationnement-interdit-lieux"],
+      "prompt": "Où est-il interdit de stationner ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Sur un passage piéton"
+        },
+        {
+          "id": "b",
+          "text": "Sur le trottoir"
+        },
+        {
+          "id": "c",
+          "text": "À un arrêt de bus"
+        },
+        {
+          "id": "d",
+          "text": "Sur une place de parking marquée"
+        }
+      ],
+      "correct": ["a", "b", "c"],
+      "explanation": "Passage piéton, trottoir, arrêt de bus, devant une entrée de garage, trop près d'une intersection : interdit."
+    },
+    {
+      "id": "q-n5-m1-004",
+      "moduleId": "n5-m1",
+      "ruleIds": ["stationnement-interdit-lieux"],
+      "prompt": "Peux-tu stationner en double file, « juste deux minutes » ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Non"
+        },
+        {
+          "id": "b",
+          "text": "Oui, avec les feux de détresse"
+        }
+      ],
+      "correct": ["a"],
+      "explanation": "La double file bloque la circulation et cache les piétons. Les feux de détresse n'y changent rien."
+    },
+    {
+      "id": "q-n5-m1-005",
+      "moduleId": "n5-m1",
+      "ruleIds": ["klaxon"],
+      "prompt": "En ville, quand peux-tu utiliser le klaxon ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Seulement pour éviter un danger immédiat"
+        },
+        {
+          "id": "b",
+          "text": "Pour saluer un ami"
+        },
+        {
+          "id": "c",
+          "text": "Quand le feu passe au vert et que la voiture devant ne démarre pas"
+        }
+      ],
+      "correct": ["a"],
+      "explanation": "En agglomération, le klaxon sert uniquement à prévenir d'un danger immédiat."
+    },
+    {
+      "id": "q-n5-m1-006",
+      "moduleId": "n5-m1",
+      "ruleIds": ["ville-vigilance"],
+      "prompt": "Un bus s'arrête à son arrêt devant toi, et des gens descendent. Que fais-tu ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Je ralentis et je fais attention aux piétons qui pourraient traverser devant le bus"
+        },
+        {
+          "id": "b",
+          "text": "Je le double vite par la gauche"
+        },
+        {
+          "id": "c",
+          "text": "Je klaxonne pour qu'il reparte"
+        }
+      ],
+      "correct": ["a"],
+      "explanation": "Des passagers peuvent traverser juste devant ou derrière le bus, sans te voir."
+    },
+    {
+      "id": "q-n5-m1-007",
+      "moduleId": "n5-m1",
+      "ruleIds": ["ville-vigilance", "pieton-passage"],
+      "prompt": "Un piéton attend au bord d'un passage piéton, prêt à traverser. Que fais-tu ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Je m'arrête pour le laisser traverser"
+        },
+        {
+          "id": "b",
+          "text": "Je passe, il n'est pas encore sur la chaussée"
+        }
+      ],
+      "correct": ["a"],
+      "explanation": "Le piéton qui s'apprête à traverser sur un passage piéton doit pouvoir le faire. Tu t'arrêtes.",
+      "media": {
+        "kind": "svg",
+        "component": "Sign",
+        "props": {
+          "preset": "passage-pietons"
+        }
+      }
+    },
+    {
+      "id": "q-n5-m1-008",
+      "moduleId": "n5-m1",
+      "ruleIds": ["vitesse-agglo", "ville-vigilance"],
+      "prompt": "Près d'une école, à la sortie des classes, la limite est 60 km/h. À quelle vitesse roules-tu ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Bien moins vite, prête à m'arrêter"
+        },
+        {
+          "id": "b",
+          "text": "60 km/h, c'est autorisé"
+        }
+      ],
+      "correct": ["a"],
+      "explanation": "La limite est un maximum. Près d'une école, un enfant peut surgir : roule lentement.",
+      "media": {
+        "kind": "svg",
+        "component": "Sign",
+        "props": {
+          "preset": "danger-enfants"
+        }
+      }
+    }
+  ]
+}

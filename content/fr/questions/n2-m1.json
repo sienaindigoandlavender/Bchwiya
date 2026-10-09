@@ -1,0 +1,225 @@
+{
+  "$comment": "Règle générale de priorité à droite : loi 52-05 (règles de circulation).",
+  "moduleId": "n2-m1",
+  "questions": [
+    {
+      "id": "q-n2-m1-001",
+      "moduleId": "n2-m1",
+      "ruleIds": ["priorite-droite-principe"],
+      "prompt": "Tu arrives à une intersection sans panneau ni feu. Une voiture arrive par ta droite. Qui passe en premier ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "La voiture de droite"
+        },
+        {
+          "id": "b",
+          "text": "Moi, car je roule plus vite"
+        },
+        {
+          "id": "c",
+          "text": "Celle qui klaxonne"
+        }
+      ],
+      "correct": ["a"],
+      "explanation": "Sans signalisation, c'est la priorité à droite : tu laisses passer la voiture qui arrive par ta droite.",
+      "media": {
+        "kind": "svg",
+        "component": "Crossroads",
+        "props": {
+          "cars": [
+            {
+              "arm": "s",
+              "who": "you"
+            },
+            {
+              "arm": "e",
+              "who": "other"
+            }
+          ],
+          "signs": []
+        }
+      }
+    },
+    {
+      "id": "q-n2-m1-002",
+      "moduleId": "n2-m1",
+      "ruleIds": ["priorite-droite-principe"],
+      "prompt": "Même intersection, sans panneau. Cette fois, la voiture arrive par ta gauche. Qui passe en premier ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Moi, elle doit me céder le passage"
+        },
+        {
+          "id": "b",
+          "text": "La voiture de gauche"
+        }
+      ],
+      "correct": ["a"],
+      "explanation": "Tu es à sa droite : c'est elle qui doit te laisser passer. Reste prudente quand même, et vérifie qu'elle s'arrête.",
+      "media": {
+        "kind": "svg",
+        "component": "Crossroads",
+        "props": {
+          "cars": [
+            {
+              "arm": "s",
+              "who": "you"
+            },
+            {
+              "arm": "w",
+              "who": "other"
+            }
+          ],
+          "signs": []
+        }
+      }
+    },
+    {
+      "id": "q-n2-m1-003",
+      "moduleId": "n2-m1",
+      "ruleIds": ["priorite-droite-principe"],
+      "prompt": "Pas de panneau. Une voiture arrive par ta droite, une autre en face. Toi, tu vas tout droit. Qui dois-tu laisser passer ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "La voiture de droite"
+        },
+        {
+          "id": "b",
+          "text": "La voiture d'en face"
+        },
+        {
+          "id": "c",
+          "text": "Personne"
+        }
+      ],
+      "correct": ["a"],
+      "explanation": "Tu cèdes le passage à celle qui vient de ta droite. Celle d'en face ne croise pas ta route si elle va tout droit, et si elle tourne à gauche, c'est elle qui doit te laisser passer.",
+      "media": {
+        "kind": "svg",
+        "component": "Crossroads",
+        "props": {
+          "cars": [
+            {
+              "arm": "s",
+              "who": "you"
+            },
+            {
+              "arm": "e",
+              "who": "other"
+            },
+            {
+              "arm": "n",
+              "who": "other"
+            }
+          ],
+          "signs": []
+        }
+      }
+    },
+    {
+      "id": "q-n2-m1-004",
+      "moduleId": "n2-m1",
+      "ruleIds": ["priorite-ordre"],
+      "prompt": "Un agent fait la circulation à un carrefour où le feu est vert pour toi. L'agent te fait signe de t'arrêter. Que fais-tu ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Je m'arrête : l'agent passe avant le feu"
+        },
+        {
+          "id": "b",
+          "text": "Je passe : le feu est vert"
+        }
+      ],
+      "correct": ["a"],
+      "explanation": "Les ordres de l'agent passent avant tout : avant les feux, les panneaux et la priorité à droite."
+    },
+    {
+      "id": "q-n2-m1-005",
+      "moduleId": "n2-m1",
+      "ruleIds": ["priorite-droite-principe"],
+      "prompt": "Quel panneau t'annonce une intersection où s'applique la priorité à droite ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Le triangle avec une croix en X"
+        },
+        {
+          "id": "b",
+          "text": "Le losange jaune"
+        },
+        {
+          "id": "c",
+          "text": "Le rond bleu avec trois flèches"
+        }
+      ],
+      "correct": ["a"],
+      "explanation": "La croix en X dans un triangle annonce la priorité à droite."
+    },
+    {
+      "id": "q-n2-m1-006",
+      "moduleId": "n2-m1",
+      "ruleIds": ["priorite-ordre"],
+      "prompt": "Dans quel ordre s'appliquent les règles à une intersection ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Agent, puis feux, puis panneaux, puis priorité à droite"
+        },
+        {
+          "id": "b",
+          "text": "Priorité à droite, puis panneaux, puis feux"
+        },
+        {
+          "id": "c",
+          "text": "Feux, puis agent, puis panneaux"
+        }
+      ],
+      "correct": ["a"],
+      "explanation": "L'agent commande tout. S'il n'y en a pas, on suit les feux. Sans feux, les panneaux. Sans panneaux, la priorité à droite."
+    },
+    {
+      "id": "q-n2-m1-007",
+      "moduleId": "n2-m1",
+      "ruleIds": ["priorite-droite-principe"],
+      "prompt": "Tu sors d'un chemin de terre pour rejoindre une route. Une voiture arrive sur la route, à ta gauche. Dois-tu la laisser passer ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Oui, je sors d'un chemin : je laisse passer"
+        },
+        {
+          "id": "b",
+          "text": "Non, elle est à ma gauche, j'ai la priorité"
+        }
+      ],
+      "correct": ["a"],
+      "explanation": "Quand on sort d'un chemin de terre, d'un parking ou d'une propriété, on laisse passer tous les usagers de la route."
+    },
+    {
+      "id": "q-n2-m1-008",
+      "moduleId": "n2-m1",
+      "ruleIds": ["priorite-droite-principe"],
+      "prompt": "La voiture de droite est prioritaire mais elle hésite. Que fais-tu ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "J'attends qu'elle passe ou qu'elle me fasse clairement signe"
+        },
+        {
+          "id": "b",
+          "text": "Je force le passage"
+        },
+        {
+          "id": "c",
+          "text": "Je klaxonne"
+        }
+      ],
+      "correct": ["a"],
+      "explanation": "Céder le passage, c'est ne pas obliger l'autre à ralentir ou à s'arrêter. Dans le doute, tu attends."
+    }
+  ]
+}

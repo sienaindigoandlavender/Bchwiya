@@ -1,0 +1,216 @@
+{
+  "$comment": "Alcoolémie : arrêté 2707-10, seuil de 0,20 g/l de sang ou 0,10 mg/l d'air expiré.",
+  "moduleId": "n4-m1",
+  "questions": [
+    {
+      "id": "q-n4-m1-001",
+      "moduleId": "n4-m1",
+      "ruleIds": ["alcool-seuil"],
+      "prompt": "À partir de quel taux d'alcool dans le sang est-il interdit de conduire au Maroc ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "0,20 g par litre de sang"
+        },
+        {
+          "id": "b",
+          "text": "0,50 g par litre de sang"
+        },
+        {
+          "id": "c",
+          "text": "0,80 g par litre de sang"
+        }
+      ],
+      "correct": ["a"],
+      "explanation": "Le seuil est de 0,20 g par litre de sang, soit 0,10 mg par litre d'air expiré. C'est très bas : un seul verre peut suffire."
+    },
+    {
+      "id": "q-n4-m1-002",
+      "moduleId": "n4-m1",
+      "ruleIds": ["alcool-effets"],
+      "prompt": "Qu'est-ce qui fait baisser le taux d'alcool dans le sang ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Seulement le temps"
+        },
+        {
+          "id": "b",
+          "text": "Un café fort"
+        },
+        {
+          "id": "c",
+          "text": "Beaucoup d'eau"
+        },
+        {
+          "id": "d",
+          "text": "Un repas copieux"
+        }
+      ],
+      "correct": ["a"],
+      "explanation": "Ni le café, ni l'eau, ni la nourriture ne font disparaître l'alcool. Seul le temps le fait."
+    },
+    {
+      "id": "q-n4-m1-003",
+      "moduleId": "n4-m1",
+      "ruleIds": ["alcool-effets"],
+      "prompt": "Quels sont les effets de l'alcool sur la conduite ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Les réflexes sont plus lents"
+        },
+        {
+          "id": "b",
+          "text": "On voit moins bien sur les côtés"
+        },
+        {
+          "id": "c",
+          "text": "On se croit plus capable qu'on ne l'est"
+        },
+        {
+          "id": "d",
+          "text": "On conduit plus prudemment"
+        }
+      ],
+      "correct": ["a", "b", "c"],
+      "explanation": "L'alcool ralentit les réflexes, rétrécit le champ de vision et donne une fausse confiance."
+    },
+    {
+      "id": "q-n4-m1-004",
+      "moduleId": "n4-m1",
+      "ruleIds": ["fatigue"],
+      "prompt": "Quels sont les signes de fatigue au volant ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Je bâille souvent"
+        },
+        {
+          "id": "b",
+          "text": "Mes yeux piquent"
+        },
+        {
+          "id": "c",
+          "text": "J'ai du mal à rester bien droite dans ma voie"
+        },
+        {
+          "id": "d",
+          "text": "Je chante à la radio"
+        }
+      ],
+      "correct": ["a", "b", "c"],
+      "explanation": "Bâillements, yeux qui piquent, nuque raide, voiture qui dérive : arrête-toi."
+    },
+    {
+      "id": "q-n4-m1-005",
+      "moduleId": "n4-m1",
+      "ruleIds": ["fatigue"],
+      "prompt": "Sur un long trajet, tous les combien faut-il faire une pause ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Environ toutes les 2 heures"
+        },
+        {
+          "id": "b",
+          "text": "Toutes les 5 heures"
+        },
+        {
+          "id": "c",
+          "text": "Seulement quand j'ai faim"
+        }
+      ],
+      "correct": ["a"],
+      "explanation": "Une pause toutes les 2 heures, et dès que tu sens la fatigue. Une petite sieste de 15 à 20 minutes aide beaucoup."
+    },
+    {
+      "id": "q-n4-m1-006",
+      "moduleId": "n4-m1",
+      "ruleIds": ["medicaments-drogues"],
+      "prompt": "Ton médecin te donne un médicament. Avant de conduire, tu :",
+      "options": [
+        {
+          "id": "a",
+          "text": "Lis la notice et demandes au pharmacien s'il donne sommeil"
+        },
+        {
+          "id": "b",
+          "text": "Conduis normalement, c'est un médicament"
+        },
+        {
+          "id": "c",
+          "text": "En prends deux pour être sûre"
+        }
+      ],
+      "correct": ["a"],
+      "explanation": "Certains médicaments donnent sommeil ou ralentissent les réflexes. La notice et le pharmacien te le disent."
+    },
+    {
+      "id": "q-n4-m1-007",
+      "moduleId": "n4-m1",
+      "ruleIds": ["telephone"],
+      "prompt": "As-tu le droit de téléphoner en tenant le téléphone en main en conduisant ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Non, c'est interdit"
+        },
+        {
+          "id": "b",
+          "text": "Oui, si l'appel est court"
+        },
+        {
+          "id": "c",
+          "text": "Oui, à un feu rouge"
+        }
+      ],
+      "correct": ["a"],
+      "explanation": "Tenir son téléphone en main en conduisant est interdit. Même avec un kit mains libres, la conversation distrait : le mieux est de s'arrêter."
+    },
+    {
+      "id": "q-n4-m1-008",
+      "moduleId": "n4-m1",
+      "ruleIds": ["alcool-seuil"],
+      "prompt": "Tu as bu une bière il y a 20 minutes et tu te sens bien. Peux-tu conduire ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Non, je peux dépasser le seuil, et me sentir bien ne prouve rien"
+        },
+        {
+          "id": "b",
+          "text": "Oui, je me sens bien"
+        },
+        {
+          "id": "c",
+          "text": "Oui, si je roule doucement"
+        }
+      ],
+      "correct": ["a"],
+      "explanation": "Avec un seuil aussi bas, un seul verre peut suffire. Se sentir bien ne veut rien dire."
+    },
+    {
+      "id": "q-n4-m1-009",
+      "moduleId": "n4-m1",
+      "ruleIds": ["medicaments-drogues"],
+      "prompt": "Conduire après avoir pris de la drogue est :",
+      "options": [
+        {
+          "id": "a",
+          "text": "Interdit"
+        },
+        {
+          "id": "b",
+          "text": "Permis si on se sent bien"
+        },
+        {
+          "id": "c",
+          "text": "Permis la journée"
+        }
+      ],
+      "correct": ["a"],
+      "explanation": "Les drogues sont interdites au volant. Elles altèrent la vision, les réflexes et le jugement."
+    }
+  ]
+}

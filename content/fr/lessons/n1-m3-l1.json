@@ -1,14 +1,62 @@
 {
   "id": "n1-m3-l1",
   "moduleId": "n1-m3",
-  "title": "Panneaux d'interdiction et d'obligation",
+  "title": "Ce qui est interdit",
   "minutes": 5,
-  "ruleIds": [],
+  "ruleIds": ["interdiction-acces", "interdiction-depasser-tourner"],
   "screens": [
     {
       "type": "text",
-      "body": "Contenu à venir."
+      "body": "Les panneaux d'interdiction sont ronds, avec du rouge. Ils te disent ce que tu n'as pas le droit de faire, à partir du panneau."
+    },
+    {
+      "type": "text",
+      "body": "Le sens interdit : un disque rouge avec une barre blanche. Interdit d'entrer de ce côté.",
+      "media": {
+        "kind": "svg",
+        "component": "Sign",
+        "props": {
+          "preset": "sens-interdit"
+        }
+      }
+    },
+    {
+      "type": "text",
+      "body": "Le cercle vide bordé de rouge : aucun véhicule ne passe.",
+      "media": {
+        "kind": "svg",
+        "component": "Sign",
+        "props": {
+          "preset": "interdit-circulation"
+        }
+      }
+    },
+    {
+      "type": "text",
+      "body": "Deux voitures, une rouge et une noire : interdiction de dépasser.",
+      "media": {
+        "kind": "svg",
+        "component": "Sign",
+        "props": {
+          "preset": "depassement-interdit"
+        }
+      }
+    },
+    {
+      "type": "text",
+      "body": "Une flèche barrée : interdiction de tourner dans ce sens.",
+      "media": {
+        "kind": "svg",
+        "component": "Sign",
+        "props": {
+          "preset": "interdit-tourner-gauche"
+        }
+      }
+    },
+    {
+      "type": "keypoint",
+      "body": "Rond et rouge : je n'ai pas le droit."
     }
   ],
-  "checks": []
+  "checks": ["q-n1-m3-001", "q-n1-m3-003"]
 }

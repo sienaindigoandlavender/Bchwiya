@@ -1,0 +1,58 @@
+{
+  "id": "n1-m4-l2",
+  "moduleId": "n1-m4",
+  "title": "Piétons et autoroute",
+  "minutes": 5,
+  "ruleIds": ["indication-pietons", "indication-autoroute"],
+  "screens": [
+    {
+      "type": "text",
+      "body": "Pour un passage piéton, il existe deux panneaux. Le triangle rouge l'annonce à l'avance.",
+      "media": {
+        "kind": "svg",
+        "component": "Sign",
+        "props": {
+          "preset": "danger-pietons"
+        }
+      }
+    },
+    {
+      "type": "text",
+      "body": "Le carré bleu est posé à l'endroit même du passage.",
+      "media": {
+        "kind": "svg",
+        "component": "Sign",
+        "props": {
+          "preset": "passage-pietons"
+        }
+      }
+    },
+    {
+      "type": "text",
+      "body": "Ce panneau marque l'entrée d'une autoroute. À partir d'ici, ses règles s'appliquent.",
+      "media": {
+        "kind": "svg",
+        "component": "Sign",
+        "props": {
+          "preset": "autoroute"
+        }
+      }
+    },
+    {
+      "type": "text",
+      "body": "Le même, barré de rouge : fin de l'autoroute.",
+      "media": {
+        "kind": "svg",
+        "component": "Sign",
+        "props": {
+          "preset": "fin-autoroute"
+        }
+      }
+    },
+    {
+      "type": "keypoint",
+      "body": "Triangle : le passage piéton arrive. Carré bleu : il est ici."
+    }
+  ],
+  "checks": ["q-n1-m4-004", "q-n1-m4-006"]
+}

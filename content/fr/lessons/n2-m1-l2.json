@@ -1,0 +1,49 @@
+{
+  "$comment": "Règle générale de priorité à droite : loi 52-05 (règles de circulation).",
+  "id": "n2-m1-l2",
+  "moduleId": "n2-m1",
+  "title": "Qui commande en premier",
+  "minutes": 5,
+  "ruleIds": ["priorite-ordre"],
+  "screens": [
+    {
+      "type": "text",
+      "body": "À une intersection, plusieurs règles peuvent se croiser. Elles ont un ordre, du plus fort au plus faible."
+    },
+    {
+      "type": "text",
+      "body": "1. L'agent de circulation. Ses gestes passent avant tout le reste."
+    },
+    {
+      "type": "text",
+      "body": "2. Les feux tricolores.",
+      "media": {
+        "kind": "svg",
+        "component": "TrafficLight",
+        "props": {
+          "state": "rouge"
+        }
+      }
+    },
+    {
+      "type": "text",
+      "body": "3. Les panneaux : stop, cédez le passage, route prioritaire.",
+      "media": {
+        "kind": "svg",
+        "component": "Sign",
+        "props": {
+          "preset": "stop"
+        }
+      }
+    },
+    {
+      "type": "text",
+      "body": "4. Et s'il n'y a rien de tout ça : la priorité à droite."
+    },
+    {
+      "type": "keypoint",
+      "body": "Agent, puis feux, puis panneaux, puis priorité à droite."
+    }
+  ],
+  "checks": ["q-n2-m1-006", "q-n2-m1-004"]
+}

@@ -1,14 +1,30 @@
 {
   "id": "n5-m1-l1",
   "moduleId": "n5-m1",
-  "title": "En ville",
+  "title": "Conduire en ville",
   "minutes": 5,
-  "ruleIds": [],
+  "ruleIds": ["ville-vigilance", "klaxon"],
   "screens": [
     {
       "type": "text",
-      "body": "Contenu à venir."
+      "body": "En ville, tout est proche et tout bouge : piétons, scooters, vélos, bus, voitures qui se garent."
+    },
+    {
+      "type": "text",
+      "body": "Un piéton peut sortir entre deux voitures garées. Un scooter peut se cacher dans ton angle mort. Regarde partout, roule doucement."
+    },
+    {
+      "type": "text",
+      "body": "Avant d'ouvrir ta portière côté rue, regarde dans le rétroviseur et par-dessus ton épaule."
+    },
+    {
+      "type": "text",
+      "body": "Le klaxon, en ville, sert seulement à prévenir d'un danger immédiat. Pas pour saluer, pas pour s'impatienter."
+    },
+    {
+      "type": "keypoint",
+      "body": "En ville, je roule doucement et je regarde partout."
     }
   ],
-  "checks": []
+  "checks": ["q-n5-m1-001", "q-n5-m1-002"]
 }

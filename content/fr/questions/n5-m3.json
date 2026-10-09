@@ -1,0 +1,278 @@
+{
+  "$comment": "Numéros d'urgence au Maroc : 15 (protection civile : pompiers et ambulance), 19 (police), 177 (gendarmerie royale).",
+  "moduleId": "n5-m3",
+  "questions": [
+    {
+      "id": "q-n5-m3-001",
+      "moduleId": "n5-m3",
+      "ruleIds": ["feux-eclairage"],
+      "prompt": "La nuit, sur une route sans éclairage, tu roules en feux de route (pleins phares). Une voiture arrive en face. Que fais-tu ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Je passe en feux de croisement"
+        },
+        {
+          "id": "b",
+          "text": "Je garde mes feux de route"
+        },
+        {
+          "id": "c",
+          "text": "J'éteins tous mes feux"
+        }
+      ],
+      "correct": ["a"],
+      "explanation": "Les feux de route éblouissent. Dès que quelqu'un arrive en face, ou que tu suis une voiture de près, tu passes en feux de croisement."
+    },
+    {
+      "id": "q-n5-m3-002",
+      "moduleId": "n5-m3",
+      "ruleIds": ["feux-eclairage"],
+      "prompt": "Quand peux-tu utiliser les feux de route ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Hors agglomération, sur une route non éclairée, quand personne n'arrive en face ni devant"
+        },
+        {
+          "id": "b",
+          "text": "En ville la nuit"
+        },
+        {
+          "id": "c",
+          "text": "Tout le temps la nuit"
+        }
+      ],
+      "correct": ["a"],
+      "explanation": "Les feux de route servent quand la route est sombre et que tu ne risques d'éblouir personne."
+    },
+    {
+      "id": "q-n5-m3-003",
+      "moduleId": "n5-m3",
+      "ruleIds": ["eblouissement"],
+      "prompt": "Une voiture en face t'éblouit. Que fais-tu ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Je ralentis et je regarde le bord droit de la route"
+        },
+        {
+          "id": "b",
+          "text": "Je l'éblouis à mon tour"
+        },
+        {
+          "id": "c",
+          "text": "Je ferme les yeux un instant"
+        }
+      ],
+      "correct": ["a"],
+      "explanation": "Regarde le bord droit pour garder ta trajectoire, et ralentis jusqu'à ce que ta vue revienne."
+    },
+    {
+      "id": "q-n5-m3-004",
+      "moduleId": "n5-m3",
+      "ruleIds": ["pluie-aquaplaning"],
+      "prompt": "Sous la pluie, que dois-tu faire ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Ralentir"
+        },
+        {
+          "id": "b",
+          "text": "Augmenter ta distance de sécurité"
+        },
+        {
+          "id": "c",
+          "text": "Allumer tes feux de croisement"
+        },
+        {
+          "id": "d",
+          "text": "Freiner fort et souvent"
+        }
+      ],
+      "correct": ["a", "b", "c"],
+      "explanation": "Sous la pluie : moins vite, plus de distance, feux de croisement pour être vue."
+    },
+    {
+      "id": "q-n5-m3-005",
+      "moduleId": "n5-m3",
+      "ruleIds": ["pluie-aquaplaning"],
+      "prompt": "Ta voiture « flotte » sur une grosse flaque, le volant devient léger. C'est l'aquaplaning. Que fais-tu ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Je lève le pied doucement et je tiens le volant droit, sans freiner brusquement"
+        },
+        {
+          "id": "b",
+          "text": "Je freine à fond"
+        },
+        {
+          "id": "c",
+          "text": "Je tourne vite le volant"
+        }
+      ],
+      "correct": ["a"],
+      "explanation": "Ne freine pas brusquement et ne donne pas de coup de volant. Lève le pied et tiens le volant droit jusqu'à ce que les pneus touchent à nouveau la route."
+    },
+    {
+      "id": "q-n5-m3-006",
+      "moduleId": "n5-m3",
+      "ruleIds": ["brouillard"],
+      "prompt": "Dans le brouillard, quels feux allumes-tu ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Les feux de croisement"
+        },
+        {
+          "id": "b",
+          "text": "Les feux de brouillard avant, si ma voiture en a"
+        },
+        {
+          "id": "c",
+          "text": "Les feux de route"
+        }
+      ],
+      "correct": ["a", "b"],
+      "explanation": "Les feux de route se reflètent sur le brouillard et t'éblouissent. Croisement et brouillard, et vitesse réduite."
+    },
+    {
+      "id": "q-n5-m3-007",
+      "moduleId": "n5-m3",
+      "ruleIds": ["accident-pas"],
+      "prompt": "Tu arrives sur un accident. Dans quel ordre agis-tu ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Protéger, alerter, secourir"
+        },
+        {
+          "id": "b",
+          "text": "Secourir, protéger, alerter"
+        },
+        {
+          "id": "c",
+          "text": "Alerter, secourir, protéger"
+        }
+      ],
+      "correct": ["a"],
+      "explanation": "D'abord protéger pour éviter un second accident, puis alerter les secours, puis secourir les blessés."
+    },
+    {
+      "id": "q-n5-m3-008",
+      "moduleId": "n5-m3",
+      "ruleIds": ["accident-pas"],
+      "prompt": "Comment protéger les lieux d'un accident ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "J'allume mes feux de détresse"
+        },
+        {
+          "id": "b",
+          "text": "Je place un triangle en amont pour prévenir les autres"
+        },
+        {
+          "id": "c",
+          "text": "Je ne fume pas près des véhicules"
+        },
+        {
+          "id": "d",
+          "text": "Je déplace tous les blessés"
+        }
+      ],
+      "correct": ["a", "b", "c"],
+      "explanation": "Warning, triangle bien en arrière, pas de cigarette (risque d'incendie). On ne déplace pas les blessés, sauf danger immédiat."
+    },
+    {
+      "id": "q-n5-m3-009",
+      "moduleId": "n5-m3",
+      "ruleIds": ["numeros-urgence"],
+      "prompt": "Quel numéro appelles-tu pour les pompiers et l'ambulance (protection civile) ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "15"
+        },
+        {
+          "id": "b",
+          "text": "19"
+        },
+        {
+          "id": "c",
+          "text": "177"
+        }
+      ],
+      "correct": ["a"],
+      "explanation": "15 : protection civile, pompiers et ambulance. 19 : police. 177 : gendarmerie royale."
+    },
+    {
+      "id": "q-n5-m3-010",
+      "moduleId": "n5-m3",
+      "ruleIds": ["numeros-urgence"],
+      "prompt": "Un accident a lieu sur une route de campagne, loin de la ville. Qui peux-tu appeler ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Le 177, la gendarmerie royale"
+        },
+        {
+          "id": "b",
+          "text": "Le 15, la protection civile"
+        },
+        {
+          "id": "c",
+          "text": "Le 10"
+        }
+      ],
+      "correct": ["a", "b"],
+      "explanation": "Hors des villes, la gendarmerie royale (177) intervient. La protection civile (15) envoie pompiers et ambulance."
+    },
+    {
+      "id": "q-n5-m3-011",
+      "moduleId": "n5-m3",
+      "ruleIds": ["accident-pas"],
+      "prompt": "Un motard blessé est allongé sur la route, il porte son casque. Que fais-tu ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Je ne retire pas son casque"
+        },
+        {
+          "id": "b",
+          "text": "Je retire son casque pour qu'il respire"
+        },
+        {
+          "id": "c",
+          "text": "Je le relève"
+        }
+      ],
+      "correct": ["a"],
+      "explanation": "Ne retire jamais le casque d'un motard : tu pourrais aggraver une blessure à la colonne. Parle-lui, couvre-le, et attends les secours."
+    },
+    {
+      "id": "q-n5-m3-012",
+      "moduleId": "n5-m3",
+      "ruleIds": ["accident-pas", "numeros-urgence"],
+      "prompt": "Quand tu appelles les secours, que dois-tu dire ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Où se trouve l'accident, précisément"
+        },
+        {
+          "id": "b",
+          "text": "Combien il y a de blessés et leur état"
+        },
+        {
+          "id": "c",
+          "text": "La marque des voitures uniquement"
+        }
+      ],
+      "correct": ["a", "b"],
+      "explanation": "Le lieu exact, le nombre de blessés, ce que tu vois. Ne raccroche pas avant qu'on te le dise."
+    }
+  ]
+}

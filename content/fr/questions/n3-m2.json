@@ -1,0 +1,250 @@
+{
+  "$comment": "Vitesses : décret 2-10-420 art. 15 à 18 (60 / 100 / 120 km/h), art. 16 (90 km/h en période probatoire). Vitesse minimale de 60 km/h sur autoroute.",
+  "moduleId": "n3-m2",
+  "questions": [
+    {
+      "id": "q-n3-m2-001",
+      "moduleId": "n3-m2",
+      "ruleIds": ["vitesse-agglo"],
+      "prompt": "Sauf panneau contraire, quelle est la vitesse maximale en agglomération (en ville) ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "60 km/h"
+        },
+        {
+          "id": "b",
+          "text": "50 km/h"
+        },
+        {
+          "id": "c",
+          "text": "80 km/h"
+        }
+      ],
+      "correct": ["a"],
+      "explanation": "En agglomération, la vitesse est limitée à 60 km/h, sauf si un panneau indique autre chose.",
+      "media": {
+        "kind": "svg",
+        "component": "Sign",
+        "props": {
+          "preset": "vitesse-60"
+        }
+      }
+    },
+    {
+      "id": "q-n3-m2-002",
+      "moduleId": "n3-m2",
+      "ruleIds": ["vitesse-route"],
+      "prompt": "Hors agglomération, sur une route normale, quelle est la vitesse maximale pour une voiture ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "100 km/h"
+        },
+        {
+          "id": "b",
+          "text": "90 km/h"
+        },
+        {
+          "id": "c",
+          "text": "120 km/h"
+        }
+      ],
+      "correct": ["a"],
+      "explanation": "Hors agglomération, c'est 100 km/h au plus pour une voiture.",
+      "media": {
+        "kind": "svg",
+        "component": "Sign",
+        "props": {
+          "preset": "vitesse-100"
+        }
+      }
+    },
+    {
+      "id": "q-n3-m2-003",
+      "moduleId": "n3-m2",
+      "ruleIds": ["vitesse-autoroute"],
+      "prompt": "Sur autoroute, quelle est la vitesse maximale ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "120 km/h"
+        },
+        {
+          "id": "b",
+          "text": "100 km/h"
+        },
+        {
+          "id": "c",
+          "text": "140 km/h"
+        }
+      ],
+      "correct": ["a"],
+      "explanation": "Sur autoroute, 120 km/h au plus.",
+      "media": {
+        "kind": "svg",
+        "component": "Sign",
+        "props": {
+          "preset": "vitesse-120"
+        }
+      }
+    },
+    {
+      "id": "q-n3-m2-004",
+      "moduleId": "n3-m2",
+      "ruleIds": ["vitesse-autoroute"],
+      "prompt": "Sur autoroute, par circulation normale, existe-t-il une vitesse minimale ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Oui, 60 km/h"
+        },
+        {
+          "id": "b",
+          "text": "Non, on peut rouler aussi lentement qu'on veut"
+        }
+      ],
+      "correct": ["a"],
+      "explanation": "Rouler trop lentement sur autoroute est dangereux. Par circulation normale, il faut rouler à au moins 60 km/h."
+    },
+    {
+      "id": "q-n3-m2-005",
+      "moduleId": "n3-m2",
+      "ruleIds": ["vitesse-probatoire"],
+      "prompt": "Pendant ton permis probatoire, quelle vitesse ne dois-tu jamais dépasser, même sur autoroute ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "90 km/h"
+        },
+        {
+          "id": "b",
+          "text": "100 km/h"
+        },
+        {
+          "id": "c",
+          "text": "120 km/h"
+        }
+      ],
+      "correct": ["a"],
+      "explanation": "Pendant la période probatoire, tu ne dépasses jamais 90 km/h. Ta voiture doit aussi porter l'indication de vitesse prévue pour les nouveaux conducteurs.",
+      "media": {
+        "kind": "svg",
+        "component": "Sign",
+        "props": {
+          "preset": "vitesse-90"
+        }
+      }
+    },
+    {
+      "id": "q-n3-m2-006",
+      "moduleId": "n3-m2",
+      "ruleIds": ["vitesse-adaptee"],
+      "prompt": "Il pleut fort. La limite est de 100 km/h. Que fais-tu ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Je roule moins vite que 100 km/h"
+        },
+        {
+          "id": "b",
+          "text": "Je peux rouler à 100 km/h, c'est la limite"
+        }
+      ],
+      "correct": ["a"],
+      "explanation": "La limite est un maximum, pas un objectif. Sous la pluie, la nuit ou dans le brouillard, tu adaptes ta vitesse et tu roules moins vite."
+    },
+    {
+      "id": "q-n3-m2-007",
+      "moduleId": "n3-m2",
+      "ruleIds": ["distance-securite"],
+      "prompt": "Quelle distance garder avec la voiture de devant ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Au moins 2 secondes entre elle et moi"
+        },
+        {
+          "id": "b",
+          "text": "Un mètre suffit"
+        },
+        {
+          "id": "c",
+          "text": "Je peux la coller si elle roule vite"
+        }
+      ],
+      "correct": ["a"],
+      "explanation": "Repère un poteau. Quand la voiture de devant le passe, compte « un, deux ». Si tu y arrives avant d'avoir fini, tu es trop près."
+    },
+    {
+      "id": "q-n3-m2-008",
+      "moduleId": "n3-m2",
+      "ruleIds": ["distance-arret"],
+      "prompt": "La distance d'arrêt, c'est :",
+      "options": [
+        {
+          "id": "a",
+          "text": "La distance parcourue pendant que je réagis, plus la distance de freinage"
+        },
+        {
+          "id": "b",
+          "text": "Seulement la distance de freinage"
+        },
+        {
+          "id": "c",
+          "text": "La distance entre deux voitures arrêtées"
+        }
+      ],
+      "correct": ["a"],
+      "explanation": "Avant même de freiner, il te faut environ une seconde pour réagir. Pendant cette seconde, la voiture roule. Puis elle freine."
+    },
+    {
+      "id": "q-n3-m2-009",
+      "moduleId": "n3-m2",
+      "ruleIds": ["distance-arret", "vitesse-adaptee"],
+      "prompt": "Qu'est-ce qui allonge la distance d'arrêt ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Une vitesse plus élevée"
+        },
+        {
+          "id": "b",
+          "text": "Une route mouillée"
+        },
+        {
+          "id": "c",
+          "text": "La fatigue"
+        },
+        {
+          "id": "d",
+          "text": "Une voiture propre"
+        }
+      ],
+      "correct": ["a", "b", "c"],
+      "explanation": "Plus tu vas vite, plus tu mets de temps à t'arrêter. Une route mouillée allonge le freinage. La fatigue allonge le temps de réaction."
+    },
+    {
+      "id": "q-n3-m2-010",
+      "moduleId": "n3-m2",
+      "ruleIds": ["distance-securite", "vitesse-adaptee"],
+      "prompt": "Sous la pluie, ta distance de sécurité doit :",
+      "options": [
+        {
+          "id": "a",
+          "text": "Augmenter"
+        },
+        {
+          "id": "b",
+          "text": "Rester la même"
+        },
+        {
+          "id": "c",
+          "text": "Diminuer"
+        }
+      ],
+      "correct": ["a"],
+      "explanation": "Sur route mouillée, on freine moins bien : laisse plus d'espace, environ le double."
+    }
+  ]
+}

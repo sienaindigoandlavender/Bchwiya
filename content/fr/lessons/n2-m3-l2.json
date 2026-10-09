@@ -1,5 +1,5 @@
 {
-  "$comment": "// TODO: verify against loi 52-05",
+  "$comment": "Vérifié : décret 2-10-420 art. 36, 37, 85 ; arrêté 2805-14 art. 4 (rond-point sans signalisation : priorité à droite ; giratoire avec cédez le passage : l'anneau est prioritaire).",
   "id": "n2-m3-l2",
   "moduleId": "n2-m3",
   "title": "Le rond-point : deux règles",
@@ -23,8 +23,14 @@
         "props": {
           "variant": "cedez",
           "cars": [
-            { "slot": "entry-s", "who": "you" },
-            { "slot": "ring-sw", "who": "other" }
+            {
+              "slot": "entry-s",
+              "who": "you"
+            },
+            {
+              "slot": "ring-sw",
+              "who": "other"
+            }
           ]
         }
       }
@@ -38,19 +44,25 @@
         "props": {
           "variant": "sans-panneau",
           "cars": [
-            { "slot": "ring-se", "who": "you" },
-            { "slot": "entry-e", "who": "other" }
+            {
+              "slot": "ring-se",
+              "who": "you"
+            },
+            {
+              "slot": "entry-e",
+              "who": "other"
+            }
           ]
         }
       }
     },
     {
-      "type": "keypoint",
-      "body": "Cédez le passage à l'entrée → l'anneau est prioritaire. Pas de panneau → priorité à droite : ceux qui entrent sont prioritaires."
-    },
-    {
       "type": "text",
       "body": "Le piège classique : penser que l'anneau est toujours prioritaire. Ce n'est vrai que s'il y a le panneau. Alors, à chaque giratoire, un seul réflexe : regarder l'entrée."
+    },
+    {
+      "type": "keypoint",
+      "body": "Cédez le passage à l'entrée → l'anneau est prioritaire. Pas de panneau → priorité à droite : ceux qui entrent sont prioritaires. Un stop à l'entrée a le même effet que le cédez le passage."
     }
   ],
   "checks": ["q-n2-m3-004", "q-n2-m3-005", "q-n2-m3-006"]

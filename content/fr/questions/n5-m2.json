@@ -1,0 +1,218 @@
+{
+  "moduleId": "n5-m2",
+  "questions": [
+    {
+      "id": "q-n5-m2-001",
+      "moduleId": "n5-m2",
+      "ruleIds": ["autoroute-interdits"],
+      "prompt": "Qui n'a pas le droit de circuler sur autoroute ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Les piétons"
+        },
+        {
+          "id": "b",
+          "text": "Les cyclistes"
+        },
+        {
+          "id": "c",
+          "text": "Les charrettes"
+        },
+        {
+          "id": "d",
+          "text": "Les voitures"
+        }
+      ],
+      "correct": ["a", "b", "c"],
+      "explanation": "L'autoroute est réservée aux véhicules rapides. Piétons, vélos, charrettes et tracteurs y sont interdits.",
+      "media": {
+        "kind": "svg",
+        "component": "Sign",
+        "props": {
+          "preset": "autoroute"
+        }
+      }
+    },
+    {
+      "id": "q-n5-m2-002",
+      "moduleId": "n5-m2",
+      "ruleIds": ["autoroute-inserer"],
+      "prompt": "Tu entres sur l'autoroute. Comment t'insères-tu ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "J'accélère sur la voie d'accélération et je m'insère en laissant passer ceux qui sont déjà sur l'autoroute"
+        },
+        {
+          "id": "b",
+          "text": "Je m'arrête au bout de la voie d'accélération"
+        },
+        {
+          "id": "c",
+          "text": "Je force le passage, j'ai la priorité"
+        }
+      ],
+      "correct": ["a"],
+      "explanation": "La voie d'accélération sert à prendre de la vitesse. Ceux qui sont déjà sur l'autoroute sont prioritaires."
+    },
+    {
+      "id": "q-n5-m2-003",
+      "moduleId": "n5-m2",
+      "ruleIds": ["autoroute-interdictions"],
+      "prompt": "Tu as raté ta sortie d'autoroute. Que fais-tu ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Je continue jusqu'à la sortie suivante"
+        },
+        {
+          "id": "b",
+          "text": "Je fais marche arrière sur la bande d'arrêt d'urgence"
+        },
+        {
+          "id": "c",
+          "text": "Je fais demi-tour"
+        }
+      ],
+      "correct": ["a"],
+      "explanation": "Sur autoroute, demi-tour et marche arrière sont strictement interdits. Prends la sortie suivante."
+    },
+    {
+      "id": "q-n5-m2-004",
+      "moduleId": "n5-m2",
+      "ruleIds": ["autoroute-panne"],
+      "prompt": "Tu tombes en panne sur l'autoroute. Que fais-tu ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Je me range sur la bande d'arrêt d'urgence"
+        },
+        {
+          "id": "b",
+          "text": "J'allume les feux de détresse"
+        },
+        {
+          "id": "c",
+          "text": "Je fais sortir tout le monde côté droit et je vais derrière la glissière"
+        },
+        {
+          "id": "d",
+          "text": "Je reste dans la voiture pour attendre"
+        }
+      ],
+      "correct": ["a", "b", "c"],
+      "explanation": "Sur la bande d'arrêt d'urgence, warning allumé. Tout le monde sort côté droit et se met à l'abri derrière la glissière."
+    },
+    {
+      "id": "q-n5-m2-005",
+      "moduleId": "n5-m2",
+      "ruleIds": ["autoroute-panne"],
+      "prompt": "À quoi sert la bande d'arrêt d'urgence ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "À s'arrêter en cas de panne ou d'urgence uniquement"
+        },
+        {
+          "id": "b",
+          "text": "À dépasser par la droite"
+        },
+        {
+          "id": "c",
+          "text": "À faire une pause"
+        }
+      ],
+      "correct": ["a"],
+      "explanation": "Elle est réservée aux pannes et aux urgences. Pour une pause, prends une aire de repos."
+    },
+    {
+      "id": "q-n5-m2-006",
+      "moduleId": "n5-m2",
+      "ruleIds": ["voies-multiples", "autoroute-inserer"],
+      "prompt": "Sur autoroute, sur quelle voie roules-tu normalement ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Celle de droite"
+        },
+        {
+          "id": "b",
+          "text": "Celle du milieu"
+        },
+        {
+          "id": "c",
+          "text": "Celle de gauche"
+        }
+      ],
+      "correct": ["a"],
+      "explanation": "On roule sur la voie de droite. Les autres voies servent à dépasser."
+    },
+    {
+      "id": "q-n5-m2-007",
+      "moduleId": "n5-m2",
+      "ruleIds": ["route-campagne"],
+      "prompt": "Sur une route de campagne, tu vois un troupeau de moutons sur le bas-côté. Que fais-tu ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Je ralentis et je reste prête à m'arrêter"
+        },
+        {
+          "id": "b",
+          "text": "Je klaxonne pour les faire fuir"
+        },
+        {
+          "id": "c",
+          "text": "Je garde ma vitesse"
+        }
+      ],
+      "correct": ["a"],
+      "explanation": "Les animaux peuvent traverser sans prévenir. Klaxonner peut les affoler. Ralentis."
+    },
+    {
+      "id": "q-n5-m2-008",
+      "moduleId": "n5-m2",
+      "ruleIds": ["route-campagne"],
+      "prompt": "Tu suis une charrette lente sur une route en virages. Que fais-tu ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "J'attends une portion droite avec de la visibilité pour dépasser"
+        },
+        {
+          "id": "b",
+          "text": "Je la dépasse tout de suite dans le virage"
+        },
+        {
+          "id": "c",
+          "text": "Je la colle pour qu'elle se pousse"
+        }
+      ],
+      "correct": ["a"],
+      "explanation": "Patience : dépasse seulement quand tu vois assez loin et que la ligne le permet."
+    },
+    {
+      "id": "q-n5-m2-009",
+      "moduleId": "n5-m2",
+      "ruleIds": ["autoroute-sortir"],
+      "prompt": "Pour sortir de l'autoroute, que fais-tu ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Je mets mon clignotant tôt et je ralentis sur la voie de décélération"
+        },
+        {
+          "id": "b",
+          "text": "Je freine sur la voie de gauche"
+        },
+        {
+          "id": "c",
+          "text": "Je coupe les voies au dernier moment"
+        }
+      ],
+      "correct": ["a"],
+      "explanation": "Prends la voie de sortie, appelée voie de décélération, et ralentis sur elle, pas avant."
+    }
+  ]
+}

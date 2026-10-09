@@ -1,0 +1,223 @@
+{
+  "moduleId": "n1-m1",
+  "questions": [
+    {
+      "id": "q-n1-m1-001",
+      "moduleId": "n1-m1",
+      "ruleIds": ["forme-triangle-danger"],
+      "prompt": "Un panneau en triangle, pointe en haut, avec une bordure rouge, t'annonce :",
+      "options": [
+        {
+          "id": "a",
+          "text": "Un danger"
+        },
+        {
+          "id": "b",
+          "text": "Une interdiction"
+        },
+        {
+          "id": "c",
+          "text": "Une indication"
+        }
+      ],
+      "correct": ["a"],
+      "explanation": "Le triangle pointe en haut prévient d'un danger. Il te dit de ralentir et de faire attention.",
+      "media": {
+        "kind": "svg",
+        "component": "Sign",
+        "props": {
+          "preset": "danger-autre"
+        }
+      }
+    },
+    {
+      "id": "q-n1-m1-002",
+      "moduleId": "n1-m1",
+      "ruleIds": ["forme-rond-ordre", "couleur-rouge-bleu"],
+      "prompt": "Un panneau rond avec une bordure rouge est :",
+      "options": [
+        {
+          "id": "a",
+          "text": "Une interdiction"
+        },
+        {
+          "id": "b",
+          "text": "Une obligation"
+        },
+        {
+          "id": "c",
+          "text": "Une indication"
+        }
+      ],
+      "correct": ["a"],
+      "explanation": "Rond + rouge = interdiction. Rond + bleu = obligation.",
+      "media": {
+        "kind": "svg",
+        "component": "Sign",
+        "props": {
+          "preset": "interdit-circulation"
+        }
+      }
+    },
+    {
+      "id": "q-n1-m1-003",
+      "moduleId": "n1-m1",
+      "ruleIds": ["forme-rond-ordre", "couleur-rouge-bleu"],
+      "prompt": "Un panneau rond, bleu, avec une flèche blanche est :",
+      "options": [
+        {
+          "id": "a",
+          "text": "Une interdiction"
+        },
+        {
+          "id": "b",
+          "text": "Une obligation"
+        },
+        {
+          "id": "c",
+          "text": "Une indication"
+        }
+      ],
+      "correct": ["b"],
+      "explanation": "Rond et bleu : c'est une obligation. Ici, tu dois aller tout droit.",
+      "media": {
+        "kind": "svg",
+        "component": "Sign",
+        "props": {
+          "preset": "obligation-tout-droit"
+        }
+      }
+    },
+    {
+      "id": "q-n1-m1-004",
+      "moduleId": "n1-m1",
+      "ruleIds": ["forme-carre-indication"],
+      "prompt": "Un panneau carré et bleu te donne :",
+      "options": [
+        {
+          "id": "a",
+          "text": "Un ordre"
+        },
+        {
+          "id": "b",
+          "text": "Une information"
+        },
+        {
+          "id": "c",
+          "text": "Un danger"
+        }
+      ],
+      "correct": ["b"],
+      "explanation": "Le carré ou le rectangle informe : un parking, un sens unique, un hôpital…",
+      "media": {
+        "kind": "svg",
+        "component": "Sign",
+        "props": {
+          "preset": "parking"
+        }
+      }
+    },
+    {
+      "id": "q-n1-m1-005",
+      "moduleId": "n1-m1",
+      "ruleIds": ["forme-speciales-priorite"],
+      "prompt": "Quels panneaux ont une forme unique, que tu reconnais même de dos ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Le stop (octogone)"
+        },
+        {
+          "id": "b",
+          "text": "Le cédez le passage (triangle pointe en bas)"
+        },
+        {
+          "id": "c",
+          "text": "Le parking (carré)"
+        }
+      ],
+      "correct": ["a", "b"],
+      "explanation": "Le stop et le cédez le passage ont des formes uniques. Ainsi, un conducteur qui arrive de l'autre côté les reconnaît, même de dos."
+    },
+    {
+      "id": "q-n1-m1-006",
+      "moduleId": "n1-m1",
+      "ruleIds": ["forme-speciales-priorite"],
+      "prompt": "Ce losange jaune et blanc signifie :",
+      "options": [
+        {
+          "id": "a",
+          "text": "Tu es sur une route prioritaire"
+        },
+        {
+          "id": "b",
+          "text": "Attention, danger"
+        },
+        {
+          "id": "c",
+          "text": "Fin d'une interdiction"
+        }
+      ],
+      "correct": ["a"],
+      "explanation": "Le losange jaune indique une route prioritaire : aux intersections, les autres te laissent passer.",
+      "media": {
+        "kind": "svg",
+        "component": "Sign",
+        "props": {
+          "preset": "route-prioritaire"
+        }
+      }
+    },
+    {
+      "id": "q-n1-m1-007",
+      "moduleId": "n1-m1",
+      "ruleIds": ["panneau-fin-barres"],
+      "prompt": "Des barres noires en diagonale sur un panneau veulent dire :",
+      "options": [
+        {
+          "id": "a",
+          "text": "La fin d'une règle"
+        },
+        {
+          "id": "b",
+          "text": "Un danger très grave"
+        },
+        {
+          "id": "c",
+          "text": "Une interdiction de stationner"
+        }
+      ],
+      "correct": ["a"],
+      "explanation": "Les barres noires en diagonale annoncent la fin : fin de route prioritaire, fin des interdictions…",
+      "media": {
+        "kind": "svg",
+        "component": "Sign",
+        "props": {
+          "preset": "fin-interdictions"
+        }
+      }
+    },
+    {
+      "id": "q-n1-m1-008",
+      "moduleId": "n1-m1",
+      "ruleIds": ["couleur-rouge-bleu"],
+      "prompt": "Sur un panneau, la couleur rouge sert à :",
+      "options": [
+        {
+          "id": "a",
+          "text": "Interdire"
+        },
+        {
+          "id": "b",
+          "text": "Alerter d'un danger"
+        },
+        {
+          "id": "c",
+          "text": "Indiquer un service"
+        }
+      ],
+      "correct": ["a", "b"],
+      "explanation": "Le rouge interdit (rond) ou alerte (triangle). Le bleu oblige (rond) ou informe (carré)."
+    }
+  ]
+}

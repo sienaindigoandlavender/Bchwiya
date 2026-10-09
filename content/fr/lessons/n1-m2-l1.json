@@ -1,14 +1,66 @@
 {
   "id": "n1-m2-l1",
   "moduleId": "n1-m2",
-  "title": "Panneaux de danger",
+  "title": "Le triangle qui prévient",
   "minutes": 5,
-  "ruleIds": [],
+  "ruleIds": ["danger-role", "danger-virages", "danger-feux-ralentisseur"],
   "screens": [
     {
       "type": "text",
-      "body": "Contenu à venir."
+      "body": "Les panneaux de danger sont des triangles blancs bordés de rouge. Ils sont placés avant le danger, pour te laisser le temps de réagir."
+    },
+    {
+      "type": "text",
+      "body": "Leur message est toujours le même : ralentis et regarde bien. Le dessin au milieu te dit de quel danger il s'agit."
+    },
+    {
+      "type": "text",
+      "body": "Un virage à droite…",
+      "media": {
+        "kind": "svg",
+        "component": "Sign",
+        "props": {
+          "preset": "danger-virage-droite"
+        }
+      }
+    },
+    {
+      "type": "text",
+      "body": "… ou à gauche.",
+      "media": {
+        "kind": "svg",
+        "component": "Sign",
+        "props": {
+          "preset": "danger-virage-gauche"
+        }
+      }
+    },
+    {
+      "type": "text",
+      "body": "Des feux tricolores un peu plus loin.",
+      "media": {
+        "kind": "svg",
+        "component": "Sign",
+        "props": {
+          "preset": "danger-feux"
+        }
+      }
+    },
+    {
+      "type": "text",
+      "body": "Un ralentisseur, le fameux dos d'âne.",
+      "media": {
+        "kind": "svg",
+        "component": "Sign",
+        "props": {
+          "preset": "danger-ralentisseur"
+        }
+      }
+    },
+    {
+      "type": "keypoint",
+      "body": "Triangle de danger : je ralentis et je redouble d'attention."
     }
   ],
-  "checks": []
+  "checks": ["q-n1-m2-001", "q-n1-m2-002"]
 }

@@ -1,0 +1,266 @@
+{
+  "moduleId": "n1-m2",
+  "questions": [
+    {
+      "id": "q-n1-m2-001",
+      "moduleId": "n1-m2",
+      "ruleIds": ["danger-role"],
+      "prompt": "Tu vois un panneau de danger. Que fais-tu ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Je ralentis"
+        },
+        {
+          "id": "b",
+          "text": "Je redouble d'attention"
+        },
+        {
+          "id": "c",
+          "text": "J'accélère pour passer vite"
+        }
+      ],
+      "correct": ["a", "b"],
+      "explanation": "Un panneau de danger demande deux choses : ralentir et regarder encore mieux.",
+      "media": {
+        "kind": "svg",
+        "component": "Sign",
+        "props": {
+          "preset": "danger-autre"
+        }
+      }
+    },
+    {
+      "id": "q-n1-m2-002",
+      "moduleId": "n1-m2",
+      "ruleIds": ["danger-virages"],
+      "prompt": "Ce panneau annonce :",
+      "options": [
+        {
+          "id": "a",
+          "text": "Un virage à droite"
+        },
+        {
+          "id": "b",
+          "text": "Un virage à gauche"
+        },
+        {
+          "id": "c",
+          "text": "Une obligation de tourner à droite"
+        }
+      ],
+      "correct": ["a"],
+      "explanation": "Triangle de danger et route qui tourne vers la droite : un virage à droite arrive. Ce n'est pas une obligation, c'est un avertissement.",
+      "media": {
+        "kind": "svg",
+        "component": "Sign",
+        "props": {
+          "preset": "danger-virage-droite"
+        }
+      }
+    },
+    {
+      "id": "q-n1-m2-003",
+      "moduleId": "n1-m2",
+      "ruleIds": ["danger-virages"],
+      "prompt": "Ce panneau annonce :",
+      "options": [
+        {
+          "id": "a",
+          "text": "Un virage à droite"
+        },
+        {
+          "id": "b",
+          "text": "Un virage à gauche"
+        },
+        {
+          "id": "c",
+          "text": "Une route sans issue"
+        }
+      ],
+      "correct": ["b"],
+      "explanation": "La route dessinée tourne vers la gauche : virage à gauche.",
+      "media": {
+        "kind": "svg",
+        "component": "Sign",
+        "props": {
+          "preset": "danger-virage-gauche"
+        }
+      }
+    },
+    {
+      "id": "q-n1-m2-004",
+      "moduleId": "n1-m2",
+      "ruleIds": ["danger-intersections"],
+      "prompt": "Que t'annonce ce panneau ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Une intersection où la priorité à droite s'applique"
+        },
+        {
+          "id": "b",
+          "text": "Une route prioritaire"
+        },
+        {
+          "id": "c",
+          "text": "Un passage à niveau"
+        }
+      ],
+      "correct": ["a"],
+      "explanation": "La croix en X dans un triangle annonce une intersection : tu devras céder le passage aux véhicules venant de ta droite.",
+      "media": {
+        "kind": "svg",
+        "component": "Sign",
+        "props": {
+          "preset": "danger-intersection-droite"
+        }
+      }
+    },
+    {
+      "id": "q-n1-m2-005",
+      "moduleId": "n1-m2",
+      "ruleIds": ["danger-intersections"],
+      "prompt": "Ce panneau t'annonce une intersection où :",
+      "options": [
+        {
+          "id": "a",
+          "text": "Tu es prioritaire"
+        },
+        {
+          "id": "b",
+          "text": "Tu dois céder le passage à droite"
+        },
+        {
+          "id": "c",
+          "text": "Tu dois t'arrêter"
+        }
+      ],
+      "correct": ["a"],
+      "explanation": "Le gros trait vertical, c'est ta route : elle est prioritaire. Le trait fin, c'est la route qui doit te céder le passage.",
+      "media": {
+        "kind": "svg",
+        "component": "Sign",
+        "props": {
+          "preset": "danger-intersection-prioritaire"
+        }
+      }
+    },
+    {
+      "id": "q-n1-m2-006",
+      "moduleId": "n1-m2",
+      "ruleIds": ["danger-pietons-enfants"],
+      "prompt": "Ce panneau t'annonce :",
+      "options": [
+        {
+          "id": "a",
+          "text": "Un endroit fréquenté par des enfants"
+        },
+        {
+          "id": "b",
+          "text": "Un passage pour piétons"
+        },
+        {
+          "id": "c",
+          "text": "Une aire de jeux interdite aux voitures"
+        }
+      ],
+      "correct": ["a"],
+      "explanation": "Deux silhouettes, une grande et une petite : des enfants peuvent traverser, souvent près d'une école.",
+      "media": {
+        "kind": "svg",
+        "component": "Sign",
+        "props": {
+          "preset": "danger-enfants"
+        }
+      }
+    },
+    {
+      "id": "q-n1-m2-007",
+      "moduleId": "n1-m2",
+      "ruleIds": ["danger-feux-ralentisseur"],
+      "prompt": "Ce panneau t'annonce :",
+      "options": [
+        {
+          "id": "a",
+          "text": "Des feux tricolores"
+        },
+        {
+          "id": "b",
+          "text": "Une station-service"
+        },
+        {
+          "id": "c",
+          "text": "Un carrefour giratoire"
+        }
+      ],
+      "correct": ["a"],
+      "explanation": "Trois ronds rouge, orange, vert dans un triangle : des feux arrivent. Prépare-toi à t'arrêter.",
+      "media": {
+        "kind": "svg",
+        "component": "Sign",
+        "props": {
+          "preset": "danger-feux"
+        }
+      }
+    },
+    {
+      "id": "q-n1-m2-008",
+      "moduleId": "n1-m2",
+      "ruleIds": ["danger-feux-ralentisseur"],
+      "prompt": "Ce panneau t'annonce :",
+      "options": [
+        {
+          "id": "a",
+          "text": "Un ralentisseur (dos d'âne)"
+        },
+        {
+          "id": "b",
+          "text": "Un pont"
+        },
+        {
+          "id": "c",
+          "text": "Une descente dangereuse"
+        }
+      ],
+      "correct": ["a"],
+      "explanation": "La bosse dessinée annonce un ralentisseur. Ralentis avant de passer dessus.",
+      "media": {
+        "kind": "svg",
+        "component": "Sign",
+        "props": {
+          "preset": "danger-ralentisseur"
+        }
+      }
+    },
+    {
+      "id": "q-n1-m2-009",
+      "moduleId": "n1-m2",
+      "ruleIds": ["danger-pietons-enfants"],
+      "prompt": "Ce panneau t'annonce :",
+      "options": [
+        {
+          "id": "a",
+          "text": "Un passage pour piétons"
+        },
+        {
+          "id": "b",
+          "text": "Une zone piétonne interdite aux voitures"
+        },
+        {
+          "id": "c",
+          "text": "Un arrêt de bus"
+        }
+      ],
+      "correct": ["a"],
+      "explanation": "Triangle de danger avec un piéton : un passage pour piétons arrive.",
+      "media": {
+        "kind": "svg",
+        "component": "Sign",
+        "props": {
+          "preset": "danger-pietons"
+        }
+      }
+    }
+  ]
+}

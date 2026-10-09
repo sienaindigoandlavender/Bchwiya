@@ -1,0 +1,69 @@
+{
+  "id": "n1-m1-l2",
+  "moduleId": "n1-m1",
+  "title": "Les formes spéciales et les couleurs",
+  "minutes": 5,
+  "ruleIds": ["forme-speciales-priorite", "couleur-rouge-bleu", "panneau-fin-barres"],
+  "screens": [
+    {
+      "type": "text",
+      "body": "Trois panneaux ont une forme bien à eux. L'octogone rouge, c'est le stop.",
+      "media": {
+        "kind": "svg",
+        "component": "Sign",
+        "props": {
+          "preset": "stop"
+        }
+      }
+    },
+    {
+      "type": "text",
+      "body": "Le triangle pointe en bas, c'est le cédez le passage.",
+      "media": {
+        "kind": "svg",
+        "component": "Sign",
+        "props": {
+          "preset": "cedez-le-passage"
+        }
+      }
+    },
+    {
+      "type": "text",
+      "body": "Le losange jaune et blanc, c'est la route prioritaire.",
+      "media": {
+        "kind": "svg",
+        "component": "Sign",
+        "props": {
+          "preset": "route-prioritaire"
+        }
+      }
+    },
+    {
+      "type": "text",
+      "body": "Ensuite, la couleur précise le message. Rond et rouge : interdiction. Rond et bleu : obligation. Carré et bleu : information.",
+      "media": {
+        "kind": "svg",
+        "component": "Sign",
+        "props": {
+          "preset": "obligation-tout-droit"
+        }
+      }
+    },
+    {
+      "type": "text",
+      "body": "Quand des barres noires barrent un panneau en diagonale, c'est la fin de la règle.",
+      "media": {
+        "kind": "svg",
+        "component": "Sign",
+        "props": {
+          "preset": "fin-route-prioritaire"
+        }
+      }
+    },
+    {
+      "type": "keypoint",
+      "body": "Rouge interdit ou alerte. Bleu oblige ou informe. Barres noires : c'est fini."
+    }
+  ],
+  "checks": ["q-n1-m1-002", "q-n1-m1-003"]
+}

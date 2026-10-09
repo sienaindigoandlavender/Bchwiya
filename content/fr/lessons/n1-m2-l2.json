@@ -1,0 +1,69 @@
+{
+  "id": "n1-m2-l2",
+  "moduleId": "n1-m2",
+  "title": "Intersections, piétons, enfants",
+  "minutes": 5,
+  "ruleIds": ["danger-intersections", "danger-pietons-enfants"],
+  "screens": [
+    {
+      "type": "text",
+      "body": "Ce triangle avec une croix en X annonce une intersection où s'applique la priorité à droite. Tu devras laisser passer ceux qui arrivent par ta droite.",
+      "media": {
+        "kind": "svg",
+        "component": "Sign",
+        "props": {
+          "preset": "danger-intersection-droite"
+        }
+      }
+    },
+    {
+      "type": "text",
+      "body": "Celui-ci annonce une intersection où tu es prioritaire. Le gros trait, c'est ta route.",
+      "media": {
+        "kind": "svg",
+        "component": "Sign",
+        "props": {
+          "preset": "danger-intersection-prioritaire"
+        }
+      }
+    },
+    {
+      "type": "text",
+      "body": "Un piéton dans un triangle : un passage pour piétons arrive.",
+      "media": {
+        "kind": "svg",
+        "component": "Sign",
+        "props": {
+          "preset": "danger-pietons"
+        }
+      }
+    },
+    {
+      "type": "text",
+      "body": "Deux silhouettes, une grande et une petite : des enfants, souvent près d'une école.",
+      "media": {
+        "kind": "svg",
+        "component": "Sign",
+        "props": {
+          "preset": "danger-enfants"
+        }
+      }
+    },
+    {
+      "type": "text",
+      "body": "Et le point d'exclamation : un autre danger. Un panneau rectangulaire en dessous précise souvent lequel.",
+      "media": {
+        "kind": "svg",
+        "component": "Sign",
+        "props": {
+          "preset": "danger-autre"
+        }
+      }
+    },
+    {
+      "type": "keypoint",
+      "body": "Croix en X : priorité à droite. Gros trait : je suis prioritaire."
+    }
+  ],
+  "checks": ["q-n1-m2-004", "q-n1-m2-006"]
+}
