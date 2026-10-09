@@ -1,14 +1,30 @@
 {
   "id": "n6-m1-l1",
   "moduleId": "n6-m1",
-  "title": "Les pièges classiques",
+  "title": "Les pièges de l'examen",
   "minutes": 5,
-  "ruleIds": [],
+  "ruleIds": ["piege-plusieurs-reponses", "piege-mots", "piege-details-image"],
   "screens": [
     {
       "type": "text",
-      "body": "Contenu à venir."
+      "body": "À l'examen, beaucoup d'erreurs viennent de la lecture, pas des règles. Voici les pièges les plus courants."
+    },
+    {
+      "type": "text",
+      "body": "Plusieurs bonnes réponses. Une question peut en avoir deux, trois, ou une seule. Lis chaque proposition, une par une, et demande-toi : est-ce vrai ?"
+    },
+    {
+      "type": "text",
+      "body": "Les mots « toujours », « jamais », « seulement ». Ils rendent souvent une phrase fausse, parce qu'il existe presque toujours une exception."
+    },
+    {
+      "type": "text",
+      "body": "Les détails de l'image. Un panneau au loin, une ligne au sol, un clignotant, un piéton sur le côté : regarde tout avant de répondre."
+    },
+    {
+      "type": "keypoint",
+      "body": "Je lis chaque réponse. Je me méfie de « toujours » et « jamais ». Je regarde toute l'image."
     }
   ],
-  "checks": []
+  "checks": ["q-n6-m1-001", "q-n6-m1-004"]
 }

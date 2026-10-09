@@ -104,6 +104,391 @@
       "id": "permis-age",
       "title": "Permis B : 18 ans minimum",
       "levelId": "n0"
+    },
+    {
+      "id": "forme-triangle-danger",
+      "title": "Triangle pointe en haut : un danger",
+      "levelId": "n1"
+    },
+    {
+      "id": "forme-rond-ordre",
+      "title": "Rond : un ordre (interdiction ou obligation)",
+      "levelId": "n1"
+    },
+    {
+      "id": "forme-carre-indication",
+      "title": "Carré ou rectangle : une indication",
+      "levelId": "n1"
+    },
+    {
+      "id": "forme-speciales-priorite",
+      "title": "Formes uniques : stop, cédez le passage, losange",
+      "levelId": "n1"
+    },
+    {
+      "id": "couleur-rouge-bleu",
+      "title": "Rouge interdit ou alerte, bleu oblige ou informe",
+      "levelId": "n1"
+    },
+    {
+      "id": "panneau-fin-barres",
+      "title": "Barres noires en diagonale : fin d'une règle",
+      "levelId": "n1"
+    },
+    {
+      "id": "danger-role",
+      "title": "Un panneau de danger : je ralentis et je redouble d'attention",
+      "levelId": "n1"
+    },
+    {
+      "id": "danger-virages",
+      "title": "Panneaux de virage : virage à droite ou à gauche",
+      "levelId": "n1"
+    },
+    {
+      "id": "danger-intersections",
+      "title": "Intersection : priorité à droite ou route non prioritaire",
+      "levelId": "n1"
+    },
+    {
+      "id": "danger-pietons-enfants",
+      "title": "Piétons et enfants : je ralentis",
+      "levelId": "n1"
+    },
+    {
+      "id": "danger-feux-ralentisseur",
+      "title": "Feux tricolores et ralentisseur annoncés",
+      "levelId": "n1"
+    },
+    {
+      "id": "interdiction-acces",
+      "title": "Sens interdit et circulation interdite",
+      "levelId": "n1"
+    },
+    {
+      "id": "interdiction-depasser-tourner",
+      "title": "Interdiction de dépasser ou de tourner",
+      "levelId": "n1"
+    },
+    {
+      "id": "limitation-vitesse-panneau",
+      "title": "Le chiffre dans le cercle rouge : vitesse maximale",
+      "levelId": "n1"
+    },
+    {
+      "id": "arret-vs-stationnement",
+      "title": "Arrêt (bref, conducteur au volant) et stationnement",
+      "levelId": "n1"
+    },
+    {
+      "id": "obligation-bleue",
+      "title": "Panneau rond bleu : je dois suivre la direction",
+      "levelId": "n1"
+    },
+    {
+      "id": "indication-services",
+      "title": "Parking, hôpital : panneaux carrés bleus",
+      "levelId": "n1"
+    },
+    {
+      "id": "indication-circulation",
+      "title": "Sens unique et impasse",
+      "levelId": "n1"
+    },
+    {
+      "id": "indication-pietons",
+      "title": "Passage piétons : panneau d'indication (bleu)",
+      "levelId": "n1"
+    },
+    {
+      "id": "indication-autoroute",
+      "title": "Entrée et fin d'autoroute",
+      "levelId": "n1"
+    },
+    {
+      "id": "priorite-droite-principe",
+      "title": "Sans signalisation, je cède le passage à droite",
+      "levelId": "n2"
+    },
+    {
+      "id": "priorite-ordre",
+      "title": "L'agent passe avant les feux, les feux avant les panneaux",
+      "levelId": "n2"
+    },
+    {
+      "id": "stop-arret-complet",
+      "title": "Stop : arrêt complet à la ligne, puis je cède à tous",
+      "levelId": "n2"
+    },
+    {
+      "id": "cedez-ralentir",
+      "title": "Cédez le passage : je ralentis et je laisse passer tout le monde",
+      "levelId": "n2"
+    },
+    {
+      "id": "route-prioritaire-regle",
+      "title": "Route prioritaire : les autres me cèdent le passage",
+      "levelId": "n2"
+    },
+    {
+      "id": "feu-rouge",
+      "title": "Feu rouge : arrêt à la ligne",
+      "levelId": "n2"
+    },
+    {
+      "id": "feu-orange-fixe",
+      "title": "Orange fixe : je m'arrête, sauf si c'est dangereux",
+      "levelId": "n2"
+    },
+    {
+      "id": "feu-vert",
+      "title": "Feu vert : je passe si le carrefour est dégagé",
+      "levelId": "n2"
+    },
+    {
+      "id": "feu-orange-clignotant",
+      "title": "Orange clignotant : prudence, les panneaux s'appliquent",
+      "levelId": "n2"
+    },
+    {
+      "id": "agent-gestes",
+      "title": "Gestes de l'agent : bras levé = arrêt pour tous",
+      "levelId": "n2"
+    },
+    {
+      "id": "rouler-a-droite",
+      "title": "Je roule à droite de la chaussée",
+      "levelId": "n3"
+    },
+    {
+      "id": "voies-multiples",
+      "title": "Plusieurs voies : la droite pour rouler, la gauche pour dépasser",
+      "levelId": "n3"
+    },
+    {
+      "id": "changer-de-voie",
+      "title": "Changer de voie : rétroviseur, angle mort, clignotant",
+      "levelId": "n3"
+    },
+    {
+      "id": "se-placer-tourner",
+      "title": "Pour tourner : à droite je serre à droite, à gauche je me place près du milieu",
+      "levelId": "n3"
+    },
+    {
+      "id": "vitesse-agglo",
+      "title": "En agglomération : 60 km/h maximum",
+      "levelId": "n3"
+    },
+    {
+      "id": "vitesse-route",
+      "title": "Hors agglomération : 100 km/h maximum",
+      "levelId": "n3"
+    },
+    {
+      "id": "vitesse-autoroute",
+      "title": "Autoroute : 120 km/h maximum, 60 km/h minimum",
+      "levelId": "n3"
+    },
+    {
+      "id": "vitesse-probatoire",
+      "title": "Permis probatoire : 90 km/h maximum",
+      "levelId": "n3"
+    },
+    {
+      "id": "vitesse-adaptee",
+      "title": "J'adapte ma vitesse : pluie, nuit, brouillard",
+      "levelId": "n3"
+    },
+    {
+      "id": "distance-securite",
+      "title": "Distance de sécurité : au moins 2 secondes",
+      "levelId": "n3"
+    },
+    {
+      "id": "distance-arret",
+      "title": "Distance d'arrêt = réaction + freinage",
+      "levelId": "n3"
+    },
+    {
+      "id": "depasser-gauche",
+      "title": "Je dépasse par la gauche",
+      "levelId": "n3"
+    },
+    {
+      "id": "depasser-conditions",
+      "title": "Je dépasse seulement si je vois loin et que j'ai la place de revenir",
+      "levelId": "n3"
+    },
+    {
+      "id": "depasser-interdit-lieux",
+      "title": "Interdit de dépasser : ligne continue, virage, sommet de côte",
+      "levelId": "n3"
+    },
+    {
+      "id": "etre-depasse",
+      "title": "Quand on me dépasse : je reste à droite et je n'accélère pas",
+      "levelId": "n3"
+    },
+    {
+      "id": "croiser",
+      "title": "Croiser : je serre à droite, l'obstacle de mon côté = je cède",
+      "levelId": "n3"
+    },
+    {
+      "id": "alcool-seuil",
+      "title": "Alcool : interdit à partir de 0,20 g/l de sang",
+      "levelId": "n4"
+    },
+    {
+      "id": "alcool-effets",
+      "title": "L'alcool ralentit les réflexes ; seul le temps l'élimine",
+      "levelId": "n4"
+    },
+    {
+      "id": "fatigue",
+      "title": "Fatigue : une pause toutes les 2 heures",
+      "levelId": "n4"
+    },
+    {
+      "id": "medicaments-drogues",
+      "title": "Médicaments : je lis la notice ; drogues : interdit",
+      "levelId": "n4"
+    },
+    {
+      "id": "telephone",
+      "title": "Téléphone tenu en main : interdit",
+      "levelId": "n4"
+    },
+    {
+      "id": "ceinture",
+      "title": "Ceinture obligatoire à toutes les places, avant et arrière",
+      "levelId": "n4"
+    },
+    {
+      "id": "enfants-siege",
+      "title": "Les jeunes enfants voyagent dans un siège adapté",
+      "levelId": "n4"
+    },
+    {
+      "id": "appuie-tete-airbag",
+      "title": "Appuie-tête bien réglé ; l'airbag ne remplace pas la ceinture",
+      "levelId": "n4"
+    },
+    {
+      "id": "warning-triangle",
+      "title": "Panne : feux de détresse et triangle",
+      "levelId": "n4"
+    },
+    {
+      "id": "voyants-couleurs",
+      "title": "Voyant rouge : je m'arrête ; orange : je fais vérifier ; vert ou bleu : information",
+      "levelId": "n4"
+    },
+    {
+      "id": "pneus",
+      "title": "Pneus : pression vérifiée à froid, usure surveillée",
+      "levelId": "n4"
+    },
+    {
+      "id": "niveaux",
+      "title": "Niveaux : huile, liquide de frein, refroidissement, lave-glace",
+      "levelId": "n4"
+    },
+    {
+      "id": "documents",
+      "title": "Documents : permis, carte grise, assurance, visite technique",
+      "levelId": "n4"
+    },
+    {
+      "id": "ville-vigilance",
+      "title": "En ville : piétons, deux-roues, portières, bus",
+      "levelId": "n5"
+    },
+    {
+      "id": "stationnement-interdit-lieux",
+      "title": "Interdit de stationner : trottoir, passage piéton, arrêt de bus, devant un garage",
+      "levelId": "n5"
+    },
+    {
+      "id": "klaxon",
+      "title": "Klaxon : seulement en cas de danger immédiat",
+      "levelId": "n5"
+    },
+    {
+      "id": "route-campagne",
+      "title": "Sur route : virages, animaux, charrettes, dépassements prudents",
+      "levelId": "n5"
+    },
+    {
+      "id": "autoroute-interdits",
+      "title": "Autoroute interdite aux piétons, vélos, charrettes, tracteurs",
+      "levelId": "n5"
+    },
+    {
+      "id": "autoroute-inserer",
+      "title": "S'insérer sur autoroute : la voie d'accélération",
+      "levelId": "n5"
+    },
+    {
+      "id": "autoroute-interdictions",
+      "title": "Sur autoroute : jamais de demi-tour ni de marche arrière",
+      "levelId": "n5"
+    },
+    {
+      "id": "autoroute-panne",
+      "title": "Panne sur autoroute : bande d'arrêt d'urgence, warning, derrière la glissière",
+      "levelId": "n5"
+    },
+    {
+      "id": "feux-eclairage",
+      "title": "Feux de croisement la nuit, feux de route seulement si personne devant ni en face",
+      "levelId": "n5"
+    },
+    {
+      "id": "eblouissement",
+      "title": "Ébloui : je ralentis et je regarde le bord droit",
+      "levelId": "n5"
+    },
+    {
+      "id": "pluie-aquaplaning",
+      "title": "Pluie : je ralentis, je double la distance ; aquaplaning : je lève le pied",
+      "levelId": "n5"
+    },
+    {
+      "id": "brouillard",
+      "title": "Brouillard : feux de croisement et de brouillard, vitesse réduite",
+      "levelId": "n5"
+    },
+    {
+      "id": "accident-pas",
+      "title": "Accident : Protéger, Alerter, Secourir",
+      "levelId": "n5"
+    },
+    {
+      "id": "numeros-urgence",
+      "title": "Urgences : 15 protection civile, 19 police, 177 gendarmerie",
+      "levelId": "n5"
+    },
+    {
+      "id": "piege-plusieurs-reponses",
+      "title": "Plusieurs bonnes réponses : je coche toutes les bonnes",
+      "levelId": "n6"
+    },
+    {
+      "id": "piege-details-image",
+      "title": "Je regarde tous les détails de l'image",
+      "levelId": "n6"
+    },
+    {
+      "id": "piege-mots",
+      "title": "Les mots « toujours » et « jamais » méritent un second regard",
+      "levelId": "n6"
+    },
+    {
+      "id": "autoroute-sortir",
+      "title": "Sortir de l'autoroute : clignotant tôt, je ralentis sur la voie de sortie",
+      "levelId": "n5"
     }
   ]
 }

@@ -1,0 +1,200 @@
+{
+  "moduleId": "n2-m4",
+  "questions": [
+    {
+      "id": "q-n2-m4-001",
+      "moduleId": "n2-m4",
+      "ruleIds": ["feu-rouge"],
+      "prompt": "Le feu est rouge. Que fais-tu ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Je m'arrête à la ligne d'arrêt"
+        },
+        {
+          "id": "b",
+          "text": "Je passe si personne n'arrive"
+        },
+        {
+          "id": "c",
+          "text": "Je ralentis seulement"
+        }
+      ],
+      "correct": ["a"],
+      "explanation": "Feu rouge : arrêt obligatoire à la ligne, même si le carrefour semble vide.",
+      "media": {
+        "kind": "svg",
+        "component": "TrafficLight",
+        "props": {
+          "state": "rouge"
+        }
+      }
+    },
+    {
+      "id": "q-n2-m4-002",
+      "moduleId": "n2-m4",
+      "ruleIds": ["feu-orange-fixe"],
+      "prompt": "Le feu passe à l'orange fixe. Tu es assez loin pour freiner sans danger. Que fais-tu ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Je m'arrête"
+        },
+        {
+          "id": "b",
+          "text": "J'accélère pour passer avant le rouge"
+        }
+      ],
+      "correct": ["a"],
+      "explanation": "L'orange fixe veut dire : arrête-toi. Tu ne passes que si t'arrêter serait dangereux, par exemple si tu es déjà presque sur la ligne.",
+      "media": {
+        "kind": "svg",
+        "component": "TrafficLight",
+        "props": {
+          "state": "orange"
+        }
+      }
+    },
+    {
+      "id": "q-n2-m4-003",
+      "moduleId": "n2-m4",
+      "ruleIds": ["feu-vert"],
+      "prompt": "Le feu est vert, mais le carrefour est encombré : tu resterais bloquée au milieu. Que fais-tu ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "J'attends avant la ligne que le carrefour se libère"
+        },
+        {
+          "id": "b",
+          "text": "J'avance quand même, le feu est vert"
+        }
+      ],
+      "correct": ["a"],
+      "explanation": "Le vert t'autorise à passer, pas à bloquer le carrefour. N'avance que si tu peux le traverser entièrement.",
+      "media": {
+        "kind": "svg",
+        "component": "TrafficLight",
+        "props": {
+          "state": "vert"
+        }
+      }
+    },
+    {
+      "id": "q-n2-m4-004",
+      "moduleId": "n2-m4",
+      "ruleIds": ["feu-orange-clignotant"],
+      "prompt": "Le feu clignote à l'orange. Que fais-tu ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Je passe avec prudence en respectant les panneaux, ou la priorité à droite s'il n'y en a pas"
+        },
+        {
+          "id": "b",
+          "text": "Je m'arrête et j'attends le vert"
+        },
+        {
+          "id": "c",
+          "text": "Je passe, j'ai la priorité"
+        }
+      ],
+      "correct": ["a"],
+      "explanation": "L'orange clignotant veut dire : prudence. Le feu ne règle plus le carrefour : ce sont les panneaux, ou la priorité à droite, qui comptent.",
+      "media": {
+        "kind": "svg",
+        "component": "TrafficLight",
+        "props": {
+          "state": "orange-clignotant"
+        }
+      }
+    },
+    {
+      "id": "q-n2-m4-005",
+      "moduleId": "n2-m4",
+      "ruleIds": ["feu-orange-clignotant"],
+      "prompt": "Les feux sont éteints (en panne). Qu'est-ce qui s'applique ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Les panneaux, ou la priorité à droite s'il n'y en a pas"
+        },
+        {
+          "id": "b",
+          "text": "Je suis toujours prioritaire"
+        },
+        {
+          "id": "c",
+          "text": "Je dois m'arrêter comme au stop"
+        }
+      ],
+      "correct": ["a"],
+      "explanation": "Un feu éteint ne règle plus rien. Comme pour l'orange clignotant : les panneaux, sinon la priorité à droite.",
+      "media": {
+        "kind": "svg",
+        "component": "TrafficLight",
+        "props": {
+          "state": "eteint"
+        }
+      }
+    },
+    {
+      "id": "q-n2-m4-006",
+      "moduleId": "n2-m4",
+      "ruleIds": ["agent-gestes"],
+      "prompt": "L'agent lève le bras bien droit vers le ciel. Que fais-tu ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Je m'arrête, sauf si je suis déjà engagée dans le carrefour"
+        },
+        {
+          "id": "b",
+          "text": "Je passe"
+        },
+        {
+          "id": "c",
+          "text": "Je tourne à droite"
+        }
+      ],
+      "correct": ["a"],
+      "explanation": "Bras levé à la verticale : arrêt pour tous les usagers, sauf ceux déjà engagés, qui finissent de dégager le carrefour."
+    },
+    {
+      "id": "q-n2-m4-007",
+      "moduleId": "n2-m4",
+      "ruleIds": ["agent-gestes"],
+      "prompt": "L'agent a les bras tendus à l'horizontale. Tu arrives face à lui. Que fais-tu ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Je m'arrête"
+        },
+        {
+          "id": "b",
+          "text": "Je passe"
+        }
+      ],
+      "correct": ["a"],
+      "explanation": "Bras tendus à l'horizontale : arrêt pour ceux qui arrivent face à l'agent ou dans son dos. Ceux qui arrivent sur ses côtés peuvent passer."
+    },
+    {
+      "id": "q-n2-m4-008",
+      "moduleId": "n2-m4",
+      "ruleIds": ["agent-gestes", "feu-vert"],
+      "prompt": "Le feu est vert pour toi, mais l'agent te fait signe de t'arrêter. Qui suis-tu ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "L'agent"
+        },
+        {
+          "id": "b",
+          "text": "Le feu"
+        }
+      ],
+      "correct": ["a"],
+      "explanation": "L'agent commande toujours avant le feu."
+    }
+  ]
+}

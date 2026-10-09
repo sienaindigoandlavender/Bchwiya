@@ -1,0 +1,169 @@
+{
+  "moduleId": "n4-m2",
+  "questions": [
+    {
+      "id": "q-n4-m2-001",
+      "moduleId": "n4-m2",
+      "ruleIds": ["ceinture"],
+      "prompt": "Où la ceinture de sécurité est-elle obligatoire ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "À toutes les places, avant et arrière"
+        },
+        {
+          "id": "b",
+          "text": "Seulement à l'avant"
+        },
+        {
+          "id": "c",
+          "text": "Seulement sur autoroute"
+        }
+      ],
+      "correct": ["a"],
+      "explanation": "La ceinture est obligatoire pour tous, à toutes les places, même en ville et même pour un petit trajet."
+    },
+    {
+      "id": "q-n4-m2-002",
+      "moduleId": "n4-m2",
+      "ruleIds": ["ceinture"],
+      "prompt": "Qui est responsable de faire porter la ceinture aux passagers ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Le conducteur vérifie que tout le monde est attaché"
+        },
+        {
+          "id": "b",
+          "text": "Chacun pour soi, le conducteur n'a rien à voir"
+        }
+      ],
+      "correct": ["a"],
+      "explanation": "Avant de démarrer, tu vérifies que tout le monde est attaché. Chaque passager non attaché peut être sanctionné."
+    },
+    {
+      "id": "q-n4-m2-003",
+      "moduleId": "n4-m2",
+      "ruleIds": ["enfants-siege"],
+      "prompt": "Comment transporte-t-on un jeune enfant ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Dans un siège auto adapté à son âge et à sa taille"
+        },
+        {
+          "id": "b",
+          "text": "Sur les genoux d'un adulte"
+        },
+        {
+          "id": "c",
+          "text": "Avec la ceinture adulte seulement"
+        }
+      ],
+      "correct": ["a"],
+      "explanation": "Un jeune enfant voyage dans un siège auto homologué, adapté à sa taille. Jamais sur les genoux."
+    },
+    {
+      "id": "q-n4-m2-004",
+      "moduleId": "n4-m2",
+      "ruleIds": ["appuie-tete-airbag"],
+      "prompt": "À quelle hauteur règle-t-on l'appuie-tête ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Le haut de l'appuie-tête au niveau du haut de la tête"
+        },
+        {
+          "id": "b",
+          "text": "Au niveau du cou"
+        },
+        {
+          "id": "c",
+          "text": "Le plus bas possible"
+        }
+      ],
+      "correct": ["a"],
+      "explanation": "Bien réglé, l'appuie-tête protège la nuque en cas de choc par l'arrière."
+    },
+    {
+      "id": "q-n4-m2-005",
+      "moduleId": "n4-m2",
+      "ruleIds": ["appuie-tete-airbag"],
+      "prompt": "L'airbag remplace-t-il la ceinture ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Non, il la complète"
+        },
+        {
+          "id": "b",
+          "text": "Oui"
+        }
+      ],
+      "correct": ["a"],
+      "explanation": "L'airbag est prévu pour fonctionner avec la ceinture. Sans ceinture, il peut même blesser."
+    },
+    {
+      "id": "q-n4-m2-006",
+      "moduleId": "n4-m2",
+      "ruleIds": ["warning-triangle"],
+      "prompt": "Ta voiture tombe en panne sur le bord de la route. Que fais-tu ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "J'allume les feux de détresse"
+        },
+        {
+          "id": "b",
+          "text": "Je place le triangle bien en arrière de la voiture"
+        },
+        {
+          "id": "c",
+          "text": "Je reste assise dans la voiture sur la chaussée"
+        }
+      ],
+      "correct": ["a", "b"],
+      "explanation": "Feux de détresse allumés, triangle posé bien en arrière pour prévenir à temps, et les passagers se mettent en sécurité, hors de la chaussée."
+    },
+    {
+      "id": "q-n4-m2-007",
+      "moduleId": "n4-m2",
+      "ruleIds": ["enfants-siege", "appuie-tete-airbag"],
+      "prompt": "Peut-on installer un siège bébé dos à la route sur le siège avant, devant un airbag actif ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Non, jamais"
+        },
+        {
+          "id": "b",
+          "text": "Oui, si le trajet est court"
+        }
+      ],
+      "correct": ["a"],
+      "explanation": "L'airbag frontal qui se déclenche contre un siège bébé dos à la route est très dangereux. Il faut le désactiver, ou installer le siège à l'arrière."
+    },
+    {
+      "id": "q-n4-m2-008",
+      "moduleId": "n4-m2",
+      "ruleIds": ["ceinture"],
+      "prompt": "Comment porter correctement la ceinture ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Bien plaquée, sur l'épaule et sur le bassin, sans être vrillée"
+        },
+        {
+          "id": "b",
+          "text": "Sous le bras"
+        },
+        {
+          "id": "c",
+          "text": "Derrière le dos"
+        }
+      ],
+      "correct": ["a"],
+      "explanation": "La ceinture passe sur l'épaule, pas sur le cou, et sur le bassin, pas sur le ventre. Elle doit être bien tendue."
+    }
+  ]
+}

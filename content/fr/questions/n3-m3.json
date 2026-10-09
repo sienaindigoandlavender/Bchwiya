@@ -1,0 +1,213 @@
+{
+  "moduleId": "n3-m3",
+  "questions": [
+    {
+      "id": "q-n3-m3-001",
+      "moduleId": "n3-m3",
+      "ruleIds": ["depasser-gauche"],
+      "prompt": "Par quel côté dépasse-t-on normalement ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Par la gauche"
+        },
+        {
+          "id": "b",
+          "text": "Par la droite"
+        },
+        {
+          "id": "c",
+          "text": "Par le côté où il y a de la place"
+        }
+      ],
+      "correct": ["a"],
+      "explanation": "On dépasse par la gauche."
+    },
+    {
+      "id": "q-n3-m3-002",
+      "moduleId": "n3-m3",
+      "ruleIds": ["depasser-gauche"],
+      "prompt": "La voiture devant toi a mis son clignotant gauche et s'est placée au milieu pour tourner à gauche. Peux-tu la dépasser par la droite ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Oui, s'il y a la place et sans danger"
+        },
+        {
+          "id": "b",
+          "text": "Non, jamais"
+        }
+      ],
+      "correct": ["a"],
+      "explanation": "C'est l'exception : un véhicule qui tourne à gauche et l'a signalé peut être dépassé par la droite."
+    },
+    {
+      "id": "q-n3-m3-003",
+      "moduleId": "n3-m3",
+      "ruleIds": ["depasser-conditions"],
+      "prompt": "Avant de dépasser, que dois-tu vérifier ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Que je vois assez loin devant"
+        },
+        {
+          "id": "b",
+          "text": "Que personne ne me dépasse déjà"
+        },
+        {
+          "id": "c",
+          "text": "Que j'aurai la place de revenir à droite"
+        },
+        {
+          "id": "d",
+          "text": "Que la voiture devant est plus lente que la limite"
+        }
+      ],
+      "correct": ["a", "b", "c"],
+      "explanation": "Tu dois voir loin, personne ne doit être en train de te dépasser, et tu dois pouvoir revenir à droite sans gêner."
+    },
+    {
+      "id": "q-n3-m3-004",
+      "moduleId": "n3-m3",
+      "ruleIds": ["depasser-interdit-lieux"],
+      "prompt": "La ligne au milieu est continue. Peux-tu dépasser ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Non"
+        },
+        {
+          "id": "b",
+          "text": "Oui, si personne n'arrive en face"
+        }
+      ],
+      "correct": ["a"],
+      "explanation": "Ligne continue : pas de dépassement, même si la route semble libre.",
+      "media": {
+        "kind": "svg",
+        "component": "RoadLines",
+        "props": {
+          "variant": "continue"
+        }
+      }
+    },
+    {
+      "id": "q-n3-m3-005",
+      "moduleId": "n3-m3",
+      "ruleIds": ["depasser-interdit-lieux"],
+      "prompt": "Où est-il interdit de dépasser ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Dans un virage sans visibilité"
+        },
+        {
+          "id": "b",
+          "text": "Au sommet d'une côte"
+        },
+        {
+          "id": "c",
+          "text": "À l'approche d'un passage piéton"
+        },
+        {
+          "id": "d",
+          "text": "Sur une longue ligne droite dégagée, ligne discontinue"
+        }
+      ],
+      "correct": ["a", "b", "c"],
+      "explanation": "Dès que tu ne vois pas assez loin, ou qu'un piéton pourrait traverser, le dépassement est interdit."
+    },
+    {
+      "id": "q-n3-m3-006",
+      "moduleId": "n3-m3",
+      "ruleIds": ["depasser-conditions"],
+      "prompt": "Les deux lignes au milieu sont différentes : une continue et une discontinue. Celle qui est de ton côté est discontinue. Peux-tu dépasser ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Oui, si c'est sans danger : je respecte la ligne de mon côté"
+        },
+        {
+          "id": "b",
+          "text": "Non, une ligne continue est là"
+        }
+      ],
+      "correct": ["a"],
+      "explanation": "Avec une ligne mixte, c'est la ligne la plus proche de toi qui compte. Discontinue de ton côté : tu peux la franchir si c'est sans danger.",
+      "media": {
+        "kind": "svg",
+        "component": "RoadLines",
+        "props": {
+          "variant": "mixte"
+        }
+      }
+    },
+    {
+      "id": "q-n3-m3-007",
+      "moduleId": "n3-m3",
+      "ruleIds": ["etre-depasse"],
+      "prompt": "Une voiture te dépasse. Que fais-tu ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Je reste bien à droite et je n'accélère pas"
+        },
+        {
+          "id": "b",
+          "text": "J'accélère pour ne pas me laisser dépasser"
+        },
+        {
+          "id": "c",
+          "text": "Je me déporte à gauche"
+        }
+      ],
+      "correct": ["a"],
+      "explanation": "Quand on te dépasse, tu facilites la manœuvre : tu restes à droite et tu n'accélères surtout pas."
+    },
+    {
+      "id": "q-n3-m3-008",
+      "moduleId": "n3-m3",
+      "ruleIds": ["depasser-conditions"],
+      "prompt": "Quand peux-tu revenir à droite après un dépassement ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Quand je vois la voiture dépassée dans mon rétroviseur intérieur"
+        },
+        {
+          "id": "b",
+          "text": "Dès que mon avant dépasse son avant"
+        },
+        {
+          "id": "c",
+          "text": "Le plus vite possible"
+        }
+      ],
+      "correct": ["a"],
+      "explanation": "Quand tu vois la voiture dépassée en entier dans ton rétroviseur intérieur, tu as assez de place pour revenir à droite, avec ton clignotant droit."
+    },
+    {
+      "id": "q-n3-m3-009",
+      "moduleId": "n3-m3",
+      "ruleIds": ["croiser"],
+      "prompt": "Une voiture garée bloque ta voie. Une voiture arrive en face. Qui passe en premier ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Celle d'en face : l'obstacle est de mon côté"
+        },
+        {
+          "id": "b",
+          "text": "Moi, j'étais là avant"
+        },
+        {
+          "id": "c",
+          "text": "Celle qui klaxonne"
+        }
+      ],
+      "correct": ["a"],
+      "explanation": "Quand l'obstacle est de ton côté, c'est à toi de laisser passer celle d'en face."
+    }
+  ]
+}

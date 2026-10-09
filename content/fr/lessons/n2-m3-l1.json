@@ -1,5 +1,5 @@
 {
-  "$comment": "// TODO: verify against loi 52-05",
+  "$comment": "Vérifié : décret 2-10-420 art. 36, 37, 85 ; arrêté 2805-14 art. 4 (rond-point sans signalisation : priorité à droite ; giratoire avec cédez le passage : l'anneau est prioritaire).",
   "id": "n2-m3-l1",
   "moduleId": "n2-m3",
   "title": "Reconnaître un giratoire",
@@ -14,12 +14,24 @@
     {
       "type": "text",
       "body": "Un giratoire (on dit aussi rond-point) est un carrefour organisé autour d'un îlot central. Tous les véhicules tournent autour de cet îlot, dans le même sens.",
-      "media": { "kind": "svg", "component": "Roundabout", "props": { "variant": "sans-panneau" } }
+      "media": {
+        "kind": "svg",
+        "component": "Roundabout",
+        "props": {
+          "variant": "sans-panneau"
+        }
+      }
     },
     {
       "type": "text",
       "body": "Avant le giratoire, un panneau triangulaire te prévient : bordure rouge, fond blanc, trois flèches qui tournent en rond. C'est un panneau de danger. Il annonce le giratoire, mais il ne dit pas encore qui a la priorité.",
-      "media": { "kind": "svg", "component": "Sign", "props": { "preset": "giratoire-danger" } }
+      "media": {
+        "kind": "svg",
+        "component": "Sign",
+        "props": {
+          "preset": "giratoire-danger"
+        }
+      }
     },
     {
       "type": "text",
@@ -27,13 +39,21 @@
       "media": {
         "kind": "svg",
         "component": "Sign",
-        "props": { "preset": "sens-giratoire-obligatoire" }
+        "props": {
+          "preset": "sens-giratoire-obligatoire"
+        }
       }
     },
     {
       "type": "text",
       "body": "Parfois, juste à l'entrée, il y a aussi un triangle pointe en bas, bordé de rouge : cédez le passage. C'est lui qui décide de la priorité. On le regarde en détail dans la leçon suivante.",
-      "media": { "kind": "svg", "component": "Sign", "props": { "preset": "cedez-le-passage" } }
+      "media": {
+        "kind": "svg",
+        "component": "Sign",
+        "props": {
+          "preset": "cedez-le-passage"
+        }
+      }
     },
     {
       "type": "keypoint",

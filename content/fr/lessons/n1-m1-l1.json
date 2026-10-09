@@ -1,14 +1,51 @@
 {
   "id": "n1-m1-l1",
   "moduleId": "n1-m1",
-  "title": "Les formes et les couleurs",
+  "title": "La forme parle d'abord",
   "minutes": 5,
-  "ruleIds": [],
+  "ruleIds": ["forme-triangle-danger", "forme-rond-ordre", "forme-carre-indication"],
   "screens": [
     {
       "type": "text",
-      "body": "Contenu à venir."
+      "body": "Un panneau se lit d'abord par sa forme, avant même de voir ce qu'il y a dessus. De loin, la forme suffit pour savoir quel genre de message t'attend."
+    },
+    {
+      "type": "text",
+      "body": "Le triangle, pointe en haut, avec une bordure rouge : attention, un danger arrive.",
+      "media": {
+        "kind": "svg",
+        "component": "Sign",
+        "props": {
+          "preset": "danger-autre"
+        }
+      }
+    },
+    {
+      "type": "text",
+      "body": "Le rond : c'est un ordre. Soit une interdiction, soit une obligation.",
+      "media": {
+        "kind": "svg",
+        "component": "Sign",
+        "props": {
+          "preset": "interdit-circulation"
+        }
+      }
+    },
+    {
+      "type": "text",
+      "body": "Le carré ou le rectangle : c'est une information. Un parking, un hôpital, une direction.",
+      "media": {
+        "kind": "svg",
+        "component": "Sign",
+        "props": {
+          "preset": "parking"
+        }
+      }
+    },
+    {
+      "type": "keypoint",
+      "body": "Triangle = danger. Rond = ordre. Carré = information."
     }
   ],
-  "checks": []
+  "checks": ["q-n1-m1-001", "q-n1-m1-004"]
 }

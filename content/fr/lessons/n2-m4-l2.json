@@ -1,0 +1,48 @@
+{
+  "id": "n2-m4-l2",
+  "moduleId": "n2-m4",
+  "title": "Orange clignotant et agent",
+  "minutes": 5,
+  "ruleIds": ["feu-orange-clignotant", "agent-gestes"],
+  "screens": [
+    {
+      "type": "text",
+      "body": "Orange clignotant : prudence. Le feu ne règle plus le carrefour. Tu suis les panneaux, ou la priorité à droite s'il n'y en a pas.",
+      "media": {
+        "kind": "svg",
+        "component": "TrafficLight",
+        "props": {
+          "state": "orange-clignotant"
+        }
+      }
+    },
+    {
+      "type": "text",
+      "body": "Feu éteint, en panne : même règle que l'orange clignotant.",
+      "media": {
+        "kind": "svg",
+        "component": "TrafficLight",
+        "props": {
+          "state": "eteint"
+        }
+      }
+    },
+    {
+      "type": "text",
+      "body": "L'agent de circulation passe avant les feux et les panneaux."
+    },
+    {
+      "type": "text",
+      "body": "Bras levé à la verticale : arrêt pour tous, sauf ceux déjà engagés dans le carrefour."
+    },
+    {
+      "type": "text",
+      "body": "Bras tendus à l'horizontale : arrêt pour ceux qui arrivent face à lui ou dans son dos. Ceux qui sont sur ses côtés passent."
+    },
+    {
+      "type": "keypoint",
+      "body": "Orange clignotant : les panneaux décident. Agent : il décide de tout."
+    }
+  ],
+  "checks": ["q-n2-m4-004", "q-n2-m4-006"]
+}

@@ -1,0 +1,62 @@
+{
+  "id": "n1-m3-l2",
+  "moduleId": "n1-m3",
+  "title": "Vitesse, arrêt et stationnement",
+  "minutes": 5,
+  "ruleIds": ["limitation-vitesse-panneau", "arret-vs-stationnement", "panneau-fin-barres"],
+  "screens": [
+    {
+      "type": "text",
+      "body": "Un chiffre dans un cercle rouge, c'est la vitesse maximale. Ici, 60 km/h au plus.",
+      "media": {
+        "kind": "svg",
+        "component": "Sign",
+        "props": {
+          "preset": "vitesse-60"
+        }
+      }
+    },
+    {
+      "type": "text",
+      "body": "S'arrêter, c'est s'immobiliser un court instant, le conducteur au volant ou tout près : déposer quelqu'un, charger un sac. Stationner, c'est laisser le véhicule plus longtemps."
+    },
+    {
+      "type": "text",
+      "body": "Fond bleu, une barre rouge : stationnement interdit. Un arrêt bref reste possible.",
+      "media": {
+        "kind": "svg",
+        "component": "Sign",
+        "props": {
+          "preset": "stationnement-interdit"
+        }
+      }
+    },
+    {
+      "type": "text",
+      "body": "Fond bleu, croix rouge : arrêt et stationnement interdits. Même pas une seconde.",
+      "media": {
+        "kind": "svg",
+        "component": "Sign",
+        "props": {
+          "preset": "arret-stationnement-interdit"
+        }
+      }
+    },
+    {
+      "type": "text",
+      "body": "Le cercle blanc barré de noir met fin aux interdictions des véhicules en mouvement signalées avant : vitesse, dépassement.",
+      "media": {
+        "kind": "svg",
+        "component": "Sign",
+        "props": {
+          "preset": "fin-interdictions"
+        }
+      }
+    },
+    {
+      "type": "keypoint",
+      "body": "Une barre : je ne stationne pas. Une croix : je ne m'arrête même pas."
+    }
+  ],
+  "checks": ["q-n1-m3-005", "q-n1-m3-007"]
+}

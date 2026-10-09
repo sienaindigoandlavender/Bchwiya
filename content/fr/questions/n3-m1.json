@@ -1,0 +1,195 @@
+{
+  "moduleId": "n3-m1",
+  "questions": [
+    {
+      "id": "q-n3-m1-001",
+      "moduleId": "n3-m1",
+      "ruleIds": ["rouler-a-droite"],
+      "prompt": "Sur une route à double sens, où dois-tu rouler ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Sur la partie droite de la chaussée"
+        },
+        {
+          "id": "b",
+          "text": "Au milieu, pour voir loin"
+        },
+        {
+          "id": "c",
+          "text": "Où je veux si la route est vide"
+        }
+      ],
+      "correct": ["a"],
+      "explanation": "Au Maroc, on roule à droite. Tu restes sur la partie droite, pour laisser la place à ceux qui arrivent en face.",
+      "media": {
+        "kind": "svg",
+        "component": "RoadLines",
+        "props": {
+          "variant": "discontinue"
+        }
+      }
+    },
+    {
+      "id": "q-n3-m1-002",
+      "moduleId": "n3-m1",
+      "ruleIds": ["voies-multiples"],
+      "prompt": "Sur une route à deux voies dans ton sens, laquelle utilises-tu normalement ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "La voie de droite"
+        },
+        {
+          "id": "b",
+          "text": "La voie de gauche"
+        },
+        {
+          "id": "c",
+          "text": "Celle où il y a le moins de monde"
+        }
+      ],
+      "correct": ["a"],
+      "explanation": "On roule à droite. La voie de gauche sert à dépasser, puis on revient à droite."
+    },
+    {
+      "id": "q-n3-m1-003",
+      "moduleId": "n3-m1",
+      "ruleIds": ["changer-de-voie"],
+      "prompt": "Tu veux changer de voie. Dans quel ordre fais-tu les choses ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Rétroviseur, clignotant, coup d'œil dans l'angle mort, puis je change de voie"
+        },
+        {
+          "id": "b",
+          "text": "Clignotant, puis je change de voie tout de suite"
+        },
+        {
+          "id": "c",
+          "text": "Je change de voie, puis je mets le clignotant"
+        }
+      ],
+      "correct": ["a"],
+      "explanation": "Le rétroviseur te montre ce qui arrive, le clignotant prévient les autres, et le coup d'œil sur le côté vérifie l'angle mort que le rétroviseur ne montre pas."
+    },
+    {
+      "id": "q-n3-m1-004",
+      "moduleId": "n3-m1",
+      "ruleIds": ["changer-de-voie"],
+      "prompt": "Qu'est-ce que l'angle mort ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Une zone sur le côté de la voiture que les rétroviseurs ne montrent pas"
+        },
+        {
+          "id": "b",
+          "text": "Un virage très serré"
+        },
+        {
+          "id": "c",
+          "text": "Un coin de rue sans visibilité"
+        }
+      ],
+      "correct": ["a"],
+      "explanation": "L'angle mort est juste derrière ton épaule. Un deux-roues peut s'y cacher. Pour le voir, tourne la tête."
+    },
+    {
+      "id": "q-n3-m1-005",
+      "moduleId": "n3-m1",
+      "ruleIds": ["se-placer-tourner"],
+      "prompt": "Tu vas tourner à droite au prochain carrefour. Où te places-tu ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Bien à droite de ma voie"
+        },
+        {
+          "id": "b",
+          "text": "Au milieu de la chaussée"
+        },
+        {
+          "id": "c",
+          "text": "À gauche, pour avoir de la place"
+        }
+      ],
+      "correct": ["a"],
+      "explanation": "Pour tourner à droite, tu serres à droite et tu mets ton clignotant droit à l'avance."
+    },
+    {
+      "id": "q-n3-m1-006",
+      "moduleId": "n3-m1",
+      "ruleIds": ["se-placer-tourner"],
+      "prompt": "Sur une route à double sens, tu vas tourner à gauche. Où te places-tu ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Près du milieu de la chaussée, sans le dépasser"
+        },
+        {
+          "id": "b",
+          "text": "Tout à droite"
+        },
+        {
+          "id": "c",
+          "text": "Sur la voie d'en face"
+        }
+      ],
+      "correct": ["a"],
+      "explanation": "Pour tourner à gauche, tu te rapproches de l'axe, le milieu, en restant dans ta moitié. Tu laisses passer ceux d'en face avant de tourner."
+    },
+    {
+      "id": "q-n3-m1-007",
+      "moduleId": "n3-m1",
+      "ruleIds": ["se-placer-tourner"],
+      "prompt": "Dans une rue à sens unique, tu vas tourner à gauche. Où te places-tu ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Tout à gauche de la chaussée"
+        },
+        {
+          "id": "b",
+          "text": "Tout à droite"
+        },
+        {
+          "id": "c",
+          "text": "Au milieu"
+        }
+      ],
+      "correct": ["a"],
+      "explanation": "En sens unique, personne n'arrive en face : pour tourner à gauche, tu te places tout à gauche.",
+      "media": {
+        "kind": "svg",
+        "component": "Sign",
+        "props": {
+          "preset": "sens-unique"
+        }
+      }
+    },
+    {
+      "id": "q-n3-m1-008",
+      "moduleId": "n3-m1",
+      "ruleIds": ["changer-de-voie", "se-placer-tourner"],
+      "prompt": "Quand mets-tu ton clignotant avant de tourner ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Assez tôt, avant de ralentir, pour prévenir les autres"
+        },
+        {
+          "id": "b",
+          "text": "Au moment où je tourne le volant"
+        },
+        {
+          "id": "c",
+          "text": "Jamais si la route est vide"
+        }
+      ],
+      "correct": ["a"],
+      "explanation": "Le clignotant sert à prévenir. Il doit être mis assez tôt pour que les autres comprennent ce que tu vas faire."
+    }
+  ]
+}

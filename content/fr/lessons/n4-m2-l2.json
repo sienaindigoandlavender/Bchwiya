@@ -1,0 +1,26 @@
+{
+  "id": "n4-m2-l2",
+  "moduleId": "n4-m2",
+  "title": "Appuie-tête, airbag, panne",
+  "minutes": 5,
+  "ruleIds": ["appuie-tete-airbag", "warning-triangle"],
+  "screens": [
+    {
+      "type": "text",
+      "body": "L'appuie-tête se règle au niveau du haut de ta tête. Il protège ta nuque en cas de choc par l'arrière."
+    },
+    {
+      "type": "text",
+      "body": "L'airbag complète la ceinture, il ne la remplace pas. Jamais de siège bébé dos à la route devant un airbag actif."
+    },
+    {
+      "type": "text",
+      "body": "En cas de panne : feux de détresse, triangle posé bien en arrière de la voiture, et tout le monde se met en sécurité hors de la chaussée."
+    },
+    {
+      "type": "keypoint",
+      "body": "Airbag + ceinture. En panne : warning et triangle."
+    }
+  ],
+  "checks": ["q-n4-m2-005", "q-n4-m2-006"]
+}

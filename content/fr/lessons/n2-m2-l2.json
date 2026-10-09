@@ -1,0 +1,51 @@
+{
+  "id": "n2-m2-l2",
+  "moduleId": "n2-m2",
+  "title": "La route prioritaire",
+  "minutes": 5,
+  "ruleIds": ["route-prioritaire-regle"],
+  "screens": [
+    {
+      "type": "text",
+      "body": "Le losange jaune t'indique que tu roules sur une route prioritaire. À chaque intersection, ce sont les autres qui te laissent passer.",
+      "media": {
+        "kind": "svg",
+        "component": "Sign",
+        "props": {
+          "preset": "route-prioritaire"
+        }
+      }
+    },
+    {
+      "type": "text",
+      "body": "Ce triangle te le rappelle juste avant une intersection : ta route, le gros trait, est prioritaire.",
+      "media": {
+        "kind": "svg",
+        "component": "Sign",
+        "props": {
+          "preset": "danger-intersection-prioritaire"
+        }
+      }
+    },
+    {
+      "type": "text",
+      "body": "Le losange barré de noir annonce la fin de la route prioritaire. Ensuite, regarde à nouveau les panneaux.",
+      "media": {
+        "kind": "svg",
+        "component": "Sign",
+        "props": {
+          "preset": "fin-route-prioritaire"
+        }
+      }
+    },
+    {
+      "type": "text",
+      "body": "Même prioritaire, reste attentive : un conducteur peut ne pas te voir."
+    },
+    {
+      "type": "keypoint",
+      "body": "Losange jaune : je suis prioritaire. Losange barré : ça s'arrête."
+    }
+  ],
+  "checks": ["q-n2-m2-005", "q-n2-m2-006"]
+}

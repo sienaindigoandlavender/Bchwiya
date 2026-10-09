@@ -1,0 +1,51 @@
+{
+  "id": "n1-m3-l3",
+  "moduleId": "n1-m3",
+  "title": "Ce qui est obligatoire",
+  "minutes": 5,
+  "ruleIds": ["obligation-bleue"],
+  "screens": [
+    {
+      "type": "text",
+      "body": "Les panneaux d'obligation sont ronds et bleus, avec un dessin blanc. Ils te disent ce que tu dois faire."
+    },
+    {
+      "type": "text",
+      "body": "Flèche vers le haut : tu dois aller tout droit.",
+      "media": {
+        "kind": "svg",
+        "component": "Sign",
+        "props": {
+          "preset": "obligation-tout-droit"
+        }
+      }
+    },
+    {
+      "type": "text",
+      "body": "Flèche qui tourne : tu dois tourner dans ce sens.",
+      "media": {
+        "kind": "svg",
+        "component": "Sign",
+        "props": {
+          "preset": "obligation-droite"
+        }
+      }
+    },
+    {
+      "type": "text",
+      "body": "Trois flèches en rond : sens giratoire obligatoire. Tu tournes autour du rond-point.",
+      "media": {
+        "kind": "svg",
+        "component": "Sign",
+        "props": {
+          "preset": "sens-giratoire-obligatoire"
+        }
+      }
+    },
+    {
+      "type": "keypoint",
+      "body": "Rond et bleu : je dois."
+    }
+  ],
+  "checks": ["q-n1-m3-009"]
+}

@@ -1,0 +1,257 @@
+{
+  "moduleId": "n6-m1",
+  "questions": [
+    {
+      "id": "q-n6-m1-001",
+      "moduleId": "n6-m1",
+      "ruleIds": ["piege-plusieurs-reponses", "danger-role"],
+      "prompt": "Un panneau de danger t'oblige à :",
+      "options": [
+        {
+          "id": "a",
+          "text": "Ralentir"
+        },
+        {
+          "id": "b",
+          "text": "Redoubler d'attention"
+        },
+        {
+          "id": "c",
+          "text": "T'arrêter"
+        }
+      ],
+      "correct": ["a", "b"],
+      "explanation": "Deux bonnes réponses ici. Le panneau de danger ne t'oblige pas à t'arrêter.",
+      "media": {
+        "kind": "svg",
+        "component": "Sign",
+        "props": {
+          "preset": "danger-virage-droite"
+        }
+      }
+    },
+    {
+      "id": "q-n6-m1-002",
+      "moduleId": "n6-m1",
+      "ruleIds": ["piege-details-image", "priorite-giratoire-sans-panneau"],
+      "prompt": "Tu es dans l'anneau du giratoire. Il n'y a pas de cédez le passage aux entrées. Une voiture veut entrer à ta droite. Qui passe ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Elle : sans panneau, c'est la priorité à droite"
+        },
+        {
+          "id": "b",
+          "text": "Moi : je suis déjà dans l'anneau"
+        }
+      ],
+      "correct": ["a"],
+      "explanation": "Le piège classique. Sans cédez le passage aux entrées, ceux qui entrent sont à ta droite : ils passent.",
+      "media": {
+        "kind": "svg",
+        "component": "Roundabout",
+        "props": {
+          "variant": "sans-panneau",
+          "cars": [
+            {
+              "slot": "ring-se",
+              "who": "you"
+            },
+            {
+              "slot": "entry-e",
+              "who": "other"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "q-n6-m1-003",
+      "moduleId": "n6-m1",
+      "ruleIds": ["feu-orange-fixe", "feu-orange-clignotant"],
+      "prompt": "Quelle est la différence entre l'orange fixe et l'orange clignotant ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Fixe : je m'arrête si je peux. Clignotant : je passe prudemment en suivant les panneaux"
+        },
+        {
+          "id": "b",
+          "text": "Aucune différence"
+        },
+        {
+          "id": "c",
+          "text": "Fixe : je passe. Clignotant : je m'arrête"
+        }
+      ],
+      "correct": ["a"],
+      "explanation": "L'orange fixe annonce le rouge. L'orange clignotant signifie que le feu ne règle plus le carrefour."
+    },
+    {
+      "id": "q-n6-m1-004",
+      "moduleId": "n6-m1",
+      "ruleIds": ["piege-mots", "depasser-gauche"],
+      "prompt": "« On dépasse toujours par la gauche. » Vrai ou faux ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Faux : on peut dépasser par la droite un véhicule qui tourne à gauche et l'a signalé"
+        },
+        {
+          "id": "b",
+          "text": "Vrai, sans exception"
+        }
+      ],
+      "correct": ["a"],
+      "explanation": "Méfie-toi des mots « toujours » et « jamais ». Ici, il existe une exception."
+    },
+    {
+      "id": "q-n6-m1-005",
+      "moduleId": "n6-m1",
+      "ruleIds": ["piege-details-image", "stop-arret-complet"],
+      "prompt": "Tu es au stop, la voie est libre à perte de vue. Dois-tu marquer l'arrêt ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Oui, toujours"
+        },
+        {
+          "id": "b",
+          "text": "Non, si la voie est libre"
+        }
+      ],
+      "correct": ["a"],
+      "explanation": "Au stop, l'arrêt complet est obligatoire, même quand la route est vide.",
+      "media": {
+        "kind": "svg",
+        "component": "Crossroads",
+        "props": {
+          "cars": [
+            {
+              "arm": "s",
+              "who": "you"
+            }
+          ],
+          "signs": [
+            {
+              "arm": "s",
+              "type": "stop"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "q-n6-m1-006",
+      "moduleId": "n6-m1",
+      "ruleIds": ["agent-gestes", "priorite-ordre"],
+      "prompt": "Feu rouge pour toi, mais l'agent te fait signe d'avancer. Que fais-tu ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "J'avance : l'agent passe avant le feu"
+        },
+        {
+          "id": "b",
+          "text": "J'attends le vert"
+        }
+      ],
+      "correct": ["a"],
+      "explanation": "L'agent commande avant le feu, dans les deux sens."
+    },
+    {
+      "id": "q-n6-m1-007",
+      "moduleId": "n6-m1",
+      "ruleIds": ["arret-vs-stationnement", "piege-details-image"],
+      "prompt": "Ce panneau te permet-il de déposer rapidement une amie ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Non : croix rouge, ni arrêt ni stationnement"
+        },
+        {
+          "id": "b",
+          "text": "Oui, pour moins d'une minute"
+        }
+      ],
+      "correct": ["a"],
+      "explanation": "Une barre : stationnement interdit, arrêt possible. Une croix : ni l'un ni l'autre.",
+      "media": {
+        "kind": "svg",
+        "component": "Sign",
+        "props": {
+          "preset": "arret-stationnement-interdit"
+        }
+      }
+    },
+    {
+      "id": "q-n6-m1-008",
+      "moduleId": "n6-m1",
+      "ruleIds": ["vitesse-probatoire", "piege-details-image"],
+      "prompt": "Tu as ton permis depuis 6 mois. Sur autoroute, la limite est 120 km/h. À combien roules-tu au maximum ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "90 km/h"
+        },
+        {
+          "id": "b",
+          "text": "120 km/h"
+        },
+        {
+          "id": "c",
+          "text": "100 km/h"
+        }
+      ],
+      "correct": ["a"],
+      "explanation": "Le détail qui change tout : en probatoire, c'est 90 km/h au maximum, partout."
+    },
+    {
+      "id": "q-n6-m1-009",
+      "moduleId": "n6-m1",
+      "ruleIds": ["piege-plusieurs-reponses", "alcool-effets"],
+      "prompt": "Que fait l'alcool au conducteur ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Il ralentit les réflexes"
+        },
+        {
+          "id": "b",
+          "text": "Il rétrécit le champ de vision"
+        },
+        {
+          "id": "c",
+          "text": "Il améliore la concentration"
+        }
+      ],
+      "correct": ["a", "b"],
+      "explanation": "Deux bonnes réponses. L'alcool n'améliore rien."
+    },
+    {
+      "id": "q-n6-m1-010",
+      "moduleId": "n6-m1",
+      "ruleIds": ["piege-details-image", "indication-circulation", "obligation-bleue"],
+      "prompt": "Ce panneau est-il une obligation ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Non, c'est une indication : sens unique"
+        },
+        {
+          "id": "b",
+          "text": "Oui, je dois aller tout droit"
+        }
+      ],
+      "correct": ["a"],
+      "explanation": "Carré bleu = indication. Rond bleu = obligation. La forme fait toute la différence.",
+      "media": {
+        "kind": "svg",
+        "component": "Sign",
+        "props": {
+          "preset": "sens-unique"
+        }
+      }
+    }
+  ]
+}

@@ -1,14 +1,59 @@
 {
+  "$comment": "Vitesses : décret 2-10-420 art. 15 à 18 (60 / 100 / 120 km/h), art. 16 (90 km/h en période probatoire). Vitesse minimale de 60 km/h sur autoroute.",
   "id": "n3-m2-l1",
   "moduleId": "n3-m2",
-  "title": "Vitesse et distances",
+  "title": "Les limites de vitesse",
   "minutes": 5,
-  "ruleIds": [],
+  "ruleIds": ["vitesse-agglo", "vitesse-route", "vitesse-autoroute", "vitesse-probatoire"],
   "screens": [
     {
       "type": "text",
-      "body": "Contenu à venir."
+      "body": "En agglomération, la vitesse maximale est de 60 km/h, sauf si un panneau indique autre chose.",
+      "media": {
+        "kind": "svg",
+        "component": "Sign",
+        "props": {
+          "preset": "vitesse-60"
+        }
+      }
+    },
+    {
+      "type": "text",
+      "body": "Hors agglomération, sur route : 100 km/h au plus pour une voiture.",
+      "media": {
+        "kind": "svg",
+        "component": "Sign",
+        "props": {
+          "preset": "vitesse-100"
+        }
+      }
+    },
+    {
+      "type": "text",
+      "body": "Sur autoroute : 120 km/h au plus. Et par circulation normale, au moins 60 km/h.",
+      "media": {
+        "kind": "svg",
+        "component": "Sign",
+        "props": {
+          "preset": "vitesse-120"
+        }
+      }
+    },
+    {
+      "type": "text",
+      "body": "Pendant ton permis probatoire, tu ne dépasses jamais 90 km/h, même sur autoroute. Ta voiture doit aussi porter le signe qui indique cette vitesse.",
+      "media": {
+        "kind": "svg",
+        "component": "Sign",
+        "props": {
+          "preset": "vitesse-90"
+        }
+      }
+    },
+    {
+      "type": "keypoint",
+      "body": "Ville 60, route 100, autoroute 120. En probatoire : 90 au maximum."
     }
   ],
-  "checks": []
+  "checks": ["q-n3-m2-001", "q-n3-m2-005"]
 }

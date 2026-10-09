@@ -1,14 +1,33 @@
 {
   "id": "n5-m2-l1",
   "moduleId": "n5-m2",
-  "title": "Sur route et autoroute",
+  "title": "Sur la route",
   "minutes": 5,
-  "ruleIds": [],
+  "ruleIds": ["route-campagne"],
   "screens": [
     {
       "type": "text",
-      "body": "Contenu à venir."
+      "body": "Hors agglomération, la limite est de 100 km/h, mais la route réserve des surprises : virages, côtes, nids-de-poule.",
+      "media": {
+        "kind": "svg",
+        "component": "Sign",
+        "props": {
+          "preset": "vitesse-100"
+        }
+      }
+    },
+    {
+      "type": "text",
+      "body": "Au Maroc, tu croiseras des charrettes, des ânes, des troupeaux, des piétons au bord de la route. Ralentis à leur approche."
+    },
+    {
+      "type": "text",
+      "body": "Derrière une charrette ou un camion lent, patience : dépasse seulement sur une portion droite, avec de la visibilité, et quand la ligne le permet."
+    },
+    {
+      "type": "keypoint",
+      "body": "Sur route, je m'attends à tout."
     }
   ],
-  "checks": []
+  "checks": ["q-n5-m2-007", "q-n5-m2-008"]
 }

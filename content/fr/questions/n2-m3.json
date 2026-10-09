@@ -1,5 +1,5 @@
 {
-  "$comment": "// TODO: verify against loi 52-05",
+  "$comment": "Vérifié : décret 2-10-420 art. 36, 37, 85 ; arrêté 2805-14 art. 4 (rond-point sans signalisation : priorité à droite ; giratoire avec cédez le passage : l'anneau est prioritaire).",
   "moduleId": "n2-m3",
   "questions": [
     {
@@ -7,11 +7,26 @@
       "moduleId": "n2-m3",
       "ruleIds": ["panneau-danger-giratoire"],
       "prompt": "Que t'annonce ce panneau ?",
-      "media": { "kind": "svg", "component": "Sign", "props": { "preset": "giratoire-danger" } },
+      "media": {
+        "kind": "svg",
+        "component": "Sign",
+        "props": {
+          "preset": "giratoire-danger"
+        }
+      },
       "options": [
-        { "id": "a", "text": "Un carrefour à sens giratoire" },
-        { "id": "b", "text": "Un virage dangereux" },
-        { "id": "c", "text": "Une interdiction de faire demi-tour" }
+        {
+          "id": "a",
+          "text": "Un carrefour à sens giratoire"
+        },
+        {
+          "id": "b",
+          "text": "Un virage dangereux"
+        },
+        {
+          "id": "c",
+          "text": "Une interdiction de faire demi-tour"
+        }
       ],
       "correct": ["a"],
       "explanation": "Triangle rouge et blanc avec trois flèches en rond : c'est le panneau de danger qui annonce un giratoire. Il ne dit pas encore qui est prioritaire."
@@ -24,12 +39,23 @@
       "media": {
         "kind": "svg",
         "component": "Sign",
-        "props": { "preset": "sens-giratoire-obligatoire" }
+        "props": {
+          "preset": "sens-giratoire-obligatoire"
+        }
       },
       "options": [
-        { "id": "a", "text": "Sens giratoire obligatoire" },
-        { "id": "b", "text": "Rond-point interdit" },
-        { "id": "c", "text": "Fin de priorité" }
+        {
+          "id": "a",
+          "text": "Sens giratoire obligatoire"
+        },
+        {
+          "id": "b",
+          "text": "Rond-point interdit"
+        },
+        {
+          "id": "c",
+          "text": "Fin de priorité"
+        }
       ],
       "correct": ["a"],
       "explanation": "Les panneaux ronds et bleus sont des obligations. Celui-ci t'oblige à tourner autour de l'îlot dans le sens des flèches."
@@ -39,11 +65,26 @@
       "moduleId": "n2-m3",
       "ruleIds": ["panneau-cedez-le-passage", "priorite-giratoire-cedez"],
       "prompt": "Ce panneau est placé à l'entrée d'un giratoire. Il t'oblige à :",
-      "media": { "kind": "svg", "component": "Sign", "props": { "preset": "cedez-le-passage" } },
+      "media": {
+        "kind": "svg",
+        "component": "Sign",
+        "props": {
+          "preset": "cedez-le-passage"
+        }
+      },
       "options": [
-        { "id": "a", "text": "Laisser passer les véhicules déjà dans l'anneau" },
-        { "id": "b", "text": "Marquer un arrêt complet, même si l'anneau est vide" },
-        { "id": "c", "text": "Laisser passer uniquement les véhicules qui viennent de ta droite" }
+        {
+          "id": "a",
+          "text": "Laisser passer les véhicules déjà dans l'anneau"
+        },
+        {
+          "id": "b",
+          "text": "Marquer un arrêt complet, même si l'anneau est vide"
+        },
+        {
+          "id": "c",
+          "text": "Laisser passer uniquement les véhicules qui viennent de ta droite"
+        }
       ],
       "correct": ["a"],
       "explanation": "Cédez le passage à l'entrée : l'anneau est prioritaire. Tu ralentis et tu laisses passer, mais tu n'es pas obligée de t'arrêter si la voie est libre."
@@ -59,15 +100,30 @@
         "props": {
           "variant": "cedez",
           "cars": [
-            { "slot": "entry-s", "who": "you" },
-            { "slot": "ring-sw", "who": "other" }
+            {
+              "slot": "entry-s",
+              "who": "you"
+            },
+            {
+              "slot": "ring-sw",
+              "who": "other"
+            }
           ]
         }
       },
       "options": [
-        { "id": "a", "text": "J'entre : je suis prioritaire" },
-        { "id": "b", "text": "Je la laisse passer, puis j'entre" },
-        { "id": "c", "text": "Je klaxonne pour la prévenir" }
+        {
+          "id": "a",
+          "text": "J'entre : je suis prioritaire"
+        },
+        {
+          "id": "b",
+          "text": "Je la laisse passer, puis j'entre"
+        },
+        {
+          "id": "c",
+          "text": "Je klaxonne pour la prévenir"
+        }
       ],
       "correct": ["b"],
       "explanation": "Avec cédez le passage à l'entrée, les véhicules dans l'anneau sont prioritaires. Tu attends qu'elle passe, puis tu entres."
@@ -83,15 +139,30 @@
         "props": {
           "variant": "sans-panneau",
           "cars": [
-            { "slot": "ring-se", "who": "you" },
-            { "slot": "entry-e", "who": "other" }
+            {
+              "slot": "ring-se",
+              "who": "you"
+            },
+            {
+              "slot": "entry-e",
+              "who": "other"
+            }
           ]
         }
       },
       "options": [
-        { "id": "a", "text": "Moi, car je suis déjà dans l'anneau" },
-        { "id": "b", "text": "La voiture qui entre" },
-        { "id": "c", "text": "Celle qui roule le plus vite" }
+        {
+          "id": "a",
+          "text": "Moi, car je suis déjà dans l'anneau"
+        },
+        {
+          "id": "b",
+          "text": "La voiture qui entre"
+        },
+        {
+          "id": "c",
+          "text": "Celle qui roule le plus vite"
+        }
       ],
       "correct": ["b"],
       "explanation": "Sans panneau, c'est la priorité à droite. La voiture qui entre arrive sur ta droite : elle est prioritaire."
@@ -102,10 +173,22 @@
       "ruleIds": ["priorite-giratoire-cedez", "priorite-giratoire-sans-panneau"],
       "prompt": "Dans quels cas les véhicules déjà dans l'anneau sont-ils prioritaires ?",
       "options": [
-        { "id": "a", "text": "Quand il y a un panneau cédez le passage à l'entrée" },
-        { "id": "b", "text": "Quand il y a un panneau stop à l'entrée" },
-        { "id": "c", "text": "Toujours, dans tous les giratoires" },
-        { "id": "d", "text": "Quand il n'y a aucun panneau" }
+        {
+          "id": "a",
+          "text": "Quand il y a un panneau cédez le passage à l'entrée"
+        },
+        {
+          "id": "b",
+          "text": "Quand il y a un panneau stop à l'entrée"
+        },
+        {
+          "id": "c",
+          "text": "Toujours, dans tous les giratoires"
+        },
+        {
+          "id": "d",
+          "text": "Quand il n'y a aucun panneau"
+        }
       ],
       "correct": ["a", "b"],
       "explanation": "Cédez le passage ou stop à l'entrée : ceux qui entrent doivent laisser passer l'anneau. Sans panneau, c'est la priorité à droite, donc ceux qui entrent passent en premier."
@@ -116,9 +199,18 @@
       "ruleIds": ["giratoire-sens-de-circulation"],
       "prompt": "Au Maroc, dans un giratoire, on tourne :",
       "options": [
-        { "id": "a", "text": "Dans le sens inverse des aiguilles d'une montre" },
-        { "id": "b", "text": "Dans le sens des aiguilles d'une montre" },
-        { "id": "c", "text": "Dans le sens que l'on veut" }
+        {
+          "id": "a",
+          "text": "Dans le sens inverse des aiguilles d'une montre"
+        },
+        {
+          "id": "b",
+          "text": "Dans le sens des aiguilles d'une montre"
+        },
+        {
+          "id": "c",
+          "text": "Dans le sens que l'on veut"
+        }
       ],
       "correct": ["a"],
       "explanation": "On circule à droite, donc on tourne en gardant l'îlot central à sa gauche : sens inverse des aiguilles d'une montre."
@@ -129,9 +221,18 @@
       "ruleIds": ["giratoire-clignotant", "giratoire-position-voie"],
       "prompt": "Tu prends la première sortie, à droite. Quel clignotant mets-tu à l'approche du giratoire ?",
       "options": [
-        { "id": "a", "text": "Le clignotant droit" },
-        { "id": "b", "text": "Le clignotant gauche" },
-        { "id": "c", "text": "Aucun" }
+        {
+          "id": "a",
+          "text": "Le clignotant droit"
+        },
+        {
+          "id": "b",
+          "text": "Le clignotant gauche"
+        },
+        {
+          "id": "c",
+          "text": "Aucun"
+        }
       ],
       "correct": ["a"],
       "explanation": "Première sortie : clignotant droit dès l'approche, et tu restes sur la voie de droite."
@@ -142,10 +243,22 @@
       "ruleIds": ["giratoire-clignotant"],
       "prompt": "Avant de sortir du giratoire, tu dois :",
       "options": [
-        { "id": "a", "text": "Mettre ton clignotant droit" },
-        { "id": "b", "text": "Regarder ton rétroviseur et ton angle mort" },
-        { "id": "c", "text": "Accélérer franchement" },
-        { "id": "d", "text": "Allumer tes feux de détresse" }
+        {
+          "id": "a",
+          "text": "Mettre ton clignotant droit"
+        },
+        {
+          "id": "b",
+          "text": "Regarder ton rétroviseur et ton angle mort"
+        },
+        {
+          "id": "c",
+          "text": "Accélérer franchement"
+        },
+        {
+          "id": "d",
+          "text": "Allumer tes feux de détresse"
+        }
       ],
       "correct": ["a", "b"],
       "explanation": "Pour sortir : clignotant droit, puis rétroviseur et angle mort avant de te rapprocher de la droite."
@@ -161,14 +274,26 @@
         "props": {
           "variant": "sans-panneau",
           "cars": [
-            { "slot": "entry-s", "who": "you" },
-            { "slot": "ring-sw", "who": "other" }
+            {
+              "slot": "entry-s",
+              "who": "you"
+            },
+            {
+              "slot": "ring-sw",
+              "who": "other"
+            }
           ]
         }
       },
       "options": [
-        { "id": "a", "text": "Moi, car elle vient de ma gauche" },
-        { "id": "b", "text": "La voiture dans l'anneau" }
+        {
+          "id": "a",
+          "text": "Moi, car elle vient de ma gauche"
+        },
+        {
+          "id": "b",
+          "text": "La voiture dans l'anneau"
+        }
       ],
       "correct": ["a"],
       "explanation": "Sans panneau, priorité à droite : c'est toi qui es prioritaire. Reste prudente quand même, et assure-toi qu'elle te laisse passer."

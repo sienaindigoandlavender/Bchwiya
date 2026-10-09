@@ -1,0 +1,44 @@
+{
+  "id": "n5-m1-l2",
+  "moduleId": "n5-m1",
+  "title": "Où stationner, où ne pas stationner",
+  "minutes": 5,
+  "ruleIds": ["stationnement-interdit-lieux", "arret-vs-stationnement"],
+  "screens": [
+    {
+      "type": "text",
+      "body": "Rappel : l'arrêt est bref, conducteur au volant ou tout près. Le stationnement dure plus longtemps."
+    },
+    {
+      "type": "text",
+      "body": "Interdit de stationner : sur un passage piéton, sur le trottoir, à un arrêt de bus, devant une entrée de garage, trop près d'une intersection.",
+      "media": {
+        "kind": "svg",
+        "component": "Sign",
+        "props": {
+          "preset": "stationnement-interdit"
+        }
+      }
+    },
+    {
+      "type": "text",
+      "body": "Et pas de double file, même « deux minutes » avec les feux de détresse."
+    },
+    {
+      "type": "text",
+      "body": "Le bon endroit : une place de stationnement, dans le sens de la circulation.",
+      "media": {
+        "kind": "svg",
+        "component": "Sign",
+        "props": {
+          "preset": "parking"
+        }
+      }
+    },
+    {
+      "type": "keypoint",
+      "body": "Je ne gêne ni les piétons, ni les bus, ni les autres voitures."
+    }
+  ],
+  "checks": ["q-n5-m1-003", "q-n5-m1-004"]
+}

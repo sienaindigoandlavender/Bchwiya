@@ -1,14 +1,30 @@
 {
   "id": "n4-m3-l1",
   "moduleId": "n4-m3",
-  "title": "L'entretien du véhicule",
+  "title": "Les voyants du tableau de bord",
   "minutes": 5,
-  "ruleIds": [],
+  "ruleIds": ["voyants-couleurs"],
   "screens": [
     {
       "type": "text",
-      "body": "Contenu à venir."
+      "body": "Les voyants parlent avec leurs couleurs, comme les feux."
+    },
+    {
+      "type": "text",
+      "body": "Rouge : alerte grave. Huile, température du moteur, freins, batterie. Tu t'arrêtes dès que possible, en sécurité."
+    },
+    {
+      "type": "text",
+      "body": "Orange : quelque chose à faire vérifier bientôt. Pas d'urgence immédiate, mais pas question d'attendre des semaines."
+    },
+    {
+      "type": "text",
+      "body": "Vert ou bleu : simple information. Le bleu t'indique par exemple que tes feux de route sont allumés."
+    },
+    {
+      "type": "keypoint",
+      "body": "Rouge : je m'arrête. Orange : je fais vérifier. Vert ou bleu : tout va bien."
     }
   ],
-  "checks": []
+  "checks": ["q-n4-m3-001", "q-n4-m3-003"]
 }

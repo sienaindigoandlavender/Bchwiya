@@ -1,0 +1,31 @@
+{
+  "$comment": "Numéros d'urgence au Maroc : 15 (protection civile : pompiers et ambulance), 19 (police), 177 (gendarmerie royale).",
+  "id": "n5-m3-l2",
+  "moduleId": "n5-m3",
+  "title": "Pluie, brouillard, vent",
+  "minutes": 5,
+  "ruleIds": ["pluie-aquaplaning", "brouillard", "vitesse-adaptee"],
+  "screens": [
+    {
+      "type": "text",
+      "body": "Sous la pluie : ralentis, double ta distance de sécurité, et allume tes feux de croisement pour être vue."
+    },
+    {
+      "type": "text",
+      "body": "Grosse flaque, volant qui devient léger : c'est l'aquaplaning. Ne freine pas brusquement. Lève le pied et tiens le volant droit."
+    },
+    {
+      "type": "text",
+      "body": "Dans le brouillard : feux de croisement et feux de brouillard, jamais les pleins phares, qui se reflètent et t'éblouissent. Roule lentement."
+    },
+    {
+      "type": "text",
+      "body": "Par vent fort, tiens bien le volant, surtout en dépassant un camion ou en sortant d'un tunnel."
+    },
+    {
+      "type": "keypoint",
+      "body": "Mauvais temps : moins vite, plus loin, et bien éclairée."
+    }
+  ],
+  "checks": ["q-n5-m3-004", "q-n5-m3-005"]
+}

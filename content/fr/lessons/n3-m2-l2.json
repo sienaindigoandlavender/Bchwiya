@@ -1,0 +1,27 @@
+{
+  "$comment": "Vitesses : décret 2-10-420 art. 15 à 18 (60 / 100 / 120 km/h), art. 16 (90 km/h en période probatoire). Vitesse minimale de 60 km/h sur autoroute.",
+  "id": "n3-m2-l2",
+  "moduleId": "n3-m2",
+  "title": "Adapter sa vitesse",
+  "minutes": 5,
+  "ruleIds": ["vitesse-adaptee"],
+  "screens": [
+    {
+      "type": "text",
+      "body": "La limite est un maximum. Ce n'est pas la vitesse à laquelle tu dois rouler."
+    },
+    {
+      "type": "text",
+      "body": "Pluie, nuit, brouillard, route abîmée, beaucoup de piétons : tu ralentis."
+    },
+    {
+      "type": "text",
+      "body": "La loi le demande aussi : dès la tombée du jour et dans le brouillard, la vitesse doit être modérée."
+    },
+    {
+      "type": "keypoint",
+      "body": "Je roule à la vitesse qui me permet de m'arrêter à temps."
+    }
+  ],
+  "checks": ["q-n3-m2-006"]
+}

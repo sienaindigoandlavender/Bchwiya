@@ -1,14 +1,62 @@
 {
   "id": "n1-m4-l1",
   "moduleId": "n1-m4",
-  "title": "Panneaux d'indication",
+  "title": "Les panneaux qui informent",
   "minutes": 5,
-  "ruleIds": [],
+  "ruleIds": ["indication-services", "indication-circulation"],
   "screens": [
     {
       "type": "text",
-      "body": "Contenu à venir."
+      "body": "Les panneaux d'indication sont carrés ou rectangulaires, souvent bleus. Ils ne donnent pas d'ordre : ils t'aident à t'orienter."
+    },
+    {
+      "type": "text",
+      "body": "Un P : un parking.",
+      "media": {
+        "kind": "svg",
+        "component": "Sign",
+        "props": {
+          "preset": "parking"
+        }
+      }
+    },
+    {
+      "type": "text",
+      "body": "Un H : un hôpital. Ici, on reste discret, pas de klaxon.",
+      "media": {
+        "kind": "svg",
+        "component": "Sign",
+        "props": {
+          "preset": "hopital"
+        }
+      }
+    },
+    {
+      "type": "text",
+      "body": "Une flèche blanche : sens unique. Tout le monde roule dans le sens de la flèche.",
+      "media": {
+        "kind": "svg",
+        "component": "Sign",
+        "props": {
+          "preset": "sens-unique"
+        }
+      }
+    },
+    {
+      "type": "text",
+      "body": "Une barre rouge en travers : impasse, la rue n'a pas de sortie.",
+      "media": {
+        "kind": "svg",
+        "component": "Sign",
+        "props": {
+          "preset": "impasse"
+        }
+      }
+    },
+    {
+      "type": "keypoint",
+      "body": "Carré bleu : on m'informe, on ne m'ordonne rien."
     }
   ],
-  "checks": []
+  "checks": ["q-n1-m4-001", "q-n1-m4-002"]
 }
