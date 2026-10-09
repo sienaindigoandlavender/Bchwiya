@@ -14,7 +14,7 @@
 
   /* the pastel box */
   --blush: #ffe4ee;
-  --rose: #e0245e; /* the one strong colour: actions, current place */
+  --rose: #c8456f; /* the one strong colour, softened: actions, current place */
   --rose-ink: #ffffff;
   --lilac: #ece3ff;
   --mint: #d3f4e2;
@@ -104,6 +104,21 @@ body {
   outline: 2px solid var(--rose);
   outline-offset: 3px;
   border-radius: 6px;
+}
+
+/* One gentle entrance for each new screen. */
+@keyframes bchwiya-fade {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+.fade-in {
+  animation: bchwiya-fade 360ms ease-out both;
 }
 
 @media (prefers-reduced-motion: reduce) {

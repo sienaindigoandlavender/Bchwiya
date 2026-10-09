@@ -30,6 +30,9 @@ export const fr = {
   "home.resume.allDone": "Tout est fait. Bravo, et place aux révisions.",
   "home.review.due": "{count} question(s) à revoir aujourd'hui.",
   "home.path": "Ton parcours",
+  "home.path.summary": "{done} module(s) terminé(s) sur {total}",
+  "home.path.open": "Voir tout",
+  "home.path.close": "Replier",
   "path.here": "Tu es ici",
   "home.extra": "Hors parcours",
 

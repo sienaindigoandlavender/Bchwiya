@@ -1,5 +1,4 @@
 import Link from "next/link";
-import { Sparkle } from "@/components/ui/Icons";
 import { WallE } from "@/components/ui/WallE";
 import { t } from "@/i18n";
 import { greetingKey } from "@/lib/greeting";
@@ -33,10 +32,7 @@ export function ResumeCard({
         : t("home.bubble.start");
 
   return (
-    <section className="relative -mx-5 -mt-[5.25rem] overflow-hidden bg-blush px-5 pt-[7.25rem] pb-0">
-      <Sparkle size={16} className="absolute start-[46%] top-10 text-rose" />
-      <Sparkle size={9} className="absolute start-[54%] top-20 text-rose" />
-
+    <section className="fade-in relative pt-4">
       <div className="flex items-end gap-2">
         <div className="flex min-w-0 flex-1 flex-col gap-5 pb-8">
           <h1 className="title text-[3.25rem] leading-[0.95] text-ink">
@@ -66,14 +62,15 @@ export function ResumeCard({
         </div>
 
         <div className="relative flex shrink-0 flex-col items-center">
-          <p className="relative mb-3 max-w-[9.5rem] rounded-[20px] bg-paper px-4 py-3 text-[0.9375rem] font-medium leading-snug text-ink">
+          <p className="relative mb-3 max-w-[9.5rem] rounded-[20px] bg-cloud px-4 py-3 text-[0.9375rem] font-medium leading-snug text-ink">
             {bubble}
             <span
               aria-hidden
-              className="absolute -bottom-2 start-1/2 size-4 -translate-x-1/2 rotate-45 rounded-[3px] bg-paper rtl:translate-x-1/2"
+              className="absolute -bottom-2 start-1/2 size-4 -translate-x-1/2 rotate-45 rounded-[3px] bg-cloud rtl:translate-x-1/2"
             />
           </p>
-          <WallE pose="hello" height={260} priority className="-mb-1" />
+          <span aria-hidden className="absolute bottom-0 size-40 rounded-full bg-blush" />
+          <WallE pose="hello" height={240} priority className="relative" />
         </div>
       </div>
     </section>

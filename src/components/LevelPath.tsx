@@ -45,10 +45,10 @@ export function LevelPath({ levels }: { levels: LevelState[] }) {
       {/* the road */}
       <span
         aria-hidden
-        className="absolute inset-y-0 start-0 w-12 rounded-full bg-cloud"
+        className="absolute inset-y-0 start-0 w-12 rounded-full bg-paper"
         style={{
           backgroundImage:
-            "repeating-linear-gradient(to bottom, transparent 0 10px, #fff 10px 20px)",
+            "repeating-linear-gradient(to bottom, transparent 0 10px, var(--line) 10px 20px)",
           backgroundSize: "3px 100%",
           backgroundPosition: "center",
           backgroundRepeat: "no-repeat",

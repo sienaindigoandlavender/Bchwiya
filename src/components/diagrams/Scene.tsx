@@ -1217,7 +1217,7 @@ const SCENES: Record<SceneName, () => ReactNode> = {
   ),
 };
 
-export function Scene({ name, size = 300 }: { name: SceneName; size?: number }) {
+export function Scene({ name, size = 230 }: { name: SceneName; size?: number }) {
   const draw = SCENES[name];
   if (!draw) return null;
   return (

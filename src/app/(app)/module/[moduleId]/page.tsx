@@ -75,7 +75,7 @@ export default async function ModulePage({ params }: { params: Promise<{ moduleI
             </ol>
           </section>
 
-          <section className="flex flex-col gap-3 rounded-big bg-lilac p-5">
+          <section className="flex flex-col gap-3 rounded-big bg-cloud p-5">
             <h2 className="title text-[1.625rem]">{t("module.testTitle")}</h2>
             {mod.bestScorePct !== null ? (
               <p className="font-medium">{t("module.bestScore", { pct: mod.bestScorePct })}</p>

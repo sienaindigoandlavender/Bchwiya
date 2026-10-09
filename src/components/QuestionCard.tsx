@@ -90,7 +90,7 @@ export function QuestionCard({ question, feedback = true, onSubmit, onNext, next
     .join(" / ");
 
   return (
-    <div className="flex flex-col gap-5">
+    <div className="fade-in flex flex-col gap-5">
       {question.media && question.media.kind !== "none" ? (
         <div className="rounded-big bg-cloud p-4">
           <Media media={question.media} />

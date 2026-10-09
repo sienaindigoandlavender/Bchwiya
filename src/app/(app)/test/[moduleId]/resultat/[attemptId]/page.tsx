@@ -67,7 +67,7 @@ export default async function ModuleResultPage({
               <li key={l.id}>
                 <Link
                   href={`/lecon/${l.id}`}
-                  className="flex items-center gap-3 rounded-big bg-lilac p-4 font-semibold"
+                  className="flex items-center gap-3 rounded-big bg-cloud p-4 font-semibold"
                 >
                   <span className="flex-1">{l.title}</span>
                   <ChevronIcon size={18} />

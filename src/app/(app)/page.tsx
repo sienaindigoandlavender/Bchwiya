@@ -16,6 +16,10 @@ export default async function HomePage() {
     .eq("user_id", session.userId)
     .lte("due_at", new Date().toISOString());
 
+  const modules = path.flatMap((l) => l.modules);
+  const modulesDone = modules.filter((m) => m.status === "done").length;
+  const modulesTotal = modules.length;
+
   return (
     <>
       <ResumeCard
@@ -35,12 +39,27 @@ export default async function HomePage() {
         </Link>
       ) : null}
 
-      <section className="mt-4 flex flex-col gap-6">
-        <h2 className="title text-[2rem]">{t("home.path")}</h2>
-        <LevelPath levels={path} />
-      </section>
+      <details className="group rounded-big bg-cloud">
+        <summary className="flex cursor-pointer list-none items-center gap-3 p-5 [&::-webkit-details-marker]:hidden">
+          <span className="flex flex-1 flex-col gap-0.5">
+            <span className="title text-[1.5rem]">{t("home.path")}</span>
+            <span className="text-[1rem] text-ink-soft">
+              {t("home.path.summary", { done: modulesDone, total: modulesTotal })}
+            </span>
+          </span>
+          <span className="text-[0.9375rem] font-semibold text-rose group-open:hidden">
+            {t("home.path.open")}
+          </span>
+          <span className="hidden text-[0.9375rem] font-semibold text-rose group-open:inline">
+            {t("home.path.close")}
+          </span>
+        </summary>
+        <div className="fade-in px-5 pt-2 pb-6">
+          <LevelPath levels={path} />
+        </div>
+      </details>
 
-      <Link href="/ma-voiture" className="mt-4 flex items-center gap-4 rounded-big bg-lilac p-5">
+      <Link href="/ma-voiture" className="flex items-center gap-4 rounded-big bg-cloud p-5">
         <span className="flex size-12 items-center justify-center rounded-full bg-paper">
           <CarIcon size={24} />
         </span>

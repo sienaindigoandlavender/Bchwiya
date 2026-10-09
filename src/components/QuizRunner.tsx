@@ -130,11 +130,11 @@ export function QuizRunner({
   return (
     <div className="flex flex-col gap-5">
       <div className="flex items-center justify-between gap-3">
-        <span className="pill bg-blush text-ink">
+        <span className="pill bg-cloud text-ink">
           {t("question.count", { current: index + 1, total: questions.length })}
         </span>
         {timerMinutes ? (
-          <span aria-live="off" className="pill bg-lilac text-ink tabular-nums">
+          <span aria-live="off" className="pill bg-cloud text-ink tabular-nums">
             {t("exam.timeLeft", {
               time: `${Math.floor(remaining / 60)}:${String(remaining % 60).padStart(2, "0")}`,
             })}
