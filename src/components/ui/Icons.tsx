@@ -58,6 +58,14 @@ export const SignIcon = (p: IconProps) => (
   </Svg>
 );
 
+/** A little camera: ask about a photo. */
+export const CameraIcon = (p: IconProps) => (
+  <Svg {...p}>
+    <path d="M4 8h3l2-3h6l2 3h3v11H4z" />
+    <circle cx="12" cy="13" r="3.5" />
+  </Svg>
+);
+
 export const ChevronIcon = (p: IconProps) => (
   <Svg {...p}>
     <path d="m9 6 6 6-6 6" className="rtl:origin-center rtl:-scale-x-100" />

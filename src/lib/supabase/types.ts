@@ -75,7 +75,8 @@ export type EventType =
   | "answer"
   | "attempt_finish"
   | "sign_spotted"
-  | "sign_check";
+  | "sign_check"
+  | "photo_question";
 
 export type SpottedSignRow = {
   user_id: string;

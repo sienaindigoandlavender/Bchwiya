@@ -4,6 +4,7 @@ import { revalidatePath } from "next/cache";
 import { presetTitle } from "@/components/signs/presets";
 import { getContent } from "@/content";
 import { getSigns } from "@/content/signs";
+import { askAboutPhoto, isPhotoAskConfigured, type PhotoAnswer } from "@/lib/askClaude";
 import { logEvent } from "@/lib/journal";
 import { nextReviewStep } from "@/lib/review";
 import { hasPassed, isCorrect, pct } from "@/lib/scoring";
@@ -264,4 +265,46 @@ export async function recordSignCheck(
     .eq("sign_id", signId);
   await logEvent(session, "sign_check", { signId, title: presetTitle(sign.id), correct });
   return { correct };
+}
+
+export type PhotoResult =
+  | { ok: true; answer: PhotoAnswer; lessons: { id: string; title: string }[] }
+  | { ok: false; reason: "not-configured" | "too-big" | "failed" };
+
+/** "Ma photo, ma question": her photo and her own guess go to Claude; the answer points back to lessons. */
+export async function askPhoto(input: {
+  imageBase64: string;
+  mediaType: string;
+  question: string;
+  guess: string;
+}): Promise<PhotoResult> {
+  const session = await requireSession();
+  if (!isPhotoAskConfigured()) return { ok: false, reason: "not-configured" };
+  const mediaType = (["image/jpeg", "image/png", "image/webp"] as const).find(
+    (m) => m === input.mediaType,
+  );
+  if (!mediaType || input.imageBase64.length > 3_500_000) return { ok: false, reason: "too-big" };
+  const question = input.question.trim().slice(0, 500);
+  const guess = input.guess.trim().slice(0, 500);
+  try {
+    const answer = await askAboutPhoto({
+      imageBase64: input.imageBase64,
+      mediaType,
+      question,
+      guess,
+    });
+    const all = getContent().lessons;
+    const lessons = answer.lessonIds.map((id) => ({ id, title: all.get(id)!.title }));
+    await logEvent(session, "photo_question", {
+      question,
+      guess,
+      verdict: answer.verdict,
+      answer: answer.answer,
+      lessonIds: answer.lessonIds,
+    });
+    return { ok: true, answer, lessons };
+  } catch (e) {
+    console.error("askPhoto", e);
+    return { ok: false, reason: "failed" };
+  }
 }
