@@ -42,6 +42,7 @@ function pageLabel(path: string, c: Content): string | null {
   if (path === "/revision") return t("journal.page.review");
   if (path === "/examen-blanc") return t("journal.page.exam");
   if (path === "/ma-voiture") return t("journal.page.car");
+  if (path === "/panneaux") return t("journal.page.signs");
   if (path === "/perminou") return t("journal.page.perminou");
   const [, kind, id] = path.split("/");
   if (kind === "niveau" && id) {
@@ -98,6 +99,16 @@ function describe(e: EventRow, c: Content): Omit<JournalLine, "id" | "time"> | n
         tone: d.correct ? "good" : "soft",
       };
     }
+    case "sign_spotted":
+      return {
+        text: t(d.again ? "journal.sign.again" : "journal.sign.spotted", { title: str(d.title) }),
+        tone: "milestone",
+      };
+    case "sign_check":
+      return {
+        text: t(d.correct ? "journal.sign.right" : "journal.sign.wrong", { title: str(d.title) }),
+        tone: d.correct ? "good" : "soft",
+      };
     case "attempt_finish": {
       if (str(d.kind) === "lesson_check") return null;
       const title = c.modules.get(str(d.moduleId))?.title ?? "";

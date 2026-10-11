@@ -1,7 +1,9 @@
 "use server";
 
 import { revalidatePath } from "next/cache";
+import { presetTitle } from "@/components/signs/presets";
 import { getContent } from "@/content";
+import { getSigns } from "@/content/signs";
 import { logEvent } from "@/lib/journal";
 import { nextReviewStep } from "@/lib/review";
 import { hasPassed, isCorrect, pct } from "@/lib/scoring";
@@ -217,4 +219,49 @@ export async function trackPageView(path: string): Promise<void> {
   if (typeof path !== "string" || !path.startsWith("/") || path.length > 200) return;
   const session = await requireSession();
   await logEvent(session, "page_view", {}, path);
+}
+
+/** "Je l'ai vu dans la rue": adds a sign to her album (or counts it again). */
+export async function spotSign(signId: string): Promise<void> {
+  const session = await requireSession();
+  const { supabase, userId } = session;
+  const sign = getSigns().signs.find((s) => s.id === signId);
+  if (!sign) return;
+  const now = new Date().toISOString();
+  const { data } = await supabase
+    .from("bchwiya_spotted_signs")
+    .select("times")
+    .eq("user_id", userId)
+    .eq("sign_id", signId)
+    .maybeSingle();
+  if (data) {
+    await supabase
+      .from("bchwiya_spotted_signs")
+      .update({ times: data.times + 1, last_spotted_at: now })
+      .eq("user_id", userId)
+      .eq("sign_id", signId);
+  } else {
+    await supabase.from("bchwiya_spotted_signs").insert({ user_id: userId, sign_id: signId });
+  }
+  await logEvent(session, "sign_spotted", { signId, title: presetTitle(sign.id), again: !!data });
+  revalidatePath("/panneaux", "layout");
+}
+
+/** The one-question check on a sign card. Calm: it only remembers the last try. */
+export async function recordSignCheck(
+  signId: string,
+  choice: string,
+): Promise<{ correct: boolean }> {
+  const session = await requireSession();
+  const { supabase, userId } = session;
+  const sign = getSigns().signs.find((s) => s.id === signId);
+  if (!sign) return { correct: false };
+  const correct = choice === sign.check.correct;
+  await supabase
+    .from("bchwiya_spotted_signs")
+    .update({ last_check_correct: correct })
+    .eq("user_id", userId)
+    .eq("sign_id", signId);
+  await logEvent(session, "sign_check", { signId, title: presetTitle(sign.id), correct });
+  return { correct };
 }

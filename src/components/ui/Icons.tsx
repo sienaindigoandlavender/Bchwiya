@@ -50,6 +50,14 @@ export const CarIcon = (p: IconProps) => (
   </Svg>
 );
 
+/** A road sign on its post: "Mes panneaux". */
+export const SignIcon = (p: IconProps) => (
+  <Svg {...p}>
+    <path d="M12 3 21 18H3z" />
+    <path d="M12 18v3" />
+  </Svg>
+);
+
 export const ChevronIcon = (p: IconProps) => (
   <Svg {...p}>
     <path d="m9 6 6 6-6 6" className="rtl:origin-center rtl:-scale-x-100" />

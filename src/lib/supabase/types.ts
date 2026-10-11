@@ -68,7 +68,23 @@ export type ModuleProgressRow = {
 };
 
 export type EventType =
-  "page_view" | "lesson_open" | "lesson_complete" | "attempt_start" | "answer" | "attempt_finish";
+  | "page_view"
+  | "lesson_open"
+  | "lesson_complete"
+  | "attempt_start"
+  | "answer"
+  | "attempt_finish"
+  | "sign_spotted"
+  | "sign_check";
+
+export type SpottedSignRow = {
+  user_id: string;
+  sign_id: string;
+  first_spotted_at: string;
+  last_spotted_at: string;
+  times: number;
+  last_check_correct: boolean | null;
+};
 
 export type EventRow = {
   id: number;
@@ -89,6 +105,7 @@ export type Database = {
       bchwiya_review_queue: Table<ReviewQueueRow, "user_id" | "question_id">;
       bchwiya_module_progress: Table<ModuleProgressRow, "user_id" | "module_id">;
       bchwiya_events: Table<EventRow, "user_id" | "type">;
+      bchwiya_spotted_signs: Table<SpottedSignRow, "user_id" | "sign_id">;
     };
     Views: { [_ in never]: never };
     Functions: {
