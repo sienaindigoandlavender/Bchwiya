@@ -49,7 +49,7 @@ export const fr = {
   "photo.verdict.pasJuste": "Voici comment ça marche",
   "photo.verdict.sansIdee": "La réponse",
   "photo.lessons": "Pour bien le retenir",
-  "photo.note": "Réponse préparée par Claude. Si un doute reste, la leçon fait foi.",
+  "photo.note": "Réponse préparée par une IA. Si un doute reste, la leçon fait foi.",
   "photo.another": "Une autre photo",
   "photo.soon": "Bientôt ici : envoyer une photo et recevoir la réponse. Encore un petit réglage.",
   "photo.error.not-configured": "Ce n'est pas encore prêt. Encore un petit réglage.",
