@@ -1,5 +1,7 @@
 import { ChevronIcon } from "@/components/ui/Icons";
 import Link from "next/link";
+import { SIGN_PRESETS, type SignPreset } from "@/components/diagrams/names";
+import { presetTitle } from "@/components/signs/presets";
 import { getContent } from "@/content";
 import { t } from "@/i18n";
 import { formatDate, formatMs, ruleStats } from "@/lib/analytics";
@@ -29,6 +31,13 @@ export default async function AdminPage() {
       </>
     );
   }
+
+  const { data: spottedRows } = await supabase
+    .from("bchwiya_spotted_signs")
+    .select("*")
+    .eq("user_id", learner.id)
+    .order("last_spotted_at", { ascending: false });
+  const spotted = spottedRows ?? [];
 
   const [{ data: answers }, { data: attempts }, pathData] = await Promise.all([
     supabase
@@ -226,6 +235,42 @@ export default async function AdminPage() {
                     </td>
                     <td className="px-2 text-end">{duration(a)}</td>
                     <td className="ps-2 text-end">{a.passed ? t("admin.yes") : t("admin.no")}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        )}
+      </section>
+
+      <section className="flex flex-col gap-2">
+        <h2 className="title text-[1.625rem]">{t("admin.signs.title")}</h2>
+        {spotted.length === 0 ? (
+          <p className="text-muted">{t("admin.signs.empty")}</p>
+        ) : (
+          <div className="-mx-5 overflow-x-auto px-5">
+            <table className="w-full text-base">
+              <thead className="text-muted">
+                <tr>
+                  <th className="py-2 pe-2 text-start">{t("signs.title")}</th>
+                  <th className="px-2 text-end">{t("admin.date")}</th>
+                  <th className="px-2 text-end">×</th>
+                  <th className="ps-2 text-end">{t("admin.signs.check")}</th>
+                </tr>
+              </thead>
+              <tbody>
+                {spotted.map((r) => (
+                  <tr key={r.sign_id} className="border-t border-border">
+                    <td className="py-2 pe-2">
+                      {(SIGN_PRESETS as readonly string[]).includes(r.sign_id)
+                        ? presetTitle(r.sign_id as SignPreset)
+                        : r.sign_id}
+                    </td>
+                    <td className="px-2 text-end">{formatDate(r.last_spotted_at)}</td>
+                    <td className="px-2 text-end">{r.times}</td>
+                    <td className="ps-2 text-end">
+                      {r.last_check_correct === null ? "—" : r.last_check_correct ? "✓" : "✗"}
+                    </td>
                   </tr>
                 ))}
               </tbody>

@@ -2,7 +2,7 @@ import Link from "next/link";
 import { LevelPath } from "@/components/LevelPath";
 import { PerminouLink } from "@/components/PerminouLink";
 import { ResumeCard } from "@/components/ResumeCard";
-import { CarIcon, ChevronIcon, ReviewIcon } from "@/components/ui/Icons";
+import { CarIcon, ChevronIcon, ReviewIcon, SignIcon } from "@/components/ui/Icons";
 import { t } from "@/i18n";
 import { loadPath } from "@/lib/data";
 import { resumeTarget } from "@/lib/progress";
@@ -59,6 +59,17 @@ export default async function HomePage() {
           <LevelPath levels={path} />
         </div>
       </details>
+
+      <Link href="/panneaux" className="flex items-center gap-4 rounded-big bg-butter p-5">
+        <span className="flex size-12 items-center justify-center rounded-full bg-paper">
+          <SignIcon size={24} />
+        </span>
+        <span className="flex flex-1 flex-col">
+          <span className="title text-[1.5rem]">{t("signs.title")}</span>
+          <span className="text-[1rem] text-ink-soft">{t("home.signs.sub")}</span>
+        </span>
+        <ChevronIcon size={18} />
+      </Link>
 
       <PerminouLink />
 

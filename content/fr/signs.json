@@ -1,0 +1,906 @@
+{
+  "$comment": "TODO: verify against loi 52-05. A human checks legal accuracy before this is treated as final.",
+  "categories": [
+    {
+      "id": "priorite",
+      "title": "Priorité"
+    },
+    {
+      "id": "danger",
+      "title": "Danger"
+    },
+    {
+      "id": "interdiction",
+      "title": "Interdiction"
+    },
+    {
+      "id": "obligation",
+      "title": "Obligation"
+    },
+    {
+      "id": "indication",
+      "title": "Indication"
+    }
+  ],
+  "signs": [
+    {
+      "id": "cedez-le-passage",
+      "category": "priorite",
+      "meaning": "Tu dois laisser passer les véhicules sur la route que tu vas croiser ou rejoindre.",
+      "todo": "Ralentis, regarde, et ne t'engage que si la voie est libre. Tu peux passer sans t'arrêter si personne n'arrive.",
+      "check": {
+        "prompt": "Tu arrives à ce panneau. Que fais-tu ?",
+        "options": [
+          {
+            "id": "a",
+            "text": "Je laisse passer les autres, et je passe si c'est libre"
+          },
+          {
+            "id": "b",
+            "text": "Je m'arrête toujours complètement"
+          },
+          {
+            "id": "c",
+            "text": "Je suis prioritaire"
+          }
+        ],
+        "correct": "a",
+        "explanation": "Cédez le passage : tu laisses passer, mais l'arrêt n'est obligatoire que si quelqu'un arrive."
+      },
+      "lessonId": "n2-m3-l2"
+    },
+    {
+      "id": "stop",
+      "category": "priorite",
+      "meaning": "Arrêt obligatoire, puis tu laisses passer tout le monde.",
+      "todo": "Arrête-toi complètement à la ligne, même si la route est vide. Repars quand c'est libre.",
+      "check": {
+        "prompt": "La route est vide. Devant ce panneau, tu dois :",
+        "options": [
+          {
+            "id": "a",
+            "text": "Ralentir et passer"
+          },
+          {
+            "id": "b",
+            "text": "T'arrêter complètement, puis repartir"
+          },
+          {
+            "id": "c",
+            "text": "Klaxonner et passer"
+          }
+        ],
+        "correct": "b",
+        "explanation": "Au stop, l'arrêt est obligatoire même quand personne n'arrive."
+      },
+      "lessonId": "n2-m3-l2"
+    },
+    {
+      "id": "route-prioritaire",
+      "category": "priorite",
+      "meaning": "Tu roules sur une route prioritaire : aux prochains carrefours, les autres te laissent passer.",
+      "todo": "Garde ta vitesse adaptée et reste attentive : certains peuvent oublier.",
+      "check": {
+        "prompt": "Ce panneau losange jaune veut dire :",
+        "options": [
+          {
+            "id": "a",
+            "text": "Fin de la priorité"
+          },
+          {
+            "id": "b",
+            "text": "Tu es sur une route prioritaire"
+          },
+          {
+            "id": "c",
+            "text": "Danger, carrefour"
+          }
+        ],
+        "correct": "b",
+        "explanation": "Le losange jaune : tu es prioritaire aux intersections qui suivent."
+      }
+    },
+    {
+      "id": "fin-route-prioritaire",
+      "category": "priorite",
+      "meaning": "La route n'est plus prioritaire. Les règles normales reviennent, souvent la priorité à droite.",
+      "todo": "Ralentis aux carrefours et regarde à droite.",
+      "check": {
+        "prompt": "Après ce panneau, aux carrefours sans panneau :",
+        "options": [
+          {
+            "id": "a",
+            "text": "Je reste prioritaire"
+          },
+          {
+            "id": "b",
+            "text": "C'est la priorité à droite"
+          },
+          {
+            "id": "c",
+            "text": "Je dois toujours m'arrêter"
+          }
+        ],
+        "correct": "b",
+        "explanation": "Fin de route prioritaire : on revient à la priorité à droite."
+      }
+    },
+    {
+      "id": "danger-intersection-droite",
+      "category": "priorite",
+      "meaning": "Un carrefour arrive où la priorité à droite s'applique.",
+      "todo": "Ralentis et laisse passer ceux qui arrivent par ta droite.",
+      "check": {
+        "prompt": "À ce carrefour, qui passe en premier ?",
+        "options": [
+          {
+            "id": "a",
+            "text": "Celui qui vient de ma droite"
+          },
+          {
+            "id": "b",
+            "text": "Celui qui vient de ma gauche"
+          },
+          {
+            "id": "c",
+            "text": "Le plus rapide"
+          }
+        ],
+        "correct": "a",
+        "explanation": "La croix dans le triangle : priorité à droite."
+      }
+    },
+    {
+      "id": "danger-intersection-prioritaire",
+      "category": "priorite",
+      "meaning": "Un carrefour arrive avec une petite route qui n'a pas la priorité : c'est toi qui es prioritaire.",
+      "todo": "Reste attentive, ceux de la petite route doivent te laisser passer.",
+      "check": {
+        "prompt": "À ce carrefour, qui est prioritaire ?",
+        "options": [
+          {
+            "id": "a",
+            "text": "Moi, sur la grande route"
+          },
+          {
+            "id": "b",
+            "text": "Ceux qui arrivent de la petite route"
+          },
+          {
+            "id": "c",
+            "text": "Personne"
+          }
+        ],
+        "correct": "a",
+        "explanation": "Le trait épais, c'est ta route : tu es prioritaire."
+      }
+    },
+    {
+      "id": "giratoire-danger",
+      "category": "danger",
+      "meaning": "Un giratoire (rond-point) arrive bientôt. Ce panneau ne dit pas qui a la priorité.",
+      "todo": "Ralentis et regarde l'entrée : y a-t-il un cédez le passage ?",
+      "check": {
+        "prompt": "Ce triangle t'annonce :",
+        "options": [
+          {
+            "id": "a",
+            "text": "Un giratoire"
+          },
+          {
+            "id": "b",
+            "text": "Un sens interdit"
+          },
+          {
+            "id": "c",
+            "text": "Une route prioritaire"
+          }
+        ],
+        "correct": "a",
+        "explanation": "Les trois flèches en rond dans un triangle : un giratoire arrive. La priorité dépend du panneau à l'entrée."
+      },
+      "lessonId": "n2-m3-l1"
+    },
+    {
+      "id": "danger-virage-droite",
+      "category": "danger",
+      "meaning": "Un virage dangereux à droite arrive.",
+      "todo": "Ralentis avant le virage, pas pendant.",
+      "check": {
+        "prompt": "Quand dois-tu ralentir pour ce virage ?",
+        "options": [
+          {
+            "id": "a",
+            "text": "Avant le virage"
+          },
+          {
+            "id": "b",
+            "text": "Au milieu du virage"
+          },
+          {
+            "id": "c",
+            "text": "Après le virage"
+          }
+        ],
+        "correct": "a",
+        "explanation": "On freine avant d'entrer dans le virage."
+      }
+    },
+    {
+      "id": "danger-virage-gauche",
+      "category": "danger",
+      "meaning": "Un virage dangereux à gauche arrive.",
+      "todo": "Ralentis avant le virage et reste bien dans ta voie.",
+      "check": {
+        "prompt": "Ce panneau annonce :",
+        "options": [
+          {
+            "id": "a",
+            "text": "Un virage à gauche"
+          },
+          {
+            "id": "b",
+            "text": "Interdit de tourner à gauche"
+          },
+          {
+            "id": "c",
+            "text": "Obligation de tourner à gauche"
+          }
+        ],
+        "correct": "a",
+        "explanation": "Un triangle annonce un danger : ici, un virage à gauche."
+      }
+    },
+    {
+      "id": "danger-pietons",
+      "category": "danger",
+      "meaning": "Un passage pour piétons arrive.",
+      "todo": "Ralentis et prépare-toi à t'arrêter pour laisser traverser.",
+      "check": {
+        "prompt": "Un piéton attend au passage. Tu :",
+        "options": [
+          {
+            "id": "a",
+            "text": "T'arrêtes pour le laisser traverser"
+          },
+          {
+            "id": "b",
+            "text": "Klaxonnes"
+          },
+          {
+            "id": "c",
+            "text": "Accélères pour passer avant"
+          }
+        ],
+        "correct": "a",
+        "explanation": "Le piéton qui s'engage ou attend au passage est prioritaire."
+      }
+    },
+    {
+      "id": "danger-enfants",
+      "category": "danger",
+      "meaning": "Endroit avec des enfants : école, jardin, aire de jeux.",
+      "todo": "Ralentis fort : un enfant peut traverser sans regarder.",
+      "check": {
+        "prompt": "Près d'une école, avec ce panneau, tu :",
+        "options": [
+          {
+            "id": "a",
+            "text": "Ralentis et fais très attention"
+          },
+          {
+            "id": "b",
+            "text": "Gardes ta vitesse"
+          },
+          {
+            "id": "c",
+            "text": "Klaxonnes en passant"
+          }
+        ],
+        "correct": "a",
+        "explanation": "Les enfants sont imprévisibles : on roule doucement."
+      }
+    },
+    {
+      "id": "danger-feux",
+      "category": "danger",
+      "meaning": "Des feux tricolores arrivent.",
+      "todo": "Prépare-toi à t'arrêter si le feu passe au rouge ou à l'orange.",
+      "check": {
+        "prompt": "Ce triangle annonce :",
+        "options": [
+          {
+            "id": "a",
+            "text": "Des feux tricolores"
+          },
+          {
+            "id": "b",
+            "text": "Un passage à niveau"
+          },
+          {
+            "id": "c",
+            "text": "Un carrefour giratoire"
+          }
+        ],
+        "correct": "a",
+        "explanation": "Les trois ronds rouge, orange, vert : des feux arrivent."
+      }
+    },
+    {
+      "id": "danger-ralentisseur",
+      "category": "danger",
+      "meaning": "Un ralentisseur (dos d'âne) arrive.",
+      "todo": "Ralentis avant de le passer.",
+      "check": {
+        "prompt": "Ce panneau t'annonce :",
+        "options": [
+          {
+            "id": "a",
+            "text": "Un ralentisseur"
+          },
+          {
+            "id": "b",
+            "text": "Une route glissante"
+          },
+          {
+            "id": "c",
+            "text": "Un pont"
+          }
+        ],
+        "correct": "a",
+        "explanation": "La petite bosse : un dos d'âne. On ralentit."
+      }
+    },
+    {
+      "id": "danger-autre",
+      "category": "danger",
+      "meaning": "Un autre danger, souvent expliqué sur un panneau en dessous.",
+      "todo": "Ralentis et regarde ce qui est indiqué.",
+      "check": {
+        "prompt": "Le point d'exclamation veut dire :",
+        "options": [
+          {
+            "id": "a",
+            "text": "Un autre danger"
+          },
+          {
+            "id": "b",
+            "text": "Fin de danger"
+          },
+          {
+            "id": "c",
+            "text": "Interdiction"
+          }
+        ],
+        "correct": "a",
+        "explanation": "Le point d'exclamation : un danger d'un autre type, souvent précisé en dessous."
+      }
+    },
+    {
+      "id": "sens-interdit",
+      "category": "interdiction",
+      "meaning": "Tu ne peux pas entrer dans cette rue de ce côté.",
+      "todo": "N'entre pas. Cherche une autre rue.",
+      "check": {
+        "prompt": "Le rond rouge avec une barre blanche veut dire :",
+        "options": [
+          {
+            "id": "a",
+            "text": "Sens interdit : je n'entre pas"
+          },
+          {
+            "id": "b",
+            "text": "Stationnement interdit"
+          },
+          {
+            "id": "c",
+            "text": "Route prioritaire"
+          }
+        ],
+        "correct": "a",
+        "explanation": "Sens interdit : interdit d'entrer de ce côté."
+      }
+    },
+    {
+      "id": "interdit-circulation",
+      "category": "interdiction",
+      "meaning": "Aucun véhicule ne peut passer.",
+      "todo": "Ne t'engage pas sur cette route.",
+      "check": {
+        "prompt": "Le rond blanc bordé de rouge, vide, veut dire :",
+        "options": [
+          {
+            "id": "a",
+            "text": "Circulation interdite à tous les véhicules"
+          },
+          {
+            "id": "b",
+            "text": "Fin des interdictions"
+          },
+          {
+            "id": "c",
+            "text": "Parking"
+          }
+        ],
+        "correct": "a",
+        "explanation": "Rond vide bordé de rouge : interdit à tous les véhicules."
+      }
+    },
+    {
+      "id": "vitesse-60",
+      "category": "interdiction",
+      "meaning": "Vitesse maximum : 60 km/h, à partir de ce panneau.",
+      "todo": "Ne dépasse pas 60. Tu peux rouler moins vite si c'est plus sûr.",
+      "check": {
+        "prompt": "Avec ce panneau, tu peux rouler :",
+        "options": [
+          {
+            "id": "a",
+            "text": "Jusqu'à 60 km/h"
+          },
+          {
+            "id": "b",
+            "text": "À 60 km/h minimum"
+          },
+          {
+            "id": "c",
+            "text": "À 70 km/h"
+          }
+        ],
+        "correct": "a",
+        "explanation": "Le chiffre dans le rond rouge est un maximum."
+      }
+    },
+    {
+      "id": "vitesse-90",
+      "category": "interdiction",
+      "meaning": "Vitesse maximum : 90 km/h.",
+      "todo": "Ne dépasse pas 90, et ralentis par mauvais temps.",
+      "check": {
+        "prompt": "Ce panneau veut dire :",
+        "options": [
+          {
+            "id": "a",
+            "text": "Vitesse maximum 90 km/h"
+          },
+          {
+            "id": "b",
+            "text": "Vitesse conseillée 90 km/h"
+          },
+          {
+            "id": "c",
+            "text": "Vitesse minimum 90 km/h"
+          }
+        ],
+        "correct": "a",
+        "explanation": "Rond rouge avec un chiffre : vitesse maximum autorisée."
+      }
+    },
+    {
+      "id": "vitesse-100",
+      "category": "interdiction",
+      "meaning": "Vitesse maximum : 100 km/h.",
+      "todo": "Ne dépasse pas 100.",
+      "check": {
+        "prompt": "La pluie tombe fort. Avec ce panneau, tu :",
+        "options": [
+          {
+            "id": "a",
+            "text": "Roules moins vite que 100"
+          },
+          {
+            "id": "b",
+            "text": "Roules à 100 exactement"
+          },
+          {
+            "id": "c",
+            "text": "Peux aller à 110"
+          }
+        ],
+        "correct": "a",
+        "explanation": "La limite est un maximum : par mauvais temps, on roule moins vite."
+      }
+    },
+    {
+      "id": "vitesse-120",
+      "category": "interdiction",
+      "meaning": "Vitesse maximum : 120 km/h, souvent sur autoroute.",
+      "todo": "Ne dépasse pas 120.",
+      "check": {
+        "prompt": "Où vois-tu souvent ce panneau ?",
+        "options": [
+          {
+            "id": "a",
+            "text": "Sur l'autoroute"
+          },
+          {
+            "id": "b",
+            "text": "En ville"
+          },
+          {
+            "id": "c",
+            "text": "Dans la médina"
+          }
+        ],
+        "correct": "a",
+        "explanation": "120 km/h : c'est la limite habituelle sur autoroute."
+      }
+    },
+    {
+      "id": "depassement-interdit",
+      "category": "interdiction",
+      "meaning": "Interdit de dépasser les voitures.",
+      "todo": "Reste derrière jusqu'au panneau de fin d'interdiction.",
+      "check": {
+        "prompt": "Avec ce panneau, tu peux :",
+        "options": [
+          {
+            "id": "a",
+            "text": "Rester derrière la voiture"
+          },
+          {
+            "id": "b",
+            "text": "Dépasser si c'est rapide"
+          },
+          {
+            "id": "c",
+            "text": "Dépasser par la droite"
+          }
+        ],
+        "correct": "a",
+        "explanation": "Les deux voitures, une rouge : interdiction de dépasser."
+      }
+    },
+    {
+      "id": "interdit-tourner-gauche",
+      "category": "interdiction",
+      "meaning": "Interdit de tourner à gauche au prochain carrefour.",
+      "todo": "Continue tout droit ou tourne à droite.",
+      "check": {
+        "prompt": "Au carrefour, avec ce panneau, tu ne peux pas :",
+        "options": [
+          {
+            "id": "a",
+            "text": "Tourner à gauche"
+          },
+          {
+            "id": "b",
+            "text": "Tourner à droite"
+          },
+          {
+            "id": "c",
+            "text": "Aller tout droit"
+          }
+        ],
+        "correct": "a",
+        "explanation": "La flèche barrée : cette direction est interdite."
+      }
+    },
+    {
+      "id": "stationnement-interdit",
+      "category": "interdiction",
+      "meaning": "Interdit de te garer ici. Un arrêt très court est permis.",
+      "todo": "Tu peux déposer quelqu'un, mais pas laisser la voiture.",
+      "check": {
+        "prompt": "Avec ce panneau (une barre), tu peux :",
+        "options": [
+          {
+            "id": "a",
+            "text": "T'arrêter un instant pour déposer quelqu'un"
+          },
+          {
+            "id": "b",
+            "text": "Te garer une heure"
+          },
+          {
+            "id": "c",
+            "text": "Laisser la voiture la nuit"
+          }
+        ],
+        "correct": "a",
+        "explanation": "Une barre : stationnement interdit, l'arrêt court reste permis."
+      }
+    },
+    {
+      "id": "arret-stationnement-interdit",
+      "category": "interdiction",
+      "meaning": "Interdit de t'arrêter et de te garer, même une minute.",
+      "todo": "Ne t'arrête pas du tout à cet endroit.",
+      "check": {
+        "prompt": "Avec ce panneau (une croix), tu peux :",
+        "options": [
+          {
+            "id": "a",
+            "text": "Ne pas t'arrêter du tout"
+          },
+          {
+            "id": "b",
+            "text": "T'arrêter une minute"
+          },
+          {
+            "id": "c",
+            "text": "Te garer si tu restes dans la voiture"
+          }
+        ],
+        "correct": "a",
+        "explanation": "La croix : arrêt et stationnement interdits."
+      }
+    },
+    {
+      "id": "fin-interdictions",
+      "category": "interdiction",
+      "meaning": "Toutes les interdictions signalées avant (vitesse, dépassement…) se terminent.",
+      "todo": "Les règles normales reviennent.",
+      "check": {
+        "prompt": "Ce panneau rond avec des barres noires veut dire :",
+        "options": [
+          {
+            "id": "a",
+            "text": "Fin de toutes les interdictions"
+          },
+          {
+            "id": "b",
+            "text": "Danger"
+          },
+          {
+            "id": "c",
+            "text": "Route barrée"
+          }
+        ],
+        "correct": "a",
+        "explanation": "Les barres noires : fin des interdictions précédentes."
+      }
+    },
+    {
+      "id": "sens-giratoire-obligatoire",
+      "category": "obligation",
+      "meaning": "Tu dois tourner autour du rond-point dans le sens des flèches.",
+      "todo": "Tourne en gardant l'îlot à ta gauche. Seul, ce panneau ne te donne pas la priorité : regarde s'il y a un cédez le passage.",
+      "check": {
+        "prompt": "À l'entrée, il n'y a que ce panneau bleu. Qui est prioritaire ?",
+        "options": [
+          {
+            "id": "a",
+            "text": "Ceux qui entrent (priorité à droite)"
+          },
+          {
+            "id": "b",
+            "text": "Ceux qui sont déjà dans l'anneau"
+          },
+          {
+            "id": "c",
+            "text": "Les plus grands véhicules"
+          }
+        ],
+        "correct": "a",
+        "explanation": "Sans cédez le passage à l'entrée, c'est la priorité à droite : ceux qui entrent passent."
+      },
+      "lessonId": "n2-m3-l2"
+    },
+    {
+      "id": "obligation-tout-droit",
+      "category": "obligation",
+      "meaning": "Tu dois continuer tout droit.",
+      "todo": "Ne tourne ni à gauche ni à droite.",
+      "check": {
+        "prompt": "Ce panneau rond bleu avec une flèche vers le haut veut dire :",
+        "options": [
+          {
+            "id": "a",
+            "text": "Obligation d'aller tout droit"
+          },
+          {
+            "id": "b",
+            "text": "Sens unique"
+          },
+          {
+            "id": "c",
+            "text": "Route prioritaire"
+          }
+        ],
+        "correct": "a",
+        "explanation": "Rond bleu : obligation. La flèche montre la seule direction permise."
+      }
+    },
+    {
+      "id": "obligation-droite",
+      "category": "obligation",
+      "meaning": "Tu dois tourner à droite.",
+      "todo": "Mets ton clignotant droit et tourne à droite.",
+      "check": {
+        "prompt": "Avec ce panneau, tu dois :",
+        "options": [
+          {
+            "id": "a",
+            "text": "Tourner à droite"
+          },
+          {
+            "id": "b",
+            "text": "Tourner à gauche"
+          },
+          {
+            "id": "c",
+            "text": "T'arrêter"
+          }
+        ],
+        "correct": "a",
+        "explanation": "Rond bleu avec une flèche : direction obligatoire."
+      }
+    },
+    {
+      "id": "parking",
+      "category": "indication",
+      "meaning": "Un parking est là.",
+      "todo": "Tu peux te garer à cet endroit.",
+      "check": {
+        "prompt": "Le P blanc sur fond bleu veut dire :",
+        "options": [
+          {
+            "id": "a",
+            "text": "Parking"
+          },
+          {
+            "id": "b",
+            "text": "Police"
+          },
+          {
+            "id": "c",
+            "text": "Passage piéton"
+          }
+        ],
+        "correct": "a",
+        "explanation": "P : parking."
+      }
+    },
+    {
+      "id": "sens-unique",
+      "category": "indication",
+      "meaning": "La rue est à sens unique : tout le monde roule dans le même sens.",
+      "todo": "Roule dans le sens de la flèche.",
+      "check": {
+        "prompt": "Ce carré bleu avec une flèche veut dire :",
+        "options": [
+          {
+            "id": "a",
+            "text": "Sens unique"
+          },
+          {
+            "id": "b",
+            "text": "Obligation tout droit"
+          },
+          {
+            "id": "c",
+            "text": "Autoroute"
+          }
+        ],
+        "correct": "a",
+        "explanation": "Carré bleu : une information. Ici, la rue est à sens unique."
+      }
+    },
+    {
+      "id": "impasse",
+      "category": "indication",
+      "meaning": "Cette rue est une impasse : elle ne mène nulle part.",
+      "todo": "N'y entre que si tu vas dans cette rue.",
+      "check": {
+        "prompt": "Ce panneau veut dire :",
+        "options": [
+          {
+            "id": "a",
+            "text": "Impasse, pas de sortie"
+          },
+          {
+            "id": "b",
+            "text": "Sens interdit"
+          },
+          {
+            "id": "c",
+            "text": "Travaux"
+          }
+        ],
+        "correct": "a",
+        "explanation": "La barre rouge en haut : la rue est fermée au bout."
+      }
+    },
+    {
+      "id": "passage-pietons",
+      "category": "indication",
+      "meaning": "Le passage pour piétons est ici.",
+      "todo": "Laisse traverser les piétons qui s'engagent.",
+      "check": {
+        "prompt": "Le carré bleu avec un piéton veut dire :",
+        "options": [
+          {
+            "id": "a",
+            "text": "Le passage piéton est ici"
+          },
+          {
+            "id": "b",
+            "text": "Interdit aux piétons"
+          },
+          {
+            "id": "c",
+            "text": "Danger, piétons plus loin"
+          }
+        ],
+        "correct": "a",
+        "explanation": "Carré bleu : indication. Le passage est à cet endroit."
+      }
+    },
+    {
+      "id": "hopital",
+      "category": "indication",
+      "meaning": "Un hôpital est proche.",
+      "todo": "Évite de klaxonner et roule calmement.",
+      "check": {
+        "prompt": "Le H blanc sur fond bleu veut dire :",
+        "options": [
+          {
+            "id": "a",
+            "text": "Hôpital"
+          },
+          {
+            "id": "b",
+            "text": "Hôtel"
+          },
+          {
+            "id": "c",
+            "text": "Halte"
+          }
+        ],
+        "correct": "a",
+        "explanation": "H : hôpital. On reste discret."
+      }
+    },
+    {
+      "id": "autoroute",
+      "category": "indication",
+      "meaning": "Tu entres sur l'autoroute.",
+      "todo": "Vitesse jusqu'à 120 km/h, pas de demi-tour, pas d'arrêt sauf urgence.",
+      "check": {
+        "prompt": "Sur l'autoroute, tu peux :",
+        "options": [
+          {
+            "id": "a",
+            "text": "Rouler jusqu'à 120 km/h"
+          },
+          {
+            "id": "b",
+            "text": "Faire demi-tour"
+          },
+          {
+            "id": "c",
+            "text": "Marcher sur le bord"
+          }
+        ],
+        "correct": "a",
+        "explanation": "Autoroute : 120 km/h maximum, jamais de demi-tour."
+      }
+    },
+    {
+      "id": "fin-autoroute",
+      "category": "indication",
+      "meaning": "L'autoroute se termine.",
+      "todo": "Ralentis : les limites de vitesse changent.",
+      "check": {
+        "prompt": "Après ce panneau, tu dois :",
+        "options": [
+          {
+            "id": "a",
+            "text": "Ralentir, l'autoroute est finie"
+          },
+          {
+            "id": "b",
+            "text": "Accélérer"
+          },
+          {
+            "id": "c",
+            "text": "Prendre la sortie de secours"
+          }
+        ],
+        "correct": "a",
+        "explanation": "Fin d'autoroute : on reprend des vitesses plus basses."
+      }
+    }
+  ]
+}
