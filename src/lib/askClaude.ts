@@ -18,8 +18,9 @@ export type PhotoAnswer = {
   lessonIds: string[];
 };
 
+/** Claude if its key is set, otherwise Gemini (free tier works fine for a few photos a day). */
 export function isPhotoAskConfigured(): boolean {
-  return Boolean(process.env.ANTHROPIC_API_KEY);
+  return Boolean(process.env.ANTHROPIC_API_KEY || process.env.GEMINI_API_KEY);
 }
 
 function systemPrompt(): string {
@@ -93,9 +94,6 @@ export async function askAboutPhoto(input: {
   question: string;
   guess: string;
 }): Promise<PhotoAnswer> {
-  const key = process.env.ANTHROPIC_API_KEY;
-  if (!key) throw new Error("ANTHROPIC_API_KEY is not set");
-
   const userText = [
     input.question
       ? `Ma question : ${input.question}`
@@ -103,40 +101,73 @@ export async function askAboutPhoto(input: {
     input.guess ? `Ce que je pense : ${input.guess}` : "Je n'ai pas d'idée.",
   ].join("\n");
 
-  const res = await fetch(`${process.env.ANTHROPIC_BASE_URL || "https://api.anthropic.com"}/v1/messages`, {
-    method: "POST",
-    headers: {
-      "content-type": "application/json",
-      "x-api-key": key,
-      "anthropic-version": "2023-06-01",
-    },
-    body: JSON.stringify({
-      model: process.env.ANTHROPIC_MODEL || "claude-sonnet-5-5",
-      max_tokens: 900,
-      system: systemPrompt(),
-      messages: [
-        {
-          role: "user",
-          content: [
-            {
-              type: "image",
-              source: { type: "base64", media_type: input.mediaType, data: input.imageBase64 },
-            },
-            { type: "text", text: userText },
-          ],
-        },
-      ],
-    }),
-  });
+  if (process.env.ANTHROPIC_API_KEY) return parse(await viaClaude(input, userText));
+  if (process.env.GEMINI_API_KEY) return parse(await viaGemini(input, userText));
+  throw new Error("No ANTHROPIC_API_KEY or GEMINI_API_KEY");
+}
 
-  if (!res.ok) {
-    const detail = await res.text().catch(() => "");
-    throw new Error(`Anthropic ${res.status}: ${detail.slice(0, 300)}`);
-  }
+type Img = { imageBase64: string; mediaType: string };
+
+async function viaClaude(input: Img, userText: string): Promise<string> {
+  const res = await fetch(
+    `${process.env.ANTHROPIC_BASE_URL || "https://api.anthropic.com"}/v1/messages`,
+    {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+        "x-api-key": process.env.ANTHROPIC_API_KEY!,
+        "anthropic-version": "2023-06-01",
+      },
+      body: JSON.stringify({
+        model: process.env.ANTHROPIC_MODEL || "claude-sonnet-5-5",
+        max_tokens: 900,
+        system: systemPrompt(),
+        messages: [
+          {
+            role: "user",
+            content: [
+              {
+                type: "image",
+                source: { type: "base64", media_type: input.mediaType, data: input.imageBase64 },
+              },
+              { type: "text", text: userText },
+            ],
+          },
+        ],
+      }),
+    },
+  );
+  if (!res.ok) throw new Error(`Anthropic ${res.status}: ${(await res.text()).slice(0, 300)}`);
   const data = (await res.json()) as { content?: { type: string; text?: string }[] };
-  const text = (data.content ?? [])
+  return (data.content ?? [])
     .filter((b) => b.type === "text")
     .map((b) => b.text ?? "")
     .join("");
-  return parse(text);
+}
+
+async function viaGemini(input: Img, userText: string): Promise<string> {
+  const model = process.env.GEMINI_MODEL || "gemini-flash-latest";
+  const base = process.env.GEMINI_BASE_URL || "https://generativelanguage.googleapis.com";
+  const res = await fetch(`${base}/v1beta/models/${model}:generateContent`, {
+    method: "POST",
+    headers: { "content-type": "application/json", "x-goog-api-key": process.env.GEMINI_API_KEY! },
+    body: JSON.stringify({
+      systemInstruction: { parts: [{ text: systemPrompt() }] },
+      contents: [
+        {
+          role: "user",
+          parts: [
+            { inlineData: { mimeType: input.mediaType, data: input.imageBase64 } },
+            { text: userText },
+          ],
+        },
+      ],
+      generationConfig: { responseMimeType: "application/json", maxOutputTokens: 2048 },
+    }),
+  });
+  if (!res.ok) throw new Error(`Gemini ${res.status}: ${(await res.text()).slice(0, 300)}`);
+  const data = (await res.json()) as {
+    candidates?: { content?: { parts?: { text?: string }[] } }[];
+  };
+  return (data.candidates?.[0]?.content?.parts ?? []).map((p) => p.text ?? "").join("");
 }
