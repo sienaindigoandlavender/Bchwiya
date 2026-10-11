@@ -2,6 +2,8 @@ import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
   reactStrictMode: true,
+  // "Ma photo, ma question" sends a shrunk photo through a server action.
+  experimental: { serverActions: { bodySizeLimit: "4mb" } },
   // Content JSON is read from disk at runtime; ship it with every server function.
   outputFileTracingIncludes: {
     "/**": ["./content/**/*"],

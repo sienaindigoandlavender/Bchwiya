@@ -43,6 +43,7 @@ function pageLabel(path: string, c: Content): string | null {
   if (path === "/examen-blanc") return t("journal.page.exam");
   if (path === "/ma-voiture") return t("journal.page.car");
   if (path === "/panneaux") return t("journal.page.signs");
+  if (path === "/photo") return t("journal.page.photo");
   if (path === "/perminou") return t("journal.page.perminou");
   const [, kind, id] = path.split("/");
   if (kind === "niveau" && id) {
@@ -103,6 +104,23 @@ function describe(e: EventRow, c: Content): Omit<JournalLine, "id" | "time"> | n
       return {
         text: t(d.again ? "journal.sign.again" : "journal.sign.spotted", { title: str(d.title) }),
         tone: "milestone",
+      };
+    case "photo_question":
+      return {
+        text: t("journal.photo", {
+          question: str(d.question) || "?",
+          guess: str(d.guess),
+          verdict:
+            (
+              {
+                juste: "idée juste",
+                presque: "presque",
+                "pas-juste": "idée pas juste",
+                "sans-idee": "sans idée",
+              } as Record<string, string>
+            )[str(d.verdict)] ?? "",
+        }),
+        tone: d.verdict === "juste" ? "good" : "neutral",
       };
     case "sign_check":
       return {

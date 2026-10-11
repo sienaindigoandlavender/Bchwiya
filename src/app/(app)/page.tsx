@@ -2,7 +2,7 @@ import Link from "next/link";
 import { LevelPath } from "@/components/LevelPath";
 import { PerminouLink } from "@/components/PerminouLink";
 import { ResumeCard } from "@/components/ResumeCard";
-import { CarIcon, ChevronIcon, ReviewIcon, SignIcon } from "@/components/ui/Icons";
+import { CameraIcon, CarIcon, ChevronIcon, ReviewIcon, SignIcon } from "@/components/ui/Icons";
 import { t } from "@/i18n";
 import { loadPath } from "@/lib/data";
 import { resumeTarget } from "@/lib/progress";
@@ -67,6 +67,17 @@ export default async function HomePage() {
         <span className="flex flex-1 flex-col">
           <span className="title text-[1.5rem]">{t("signs.title")}</span>
           <span className="text-[1rem] text-ink-soft">{t("home.signs.sub")}</span>
+        </span>
+        <ChevronIcon size={18} />
+      </Link>
+
+      <Link href="/photo" className="flex items-center gap-4 rounded-big bg-lilac p-5">
+        <span className="flex size-12 items-center justify-center rounded-full bg-paper">
+          <CameraIcon size={24} />
+        </span>
+        <span className="flex flex-1 flex-col">
+          <span className="title text-[1.5rem]">{t("photo.title")}</span>
+          <span className="text-[1rem] text-ink-soft">{t("home.photo.sub")}</span>
         </span>
         <ChevronIcon size={18} />
       </Link>
