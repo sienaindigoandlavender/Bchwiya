@@ -11,7 +11,4 @@ create table if not exists public.bchwiya_spotted_signs (
 
 alter table public.bchwiya_spotted_signs enable row level security;
 
-drop policy if exists "spotted: own rows" on public.bchwiya_spotted_signs;
-create policy "spotted: own rows" on public.bchwiya_spotted_signs
-  for all using (user_id = auth.uid() or public.bchwiya_is_admin())
-  with check (user_id = auth.uid());
+-- No policies: only the server (service-role key) reads and writes, like the journal.
