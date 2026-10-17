@@ -74,7 +74,7 @@ export function SignCheck({ signId, check }: { signId: string; check: Check }) {
               ? "bg-mint"
               : o.id === picked
                 ? "bg-blush"
-                : "bg-cloud opacity-70";
+                : "bg-cloud";
           return (
             <li key={o.id}>
               <button
@@ -98,7 +98,7 @@ export function SignCheck({ signId, check }: { signId: string; check: Check }) {
           <p className="font-semibold">
             {right ? t("signs.right") : `${t("signs.wrong")} ${correctText}`}
           </p>
-          <p className="text-ink-soft">{check.explanation}</p>
+          <p className="text-ink">{check.explanation}</p>
           <button
             type="button"
             className="mt-3 text-[0.9375rem] font-semibold text-rose"

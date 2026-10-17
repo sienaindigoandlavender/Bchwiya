@@ -14,7 +14,7 @@ export default async function PhotoPage() {
         kicker={t("photo.kicker")}
         title={t("photo.title")}
       />
-      <p className="text-[1.0625rem] leading-relaxed text-ink-soft">{t("photo.intro")}</p>
+      <p className="text-[1.0625rem] leading-relaxed text-ink">{t("photo.intro")}</p>
       {isPhotoAskConfigured() ? (
         <PhotoQuestion />
       ) : (

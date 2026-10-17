@@ -64,7 +64,7 @@ export default async function JournalPage() {
                     key={line.id}
                     className="flex items-start gap-3 border-b border-line py-2.5 last:border-0"
                   >
-                    <span className="w-12 shrink-0 pt-0.5 text-[0.9375rem] font-medium tabular-nums text-ink-soft">
+                    <span className="w-12 shrink-0 pt-0.5 text-[0.9375rem] font-medium tabular-nums text-ink">
                       {line.time}
                     </span>
                     <span

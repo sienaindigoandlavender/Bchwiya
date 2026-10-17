@@ -37,7 +37,7 @@ export default async function ModulePage({ params }: { params: Promise<{ moduleI
                       <CheckIcon size={18} />
                     </span>
                   ) : l.status === "locked" ? (
-                    <span className="flex size-10 shrink-0 items-center justify-center rounded-full bg-paper text-ink-soft">
+                    <span className="flex size-10 shrink-0 items-center justify-center rounded-full bg-paper text-ink">
                       <LockIcon size={16} />
                     </span>
                   ) : (
@@ -50,7 +50,7 @@ export default async function ModulePage({ params }: { params: Promise<{ moduleI
                     {marker}
                     <span className="flex flex-1 flex-col">
                       <span className="font-semibold leading-snug">{l.title}</span>
-                      <span className="text-[0.9375rem] text-ink-soft">
+                      <span className="text-[0.9375rem] text-ink">
                         {t("module.minutes", { minutes: l.minutes })}
                       </span>
                     </span>
@@ -59,7 +59,7 @@ export default async function ModulePage({ params }: { params: Promise<{ moduleI
                 );
                 const cls = `flex items-center gap-4 rounded-big p-4 ${
                   l.status === "available" ? "bg-blush" : "bg-cloud"
-                } ${l.status === "locked" ? "text-ink-soft" : "text-ink"}`;
+                } text-ink`;
                 return (
                   <li key={l.id}>
                     {l.status === "locked" ? (

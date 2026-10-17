@@ -344,7 +344,7 @@ const SCENES: Record<SceneName, () => ReactNode> = {
         y="70"
         fontSize="30"
         fontWeight="700"
-        fill={PLUM}
+        fill={INK}
         fontFamily="Arial, sans-serif"
       >
         z z
@@ -451,7 +451,7 @@ const SCENES: Record<SceneName, () => ReactNode> = {
         textAnchor="middle"
         fontSize="30"
         fontWeight="700"
-        fill={PLUM}
+        fill={INK}
         fontFamily="Arial, sans-serif"
       >
         18
@@ -518,7 +518,7 @@ const SCENES: Record<SceneName, () => ReactNode> = {
         y="110"
         fontSize="22"
         fontWeight="700"
-        fill={PLUM}
+        fill={INK}
         fontFamily="Arial, sans-serif"
       >
         1… 2
@@ -1170,7 +1170,7 @@ const SCENES: Record<SceneName, () => ReactNode> = {
         textAnchor="middle"
         fontSize="44"
         fontWeight="700"
-        fill={PLUM}
+        fill={INK}
         fontFamily="Arial, sans-serif"
       >
         J

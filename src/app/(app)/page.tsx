@@ -44,7 +44,7 @@ export default async function HomePage() {
         <summary className="flex cursor-pointer list-none items-center gap-3 p-5 [&::-webkit-details-marker]:hidden">
           <span className="flex flex-1 flex-col gap-0.5">
             <span className="title text-[1.5rem]">{t("home.path")}</span>
-            <span className="text-[1rem] text-ink-soft">
+            <span className="text-[1rem] text-ink">
               {t("home.path.summary", { done: modulesDone, total: modulesTotal })}
             </span>
           </span>
@@ -66,7 +66,7 @@ export default async function HomePage() {
         </span>
         <span className="flex flex-1 flex-col">
           <span className="title text-[1.5rem]">{t("signs.title")}</span>
-          <span className="text-[1rem] text-ink-soft">{t("home.signs.sub")}</span>
+          <span className="text-[1rem] text-ink">{t("home.signs.sub")}</span>
         </span>
         <ChevronIcon size={18} />
       </Link>
@@ -77,7 +77,7 @@ export default async function HomePage() {
         </span>
         <span className="flex flex-1 flex-col">
           <span className="title text-[1.5rem]">{t("photo.title")}</span>
-          <span className="text-[1rem] text-ink-soft">{t("home.photo.sub")}</span>
+          <span className="text-[1rem] text-ink">{t("home.photo.sub")}</span>
         </span>
         <ChevronIcon size={18} />
       </Link>
@@ -90,7 +90,7 @@ export default async function HomePage() {
         </span>
         <span className="flex flex-1 flex-col">
           <span className="title text-[1.5rem]">{t("nav.myCar")}</span>
-          <span className="text-[1rem] text-ink-soft">{t("home.myCar.sub")}</span>
+          <span className="text-[1rem] text-ink">{t("home.myCar.sub")}</span>
         </span>
         <ChevronIcon size={18} />
       </Link>

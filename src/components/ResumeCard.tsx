@@ -45,7 +45,7 @@ export function ResumeCard({
             <p className="text-[1.0625rem]">{t("home.resume.allDone")}</p>
           ) : (
             <div className="flex flex-col gap-1">
-              <span className="text-[0.9375rem] font-medium text-ink-soft">
+              <span className="text-[0.9375rem] font-medium text-ink">
                 {target.kind === "lesson" ? t("home.next.lesson") : t("home.next.test")}
               </span>
               <span className="text-[1.125rem] font-semibold leading-snug">{target.title}</span>

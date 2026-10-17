@@ -26,9 +26,7 @@ export default async function LevelPage({ params }: { params: Promise<{ levelId:
           const inner = (
             <>
               <span
-                className={`title flex size-11 shrink-0 items-center justify-center rounded-full text-[1.375rem] ${
-                  m.status === "locked" ? "bg-paper text-ink-soft" : "bg-paper text-ink"
-                }`}
+                className="title flex size-11 shrink-0 items-center justify-center rounded-full bg-paper text-[1.375rem] text-ink"
               >
                 {i + 1}
               </span>
@@ -39,9 +37,7 @@ export default async function LevelPage({ params }: { params: Promise<{ levelId:
               {m.status !== "locked" ? <ChevronIcon size={18} /> : null}
             </>
           );
-          const cls = `flex items-center gap-4 rounded-big p-4 ${
-            m.status === "locked" ? "bg-cloud text-ink-soft" : "bg-cloud text-ink"
-          }`;
+          const cls = "flex items-center gap-4 rounded-big bg-cloud p-4 text-ink";
           return (
             <li key={m.id}>
               {m.status === "locked" ? (

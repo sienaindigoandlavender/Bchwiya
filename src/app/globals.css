@@ -2,14 +2,14 @@
 
 /*
  * Bchwiya design tokens. Flat: no shadows, no gradients. Colour comes from soft
- * pastel fills; text is always deep aubergine ink, never light grey.
+ * pastel fills; text is always deep aubergine ink at full strength, never light grey.
  * Reskin the app by changing these values only.
  */
 :root {
   /* base */
   --paper: #ffffff;
   --ink: #26121f;
-  --ink-soft: #4f3446; /* secondary text: dark plum, never pale grey (9:1 on white) */
+  --ink-soft: #4f3446; /* drawings only (other cars, figures); never used for text */
   --line: #f2dbe5;
 
   /* the pastel box */
@@ -28,7 +28,7 @@
   --surface: var(--paper);
   --surface-muted: var(--cloud);
   --text: var(--ink);
-  --text-muted: var(--ink-soft);
+  --text-muted: var(--ink); /* secondary text: smaller, never paler */
   --border: var(--line);
   --accent: var(--rose);
   --accent-contrast: var(--rose-ink);
@@ -38,7 +38,7 @@
   /* Deliberately soft: a wrong answer is information, not an alarm. */
   --notice: #7a5a00;
   --notice-soft: var(--butter);
-  --locked: var(--ink-soft);
+  --locked: var(--ink);
 
   --radius: 18px;
   --radius-lg: 28px;
@@ -98,6 +98,13 @@ body {
   min-height: 100dvh;
   font-size: 17px;
   line-height: 1.55;
+}
+
+/* Placeholders: full ink, italic to set them apart. Never pale grey. */
+::placeholder {
+  color: var(--ink);
+  opacity: 1;
+  font-style: italic;
 }
 
 :focus-visible {
@@ -160,8 +167,8 @@ body {
     transform: scale(0.97);
   }
   .btn:disabled {
-    background: var(--cloud);
-    color: var(--ink-soft);
+    background: #dcc7d2; /* mid-tone fill, solid ink text */
+    color: var(--ink);
   }
   .btn-secondary {
     background: var(--blush);

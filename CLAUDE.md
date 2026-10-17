@@ -8,7 +8,8 @@
 ## Design system (locked Oct 8 2026)
 
 - Flat. No shadows, no gradients, no borders as decoration. Colour comes from soft pastel fills.
-- White paper, deep aubergine ink (`--ink`). Never light grey text; secondary text uses `--ink-soft`.
+- White paper, deep aubergine ink (`--ink`). `--ink-soft` is for drawings only, never text.
+- Text is never light grey: black (or the site's ink) at full strength everywhere, like Claude's own interfaces; secondary text may be smaller, never paler. House rule for every site.
 - One strong colour, rose `--rose`, for actions and "you are here". Pastels: blush, lilac, mint, butter, peach, sky, cloud.
 - Type: EB Garamond italic for titles (`.title`), EB Garamond roman for lesson and question text, DM Sans for the interface.
 - Shapes: pill buttons, 28px blocks (`rounded-big`), 18px options (`rounded-card`).

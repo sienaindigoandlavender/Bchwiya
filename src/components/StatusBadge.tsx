@@ -3,7 +3,7 @@ import { t } from "@/i18n";
 import type { Status } from "@/lib/progress";
 
 const TONE: Record<Status, string> = {
-  locked: "bg-cloud text-ink-soft",
+  locked: "bg-cloud text-ink",
   available: "bg-paper text-ink ring-1 ring-line ring-inset",
   in_progress: "bg-blush text-rose",
   done: "bg-mint text-success",

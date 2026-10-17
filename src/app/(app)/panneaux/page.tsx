@@ -20,7 +20,7 @@ export default async function SignsPage() {
   return (
     <>
       <PageHeader kicker={t("signs.kicker")} title={t("signs.title")} />
-      <p className="text-[1.0625rem] leading-relaxed text-ink-soft">{t("signs.intro")}</p>
+      <p className="text-[1.0625rem] leading-relaxed text-ink">{t("signs.intro")}</p>
       <p className="pill self-start bg-blush text-ink">
         {t("signs.count", { seen: seen.size, total: signs.length })}
       </p>
@@ -57,7 +57,7 @@ export default async function SignsPage() {
                         {presetTitle(s.id)}
                       </span>
                       {met ? null : (
-                        <span className="text-[0.8125rem] text-ink-soft">{t("signs.notYet")}</span>
+                        <span className="text-[0.8125rem] text-ink">{t("signs.notYet")}</span>
                       )}
                     </Link>
                   </li>

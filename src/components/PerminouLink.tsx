@@ -34,7 +34,7 @@ export function PerminouLink({ tone = "cloud" }: { tone?: "cloud" | "mint" }) {
       </span>
       <span className="flex flex-1 flex-col">
         <span className="title text-[1.5rem]">{t("perminou.title")}</span>
-        <span className="text-[1rem] text-ink-soft">{t("perminou.sub")}</span>
+        <span className="text-[1rem] text-ink">{t("perminou.sub")}</span>
       </span>
     </a>
   );

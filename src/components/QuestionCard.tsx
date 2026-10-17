@@ -98,7 +98,7 @@ export function QuestionCard({ question, feedback = true, onSubmit, onNext, next
       ) : null}
       <div className="flex flex-col gap-2">
         <p className="font-serif text-[1.5rem] leading-[1.3] text-ink">{question.prompt}</p>
-        <span className="pill self-start bg-cloud text-ink-soft">
+        <span className="pill self-start bg-cloud text-ink">
           {multi ? t("question.multi") : t("question.single")}
         </span>
       </div>

@@ -77,7 +77,7 @@ export function PhotoQuestion() {
         ) : null}
         {guess ? (
           <section className="card flex flex-col gap-1 bg-cloud">
-            <h2 className="text-[1rem] font-semibold text-ink-soft">{t("photo.yourIdea")}</h2>
+            <h2 className="text-[1rem] font-semibold text-ink">{t("photo.yourIdea")}</h2>
             <p className="text-[1.0625rem]">{guess}</p>
           </section>
         ) : null}
@@ -103,7 +103,7 @@ export function PhotoQuestion() {
             ))}
           </section>
         ) : null}
-        <p className="text-[0.9375rem] text-ink-soft">{t("photo.note")}</p>
+        <p className="text-[0.9375rem] text-ink">{t("photo.note")}</p>
         <button type="button" className="btn self-start" onClick={reset}>
           {t("photo.another")}
         </button>
@@ -158,7 +158,7 @@ export function PhotoQuestion() {
             <CameraIcon size={30} />
           </span>
           <span className="title text-[1.5rem]">{t("photo.pick")}</span>
-          <span className="text-[1rem] text-ink-soft">{t("photo.pick.sub")}</span>
+          <span className="text-[1rem] text-ink">{t("photo.pick.sub")}</span>
         </label>
       )}
 
@@ -175,7 +175,7 @@ export function PhotoQuestion() {
 
       <label className="flex flex-col gap-2">
         <span className="font-semibold">{t("photo.guess")}</span>
-        <span className="text-[0.9375rem] text-ink-soft">{t("photo.guess.sub")}</span>
+        <span className="text-[0.9375rem] text-ink">{t("photo.guess.sub")}</span>
         <textarea
           value={guess}
           onChange={(e) => setGuess(e.target.value)}

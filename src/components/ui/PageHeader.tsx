@@ -25,7 +25,7 @@ export function PageHeader({
         {kicker || aside ? (
           <div className="flex flex-wrap items-center gap-2">
             {kicker ? (
-              <span className="text-[1rem] font-medium text-ink-soft">{kicker}</span>
+              <span className="text-[1rem] font-medium text-ink">{kicker}</span>
             ) : null}
             {aside}
           </div>

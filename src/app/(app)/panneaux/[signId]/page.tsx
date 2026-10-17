@@ -48,11 +48,11 @@ export default async function SignPage({ params }: { params: Promise<{ signId: s
       </div>
 
       <section className="card flex flex-col gap-2 bg-cloud">
-        <h2 className="text-[1rem] font-semibold text-ink-soft">{t("signs.meaning")}</h2>
+        <h2 className="text-[1rem] font-semibold text-ink">{t("signs.meaning")}</h2>
         <p className="font-serif text-[1.25rem] leading-snug">{sign.meaning}</p>
       </section>
       <section className="card flex flex-col gap-2 bg-mint">
-        <h2 className="text-[1rem] font-semibold text-ink-soft">{t("signs.todo")}</h2>
+        <h2 className="text-[1rem] font-semibold text-ink">{t("signs.todo")}</h2>
         <p className="font-serif text-[1.25rem] leading-snug">{sign.todo}</p>
       </section>
 
@@ -64,7 +64,7 @@ export default async function SignPage({ params }: { params: Promise<{ signId: s
           className="flex items-center gap-3 rounded-card bg-blush px-5 py-4"
         >
           <span className="flex flex-1 flex-col">
-            <span className="text-[0.9375rem] text-ink-soft">{t("signs.lesson")}</span>
+            <span className="text-[0.9375rem] text-ink">{t("signs.lesson")}</span>
             <span className="font-medium">{lesson.title}</span>
           </span>
           <ChevronIcon size={18} />

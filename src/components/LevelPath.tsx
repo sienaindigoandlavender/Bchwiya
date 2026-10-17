@@ -10,7 +10,7 @@ function currentIndex(levels: LevelState[]) {
 }
 
 const CHIP: Record<ModuleState["status"], string> = {
-  locked: "bg-cloud text-ink-soft",
+  locked: "bg-cloud text-ink",
   available: "bg-paper text-ink ring-1 ring-line ring-inset",
   in_progress: "bg-blush text-ink ring-1 ring-rose ring-inset",
   done: "bg-mint text-ink",
@@ -62,7 +62,7 @@ export function LevelPath({ levels }: { levels: LevelState[] }) {
             : isCurrent
               ? "bg-rose text-rose-ink"
               : level.status === "locked"
-                ? "bg-paper text-ink-soft ring-2 ring-cloud ring-inset"
+                ? "bg-paper text-ink ring-2 ring-cloud ring-inset"
                 : `${levelFill(i)} text-ink`;
         return (
           <li key={level.id} className="relative flex gap-4">
@@ -78,14 +78,14 @@ export function LevelPath({ levels }: { levels: LevelState[] }) {
             </span>
             <div className="flex min-w-0 flex-1 flex-col gap-2.5 pt-1">
               <Link href={`/niveau/${level.id}`} className="flex flex-col">
-                <span className="flex items-center gap-2 text-[0.9375rem] font-medium text-ink-soft">
+                <span className="flex items-center gap-2 text-[0.9375rem] font-medium text-ink">
                   {t("level.label")} {i}
                   {isCurrent ? (
                     <span className="pill bg-rose py-0 text-rose-ink">{t("path.here")}</span>
                   ) : null}
                 </span>
                 <span
-                  className={`title text-[1.625rem] ${level.status === "locked" ? "text-ink-soft" : "text-ink"}`}
+                  className="title text-[1.625rem] text-ink"
                 >
                   {level.title}
                 </span>
